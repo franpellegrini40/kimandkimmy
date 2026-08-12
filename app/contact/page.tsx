@@ -12,7 +12,7 @@ export default async function ContactPage() {
     <PageShell site={site}>
       <Section tone="light" narrow className="pt-40">
         <h1 className="text-3xl">Contact</h1>
-        <p className="mt-4 text-stone-700">
+        <p className="mt-4" style={{ color: 'var(--text-secondary)' }}>
           For general enquiries, write to{' '}
           <a href="mailto:hello@vivra.world" className="underline">
             hello@vivra.world

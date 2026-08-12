@@ -18,7 +18,7 @@ export default async function MembershipPage() {
       <Section tone="light" className="pt-40">
         <span className="eyebrow">VIVRA Membership — Coming Live Soon</span>
         <h1 className="mt-4 max-w-2xl text-3xl md:text-4xl">Ibiza is the beginning.</h1>
-        <p className="mt-4 max-w-xl text-stone-700">
+        <p className="mt-4 max-w-xl" style={{ color: 'var(--text-secondary)' }}>
           VIVRA continues through a global membership and curated community. Selected tiers
           below — full benefits confirmed at launch.
         </p>

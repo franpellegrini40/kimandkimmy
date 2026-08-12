@@ -17,7 +17,7 @@ export default function Photo({
   sizes?: string
 }) {
   return (
-    <div className={clsx('relative overflow-hidden rounded-2xl', aspect, className)}>
+    <div className={clsx('relative overflow-hidden', aspect, className)}>
       <Image
         src={src}
         alt={alt}

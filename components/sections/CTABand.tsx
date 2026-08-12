@@ -6,7 +6,7 @@ export default function CTABand({ site }: { site: SiteId }) {
   const isJoin = site === 'join-vivra'
 
   return (
-    <section className="bg-stone-900 py-16 text-center text-white">
+    <section data-theme="prestige" className="grain py-16 text-center" style={{ background: 'var(--surface-page)', color: 'var(--text-primary)' }}>
       <Container>
         <h2 className="text-2xl md:text-3xl">
           {isJoin ? 'Request to join the Founding Retreat.' : 'Join VIVRA early.'}
@@ -15,7 +15,7 @@ export default function CTABand({ site }: { site: SiteId }) {
           <Button href={isJoin ? '/apply/ibiza' : '/apply/join'}>
             {isJoin ? 'Join the Founding Retreat' : 'Join VIVRA'}
           </Button>
-          <Button href="/apply/alliance" variant="secondary" className="border-white/60 text-white hover:border-white">
+          <Button href="/apply/alliance" variant="secondary">
             Join VIVRA World Alliance
           </Button>
         </div>

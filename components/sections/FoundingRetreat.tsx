@@ -2,49 +2,34 @@ import Section from '@/components/ui/Section'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import Photo from '@/components/ui/Photo'
 import Button from '@/components/ui/Button'
-import { RETREAT_FACTS, WHY_IBIZA, WHO_JOINS } from '@/content/retreat'
+import { RETREAT_FACTS, WHY_IBIZA } from '@/content/retreat'
 
 export default function FoundingRetreat() {
   return (
     <Section tone="dark" id="ibiza">
       <RevealOnScroll>
-        <span className="eyebrow text-vivra-300">{RETREAT_FACTS.status}</span>
+        <span className="eyebrow">{RETREAT_FACTS.status}</span>
         <h2 className="mt-4 max-w-2xl text-3xl md:text-4xl">{WHY_IBIZA.heading}</h2>
       </RevealOnScroll>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <div className="mt-10 grid gap-8 md:grid-cols-2 md:items-center">
         <RevealOnScroll>
-          <div className="rounded-2xl border border-white/10 p-6">
-            <h3 className="text-lg text-white">Why Ibiza</h3>
-            <p className="mt-2 text-sm text-white/70">{WHY_IBIZA.body}</p>
+          <Photo src="/images/villa-facade.jpg" alt="Entrance to Can Aylma, Ibiza" aspect="aspect-[4/5]" />
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.08} className="space-y-6">
+          <div>
+            <h3 className="text-lg" style={{ color: 'var(--text-primary)' }}>Why Ibiza</h3>
+            <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>{WHY_IBIZA.body}</p>
+          </div>
+          <div>
+            <h3 className="text-lg" style={{ color: 'var(--text-primary)' }}>Can Aylma</h3>
+            <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>{WHY_IBIZA.villa}</p>
           </div>
         </RevealOnScroll>
-        <RevealOnScroll delay={0.08}>
-          <div className="rounded-2xl border border-white/10 p-6">
-            <h3 className="text-lg text-white">{WHO_JOINS.heading}</h3>
-            <p className="mt-2 text-sm text-white/70">{WHO_JOINS.intro}</p>
-          </div>
-        </RevealOnScroll>
-        <RevealOnScroll delay={0.16}>
-          <div className="rounded-2xl border border-white/10 p-6">
-            <h3 className="text-lg text-white">Can Aylma</h3>
-            <p className="mt-2 text-sm text-white/70">{WHY_IBIZA.villa}</p>
-          </div>
-        </RevealOnScroll>
-      </div>
-
-      <div className="mt-14 grid gap-6 md:grid-cols-3">
-        <Photo
-          src="/images/villa-dining.jpg"
-          alt="Long-table dinner at sunset, Can Aylma"
-          aspect="aspect-video"
-          className="md:col-span-2"
-        />
-        <Photo src="/images/villa-view.jpg" alt="View over the Ibiza hills from Can Aylma" />
       </div>
 
       <div className="mt-12">
-        <Button href="/apply/ibiza">Join the Founding Retreat</Button>
+        <Button href="/apply/ibiza" variant="accent">Join the Founding Retreat</Button>
       </div>
     </Section>
   )

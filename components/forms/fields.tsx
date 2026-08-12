@@ -14,19 +14,20 @@ export function TextField({
 } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <label className="block">
-      <span className="text-sm text-stone-700">
+      <span className="text-sm">
         {label}
-        {required && <span className="text-clay-500"> *</span>}
+        {required && <span className="text-red-600"> *</span>}
       </span>
       <input
         name={name}
         type={type}
         required={required}
         aria-invalid={!!error}
-        className="mt-1.5 w-full rounded-lg border border-stone-900/15 bg-white px-4 py-3 text-sm text-stone-900 outline-none focus:border-vivra-600"
+        className="mt-1.5 w-full border bg-[var(--paper)] px-4 py-3 text-sm text-navy outline-none focus:border-[var(--accent-deep)]"
+        style={{ borderColor: 'var(--rule)' }}
         {...rest}
       />
-      {error && <span className="mt-1 block text-xs text-clay-500">{error}</span>}
+      {error && <span className="mt-1 block text-xs text-red-600">{error}</span>}
     </label>
   )
 }
@@ -45,19 +46,20 @@ export function TextAreaField({
 } & React.TextareaHTMLAttributes<HTMLTextAreaElement>) {
   return (
     <label className="block">
-      <span className="text-sm text-stone-700">
+      <span className="text-sm">
         {label}
-        {required && <span className="text-clay-500"> *</span>}
+        {required && <span className="text-red-600"> *</span>}
       </span>
       <textarea
         name={name}
         required={required}
         rows={3}
         aria-invalid={!!error}
-        className="mt-1.5 w-full rounded-lg border border-stone-900/15 bg-white px-4 py-3 text-sm text-stone-900 outline-none focus:border-vivra-600"
+        className="mt-1.5 w-full border bg-[var(--paper)] px-4 py-3 text-sm text-navy outline-none focus:border-[var(--accent-deep)]"
+        style={{ borderColor: 'var(--rule)' }}
         {...rest}
       />
-      {error && <span className="mt-1 block text-xs text-clay-500">{error}</span>}
+      {error && <span className="mt-1 block text-xs text-red-600">{error}</span>}
     </label>
   )
 }
@@ -78,15 +80,16 @@ export function SelectField({
 } & React.SelectHTMLAttributes<HTMLSelectElement>) {
   return (
     <label className="block">
-      <span className="text-sm text-stone-700">
+      <span className="text-sm">
         {label}
-        {required && <span className="text-clay-500"> *</span>}
+        {required && <span className="text-red-600"> *</span>}
       </span>
       <select
         name={name}
         required={required}
         aria-invalid={!!error}
-        className="mt-1.5 w-full rounded-lg border border-stone-900/15 bg-white px-4 py-3 text-sm text-stone-900 outline-none focus:border-vivra-600"
+        className="mt-1.5 w-full border bg-[var(--paper)] px-4 py-3 text-sm text-navy outline-none focus:border-[var(--accent-deep)]"
+        style={{ borderColor: 'var(--rule)' }}
         {...rest}
       >
         <option value="">Select…</option>
@@ -96,7 +99,7 @@ export function SelectField({
           </option>
         ))}
       </select>
-      {error && <span className="mt-1 block text-xs text-clay-500">{error}</span>}
+      {error && <span className="mt-1 block text-xs text-red-600">{error}</span>}
     </label>
   )
 }

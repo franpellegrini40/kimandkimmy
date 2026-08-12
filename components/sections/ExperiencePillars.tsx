@@ -10,12 +10,15 @@ export default function ExperiencePillars() {
         <h2 className="mt-4 max-w-xl text-3xl md:text-4xl">Four conversations that shape the future.</h2>
       </RevealOnScroll>
 
-      <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-stone-900/10 bg-stone-900/10 sm:grid-cols-2">
+      <div
+        className="mt-10 grid gap-px overflow-hidden border sm:grid-cols-2"
+        style={{ borderColor: 'var(--rule)', background: 'var(--rule)' }}
+      >
         {EXPERIENCE_PILLARS.map((pillar, i) => (
           <RevealOnScroll key={pillar.key} delay={i * 0.04}>
-            <div className="h-full bg-sand-50 p-6">
-              <h3 className="text-base text-stone-900">{pillar.label}</h3>
-              <p className="mt-2 text-xs text-stone-500">{pillar.description}</p>
+            <div className="h-full p-6" style={{ background: 'var(--surface-raised)' }}>
+              <h3 className="text-base">{pillar.label}</h3>
+              <p className="mt-2 text-xs" style={{ color: 'var(--text-quiet)' }}>{pillar.description}</p>
             </div>
           </RevealOnScroll>
         ))}

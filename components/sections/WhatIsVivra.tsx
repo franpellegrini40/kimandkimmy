@@ -10,7 +10,7 @@ export default function WhatIsVivra() {
         <RevealOnScroll>
           <span className="eyebrow">What is VIVRA</span>
           <h2 className="mt-4 text-3xl md:text-4xl">{RETREAT_FACTS.positioning}</h2>
-          <p className="mt-6 max-w-xl text-stone-700">{RETREAT_FACTS.invitation}</p>
+          <p className="mt-6 max-w-xl" style={{ color: 'var(--text-secondary)' }}>{RETREAT_FACTS.invitation}</p>
         </RevealOnScroll>
         <RevealOnScroll delay={0.1}>
           <Photo src="/images/villa-dining.jpg" alt="Long-table dining at Can Aylma, Ibiza" />

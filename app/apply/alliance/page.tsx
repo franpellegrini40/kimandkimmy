@@ -17,7 +17,7 @@ export default async function ApplyAlliancePage() {
       <Section tone="light" narrow className="pt-40">
         <span className="eyebrow">VIVRA World Alliance</span>
         <h1 className="mt-4 text-3xl md:text-4xl">Apply to join the Alliance.</h1>
-        <p className="mt-3 text-stone-700">
+        <p className="mt-3" style={{ color: 'var(--text-secondary)' }}>
           For membership clubs, hospitality brands, wellness businesses and aligned
           communities.
         </p>

@@ -1,13 +1,14 @@
 import Link from 'next/link'
 import { FOOTER_LINKS } from '@/content/site'
+import Logo from '@/components/ui/Logo'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-stone-900/10 bg-sand-100 py-14">
+    <footer className="border-t py-14" style={{ borderColor: 'var(--rule)', background: 'var(--surface-inset)' }}>
       <div className="container-vivra flex flex-col gap-10 md:flex-row md:justify-between">
         <div className="max-w-sm">
-          <p className="font-display text-xl tracking-[0.15em] text-stone-900">VIVRA</p>
-          <p className="mt-3 text-sm text-stone-700">
+          <Logo className="h-4 w-auto" />
+          <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
             A curated community exploring new dimensions of wellbeing, longevity and human
             potential — beginning in Ibiza.
           </p>
@@ -15,34 +16,28 @@ export default function Footer() {
 
         <div className="flex flex-wrap gap-10 text-sm">
           <div className="flex flex-col gap-2">
-            <span className="mb-1 text-xs uppercase tracking-wide text-stone-500">VIVRA</span>
+            <span className="mb-1 text-xs uppercase" style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--text-quiet)' }}>VIVRA</span>
             {FOOTER_LINKS.primary.map((l) => (
-              <Link key={l.href} href={l.href} className="text-stone-800 hover:text-vivra-700">
+              <Link key={l.href} href={l.href} className="hover:opacity-70">
                 {l.label}
               </Link>
             ))}
           </div>
           <div className="flex flex-col gap-2">
-            <span className="mb-1 text-xs uppercase tracking-wide text-stone-500">Connect</span>
+            <span className="mb-1 text-xs uppercase" style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--text-quiet)' }}>Connect</span>
             {FOOTER_LINKS.social.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-stone-800 hover:text-vivra-700"
-              >
+              <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" className="hover:opacity-70">
                 {l.label}
               </a>
             ))}
-            <Link href="/contact" className="text-stone-800 hover:text-vivra-700">
+            <Link href="/contact" className="hover:opacity-70">
               Contact
             </Link>
           </div>
           <div className="flex flex-col gap-2">
-            <span className="mb-1 text-xs uppercase tracking-wide text-stone-500">Legal</span>
+            <span className="mb-1 text-xs uppercase" style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--text-quiet)' }}>Legal</span>
             {FOOTER_LINKS.legal.map((l) => (
-              <Link key={l.href} href={l.href} className="text-stone-800 hover:text-vivra-700">
+              <Link key={l.href} href={l.href} className="hover:opacity-70">
                 {l.label}
               </Link>
             ))}
@@ -50,7 +45,10 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="container-vivra mt-10 flex flex-col-reverse gap-4 border-t border-stone-900/10 pt-6 text-xs text-stone-500 md:flex-row md:items-center md:justify-between">
+      <div
+        className="container-vivra mt-10 flex flex-col-reverse gap-4 border-t pt-6 text-xs md:flex-row md:items-center md:justify-between"
+        style={{ borderColor: 'var(--rule)', color: 'var(--text-quiet)' }}
+      >
         <p>© {new Date().getFullYear()} VIVRA. All rights reserved.</p>
         <p>vivra.world · joinvivra.com</p>
       </div>

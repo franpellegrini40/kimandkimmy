@@ -5,7 +5,6 @@ import FoundingRetreat from '@/components/sections/FoundingRetreat'
 import WhoJoins from '@/components/sections/WhoJoins'
 import VillaGallery from '@/components/sections/VillaGallery'
 import ExperiencePillars from '@/components/sections/ExperiencePillars'
-import WhatVivraPossible from '@/components/sections/WhatVivraPossible'
 import DayInLife from '@/components/sections/DayInLife'
 import AgendaTimeline from '@/components/sections/AgendaTimeline'
 import PricingSection from '@/components/sections/PricingSection'
@@ -28,7 +27,6 @@ export default async function IbizaPage() {
       <WhoJoins />
       <VillaGallery />
       <ExperiencePillars />
-      <WhatVivraPossible />
       <Section tone="sand" id="agenda">
         <span className="eyebrow">Retreat Agenda</span>
         <h2 className="mt-4 max-w-xl text-3xl md:text-4xl">The program.</h2>

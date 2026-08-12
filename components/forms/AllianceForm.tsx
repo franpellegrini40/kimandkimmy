@@ -119,7 +119,7 @@ export default function AllianceForm() {
           <TextAreaField label="Why would you like to join the Alliance?" name="whyJoin" required />
           <TextAreaField label="Partnership interests (optional)" name="partnershipInterests" />
 
-          {error && <p className="text-sm text-clay-500">{error}</p>}
+          {error && <p className="text-sm text-red-600">{error}</p>}
 
           <div className="flex gap-3">
             <Button type="button" variant="secondary" onClick={() => setStep(1)}>

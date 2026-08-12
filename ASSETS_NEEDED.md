@@ -8,13 +8,20 @@
   `.webm` (an 18–40s loop, re-encoded and compressed) plus a poster frame
   (`public/images/hero-poster.jpg`). The hero background is real footage now, not a
   placeholder.
-- ✅ **7 real villa photos**, extracted as high-quality stills from the same video and
+- ✅ **8 real villa photos**, extracted as high-quality stills from the same video and
   wired into `VillaGallery`, `WhatIsVivra` and `FoundingRetreat`:
   `villa-facade.jpg`, `villa-dining.jpg`, `villa-pool.jpg`, `villa-kitchen.jpg`,
-  `villa-view.jpg`, `villa-bedroom.jpg`, `villa-aerial.jpg` (all in `public/images/`).
-  These are genuine frames of Can Aylma — not stock photography — but a proper
-  photoshoot would still look sharper than video stills; swap in real photography
-  whenever it's available.
+  `villa-view.jpg`, `villa-gym.jpg`, `villa-bedroom.jpg`, `villa-aerial.jpg` (all in
+  `public/images/`). These are genuine frames of Can Aylma — not stock photography —
+  but a proper photoshoot would still look sharper than video stills; swap in real
+  photography whenever it's available.
+- ✅ **VIVRA design system** (`Vivra_design_system_download.zip`) — this replaced nearly
+  everything in "Brand / design system" below. Real color tokens (navy #000E21, ivory
+  #F7F4EE, copper #C57A3C, aqua #37C8D9), the real logo (`public/logo/*.svg`, inlined as
+  `components/ui/Logo.tsx`), spacing/motion tokens and the exact Button/Card/Tag specs
+  (square corners, no shadows) are now implemented site-wide — see `app/globals.css` and
+  `tailwind.config.ts`. The one thing the export did **not** include: licensed font
+  files for Optima and Neue Haas Grotesk Display (see below).
 
 ## Still needed
 - [ ] **Portrait photos** for the five named facilitators now in `content/people.ts` —
@@ -31,13 +38,18 @@
       upload, not pasted inline — and I'll wire them in directly.
 
 ## Brand / design system
-- [ ] **VIVRA brandbook / design system zip** — logo files (SVG preferred, plus PNG @2x),
-      approved color hex values, type specimens. The palette and type (Fraunces +
-      Manrope) are still *inferred* from the wordmark and villa photography — a real
-      brandbook would let this match exactly rather than approximately.
-- [ ] **Logo files** → `public/logo/` (e.g. `vivra-wordmark.svg`, `vivra-mark.svg`,
-      `vivra-wordmark-white.svg` for use over the dark hero video).
-- [ ] **Favicon** → `public/favicon.ico`
+- [ ] **Licensed font files for Optima and Neue Haas Grotesk Display** — both are
+      commercial fonts; the design-system export defined the tokens and fallback
+      chains (`app/globals.css`, `--font-display` / `--font-text`) but didn't include
+      the actual `.woff2` files (font vendors don't let export tools redistribute
+      binaries). Until you supply them, the site uses **Jost** (Optima stand-in) and
+      **Manrope** (Neue Haas stand-in) — both self-hosted via `next/font`, visually
+      close, but not the real thing. Once you have licensed files, drop them in
+      `public/fonts/` and swap the `next/font/google` calls in `app/layout.tsx` for
+      `next/font/local` pointing at those files — the CSS variables and every
+      component that consumes them stay unchanged.
+- [ ] **Favicon** → `public/favicon.ico` (a simple export of `public/logo/vivra-icon.svg`
+      would do the job in five minutes if you want to close this one out yourself).
 
 ## Membership & Alliance
 The brochure covers the Ibiza retreat in full detail but doesn't define VIVRA Membership

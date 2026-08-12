@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Fraunces, Manrope } from 'next/font/google'
+import { Jost, Manrope } from 'next/font/google'
 import './globals.css'
 import { headers } from 'next/headers'
 import { getSiteFromHost, SITE_META } from '@/lib/site'
@@ -9,11 +9,14 @@ import ConsentBanner from '@/components/layout/ConsentBanner'
 import WhatsAppButton from '@/components/layout/WhatsAppButton'
 import OrganizationJsonLd from '@/components/seo/OrganizationJsonLd'
 
-const display = Fraunces({
+// The brand system specifies Optima (display) and Neue Haas Grotesk Display (text) —
+// both commercial fonts whose license files weren't included in the design-system export.
+// Jost/Manrope stand in visually until real .woff2 files are supplied (see ASSETS_NEEDED.md);
+// tailwind.config.ts still lists the real family names first so licensed fonts drop in for free.
+const display = Jost({
   subsets: ['latin'],
   variable: '--font-display',
   weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
 })
 
 const body = Manrope({

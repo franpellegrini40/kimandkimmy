@@ -19,15 +19,15 @@ export default async function AlliancePage() {
       <Section tone="light" className="pt-40">
         <span className="eyebrow">VIVRA World Alliance</span>
         <h1 className="mt-4 max-w-2xl text-3xl md:text-4xl">For aligned organizations, not individuals.</h1>
-        <p className="mt-4 max-w-xl text-stone-700">
+        <p className="mt-4 max-w-xl" style={{ color: 'var(--text-secondary)' }}>
           Membership clubs, private clubs, wellness brands, hospitality groups, longevity
           businesses, retreat operators and impact organizations may apply to join the
           VIVRA World Alliance.
         </p>
-        <ul className="mt-10 max-w-md space-y-3 text-sm text-stone-700">
+        <ul className="mt-10 max-w-md space-y-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
           {ALLIANCE_BENEFITS.map((b, i) => (
             <li key={i} className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-vivra-600" />
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--accent)' }} />
               {b}
             </li>
           ))}

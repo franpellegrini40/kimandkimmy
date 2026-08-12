@@ -1,13 +1,22 @@
 import { clsx } from 'clsx'
 import Link from 'next/link'
 
-type Variant = 'primary' | 'secondary' | 'ghost' | 'dark'
+// Matches the brand system's Button spec exactly: square corners, uppercase
+// Neue Haas labels tracked out, colors driven by the surrounding theme's CSS vars
+// (so the same variant is correct whether it sits on an ivory or prestige section).
+type Variant = 'primary' | 'accent' | 'secondary' | 'ghost'
+
+const base =
+  'inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[11px] font-medium uppercase tracking-caps transition disabled:cursor-not-allowed disabled:opacity-40'
 
 const styles: Record<Variant, string> = {
-  primary: 'bg-vivra-700 text-white hover:bg-vivra-600',
-  secondary: 'border border-stone-900/25 text-stone-900 hover:border-stone-900/50',
-  ghost: 'text-stone-900 underline-offset-4 hover:underline',
-  dark: 'bg-stone-900 text-sand-50 hover:bg-stone-800',
+  primary:
+    'bg-[var(--surface-contrast)] text-[var(--text-on-contrast)] border border-[var(--surface-contrast)] hover:opacity-80',
+  accent: 'bg-[var(--accent)] text-navy border border-[var(--accent)] hover:opacity-80',
+  secondary:
+    'bg-transparent text-[var(--text-primary)] border border-[var(--rule)] hover:border-[var(--text-primary)]',
+  ghost:
+    'bg-transparent text-[var(--text-primary)] border-0 border-b border-[var(--rule)] px-0 pb-1.5 hover:border-[var(--text-primary)]',
 }
 
 type ButtonProps = {
@@ -29,22 +38,18 @@ export default function Button({
   type = 'button',
   disabled,
 }: ButtonProps) {
-  const base = clsx(
-    'inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide transition disabled:cursor-not-allowed disabled:opacity-50',
-    styles[variant],
-    className
-  )
+  const classes = clsx(base, styles[variant], className)
 
   if (href) {
     return (
-      <Link href={href} className={base} onClick={onClick}>
+      <Link href={href} className={classes} onClick={onClick}>
         {children}
       </Link>
     )
   }
 
   return (
-    <button type={type} onClick={onClick} disabled={disabled} className={base}>
+    <button type={type} onClick={onClick} disabled={disabled} className={classes}>
       {children}
     </button>
   )

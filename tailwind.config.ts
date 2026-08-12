@@ -1,44 +1,40 @@
 import type { Config } from 'tailwindcss'
 
+// Values copied verbatim from the VIVRA design system export (tokens/colors.css).
 const config: Config = {
   content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './content/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        // Warm plaster / stone neutrals lifted from the villa photography.
-        sand: {
-          50: '#FBF9F5',
-          100: '#F5F0E7',
-          200: '#EAE1D0',
-          300: '#DACBAE',
-          400: '#C4AF8C',
-          500: '#A88F6C',
+        navy: '#000E21',
+        ivory: '#F7F4EE',
+        paper: '#FFFFFF',
+        inset: '#EFEBE3',
+        copper: {
+          DEFAULT: '#C57A3C',
+          deep: '#935927',
         },
-        stone: {
-          800: '#3B362E',
-          900: '#26221D',
+        turquoise: '#41C9D3',
+        aqua: {
+          900: '#004753',
+          700: '#008190',
+          500: '#37C8D9',
+          300: '#A9E6EC',
+          100: '#E0F6F8',
         },
-        // Teal drawn from the VIVRA wordmark.
-        vivra: {
-          50: '#EAF6F4',
-          100: '#CFEBE6',
-          300: '#7CC7BC',
-          500: '#2E9A8C',
-          600: '#217E72',
-          700: '#1A6259',
-        },
-        clay: {
-          400: '#C97B54',
-          500: '#B6613C',
-        },
-        olive: {
-          500: '#6E7A4F',
-          600: '#57603E',
+        prestige: {
+          raised: '#071527',
+          inset: '#06121F',
         },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'serif'],
-        body: ['var(--font-body)', 'sans-serif'],
+        display: ['var(--font-display)', 'Optima', '"Optima Nova"', '"Gill Sans"', 'sans-serif'],
+        body: ['var(--font-body)', '"Neue Haas Grotesk Display"', 'Helvetica', 'Arial', 'sans-serif'],
+      },
+      letterSpacing: {
+        mark: '.34em',
+        display: '.16em',
+        caps: '.24em',
       },
       maxWidth: {
         content: '1440px',

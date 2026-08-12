@@ -8,7 +8,7 @@ export default function HeroVideo() {
   const [failed, setFailed] = useState(false)
 
   return (
-    <div className="grain absolute inset-0 -z-10 bg-gradient-to-b from-stone-800 via-olive-600 to-stone-900">
+    <div className="grain absolute inset-0 -z-10" style={{ background: 'var(--navy)' }}>
       {!failed && (
         <video
           ref={videoRef}
@@ -26,7 +26,13 @@ export default function HeroVideo() {
           <source src="/videos/villa-hero.mp4" type="video/mp4" />
         </video>
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/20 to-stone-900/40" />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(to top, rgba(0,14,33,.82), rgba(0,14,33,.18) 55%, rgba(0,14,33,.4))',
+        }}
+      />
     </div>
   )
 }

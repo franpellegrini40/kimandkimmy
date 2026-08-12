@@ -6,10 +6,10 @@ export default function SuccessScreen({
   body: string
 }) {
   return (
-    <div className="rounded-2xl border border-vivra-600/20 bg-vivra-50 p-10 text-center">
+    <div className="border p-10 text-center" style={{ borderColor: 'var(--rule)', background: 'var(--surface-inset)' }}>
       <span className="eyebrow">Received</span>
-      <h2 className="mt-3 text-2xl text-stone-900">{heading}</h2>
-      <p className="mt-3 text-stone-700">{body}</p>
+      <h2 className="mt-3 text-2xl">{heading}</h2>
+      <p className="mt-3" style={{ color: 'var(--text-secondary)' }}>{body}</p>
     </div>
   )
 }

@@ -15,11 +15,11 @@ export default function AgendaTimeline() {
   }
 
   return (
-    <div className="divide-y divide-stone-900/10 border-y border-stone-900/10">
-      {AGENDA.map((d) => {
+    <div className="border-y" style={{ borderColor: 'var(--rule)' }}>
+      {AGENDA.map((d, i) => {
         const open = openDay === d.day
         return (
-          <div key={d.day}>
+          <div key={d.day} className={i > 0 ? 'border-t' : ''} style={{ borderColor: 'var(--rule)' }}>
             <button
               onClick={() => toggle(d.day)}
               aria-expanded={open}
@@ -27,15 +27,15 @@ export default function AgendaTimeline() {
             >
               <span className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-4">
                 <span className="eyebrow">{d.day === 0 ? 'Arrival' : `Day ${d.day}`}</span>
-                <span className="text-lg text-stone-900">{d.title}</span>
-                <span className="text-xs text-stone-400">{d.date}</span>
+                <span className="text-lg">{d.title}</span>
+                <span className="text-xs" style={{ color: 'var(--text-quiet)' }}>{d.date}</span>
               </span>
               <span className={clsx('transition-transform', open && 'rotate-45')}>+</span>
             </button>
             {open && (
               <div className="pb-6">
-                <p className="text-sm text-stone-700">{d.summary}</p>
-                <ul className="mt-3 space-y-1 text-sm text-stone-500">
+                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{d.summary}</p>
+                <ul className="mt-3 space-y-1 text-sm" style={{ color: 'var(--text-quiet)' }}>
                   {d.moments.map((m, i) => (
                     <li key={i}>· {m}</li>
                   ))}

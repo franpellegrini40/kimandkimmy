@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { NAV_ITEMS, CTA_COPY } from '@/content/site'
 import Button from '@/components/ui/Button'
+import Logo from '@/components/ui/Logo'
 import type { SiteId } from '@/lib/site'
 
 export default function Header({ site, overHero = false }: { site: SiteId; overHero?: boolean }) {
@@ -24,18 +25,17 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        solid ? 'bg-sand-50/95 backdrop-blur shadow-sm' : 'bg-transparent'
-      }`}
+      data-theme={solid ? undefined : 'prestige'}
+      className="fixed inset-x-0 top-0 z-50 transition-colors duration-300"
+      style={{
+        background: solid ? 'color-mix(in srgb, var(--surface-page) 95%, transparent)' : 'transparent',
+        backdropFilter: solid ? 'blur(8px)' : undefined,
+        boxShadow: solid ? '0 1px 0 var(--rule)' : undefined,
+      }}
     >
       <div className="container-vivra flex h-20 items-center justify-between">
-        <Link
-          href="/"
-          className={`font-display text-xl tracking-[0.15em] transition-colors ${
-            solid ? 'text-stone-900' : 'text-white'
-          }`}
-        >
-          VIVRA
+        <Link href="/" aria-label="VIVRA home" style={{ color: 'var(--text-primary)' }}>
+          <Logo className="h-5 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
@@ -43,14 +43,13 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
             <Link
               key={item.href}
               href={item.href}
-              className={`text-sm tracking-wide transition-colors ${
-                solid ? 'text-stone-800 hover:text-vivra-700' : 'text-white/90 hover:text-white'
-              }`}
+              className="text-sm transition-opacity hover:opacity-70"
+              style={{ color: 'var(--text-primary)' }}
             >
               {item.label}
             </Link>
           ))}
-          <Button href={site === 'join-vivra' ? '/apply/ibiza' : '/apply/join'} variant={solid ? 'primary' : 'secondary'} className={!solid ? 'border-white/60 text-white hover:border-white' : ''}>
+          <Button href={site === 'join-vivra' ? '/apply/ibiza' : '/apply/join'} variant={solid ? 'primary' : 'secondary'}>
             {site === 'join-vivra' ? CTA_COPY.ibiza : CTA_COPY.join}
           </Button>
         </nav>
@@ -59,7 +58,8 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((v) => !v)}
-          className={`flex h-10 w-10 items-center justify-center lg:hidden ${solid ? 'text-stone-900' : 'text-white'}`}
+          className="flex h-10 w-10 items-center justify-center lg:hidden"
+          style={{ color: 'var(--text-primary)' }}
         >
           <span className="sr-only">Menu</span>
           {menuOpen ? (
@@ -81,13 +81,19 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
             animate={{ height: 'auto', opacity: 1 }}
             exit={reducedMotion ? undefined : { height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-stone-900/10 bg-sand-50 lg:hidden"
+            className="overflow-hidden border-t lg:hidden"
+            style={{ borderColor: 'var(--rule)', background: 'var(--surface-page)' }}
           >
             <div className="px-6 py-6">
               <ul className="flex flex-col gap-5">
                 {NAV_ITEMS.slice(1).map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} onClick={() => setMenuOpen(false)} className="text-lg text-stone-900">
+                    <Link
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="text-lg"
+                      style={{ color: 'var(--text-primary)' }}
+                    >
                       {item.label}
                     </Link>
                   </li>

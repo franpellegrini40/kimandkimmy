@@ -17,13 +17,12 @@ export default function Section({
   return (
     <section
       id={id}
-      className={clsx(
-        'py-20 md:py-28',
-        tone === 'dark' && 'grain bg-stone-900 text-sand-50',
-        tone === 'sand' && 'bg-sand-100',
-        tone === 'light' && 'bg-sand-50',
-        className
-      )}
+      data-theme={tone === 'dark' ? 'prestige' : undefined}
+      className={clsx('py-20 md:py-28', tone === 'dark' && 'grain', className)}
+      style={{
+        background: tone === 'sand' ? 'var(--surface-inset)' : 'var(--surface-page)',
+        color: 'var(--text-primary)',
+      }}
     >
       <Container className={clsx(narrow && 'max-w-3xl')}>{children}</Container>
     </section>

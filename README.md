@@ -13,21 +13,39 @@ hierarchy adapting per `site`.
 
 ## Status
 
-This is a working, deployable build — architecture, design system, routing, all
-homepage/subpage sections, three multi-step application forms with a real backend
-adapter, SEO, and analytics scaffolding are in place. What's **not** in place is real
-VIVRA content and photography, because no brochure PDF, brandbook zip, or image/video
-files were actually available in this build session — see `ASSETS_NEEDED.md` for the
-exact, itemized list of what to drop in and where. Every gap is marked `PENDING` (copy)
-or as an `AssetPlaceholder` (imagery) directly in the code, so nothing is silently
-guessed.
+This is a working, deployable build — architecture, the real VIVRA brand system,
+routing, all homepage/subpage sections, real brochure content and villa
+photography/video, three multi-step application forms with a real backend adapter,
+SEO, and analytics scaffolding are all in place. What's still missing is itemized in
+`ASSETS_NEEDED.md` — mainly facilitator portraits and the licensed Optima/Neue Haas
+Grotesk font files. Every gap is marked `PENDING` (copy) or as an `AssetPlaceholder`
+(imagery) directly in the code, so nothing is silently guessed.
+
+## Brand system
+
+Colors, spacing, motion and component specs (square corners, no shadows, hairline
+borders) come directly from VIVRA's own design-system export and live as CSS custom
+properties in `app/globals.css` — `--navy`, `--ivory`, `--copper`, `--aqua-*`, plus
+theme-level tokens (`--surface-page`, `--text-primary`, `--accent`, …) that flip
+automatically between the light "ivory" theme and the dark "prestige" theme
+(`data-theme="prestige"` on any section/header in its dark state — see
+`components/ui/Section.tsx`). Copper only ever appears on navy, matching the brand
+rule ("copper lives exclusively on navy, never on white or ivory"); aqua is the
+light-theme accent. Because components read colors from these CSS variables rather
+than hardcoded Tailwind classes, nesting is what drives theming — wrap anything in a
+`data-theme="prestige"` element and its buttons/eyebrows/rules re-theme for free.
+
+The real logo (`public/logo/vivra-lockup.svg`) is inlined as `components/ui/Logo.tsx`
+so it inherits `color` from its wrapper — same file renders navy, ivory or copper
+depending on where it's placed.
 
 ## Stack
 
 - **Next.js 15 (App Router) + TypeScript** — file-based routing, server components by
   default, easy to deploy to Vercel with zero config.
-- **Tailwind CSS** — design tokens in `tailwind.config.ts` (colors inferred from the
-  VIVRA wordmark + villa photography; swap for exact brandbook values once available).
+- **Tailwind CSS** — utility classes for layout/spacing; brand colors consumed via CSS
+  variables (see "Brand system" above) rather than Tailwind's color palette, so the
+  same component re-themes correctly regardless of section.
 - **Framer Motion** — subtle scroll reveals only, respects `prefers-reduced-motion`
   (`components/ui/RevealOnScroll.tsx`).
 - **Zod** — form validation, shared between client and API routes.

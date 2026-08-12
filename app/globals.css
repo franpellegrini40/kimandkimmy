@@ -2,8 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Tokens copied verbatim from the VIVRA design system export. */
 :root {
   color-scheme: light;
+
+  --aqua: #37c8d9;
+  --turquoise: #41c9d3;
+  --copper: #c57a3c;
+  --aqua-900: #004753;
+  --aqua-700: #008190;
+  --aqua-500: #37c8d9;
+  --aqua-300: #a9e6ec;
+  --aqua-100: #e0f6f8;
+  --navy: #000e21;
+  --ivory: #f7f4ee;
+  --paper: #ffffff;
+  --black-a08: rgba(0, 14, 33, 0.08);
+  --black-a12: rgba(0, 14, 33, 0.12);
+  --black-a40: rgba(0, 14, 33, 0.4);
+  --black-a60: rgba(0, 14, 33, 0.6);
+  --white-a06: rgba(255, 255, 255, 0.06);
+  --white-a12: rgba(255, 255, 255, 0.12);
+  --white-a45: rgba(255, 255, 255, 0.45);
+  --white-a70: rgba(255, 255, 255, 0.7);
+
+  --tracking-mark: 0.34em;
+  --tracking-display: 0.16em;
+  --tracking-caps: 0.24em;
+
+  /* Ivory theme (default) */
+  --surface-page: var(--ivory);
+  --surface-raised: var(--paper);
+  --surface-inset: #efebe3;
+  --surface-contrast: var(--navy);
+  --text-primary: var(--navy);
+  --text-secondary: var(--black-a60);
+  --text-quiet: var(--black-a40);
+  --text-on-contrast: var(--ivory);
+  --accent: var(--aqua);
+  --accent-deep: var(--aqua-700);
+  --rule: var(--black-a12);
+  --rule-quiet: var(--black-a08);
+}
+
+/* Prestige theme — navy + copper. Copper never appears outside this theme. */
+[data-theme='prestige'] {
+  --surface-page: var(--navy);
+  --surface-raised: #071527;
+  --surface-inset: #06121f;
+  --surface-contrast: var(--ivory);
+  --text-primary: var(--ivory);
+  --text-secondary: var(--white-a70);
+  --text-quiet: var(--white-a45);
+  --text-on-contrast: var(--navy);
+  --accent: var(--copper);
+  --accent-deep: #935927;
+  --rule: var(--white-a12);
+  --rule-quiet: var(--white-a06);
 }
 
 @layer base {
@@ -12,35 +67,32 @@
   }
 
   body {
-    @apply bg-sand-50 text-stone-900 font-body antialiased;
+    @apply font-body antialiased;
+    background: var(--surface-page);
+    color: var(--text-primary);
   }
 
   h1, h2, h3, h4 {
-    @apply font-display text-stone-900;
+    @apply font-display;
+    color: var(--text-primary);
     line-height: 1.08;
-    letter-spacing: -0.01em;
+    font-weight: 400;
   }
 
-  h1 { font-size: clamp(2.25rem, 1.5rem + 3.6vw, 4.5rem); }
-  h2 { font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.75rem); }
+  h1 { font-size: clamp(2.25rem, 1.5rem + 3.6vw, 4.5rem); letter-spacing: 0.01em; }
+  h2 { font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.75rem); letter-spacing: 0.005em; }
   h3 { font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.5rem); }
 
-  p { line-height: 1.6; }
-
-  a, button {
-    @apply outline-vivra-600;
-  }
+  p { line-height: 1.68; }
 
   :focus-visible {
-    outline: 2px solid theme('colors.vivra.600');
+    outline: 2px solid var(--accent-deep);
     outline-offset: 3px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
@@ -51,16 +103,16 @@
 
 @layer components {
   .eyebrow {
-    @apply text-xs uppercase tracking-[0.22em] text-vivra-700 font-medium;
+    @apply font-body text-[11px] font-medium uppercase;
+    letter-spacing: var(--tracking-caps);
+    color: var(--accent-deep);
   }
 
   .container-vivra {
     @apply mx-auto w-full max-w-content px-6 md:px-10 lg:px-16;
   }
 
-  .grain {
-    position: relative;
-  }
+  .grain { position: relative; }
 
   .grain::after {
     content: '';

@@ -16,11 +16,11 @@ export default function OgImage() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #26221D 0%, #57603E 55%, #1A6259 100%)',
-          color: '#FBF9F5',
+          background: 'linear-gradient(135deg, #000E21 0%, #004753 100%)',
+          color: '#F7F4EE',
         }}
       >
-        <div style={{ fontSize: 96, letterSpacing: 12, fontWeight: 600 }}>VIVRA</div>
+        <div style={{ fontSize: 96, letterSpacing: 24, fontWeight: 400 }}>VIVRA</div>
         <div style={{ fontSize: 28, marginTop: 20, opacity: 0.85 }}>
           Ibiza Founding Retreat · Coming Live Soon
         </div>

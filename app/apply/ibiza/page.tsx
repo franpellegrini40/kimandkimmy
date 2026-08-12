@@ -18,7 +18,7 @@ export default async function ApplyIbizaPage() {
       <Section tone="light" narrow className="pt-40">
         <span className="eyebrow">{RETREAT_FACTS.status}</span>
         <h1 className="mt-4 text-3xl md:text-4xl">Request to join.</h1>
-        <p className="mt-3 text-stone-700">
+        <p className="mt-3" style={{ color: 'var(--text-secondary)' }}>
           {RETREAT_FACTS.dates} · Can Aylma, Ibiza. Every place includes a short curator
           fit-conversation — tell us a little about yourself and our team will follow up
           personally.

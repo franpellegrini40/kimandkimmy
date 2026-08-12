@@ -13,32 +13,34 @@ export default function PricingSection() {
 
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         <RevealOnScroll>
-          <div className="rounded-2xl border border-stone-900/10 bg-sand-50 p-8">
+          <div className="border p-8" style={{ borderColor: 'var(--rule)', background: 'var(--surface-raised)' }}>
             <span className="eyebrow">{PRICING.solo.label}</span>
-            <p className="mt-3 text-3xl text-stone-900">{PRICING.solo.price}</p>
-            <p className="mt-2 text-sm text-stone-500">{PRICING.solo.detail}</p>
+            <p className="mt-3 text-3xl">{PRICING.solo.price}</p>
+            <p className="mt-2 text-sm" style={{ color: 'var(--text-quiet)' }}>{PRICING.solo.detail}</p>
           </div>
         </RevealOnScroll>
         <RevealOnScroll delay={0.08}>
-          <div className="rounded-2xl border border-stone-900/10 bg-sand-50 p-8">
+          <div className="border p-8" style={{ borderColor: 'var(--rule)', background: 'var(--surface-raised)' }}>
             <span className="eyebrow">{PRICING.double.label}</span>
-            <p className="mt-3 text-3xl text-stone-900">{PRICING.double.price}</p>
-            <p className="mt-2 text-sm text-stone-500">{PRICING.double.detail}</p>
+            <p className="mt-3 text-3xl">{PRICING.double.price}</p>
+            <p className="mt-2 text-sm" style={{ color: 'var(--text-quiet)' }}>{PRICING.double.detail}</p>
           </div>
         </RevealOnScroll>
       </div>
 
-      <RevealOnScroll delay={0.12} className="mt-6 max-w-2xl text-sm text-stone-500">
+      <RevealOnScroll delay={0.12} className="mt-6 max-w-2xl text-sm" style={{ color: 'var(--text-quiet)' }}>
         <p>{PRICING.includes}</p>
         <p className="mt-1 italic">{PRICING.note}</p>
       </RevealOnScroll>
 
       <RevealOnScroll delay={0.16} className="mt-10">
-        <h3 className="text-sm uppercase tracking-wide text-stone-500">Every place includes</h3>
+        <h3 className="text-sm uppercase" style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--text-quiet)' }}>
+          Every place includes
+        </h3>
         <ul className="mt-4 grid gap-2 sm:grid-cols-2">
           {EVERY_PLACE_INCLUDES.map((item) => (
-            <li key={item} className="flex items-start gap-2 text-sm text-stone-800">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-vivra-600" />
+            <li key={item} className="flex items-start gap-2 text-sm">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--accent)' }} />
               {item}
             </li>
           ))}
@@ -46,7 +48,7 @@ export default function PricingSection() {
       </RevealOnScroll>
 
       <RevealOnScroll delay={0.2} className="mt-10">
-        <Button href="/apply/ibiza">Join the Founding Retreat</Button>
+        <Button href="/apply/ibiza" variant="accent">Join the Founding Retreat</Button>
       </RevealOnScroll>
     </Section>
   )
