@@ -1,0 +1,37 @@
+import Section from '@/components/ui/Section'
+import RevealOnScroll from '@/components/ui/RevealOnScroll'
+import Button from '@/components/ui/Button'
+
+export default function AllianceTeaser() {
+  return (
+    <Section tone="sand" id="alliance">
+      <div className="grid gap-10 md:grid-cols-2 md:items-center">
+        <RevealOnScroll>
+          <span className="eyebrow">VIVRA World Alliance</span>
+          <h2 className="mt-4 text-3xl md:text-4xl">For aligned organizations, not individuals.</h2>
+          <p className="mt-4 max-w-md text-stone-700">
+            If you represent a membership club, wellness brand, hospitality group or
+            impact-driven community, you may apply to become part of the VIVRA World
+            Alliance.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Button href="/apply/alliance">Join VIVRA World Alliance</Button>
+          </div>
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.1}>
+          <ul className="space-y-3 text-sm text-stone-700">
+            {['Cross-community access', 'Curated collaborations', 'International experiences', 'Strategic partnerships'].map(
+              (item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-vivra-600" />
+                  {item}
+                  <span className="ml-1 text-xs text-stone-400">(pending brochure confirmation)</span>
+                </li>
+              )
+            )}
+          </ul>
+        </RevealOnScroll>
+      </div>
+    </Section>
+  )
+}
