@@ -31,7 +31,7 @@ export default function HealingPractices() {
               <AssetPlaceholder note={`Portrait — ${p.name}, 4:5`} tone="vivra" />
               <h3 className="mt-3 text-base text-stone-900">{p.name}</h3>
               <p className="text-sm text-stone-500">{p.role}</p>
-              <p className="mt-2 text-sm text-stone-700">{p.bio}</p>
+              <p className="mt-3 text-sm italic text-stone-700">“{p.quote}”</p>
             </RevealOnScroll>
           ))}
         </div>

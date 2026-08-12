@@ -6,11 +6,11 @@ export default function ExperiencePillars() {
   return (
     <Section tone="light" id="experience">
       <RevealOnScroll>
-        <span className="eyebrow">What We Will Experience</span>
-        <h2 className="mt-4 max-w-xl text-3xl md:text-4xl">Nine dimensions, one gathering.</h2>
+        <span className="eyebrow">Why We Gather</span>
+        <h2 className="mt-4 max-w-xl text-3xl md:text-4xl">Four conversations that shape the future.</h2>
       </RevealOnScroll>
 
-      <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-stone-900/10 bg-stone-900/10 sm:grid-cols-3">
+      <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-stone-900/10 bg-stone-900/10 sm:grid-cols-2">
         {EXPERIENCE_PILLARS.map((pillar, i) => (
           <RevealOnScroll key={pillar.key} delay={i * 0.04}>
             <div className="h-full bg-sand-50 p-6">

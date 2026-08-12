@@ -3,10 +3,11 @@ import { getCurrentSite } from '@/lib/site'
 import PageShell from '@/components/layout/PageShell'
 import Section from '@/components/ui/Section'
 import IbizaForm from '@/components/forms/IbizaForm'
+import { RETREAT_FACTS } from '@/content/retreat'
 
 export const metadata: Metadata = {
   title: 'Join the Founding Retreat',
-  description: 'Request to join the VIVRA Founding Retreat in Ibiza.',
+  description: 'Request to join the VIVRA Founding Gathering at Can Aylma, Ibiza.',
 }
 
 export default async function ApplyIbizaPage() {
@@ -15,10 +16,12 @@ export default async function ApplyIbizaPage() {
   return (
     <PageShell site={site}>
       <Section tone="light" narrow className="pt-40">
-        <span className="eyebrow">Ibiza Founding Retreat</span>
+        <span className="eyebrow">{RETREAT_FACTS.status}</span>
         <h1 className="mt-4 text-3xl md:text-4xl">Request to join.</h1>
         <p className="mt-3 text-stone-700">
-          Tell us a little about yourself. Our team reviews every request personally.
+          {RETREAT_FACTS.dates} · Can Aylma, Ibiza. Every place includes a short curator
+          fit-conversation — tell us a little about yourself and our team will follow up
+          personally.
         </p>
         <div className="mt-10">
           <IbizaForm />

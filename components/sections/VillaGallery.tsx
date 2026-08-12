@@ -1,15 +1,15 @@
 import Section from '@/components/ui/Section'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
-import AssetPlaceholder from '@/components/ui/AssetPlaceholder'
+import Photo from '@/components/ui/Photo'
 import { VILLA_PERKS } from '@/content/retreat'
 
-const GALLERY_SPECS = [
-  'Villa exterior — whitewashed facade, cactus garden, 4:5',
-  'Outdoor pergola dining under the olive tree, 4:5',
-  'Salt water pool with loungers and mountain view, 16:9',
-  'Wellness zone — sauna & hammam, 4:5',
-  'Ceremonial teepee & fire pit at dusk, 4:5',
-  'Garden and surrounding pine hills, 16:9',
+const GALLERY_PHOTOS = [
+  { src: '/images/villa-facade.jpg', alt: 'Whitewashed entrance path at Can Aylma', aspect: 'aspect-[4/5]' },
+  { src: '/images/villa-dining.jpg', alt: 'Long-table dining terrace at golden hour', aspect: 'aspect-[4/5]' },
+  { src: '/images/villa-pool.jpg', alt: 'Salt water pool with loungers', aspect: 'aspect-video' },
+  { src: '/images/villa-kitchen.jpg', alt: 'Outdoor kitchen counter', aspect: 'aspect-[4/5]' },
+  { src: '/images/villa-view.jpg', alt: 'Lounge chairs overlooking the Ibiza hills', aspect: 'aspect-[4/5]' },
+  { src: '/images/villa-aerial.jpg', alt: 'Aerial view of the garden and pool', aspect: 'aspect-video' },
 ]
 
 export default function VillaGallery() {
@@ -17,13 +17,17 @@ export default function VillaGallery() {
     <Section tone="sand" id="villa">
       <RevealOnScroll>
         <span className="eyebrow">The Villa</span>
-        <h2 className="mt-4 max-w-xl text-3xl md:text-4xl">Where it happens.</h2>
+        <h2 className="mt-4 max-w-xl text-3xl md:text-4xl">Can Aylma — where it happens.</h2>
       </RevealOnScroll>
 
       <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3">
-        {GALLERY_SPECS.map((spec, i) => (
-          <RevealOnScroll key={spec} delay={i * 0.05} className={i === 2 ? 'col-span-2 md:col-span-1' : ''}>
-            <AssetPlaceholder note={spec} aspect={spec.includes('16:9') ? 'aspect-video' : 'aspect-[4/5]'} />
+        {GALLERY_PHOTOS.map((photo, i) => (
+          <RevealOnScroll
+            key={photo.src}
+            delay={i * 0.05}
+            className={photo.aspect === 'aspect-video' ? 'col-span-2 md:col-span-1' : ''}
+          >
+            <Photo src={photo.src} alt={photo.alt} aspect={photo.aspect} />
           </RevealOnScroll>
         ))}
       </div>

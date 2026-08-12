@@ -11,27 +11,25 @@ export default function Hero({ site }: { site: SiteId }) {
       <HeroVideo />
 
       <div className="container-vivra relative z-10 flex flex-col gap-6 pb-20 pt-32">
-        <span className="eyebrow text-vivra-100">VIVRA — Coming Live Soon</span>
+        <span className="eyebrow text-vivra-100">{RETREAT_FACTS.status}</span>
 
         {isJoin ? (
           <>
             <h1 className="max-w-2xl text-4xl leading-tight md:text-6xl">
-              VIVRA Founding Retreat
-              <span className="block italic text-vivra-100">Ibiza</span>
+              {RETREAT_FACTS.tagline}
             </h1>
             <p className="max-w-md text-sm uppercase tracking-widest text-white/80">
-              {RETREAT_FACTS.dates}
+              {RETREAT_FACTS.dates} · Can Aylma, Ibiza
             </p>
           </>
         ) : (
           <>
             <h1 className="max-w-2xl text-4xl leading-tight md:text-6xl">
-              A community for those exploring
-              <span className="block italic text-vivra-100">what comes next.</span>
+              {RETREAT_FACTS.tagline}
             </h1>
             <p className="max-w-lg text-base text-white/85 md:text-lg">
-              Wellbeing. Longevity. Human potential. Regenerative impact. VIVRA begins in
-              Ibiza — and continues as a global community.
+              {RETREAT_FACTS.subTagline} VIVRA begins in Ibiza — and continues as a global
+              community.
             </p>
           </>
         )}

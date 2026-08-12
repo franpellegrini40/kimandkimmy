@@ -1,52 +1,51 @@
 # Assets needed before launch
 
-The site is fully built and functions today with elegant placeholder blocks in place
-of missing photography/video (see `components/ui/AssetPlaceholder.tsx`). Nothing is
-blocked — but none of the following exist in this repository yet, because no design
-system zip, brochure PDF, video file, or photo file was actually attached to this
-build session (only 5 images rendered inline in chat, which aren't retrievable as files).
-Drop the real files at the exact paths below and the placeholders disappear automatically
-once you wire them into the relevant component (marked `TODO` in each file once assets land).
+## Received and integrated
+- ✅ **Brochure** (`Vivra_Retreat_Ibiza_2026_Final_Version.pdf`) — full text extracted and
+  now drives `content/retreat.ts`, `content/agenda.ts`, `content/people.ts` (real dates,
+  four conversations, who-joins profiles, day-by-day agenda, pricing, facilitator bios).
+- ✅ **Villa video** (`House_Video.mp4`) — processed into `public/videos/villa-hero.mp4` /
+  `.webm` (an 18–40s loop, re-encoded and compressed) plus a poster frame
+  (`public/images/hero-poster.jpg`). The hero background is real footage now, not a
+  placeholder.
+- ✅ **7 real villa photos**, extracted as high-quality stills from the same video and
+  wired into `VillaGallery`, `WhatIsVivra` and `FoundingRetreat`:
+  `villa-facade.jpg`, `villa-dining.jpg`, `villa-pool.jpg`, `villa-kitchen.jpg`,
+  `villa-view.jpg`, `villa-bedroom.jpg`, `villa-aerial.jpg` (all in `public/images/`).
+  These are genuine frames of Can Aylma — not stock photography — but a proper
+  photoshoot would still look sharper than video stills; swap in real photography
+  whenever it's available.
 
-## 1. Brand / design system
+## Still needed
+- [ ] **Portrait photos** for the five named facilitators now in `content/people.ts` —
+      Francisco Pellegrini, Sharon Cittone, Diana, Saha, Dunja. Currently shown as a
+      labeled placeholder mark (`components/ui/AssetPlaceholder.tsx`) since no headshots
+      have been supplied. Save as `public/people/<slug>.jpg` (slugs already match the
+      `PEOPLE` array) once available, and swap the `AssetPlaceholder` in
+      `HealingPractices.tsx` / `PeopleGrid.tsx` for a real `<Photo>`.
+- [ ] **The 5 lifestyle/brand images you pasted inline in chat** (the VIVRA wordmark
+      long-table shot, two pool photos, the two kitchen/living interior collages) — these
+      rendered in the conversation but aren't retrievable as files from this side. If you
+      want them used as real site imagery (rather than the video stills already in use),
+      please attach them the same way you attached the PDF and video — as an actual file
+      upload, not pasted inline — and I'll wire them in directly.
+
+## Brand / design system
 - [ ] **VIVRA brandbook / design system zip** — logo files (SVG preferred, plus PNG @2x),
-      approved color hex values, type specimens. Currently the palette and type
-      (Fraunces + Manrope) are *inferred* from the wordmark and villa photography you
-      shared inline — treat as a starting point, not final.
+      approved color hex values, type specimens. The palette and type (Fraunces +
+      Manrope) are still *inferred* from the wordmark and villa photography — a real
+      brandbook would let this match exactly rather than approximately.
 - [ ] **Logo files** → `public/logo/` (e.g. `vivra-wordmark.svg`, `vivra-mark.svg`,
-      `vivra-wordmark-white.svg` for use over dark hero video).
+      `vivra-wordmark-white.svg` for use over the dark hero video).
 - [ ] **Favicon** → `public/favicon.ico`
 
-## 2. Ibiza Founding Retreat brochure
-- [ ] **Brochure PDF (or the source copy doc)** — this is the primary content source
-      per your brief, and none of its actual text reached this repo. Every section
-      marked `PENDING` in `content/retreat.ts`, `content/agenda.ts`, `content/tiers.ts`
-      needs this to be replaced with approved language:
-  - Retreat dates
-  - "Why Ibiza / Who Attends / Why Founding" copy
-  - Full multi-day agenda
-  - Membership tier names + benefits
-  - VIVRA World Alliance value proposition / benefits
-  - "What is VIVRA" positioning paragraph
+## Membership & Alliance
+The brochure covers the Ibiza retreat in full detail but doesn't define VIVRA Membership
+tiers or the VIVRA World Alliance B2B value proposition beyond one closing line — so
+`content/tiers.ts` is still marked `PENDING`. Send approved tier names/benefits and
+Alliance partnership terms when they exist.
 
-## 3. Villa photography & video
-- [ ] **Hero video** (the strongest cinematic villa/Ibiza clip) → export as:
-      `public/videos/villa-hero.mp4` (H.264) and `public/videos/villa-hero.webm` (VP9),
-      max ~8–12MB each, 1920×1080, muted-safe (no dependent audio).
-      Poster frame → `public/images/hero-poster.jpg` (same crop, 1920×1080).
-- [ ] **Villa photos** (~10–15), see exact specs already coded into
-      `components/sections/VillaGallery.tsx` (`GALLERY_SPECS`) and
-      `components/sections/WhatIsVivra.tsx` / `FoundingRetreat.tsx` — aspect ratios are
-      already defined so photos can drop in with correct cropping.
-- [ ] **OG/share image** → `public/og/vivra-og.jpg` (1200×630). Until supplied, the site
-      auto-generates a branded text-only fallback (`app/opengraph-image.tsx`).
-
-## 4. People
-- [ ] Founder / host / practitioner / speaker **photos + bios**, one per person, added to
-      `content/people.ts` (`PEOPLE` array) with the photo path referenced. Structure is
-      ready in `components/sections/HealingPractices.tsx` and `PeopleGrid.tsx`.
-
-## 5. Accounts / credentials (see also DEPLOYMENT.md)
+## Accounts / credentials (see also DEPLOYMENT.md)
 - [ ] Supabase project (or Formspree endpoints) for the three forms
 - [ ] GA4 property ID
 - [ ] Meta Pixel ID / LinkedIn Insight Tag ID (optional, hooks already exist)

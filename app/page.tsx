@@ -3,8 +3,10 @@ import PageShell from '@/components/layout/PageShell'
 import Hero from '@/components/sections/Hero'
 import WhatIsVivra from '@/components/sections/WhatIsVivra'
 import FoundingRetreat from '@/components/sections/FoundingRetreat'
+import WhoJoins from '@/components/sections/WhoJoins'
 import VillaGallery from '@/components/sections/VillaGallery'
 import ExperiencePillars from '@/components/sections/ExperiencePillars'
+import WhatVivraPossible from '@/components/sections/WhatVivraPossible'
 import HealingPractices from '@/components/sections/HealingPractices'
 import DayInLife from '@/components/sections/DayInLife'
 import MembershipTeaser from '@/components/sections/MembershipTeaser'
@@ -19,8 +21,10 @@ export default async function HomePage() {
       <Hero site={site} />
       <WhatIsVivra />
       <FoundingRetreat />
+      <WhoJoins />
       <VillaGallery />
       <ExperiencePillars />
+      <WhatVivraPossible />
       <HealingPractices />
       <DayInLife />
       <MembershipTeaser />

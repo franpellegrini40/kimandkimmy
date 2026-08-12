@@ -18,11 +18,11 @@ export const SITE_META = {
   'vivra-world': {
     name: 'VIVRA World',
     domain: 'vivra.world',
-    tagline: 'A global community exploring new dimensions of wellbeing, longevity and human potential.',
+    tagline: 'Live longer. Think bigger. Leave it better.',
   },
   'join-vivra': {
-    name: 'VIVRA — Founding Retreat',
+    name: 'VIVRA Founding Gathering',
     domain: 'joinvivra.com',
-    tagline: 'Ibiza. The first expression of VIVRA.',
+    tagline: 'The Founding Gathering · By Invitation · Ten Places — Can Aylma, Ibiza.',
   },
 } as const

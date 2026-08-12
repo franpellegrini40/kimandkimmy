@@ -25,9 +25,10 @@ export default function AgendaTimeline() {
               aria-expanded={open}
               className="flex w-full items-center justify-between py-6 text-left"
             >
-              <span className="flex items-baseline gap-4">
-                <span className="eyebrow">Day {String(d.day).padStart(2, '0')}</span>
+              <span className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-4">
+                <span className="eyebrow">{d.day === 0 ? 'Arrival' : `Day ${d.day}`}</span>
                 <span className="text-lg text-stone-900">{d.title}</span>
+                <span className="text-xs text-stone-400">{d.date}</span>
               </span>
               <span className={clsx('transition-transform', open && 'rotate-45')}>+</span>
             </button>
