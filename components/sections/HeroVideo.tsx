@@ -8,7 +8,7 @@ export default function HeroVideo() {
   const [failed, setFailed] = useState(false)
 
   return (
-    <div className="absolute inset-0 -z-10 bg-gradient-to-b from-stone-800 via-olive-600 to-stone-900">
+    <div className="grain absolute inset-0 -z-10 bg-gradient-to-b from-stone-800 via-olive-600 to-stone-900">
       {!failed && (
         <video
           ref={videoRef}

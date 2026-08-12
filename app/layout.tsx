@@ -24,7 +24,7 @@ const body = Manrope({
 
 export async function generateMetadata(): Promise<Metadata> {
   const h = await headers()
-  const site = getSiteFromHost(h.get('host'))
+  const site = getSiteFromHost(h.get('x-forwarded-host') || h.get('host'))
   const meta = SITE_META[site]
   return {
     metadataBase: new URL(`https://${meta.domain}`),

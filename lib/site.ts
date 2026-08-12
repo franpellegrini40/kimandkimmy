@@ -11,7 +11,7 @@ export function getSiteFromHost(host: string | null): SiteId {
 
 export async function getCurrentSite(): Promise<SiteId> {
   const h = await headers()
-  return getSiteFromHost(h.get('host'))
+  return getSiteFromHost(h.get('x-forwarded-host') || h.get('host'))
 }
 
 export const SITE_META = {

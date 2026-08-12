@@ -15,7 +15,7 @@ export default async function HomePage() {
   const site = await getCurrentSite()
 
   return (
-    <PageShell site={site}>
+    <PageShell site={site} overHero>
       <Hero site={site} />
       <WhatIsVivra />
       <FoundingRetreat />

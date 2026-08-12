@@ -19,7 +19,7 @@ export default function Section({
       id={id}
       className={clsx(
         'py-20 md:py-28',
-        tone === 'dark' && 'bg-stone-900 text-sand-50',
+        tone === 'dark' && 'grain bg-stone-900 text-sand-50',
         tone === 'sand' && 'bg-sand-100',
         tone === 'light' && 'bg-sand-50',
         className

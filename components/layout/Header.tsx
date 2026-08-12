@@ -2,22 +2,25 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { NAV_ITEMS, CTA_COPY } from '@/content/site'
 import Button from '@/components/ui/Button'
 import type { SiteId } from '@/lib/site'
 
-export default function Header({ site }: { site: SiteId }) {
+export default function Header({ site, overHero = false }: { site: SiteId; overHero?: boolean }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const reducedMotion = useReducedMotion()
 
   useEffect(() => {
+    if (!overHero) return
     const onScroll = () => setScrolled(window.scrollY > 40)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [overHero])
 
-  const solid = scrolled || menuOpen
+  const solid = !overHero || scrolled || menuOpen
 
   return (
     <header
@@ -71,26 +74,36 @@ export default function Header({ site }: { site: SiteId }) {
         </button>
       </div>
 
-      {menuOpen && (
-        <nav className="border-t border-stone-900/10 bg-sand-50 px-6 py-6 lg:hidden">
-          <ul className="flex flex-col gap-5">
-            {NAV_ITEMS.slice(1).map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} onClick={() => setMenuOpen(false)} className="text-lg text-stone-900">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Button
-            href={site === 'join-vivra' ? '/apply/ibiza' : '/apply/join'}
-            className="mt-6 w-full"
-            onClick={() => setMenuOpen(false)}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.nav
+            initial={reducedMotion ? undefined : { height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={reducedMotion ? undefined : { height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-stone-900/10 bg-sand-50 lg:hidden"
           >
-            {site === 'join-vivra' ? CTA_COPY.ibiza : CTA_COPY.join}
-          </Button>
-        </nav>
-      )}
+            <div className="px-6 py-6">
+              <ul className="flex flex-col gap-5">
+                {NAV_ITEMS.slice(1).map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} onClick={() => setMenuOpen(false)} className="text-lg text-stone-900">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Button
+                href={site === 'join-vivra' ? '/apply/ibiza' : '/apply/join'}
+                className="mt-6 w-full"
+                onClick={() => setMenuOpen(false)}
+              >
+                {site === 'join-vivra' ? CTA_COPY.ibiza : CTA_COPY.join}
+              </Button>
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   )
 }
