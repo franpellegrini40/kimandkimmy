@@ -34,7 +34,11 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
       }}
     >
       <div className="container-vivra flex h-20 items-center justify-between">
-        <Link href="/" aria-label="VIVRA home" style={{ color: 'var(--text-primary)' }}>
+        <Link
+          href="/"
+          aria-label="VIVRA home"
+          className="text-[var(--text-primary)] transition-colors hover:text-[var(--copper-deep)] focus-visible:text-[var(--copper-deep)] active:text-[var(--copper-deep)]"
+        >
           <Logo className="h-5 w-auto" />
         </Link>
 
@@ -43,8 +47,7 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm transition-opacity hover:opacity-70"
-              style={{ color: 'var(--text-primary)' }}
+              className="text-sm text-[var(--text-primary)] transition-colors hover:text-[var(--copper-deep)] focus-visible:text-[var(--copper-deep)] active:text-[var(--copper-deep)]"
             >
               {item.label}
             </Link>
@@ -91,8 +94,7 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
                     <Link
                       href={item.href}
                       onClick={() => setMenuOpen(false)}
-                      className="text-lg"
-                      style={{ color: 'var(--text-primary)' }}
+                      className="text-lg text-[var(--text-primary)] transition-colors hover:text-[var(--copper-deep)] active:text-[var(--copper-deep)]"
                     >
                       {item.label}
                     </Link>

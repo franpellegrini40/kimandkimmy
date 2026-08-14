@@ -1,5 +1,6 @@
 # VIVRA — vivra.world / joinvivra.com
 
+
 One Next.js codebase serving two domains: **vivra.world** (institutional brand +
 membership + Alliance) and **joinvivra.com** (Ibiza Founding Retreat, conversion-first).
 Which homepage renders is decided per-request by the `Host` header

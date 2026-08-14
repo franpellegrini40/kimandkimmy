@@ -14,7 +14,7 @@ export default function FoundingRetreat() {
 
       <div className="mt-10 grid gap-8 md:grid-cols-2 md:items-center">
         <RevealOnScroll>
-          <Photo src="/images/villa-facade.jpg" alt="Entrance to Can Aylma, Ibiza" aspect="aspect-[4/5]" />
+          <Photo src="/images/villa-pool-loungers.jpg" alt="The pool and gardens at Can Aylma, Ibiza" aspect="aspect-[4/5]" />
         </RevealOnScroll>
         <RevealOnScroll delay={0.08} className="space-y-6">
           <div>

@@ -9,12 +9,16 @@
   (`public/images/hero-poster.jpg`). The hero background is real footage now, not a
   placeholder.
 - ✅ **8 real villa photos**, extracted as high-quality stills from the same video and
-  wired into `VillaGallery`, `WhatIsVivra` and `FoundingRetreat`:
+  wired into `VillaGallery` and `WhatIsVivra`:
   `villa-facade.jpg`, `villa-dining.jpg`, `villa-pool.jpg`, `villa-kitchen.jpg`,
   `villa-view.jpg`, `villa-gym.jpg`, `villa-bedroom.jpg`, `villa-aerial.jpg` (all in
   `public/images/`). These are genuine frames of Can Aylma — not stock photography —
   but a proper photoshoot would still look sharper than video stills; swap in real
   photography whenever it's available.
+- ✅ **2 real photographs** (higher quality than the video stills) — `villa-pool-loungers.jpg`
+  (the pool/loungers) now used in `FoundingRetreat` ("Why Ibiza / Can Aylma"), and
+  `vivra-gathering-table.jpg` (the branded long-table photo) now used in `WhoJoins`
+  ("V.I.P. — Very Impactful People").
 - ✅ **VIVRA design system** (`Vivra_design_system_download.zip`) — this replaced nearly
   everything in "Brand / design system" below. Real color tokens (navy #000E21, ivory
   #F7F4EE, copper #C57A3C, aqua #37C8D9), the real logo (`public/logo/*.svg`, inlined as
@@ -52,10 +56,14 @@
       would do the job in five minutes if you want to close this one out yourself).
 
 ## Membership & Alliance
-The brochure covers the Ibiza retreat in full detail but doesn't define VIVRA Membership
-tiers or the VIVRA World Alliance B2B value proposition beyond one closing line — so
-`content/tiers.ts` is still marked `PENDING`. Send approved tier names/benefits and
-Alliance partnership terms when they exist.
+- ✅ **Membership tiers** (`Vivra_Tier_Benefits_V2.pdf`) — Explorer / Member / Legacy, full
+  benefit comparison table and the VIVRA Longevity Panel breakdown are now real content in
+  `content/tiers.ts`, rendered as a comparison table in `TiersGrid.tsx`. Pricing intentionally
+  omitted per instruction (to be announced). Terms (3-month minimum, 30% Alliance-club
+  discount, 10% annual-payment discount) are listed as footnotes under the table.
+- [ ] **VIVRA World Alliance B2B value proposition** — still not defined beyond one closing
+  line in the retreat brochure, so `ALLIANCE_BENEFITS` in `content/tiers.ts` is still marked
+  `PENDING`. Send approved Alliance partnership terms when they exist.
 
 ## Accounts / credentials (see also DEPLOYMENT.md)
 - [ ] Supabase project (or Formspree endpoints) for the three forms
