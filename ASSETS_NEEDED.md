@@ -61,9 +61,15 @@
   `content/tiers.ts`, rendered as a comparison table in `TiersGrid.tsx`. Pricing intentionally
   omitted per instruction (to be announced). Terms (3-month minimum, 30% Alliance-club
   discount, 10% annual-payment discount) are listed as footnotes under the table.
-- [ ] **VIVRA World Alliance B2B value proposition** — still not defined beyond one closing
-  line in the retreat brochure, so `ALLIANCE_BENEFITS` in `content/tiers.ts` is still marked
-  `PENDING`. Send approved Alliance partnership terms when they exist.
+- ✅ **VIVRA World Alliance value proposition** (`Vivra_World_Alliance_Short_Overview.pdf`) —
+  positioning, how-it-works framing, membership/VIP pitch and the venue network are now real
+  content in `content/alliance.ts`, rendered on `/alliance` and in the homepage `AllianceTeaser`.
+  Note: this source deck is marked "Strictly Confidential" / investor-facing, so partner names,
+  deal attribution (which partner brought which venue) and investor-only framing (e.g. the
+  10,000-member POC language) were deliberately left out of the public copy — only positioning
+  and the venue list (open vs. opening soon) made it to the site, per instruction. Also: the
+  deck lists "Hamptons / United Kingdom", which is almost certainly a typo (the Hamptons are in
+  New York, USA) — corrected to USA on the site; flag if that's wrong.
 
 ## Accounts / credentials (see also DEPLOYMENT.md)
 - [ ] Supabase project (or Formspree endpoints) for the three forms

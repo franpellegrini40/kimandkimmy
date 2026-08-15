@@ -119,7 +119,3 @@ export const LONGEVITY_PANEL = {
     },
   ],
 }
-
-export const ALLIANCE_BENEFITS = [
-  'PENDING — approved Alliance value proposition from the brochure',
-]
