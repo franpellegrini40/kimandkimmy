@@ -23,18 +23,18 @@ export const ALLIANCE_MEMBERSHIP = {
 }
 
 export const ALLIANCE_VENUES = [
-  { name: 'Holbox', location: 'Mexico', status: 'open' },
-  { name: 'Puglia', location: 'Italy', status: 'open' },
-  { name: 'Viirelaid', location: 'Estonia', status: 'open' },
-  { name: 'Koh Phangan', location: 'Thailand', status: 'open' },
-  { name: 'Antigua', location: 'Caribbean', status: 'soon' },
-  { name: 'Ibiza', location: 'Spain', status: 'soon' },
-  { name: 'Marbella', location: 'Spain', status: 'soon' },
-  { name: 'Bali', location: 'Indonesia', status: 'soon' },
-  { name: 'Sri Lanka', location: 'Indian Ocean', status: 'soon' },
-  { name: 'Dubai', location: 'UAE', status: 'soon' },
-  { name: 'Hamptons', location: 'USA', status: 'soon' },
-  { name: 'Patagonia', location: 'Argentina', status: 'soon' },
+  { name: 'Holbox', location: 'Mexico', status: 'open', image: '/images/alliance/holbox.jpg' },
+  { name: 'Puglia', location: 'Italy', status: 'open', image: '/images/alliance/puglia.jpg' },
+  { name: 'Viirelaid', location: 'Estonia', status: 'open', image: '/images/alliance/viirelaid.jpg' },
+  { name: 'Koh Phangan', location: 'Thailand', status: 'open', image: '/images/alliance/koh-phangan.jpg' },
+  { name: 'Antigua', location: 'Caribbean', status: 'soon', image: '/images/alliance/antigua.jpg' },
+  { name: 'Ibiza', location: 'Spain', status: 'soon', image: '/images/alliance/ibiza.jpg' },
+  { name: 'Marbella', location: 'Spain', status: 'soon', image: '/images/alliance/marbella.jpg' },
+  { name: 'Bali', location: 'Indonesia', status: 'soon', image: '/images/alliance/bali.jpg' },
+  { name: 'Sri Lanka', location: 'Indian Ocean', status: 'soon', image: '/images/alliance/sri-lanka.jpg' },
+  { name: 'Dubai', location: 'UAE', status: 'soon', image: '/images/alliance/dubai.jpg' },
+  { name: 'Hamptons', location: 'USA', status: 'soon', image: '/images/alliance/hamptons.jpg' },
+  { name: 'Patagonia', location: 'Argentina', status: 'soon', image: '/images/alliance/patagonia.jpg' },
 ] as const
 
 export const ALLIANCE_VENUES_INTRO = {
