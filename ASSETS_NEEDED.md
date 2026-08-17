@@ -9,12 +9,17 @@
   (`public/images/hero-poster.jpg`). The hero background is real footage now, not a
   placeholder.
 - ✅ **8 real villa photos**, extracted as high-quality stills from the same video and
-  wired into `VillaGallery` and `WhatIsVivra`:
+  wired into `VillaGallery`:
   `villa-facade.jpg`, `villa-dining.jpg`, `villa-pool.jpg`, `villa-kitchen.jpg`,
   `villa-view.jpg`, `villa-gym.jpg`, `villa-bedroom.jpg`, `villa-aerial.jpg` (all in
   `public/images/`). These are genuine frames of Can Aylma — not stock photography —
   but a proper photoshoot would still look sharper than video stills; swap in real
   photography whenever it's available.
+- ⚠️ **`villa-evening-gathering.jpg`** (used in `WhatIsVivra`, replacing `villa-dining.jpg`
+  there on 2026-08-17) — this is an **AI-generated concept image** (ChatGPT-generated,
+  not a photograph), confirmed intentional by Francisco. Flagging here so future sessions
+  don't mistake it for real photography like everything else in this list — swap for a
+  genuine photoshoot of an actual VIVRA gathering if/when one exists.
 - ✅ **2 real photographs** (higher quality than the video stills) — `villa-pool-loungers.jpg`
   (the pool/loungers) now used in `FoundingRetreat` ("Why Ibiza / Can Aylma"), and
   `vivra-gathering-table.jpg` (the branded long-table photo) now used in `WhoJoins`

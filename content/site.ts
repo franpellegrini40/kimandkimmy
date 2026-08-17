@@ -9,6 +9,7 @@ export const NAV_ITEMS = [
   { label: 'Venues', href: '/venues' },
   { label: 'Alliance', href: '/alliance' },
   { label: 'Impact', href: '/impact' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export const CTA_COPY = {
