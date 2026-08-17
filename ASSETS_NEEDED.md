@@ -28,12 +28,21 @@
   files for Optima and Neue Haas Grotesk Display (see below).
 
 ## Still needed
-- [ ] **Portrait photos** for the five named facilitators now in `content/people.ts` —
-      Francisco Pellegrini, Sharon Cittone, Diana, Saha, Dunja. Currently shown as a
-      labeled placeholder mark (`components/ui/AssetPlaceholder.tsx`) since no headshots
-      have been supplied. Save as `public/people/<slug>.jpg` (slugs already match the
-      `PEOPLE` array) once available, and swap the `AssetPlaceholder` in
-      `HealingPractices.tsx` / `PeopleGrid.tsx` for a real `<Photo>`.
+- [ ] **Portrait photo for Francisco Pellegrini** — still shown as a labeled placeholder
+      mark (`components/ui/AssetPlaceholder.tsx`) since no headshot has been supplied yet.
+      Save as `public/people/francisco-pellegrini.jpg` once available, add `image:` to his
+      entry in `content/people.ts`, and it'll render automatically in `PeopleGrid.tsx`
+      (`HealingPractices.tsx` only lists practitioners, so no change needed there).
+
+## Received and integrated (facilitators & venue)
+- ✅ **Portrait photos** for Sharon Cittone, Diana, Saha and Dunja — real photos now in
+  `public/people/*.jpg`, wired into `content/people.ts` (`image` field) and rendered via
+  `<Photo>` in `PeopleGrid.tsx` / `HealingPractices.tsx`.
+- ✅ **Real Puglia venue photo** — replaced the stock aerial vineyard shot at
+  `public/images/alliance/puglia.jpg`.
+- ✅ **Sharon Cittone's "VIVRA World Flagship Workshop" PDF** — saved at
+  `public/downloads/vivra-world-flagship-workshop.pdf`, downloadable via a button on her
+  `PeopleGrid` card.
 - [ ] **The 5 lifestyle/brand images you pasted inline in chat** (the VIVRA wordmark
       long-table shot, two pool photos, the two kitchen/living interior collages) — these
       rendered in the conversation but aren't retrievable as files from this side. If you
