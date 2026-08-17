@@ -5,6 +5,7 @@ import Section from '@/components/ui/Section'
 import Button from '@/components/ui/Button'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import VenueCards from '@/components/sections/VenueCards'
+import VivraEcosystem from '@/components/sections/VivraEcosystem'
 import {
   ALLIANCE_TAGLINE,
   ALLIANCE_POSITIONING,
@@ -50,6 +51,8 @@ export default async function AlliancePage() {
           ))}
         </div>
       </Section>
+
+      <VivraEcosystem />
 
       <Section tone="light">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">

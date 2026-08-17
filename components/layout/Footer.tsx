@@ -46,7 +46,25 @@ export default function Footer() {
       </div>
 
       <div
-        className="container-vivra mt-10 flex flex-col-reverse gap-4 border-t pt-6 text-xs md:flex-row md:items-center md:justify-between"
+        className="container-vivra mt-10 border-t pt-6 text-xs"
+        style={{ borderColor: 'var(--rule)', color: 'var(--text-quiet)' }}
+      >
+        <p>
+          VIVRA is a venture of Ithaka Ventures, a DIFC-licensed venture studio (
+          <a
+            href="/downloads/ithaka-ventures-commercial-license.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:opacity-70"
+          >
+            License CL11176
+          </a>
+          ).
+        </p>
+      </div>
+
+      <div
+        className="container-vivra mt-4 flex flex-col-reverse gap-4 border-t pt-6 text-xs md:flex-row md:items-center md:justify-between"
         style={{ borderColor: 'var(--rule)', color: 'var(--text-quiet)' }}
       >
         <p>© {new Date().getFullYear()} VIVRA. All rights reserved.</p>

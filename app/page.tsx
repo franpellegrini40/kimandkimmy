@@ -2,6 +2,7 @@ import { getCurrentSite } from '@/lib/site'
 import PageShell from '@/components/layout/PageShell'
 import Hero from '@/components/sections/Hero'
 import WhatIsVivra from '@/components/sections/WhatIsVivra'
+import VivraEcosystem from '@/components/sections/VivraEcosystem'
 import FoundingRetreat from '@/components/sections/FoundingRetreat'
 import WhoJoins from '@/components/sections/WhoJoins'
 import VillaGallery from '@/components/sections/VillaGallery'
@@ -19,6 +20,7 @@ export default async function HomePage() {
     <PageShell site={site} overHero>
       <Hero site={site} />
       <WhatIsVivra />
+      <VivraEcosystem />
       <FoundingRetreat />
       <WhoJoins />
       <VillaGallery />
