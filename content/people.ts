@@ -8,6 +8,7 @@ export type Person = {
   bio: string
   quote: string
   category: 'founder' | 'host' | 'practitioner' | 'speaker'
+  image?: string
 }
 
 export const PEOPLE: Person[] = [
@@ -30,6 +31,7 @@ export const PEOPLE: Person[] = [
     quote:
       'I believe the future of food is collaborative. I work every day creating and strengthening a global food ecosystem that touches on every vertical and gives all stakeholders the possibility to collaborate together.',
     category: 'speaker',
+    image: '/people/sharon-cittone.jpg',
   },
   {
     slug: 'diana',
@@ -40,6 +42,7 @@ export const PEOPLE: Person[] = [
     quote:
       'Any person in any season of life can live better when they are regulated and connected, and that is the mission of Human State.',
     category: 'practitioner',
+    image: '/people/diana.jpg',
   },
   {
     slug: 'saha',
@@ -50,6 +53,7 @@ export const PEOPLE: Person[] = [
     quote:
       'Healing is going from the head to the heart to reclaim our wholeness. I help people find peace in the present by healing the past.',
     category: 'practitioner',
+    image: '/people/saha.jpg',
   },
   {
     slug: 'dunja',
@@ -60,5 +64,6 @@ export const PEOPLE: Person[] = [
     quote:
       'I speak German, Arabic, and English, but my most rewarding conversations are the telepathic, energetic, and intuitive communications I have with other species.',
     category: 'practitioner',
+    image: '/people/dunja.jpg',
   },
 ]
