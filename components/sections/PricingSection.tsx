@@ -1,7 +1,7 @@
 import Section from '@/components/ui/Section'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import Button from '@/components/ui/Button'
-import { PRICING, EVERY_PLACE_INCLUDES, RETREAT_FACTS } from '@/content/retreat'
+import { PRICING, PRICING_CONTACT, EVERY_PLACE_INCLUDES, RETREAT_FACTS } from '@/content/retreat'
 
 export default function PricingSection() {
   return (
@@ -15,14 +15,14 @@ export default function PricingSection() {
         <RevealOnScroll>
           <div className="border p-8" style={{ borderColor: 'var(--rule)', background: 'var(--surface-raised)' }}>
             <span className="eyebrow">{PRICING.solo.label}</span>
-            <p className="mt-3 text-3xl">{PRICING.solo.price}</p>
+            <p className="mt-3 text-2xl">On request</p>
             <p className="mt-2 text-sm" style={{ color: 'var(--text-quiet)' }}>{PRICING.solo.detail}</p>
           </div>
         </RevealOnScroll>
         <RevealOnScroll delay={0.08}>
           <div className="border p-8" style={{ borderColor: 'var(--rule)', background: 'var(--surface-raised)' }}>
             <span className="eyebrow">{PRICING.double.label}</span>
-            <p className="mt-3 text-3xl">{PRICING.double.price}</p>
+            <p className="mt-3 text-2xl">On request</p>
             <p className="mt-2 text-sm" style={{ color: 'var(--text-quiet)' }}>{PRICING.double.detail}</p>
           </div>
         </RevealOnScroll>
@@ -31,6 +31,17 @@ export default function PricingSection() {
       <RevealOnScroll delay={0.12} className="mt-6 max-w-2xl text-sm" style={{ color: 'var(--text-quiet)' }}>
         <p>{PRICING.includes}</p>
         <p className="mt-1 italic">{PRICING.note}</p>
+        <p className="mt-4">
+          For pricing, contact us directly —{' '}
+          <a href={`mailto:${PRICING_CONTACT.email}`} className="underline" style={{ color: 'var(--text-primary)' }}>
+            {PRICING_CONTACT.email}
+          </a>{' '}
+          or{' '}
+          <a href={PRICING_CONTACT.whatsappHref} target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'var(--text-primary)' }}>
+            WhatsApp {PRICING_CONTACT.whatsapp}
+          </a>
+          .
+        </p>
       </RevealOnScroll>
 
       <RevealOnScroll delay={0.16} className="mt-10">

@@ -11,10 +11,10 @@ const base =
 
 const styles: Record<Variant, string> = {
   primary:
-    'bg-[var(--surface-contrast)] text-[var(--text-on-contrast)] border border-[var(--surface-contrast)] hover:opacity-80',
+    'bg-[var(--surface-contrast)] text-[var(--text-on-contrast)] border border-[var(--surface-contrast)] hover:opacity-80 active:border-2 active:border-[var(--copper-deep)] active:bg-[var(--copper-deep)] active:text-white active:opacity-100',
   accent: 'bg-[var(--accent)] text-navy border border-[var(--accent)] hover:opacity-80',
   secondary:
-    'bg-transparent text-[var(--text-primary)] border border-[var(--rule)] hover:border-[var(--text-primary)]',
+    'bg-transparent text-[var(--text-primary)] border border-[var(--rule)] hover:border-[var(--text-primary)] active:border-2 active:border-[var(--copper-deep)] active:text-[var(--copper-deep)]',
   ghost:
     'bg-transparent text-[var(--text-primary)] border-0 border-b border-[var(--rule)] px-0 pb-1.5 hover:border-[var(--text-primary)]',
 }

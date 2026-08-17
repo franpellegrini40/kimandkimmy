@@ -6,7 +6,9 @@ export const NAV_ITEMS = [
   { label: 'Experience', href: '/ibiza#experience' },
   { label: 'People', href: '/people' },
   { label: 'Membership', href: '/membership' },
+  { label: 'Venues', href: '/venues' },
   { label: 'Alliance', href: '/alliance' },
+  { label: 'Impact', href: '/impact' },
 ]
 
 export const CTA_COPY = {

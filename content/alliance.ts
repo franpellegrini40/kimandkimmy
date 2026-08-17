@@ -29,7 +29,7 @@ export const ALLIANCE_VENUES = [
   { name: 'Koh Phangan', location: 'Thailand', status: 'open', image: '/images/alliance/koh-phangan.jpg' },
   { name: 'Antigua', location: 'Caribbean', status: 'soon', image: '/images/alliance/antigua.jpg' },
   { name: 'Ibiza', location: 'Spain', status: 'soon', image: '/images/alliance/ibiza.jpg' },
-  { name: 'Marbella', location: 'Spain', status: 'soon', image: '/images/alliance/marbella.jpg' },
+  { name: 'Costa Rica', location: 'Central America', status: 'soon', image: '/images/alliance/costa-rica.jpg' },
   { name: 'Bali', location: 'Indonesia', status: 'soon', image: '/images/alliance/bali.jpg' },
   { name: 'Sri Lanka', location: 'Indian Ocean', status: 'soon', image: '/images/alliance/sri-lanka.jpg' },
   { name: 'Dubai', location: 'UAE', status: 'soon', image: '/images/alliance/dubai.jpg' },

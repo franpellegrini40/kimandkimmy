@@ -124,11 +124,17 @@ export const DAY_IN_LIFE = [
 ]
 
 export const PRICING = {
-  solo: { price: '€7,000', label: 'Solo', detail: 'Your private room' },
-  double: { price: '€5,000', label: 'Double', detail: 'Bring your partner — share the room' },
+  solo: { label: 'Solo', detail: 'Your private room' },
+  double: { label: 'Double', detail: 'Bring your partner — share the room' },
   includes:
     'This investment includes all accommodation, meals, sessions, airport transfer and experiences during the retreat. It does not include airfare to Ibiza, Spain.',
   note: 'Exclusive discounts for early members, founding team and partners.',
+}
+
+export const PRICING_CONTACT = {
+  email: 'francisco@ithaka.vc',
+  whatsapp: '+971 54 520 2420',
+  whatsappHref: 'https://wa.me/971545202420',
 }
 
 export const EVERY_PLACE_INCLUDES = [
@@ -146,4 +152,12 @@ export const CLOSING = {
   heading: 'You’ll be telling this story for years.',
   body:
     'As part of the VIVRA World Alliance community, your journey does not end when you leave Ibiza. You will have access to a global network of conscious destinations and like-minded individuals who share your commitment to living fully and leaving things better.',
+}
+
+export const PLATFORM_MVP = {
+  eyebrow: 'VIVRA Platform MVP — Coming Live Soon',
+  heading: 'More than a network of clubs — a marketplace for how you live.',
+  body:
+    'VIVRA isn’t only the OneWorld of membership clubs. It’s the shared marketplace behind it — curated, invite-only events, masterclasses and workshops with the world’s leading facilitators, longevity products and services, and venue access across a growing regenerative network. One membership, one wallet, one booking layer. Be first in when it goes live.',
+  cta: 'Get Early-Bird Membership',
 }

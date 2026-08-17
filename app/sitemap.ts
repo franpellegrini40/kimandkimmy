@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = `https://${process.env.NEXT_PUBLIC_SITE_DOMAIN || 'vivra.world'}`
-  const routes = ['', '/ibiza', '/membership', '/alliance', '/people', '/agenda']
+  const routes = ['', '/ibiza', '/membership', '/venues', '/alliance', '/impact', '/people', '/agenda']
 
   return routes.map((route) => ({
     url: `${base}${route}`,
