@@ -27,17 +27,10 @@
   `tailwind.config.ts`. The one thing the export did **not** include: licensed font
   files for Optima and Neue Haas Grotesk Display (see below).
 
-## Still needed
-- [ ] **Portrait photo for Francisco Pellegrini** — still shown as a labeled placeholder
-      mark (`components/ui/AssetPlaceholder.tsx`) since no headshot has been supplied yet.
-      Save as `public/people/francisco-pellegrini.jpg` once available, add `image:` to his
-      entry in `content/people.ts`, and it'll render automatically in `PeopleGrid.tsx`
-      (`HealingPractices.tsx` only lists practitioners, so no change needed there).
-
 ## Received and integrated (facilitators & venue)
-- ✅ **Portrait photos** for Sharon Cittone, Diana, Saha and Dunja — real photos now in
-  `public/people/*.jpg`, wired into `content/people.ts` (`image` field) and rendered via
-  `<Photo>` in `PeopleGrid.tsx` / `HealingPractices.tsx`.
+- ✅ **Portrait photos** for all five — Francisco Pellegrini, Sharon Cittone, Diana, Saha
+  and Dunja — real photos now in `public/people/*.jpg`, wired into `content/people.ts`
+  (`image` field) and rendered via `<Photo>` in `PeopleGrid.tsx` / `HealingPractices.tsx`.
 - ✅ **Real Puglia venue photo** — replaced the stock aerial vineyard shot at
   `public/images/alliance/puglia.jpg`.
 - ✅ **Sharon Cittone's "VIVRA World Flagship Workshop" PDF** — saved at

@@ -21,6 +21,7 @@ export const PEOPLE: Person[] = [
     quote:
       'VIVRA was born from a simple belief: the way we live, connect and grow can be more conscious, more meaningful and ultimately more human.',
     category: 'founder',
+    image: '/people/francisco-pellegrini.jpg',
   },
   {
     slug: 'sharon-cittone',
