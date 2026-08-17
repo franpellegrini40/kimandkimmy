@@ -45,7 +45,7 @@ export default async function ImpactPage() {
             <Photo
               src="/images/impact/join-the-planet-messi.jpg"
               alt="Join The Planet Foundation ambassador with the impact-tracked collectible"
-              aspect="aspect-[4/5]"
+              aspect="aspect-[2/3]"
             />
           </RevealOnScroll>
         </div>

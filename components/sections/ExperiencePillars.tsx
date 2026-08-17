@@ -1,5 +1,6 @@
 import Section from '@/components/ui/Section'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
+import Button from '@/components/ui/Button'
 import { EXPERIENCE_PILLARS } from '@/content/retreat'
 
 export default function ExperiencePillars() {
@@ -23,6 +24,12 @@ export default function ExperiencePillars() {
           </RevealOnScroll>
         ))}
       </div>
+
+      <RevealOnScroll delay={0.16} className="mt-10">
+        <Button href="/downloads/vivra-world-flagship-workshop.pdf" variant="secondary">
+          Download the VIVRA Flagship Workshop (PDF)
+        </Button>
+      </RevealOnScroll>
     </Section>
   )
 }
