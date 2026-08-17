@@ -9,23 +9,15 @@ export default function HeroVideo() {
 
   return (
     <div className="grain absolute inset-0 -z-10" style={{ background: 'var(--navy)' }}>
-      {/* Mobile: a static image, not dependent on autoplay (which iOS can silently
-          block under Low Power Mode regardless of muted/playsInline). */}
-      <img
-        src="/images/hero-poster.jpg"
-        alt=""
-        aria-hidden="true"
-        className="block h-full w-full object-cover md:hidden"
-      />
       {!failed && (
         <video
           ref={videoRef}
-          className="hidden h-full w-full object-cover md:block"
+          className="h-full w-full object-cover"
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           poster="/images/hero-poster.jpg"
           onError={() => setFailed(true)}
           onPlay={() => trackEvent('video_play', { video: 'hero' })}
