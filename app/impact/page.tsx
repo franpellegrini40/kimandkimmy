@@ -3,7 +3,7 @@ import { getCurrentSite } from '@/lib/site'
 import PageShell from '@/components/layout/PageShell'
 import Section from '@/components/ui/Section'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
-import AssetPlaceholder from '@/components/ui/AssetPlaceholder'
+import Photo from '@/components/ui/Photo'
 import { IMPACT_POSITIONING, IMPACT_PARTNERSHIP } from '@/content/impact'
 import CTABand from '@/components/sections/CTABand'
 
@@ -42,7 +42,11 @@ export default async function ImpactPage() {
             </a>
           </RevealOnScroll>
           <RevealOnScroll delay={0.1}>
-            <AssetPlaceholder note="Join The Planet Foundation partnership photo, 4:5" aspect="aspect-[4/5]" />
+            <Photo
+              src="/images/impact/join-the-planet-messi.jpg"
+              alt="Join The Planet Foundation ambassador with the impact-tracked collectible"
+              aspect="aspect-[4/5]"
+            />
           </RevealOnScroll>
         </div>
       </Section>
