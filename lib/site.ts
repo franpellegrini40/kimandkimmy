@@ -23,6 +23,6 @@ export const SITE_META = {
   'join-vivra': {
     name: 'VIVRA Founding Gathering',
     domain: 'joinvivra.com',
-    tagline: 'The Founding Gathering · By Invitation · Ten Places — Can Aylma, Ibiza.',
+    tagline: '1st Founding Gathering · By Invitation Only · Few Places — Can Aylma, Ibiza.',
   },
 } as const

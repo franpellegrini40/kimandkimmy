@@ -14,7 +14,7 @@ import Section from '@/components/ui/Section'
 export const metadata: Metadata = {
   title: 'VIVRA Founding Retreat — Ibiza',
   description:
-    'The VIVRA Founding Gathering at Can Aylma, Ibiza: five days exploring longevity, regenerative economy, conscious leadership and personal transformation. By invitation, ten places.',
+    'The VIVRA Founding Gathering at Can Aylma, Ibiza: five days exploring longevity, regenerative economy, conscious leadership and personal transformation. By invitation only, few places.',
 }
 
 export default async function IbizaPage() {

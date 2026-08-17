@@ -15,7 +15,7 @@ export default function Hero({ site }: { site: SiteId }) {
       <HeroVideo />
 
       <div className="container-vivra relative z-10 flex flex-col gap-6 pb-20 pt-32">
-        <span className="eyebrow">{RETREAT_FACTS.status}</span>
+        <span className="eyebrow" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.65)' }}>{RETREAT_FACTS.status}</span>
 
         <h1 className="max-w-2xl text-4xl leading-tight md:text-6xl">{RETREAT_FACTS.tagline}</h1>
 
