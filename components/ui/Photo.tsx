@@ -8,6 +8,7 @@ export default function Photo({
   className,
   priority = false,
   sizes = '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw',
+  quality = 85,
 }: {
   src: string
   alt: string
@@ -15,6 +16,7 @@ export default function Photo({
   className?: string
   priority?: boolean
   sizes?: string
+  quality?: number
 }) {
   return (
     <div className={clsx('relative overflow-hidden', aspect, className)}>
@@ -24,6 +26,7 @@ export default function Photo({
         fill
         sizes={sizes}
         priority={priority}
+        quality={quality}
         className="object-cover"
       />
     </div>

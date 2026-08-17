@@ -13,7 +13,12 @@ export default function WhatIsVivra() {
           <p className="mt-6 max-w-xl" style={{ color: 'var(--text-secondary)' }}>{RETREAT_FACTS.invitation}</p>
         </RevealOnScroll>
         <RevealOnScroll delay={0.1}>
-          <Photo src="/images/villa-evening-gathering.jpg" alt="A VIVRA gathering at Can Aylma, Ibiza" aspect="aspect-[4/3]" />
+          <Photo
+            src="/images/villa-evening-gathering.jpg"
+            alt="A VIVRA gathering at Can Aylma, Ibiza"
+            aspect="aspect-[3/2]"
+            sizes="(min-width: 768px) 50vw, 100vw"
+          />
         </RevealOnScroll>
       </div>
     </Section>
