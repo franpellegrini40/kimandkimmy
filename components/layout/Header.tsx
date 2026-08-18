@@ -69,7 +69,7 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
           <Button
             href={ctaHref}
             variant={solid ? 'primary' : 'secondary'}
-            className="hidden justify-self-end sm:inline-flex"
+            className={`hidden justify-self-end sm:inline-flex${solid ? '' : ' hover:text-[var(--copper-deep)]'}`}
           >
             {ctaLabel}
           </Button>
@@ -107,7 +107,7 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
             aria-label="VIVRA home"
             tabIndex={menuOpen ? 0 : -1}
             onClick={() => setMenuOpen(false)}
-            className="text-[var(--aqua)]"
+            className="text-[var(--text-primary)] transition-colors hover:text-[var(--aqua)] focus-visible:text-[var(--aqua)] active:text-[var(--aqua)]"
           >
             <Logo className="h-5 w-auto" />
           </Link>
@@ -131,8 +131,7 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
                 href={item.href}
                 tabIndex={menuOpen ? 0 : -1}
                 onClick={() => setMenuOpen(false)}
-                className="block py-2 text-lg transition-colors hover:text-[var(--copper-deep)] active:text-[var(--copper-deep)]"
-                style={{ color: 'var(--text-primary)' }}
+                className="block py-2 text-lg text-[var(--text-primary)] transition-colors hover:text-[var(--copper-deep)] active:text-[var(--copper-deep)]"
               >
                 {item.label}
               </Link>
@@ -141,15 +140,9 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
         </ul>
 
         <div className="p-6">
-          <Link
-            href={ctaHref}
-            tabIndex={menuOpen ? 0 : -1}
-            onClick={() => setMenuOpen(false)}
-            className="inline-flex w-full items-center justify-center gap-2 border px-7 py-3.5 text-[11px] font-medium uppercase tracking-caps transition hover:opacity-80"
-            style={{ background: 'var(--aqua)', borderColor: 'var(--aqua)', color: 'var(--navy)' }}
-          >
+          <Button href={ctaHref} className="w-full" tabIndex={menuOpen ? 0 : -1} onClick={() => setMenuOpen(false)}>
             {ctaLabel}
-          </Link>
+          </Button>
         </div>
       </motion.nav>
     </>
