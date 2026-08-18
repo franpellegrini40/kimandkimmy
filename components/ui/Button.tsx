@@ -14,7 +14,7 @@ const styles: Record<Variant, string> = {
     'bg-[var(--surface-contrast)] text-[var(--text-on-contrast)] border border-[var(--surface-contrast)] hover:border-[var(--accent-on-contrast)] hover:bg-[var(--accent-on-contrast)] hover:text-white active:border-[var(--accent-on-contrast)] active:bg-[var(--accent-on-contrast)] active:text-white',
   accent: 'bg-[var(--accent)] text-navy border border-[var(--accent)] hover:opacity-80',
   secondary:
-    'bg-transparent text-[var(--text-primary)] border border-[var(--rule)] hover:border-[var(--text-primary)] active:border-2 active:border-[var(--copper-deep)] active:text-[var(--copper-deep)]',
+    'bg-transparent text-[var(--text-primary)] border border-[var(--rule)] hover:border-[var(--text-primary)] hover:text-[var(--copper-deep)] active:border-2 active:border-[var(--copper-deep)] active:text-[var(--copper-deep)]',
   ghost:
     'bg-transparent text-[var(--text-primary)] border-0 border-b border-[var(--rule)] px-0 pb-1.5 hover:border-[var(--text-primary)]',
 }

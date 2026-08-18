@@ -67,4 +67,15 @@ export const PEOPLE: Person[] = [
     category: 'practitioner',
     image: '/people/dunja.jpg',
   },
+  {
+    slug: 'manuele-monti',
+    name: 'Manuele Monti',
+    role: 'Co-Founder, VIVRA — CEO, Techbricks',
+    bio:
+      'Manuele Monti is an engineer, entrepreneur and venture builder who transformed a career spanning scientific research, financial engineering and global energy markets into building technology-driven companies. After achieving financial independence at 36, he dedicated his experience to venture engineering, navigating both successful exits and failures while challenging traditional venture capital models. Today, he works with conscious entrepreneurs and impact-driven investors to advance innovation, wellbeing and a regenerative economy for future generations.',
+    quote:
+      'Building deep tech ventures for systemic change through regenerative capital.',
+    category: 'founder',
+    image: '/people/manuele-monti.jpg',
+  },
 ]

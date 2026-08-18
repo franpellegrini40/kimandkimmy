@@ -69,7 +69,7 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
           <Button
             href={ctaHref}
             variant={solid ? 'primary' : 'secondary'}
-            className={`hidden justify-self-end sm:inline-flex${solid ? '' : ' hover:text-[var(--copper-deep)]'}`}
+            className="hidden justify-self-end sm:inline-flex"
           >
             {ctaLabel}
           </Button>
