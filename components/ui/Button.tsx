@@ -27,6 +27,7 @@ type ButtonProps = {
   href?: string
   type?: 'button' | 'submit'
   disabled?: boolean
+  tabIndex?: number
 }
 
 export default function Button({
@@ -37,19 +38,20 @@ export default function Button({
   href,
   type = 'button',
   disabled,
+  tabIndex,
 }: ButtonProps) {
   const classes = clsx(base, styles[variant], className)
 
   if (href) {
     return (
-      <Link href={href} className={classes} onClick={onClick}>
+      <Link href={href} className={classes} onClick={onClick} tabIndex={tabIndex}>
         {children}
       </Link>
     )
   }
 
   return (
-    <button type={type} onClick={onClick} disabled={disabled} className={classes}>
+    <button type={type} onClick={onClick} disabled={disabled} className={classes} tabIndex={tabIndex}>
       {children}
     </button>
   )

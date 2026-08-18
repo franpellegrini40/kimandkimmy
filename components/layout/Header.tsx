@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { NAV_ITEMS, CTA_COPY } from '@/content/site'
 import Button from '@/components/ui/Button'
 import Logo from '@/components/ui/Logo'
@@ -21,97 +21,129 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
     return () => window.removeEventListener('scroll', onScroll)
   }, [overHero])
 
+  useEffect(() => {
+    if (!menuOpen) return
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen])
+
   const solid = !overHero || scrolled || menuOpen
+  const ctaHref = site === 'join-vivra' ? '/apply/ibiza' : '/apply/join'
+  const ctaLabel = site === 'join-vivra' ? CTA_COPY.ibiza : CTA_COPY.join
 
   return (
-    <header
-      data-theme={solid ? undefined : 'prestige'}
-      className="fixed inset-x-0 top-0 z-50 transition-colors duration-300"
-      style={{
-        background: solid ? 'color-mix(in srgb, var(--surface-page) 95%, transparent)' : 'transparent',
-        backdropFilter: solid ? 'blur(8px)' : undefined,
-        boxShadow: solid ? '0 1px 0 var(--rule)' : undefined,
-      }}
-    >
-      <div className="container-vivra flex h-20 items-center justify-between">
-        <Link
-          href="/"
-          aria-label="VIVRA home"
-          className="text-[var(--text-primary)] transition-colors hover:text-[var(--copper-deep)] focus-visible:text-[var(--copper-deep)] active:text-[var(--copper-deep)]"
-        >
-          <Logo className="h-5 w-auto" />
-        </Link>
+    <>
+      <header
+        data-theme={solid ? undefined : 'prestige'}
+        className="fixed inset-x-0 top-0 z-50 transition-colors duration-300"
+        style={{
+          background: solid ? 'color-mix(in srgb, var(--surface-page) 95%, transparent)' : 'transparent',
+          backdropFilter: solid ? 'blur(8px)' : undefined,
+          boxShadow: solid ? '0 1px 0 var(--rule)' : undefined,
+        }}
+      >
+        <div className="container-vivra flex h-20 items-center justify-between">
+          <Link
+            href="/"
+            aria-label="VIVRA home"
+            className="text-[var(--text-primary)] transition-colors hover:text-[var(--copper-deep)] focus-visible:text-[var(--copper-deep)] active:text-[var(--copper-deep)]"
+          >
+            <Logo className="h-5 w-auto" />
+          </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
-          {NAV_ITEMS.slice(1).map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm text-[var(--text-primary)] transition-colors hover:text-[var(--copper-deep)] focus-visible:text-[var(--copper-deep)] active:text-[var(--copper-deep)]"
+          <div className="flex items-center gap-5">
+            <Button href={ctaHref} variant={solid ? 'primary' : 'secondary'} className="hidden sm:inline-flex">
+              {ctaLabel}
+            </Button>
+
+            <button
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((v) => !v)}
+              className="flex h-10 w-10 flex-col items-center justify-center gap-[5px]"
+              style={{ color: 'var(--text-primary)' }}
             >
-              {item.label}
-            </Link>
-          ))}
-          <Button href={site === 'join-vivra' ? '/apply/ibiza' : '/apply/join'} variant={solid ? 'primary' : 'secondary'}>
-            {site === 'join-vivra' ? CTA_COPY.ibiza : CTA_COPY.join}
-          </Button>
-        </nav>
+              <span className="sr-only">Menu</span>
+              <span className="h-px w-6" style={{ background: 'currentColor' }} />
+              <span className="h-px w-6" style={{ background: 'currentColor' }} />
+              <span className="h-px w-6" style={{ background: 'currentColor' }} />
+            </button>
+          </div>
+        </div>
+      </header>
 
-        <button
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center lg:hidden"
-          style={{ color: 'var(--text-primary)' }}
-        >
-          <span className="sr-only">Menu</span>
-          {menuOpen ? (
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      {/*
+        The overlay + drawer are always mounted (never conditionally rendered) so every
+        nav <Link> stays a real, crawlable anchor in the DOM for SEO/link-equity purposes —
+        only visibility/interactivity is toggled via animation + aria/pointer-events, never
+        via mount/unmount.
+      */}
+      <motion.div
+        aria-hidden={!menuOpen}
+        initial={false}
+        animate={{ opacity: menuOpen ? 1 : 0 }}
+        transition={{ duration: 0.2 }}
+        className="fixed inset-0 z-[60]"
+        style={{ background: 'rgba(0,14,33,0.5)', pointerEvents: menuOpen ? 'auto' : 'none' }}
+        onClick={() => setMenuOpen(false)}
+      />
+      <motion.nav
+        data-theme="prestige"
+        aria-hidden={!menuOpen}
+        initial={false}
+        animate={{ x: menuOpen ? 0 : '-100%' }}
+        transition={reducedMotion ? { duration: 0 } : { duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        className="fixed inset-y-0 left-0 z-[70] flex w-full max-w-sm flex-col"
+        style={{ background: 'var(--surface-page)', pointerEvents: menuOpen ? 'auto' : 'none' }}
+        aria-label="Site navigation"
+      >
+        <div className="flex h-20 items-center justify-between px-6">
+          <Link
+            href="/"
+            aria-label="VIVRA home"
+            tabIndex={menuOpen ? 0 : -1}
+            onClick={() => setMenuOpen(false)}
+            className="text-[var(--text-primary)]"
+          >
+            <Logo className="h-5 w-auto" />
+          </Link>
+          <button
+            aria-label="Close menu"
+            tabIndex={menuOpen ? 0 : -1}
+            onClick={() => setMenuOpen(false)}
+            className="flex h-10 w-10 items-center justify-center"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M6 6l12 12M18 6L6 18" />
             </svg>
-          ) : (
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            </svg>
-          )}
-        </button>
-      </div>
+          </button>
+        </div>
 
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.nav
-            initial={reducedMotion ? undefined : { height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={reducedMotion ? undefined : { height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t lg:hidden"
-            style={{ borderColor: 'var(--rule)', background: 'var(--surface-page)' }}
-          >
-            <div className="px-6 py-6">
-              <ul className="flex flex-col gap-5">
-                {NAV_ITEMS.slice(1).map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="text-lg text-[var(--text-primary)] transition-colors hover:text-[var(--copper-deep)] active:text-[var(--copper-deep)]"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <Button
-                href={site === 'join-vivra' ? '/apply/ibiza' : '/apply/join'}
-                className="mt-6 w-full"
+        <ul className="flex flex-1 flex-col justify-center gap-2 px-6">
+          {NAV_ITEMS.slice(1).map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                tabIndex={menuOpen ? 0 : -1}
                 onClick={() => setMenuOpen(false)}
+                className="block py-2.5 text-2xl transition-colors hover:text-[var(--accent-deep)] active:text-[var(--accent-deep)]"
+                style={{ color: 'var(--text-primary)' }}
               >
-                {site === 'join-vivra' ? CTA_COPY.ibiza : CTA_COPY.join}
-              </Button>
-            </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
-    </header>
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="p-6">
+          <Button href={ctaHref} className="w-full" tabIndex={menuOpen ? 0 : -1} onClick={() => setMenuOpen(false)}>
+            {ctaLabel}
+          </Button>
+        </div>
+      </motion.nav>
+    </>
   )
 }
