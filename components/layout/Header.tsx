@@ -129,7 +129,7 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
                 href={item.href}
                 tabIndex={menuOpen ? 0 : -1}
                 onClick={() => setMenuOpen(false)}
-                className="block py-2.5 text-2xl transition-colors hover:text-[var(--accent-deep)] active:text-[var(--accent-deep)]"
+                className="block py-2 text-lg transition-colors hover:text-[var(--copper-deep)] active:text-[var(--copper-deep)]"
                 style={{ color: 'var(--text-primary)' }}
               >
                 {item.label}
