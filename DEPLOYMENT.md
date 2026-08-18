@@ -1,4 +1,4 @@
-# Deployment — vivra.world + joinvivra.com
+# Deployment — worldvivra.com + joinvivra.com
 
 This environment has no Vercel, registrar, or DNS credentials, so the steps below are
 what you (or whoever holds those accounts) need to run. Everything else — the app
@@ -11,7 +11,7 @@ itself — is already built to support this exact setup with zero code changes.
 2. Framework preset: Next.js (auto-detected). Leave build command / output as default.
 3. Add the environment variables from `.env.example` under **Settings → Environment
    Variables** (fill in real values — Supabase, GA4, WhatsApp link, etc). Add
-   `NEXT_PUBLIC_SITE_DOMAIN=vivra.world` for the sitemap/robots to point at the right host.
+   `NEXT_PUBLIC_SITE_DOMAIN=worldvivra.com` for the sitemap/robots to point at the right host.
 4. Deploy.
 
 ## 2. Attach both domains to the SAME project
@@ -20,7 +20,7 @@ Both domains must point at this one Vercel project — the app tells them apart 
 maintain.
 
 In the Vercel project → **Settings → Domains**:
-1. Add `vivra.world` (and `www.vivra.world` — it will redirect to the apex automatically
+1. Add `worldvivra.com` (and `www.worldvivra.com` — it will redirect to the apex automatically
    via `middleware.ts`).
 2. Add `joinvivra.com` (and `www.joinvivra.com`).
 
@@ -37,7 +37,7 @@ modify those — only add the new records Vercel gave you in step 2. Adding an u
 "replace all DNS records" import from a registrar UI can silently wipe MX/SPF/DKIM —
 avoid that operation specifically.
 
-1. Open your DNS management screen for `vivra.world`.
+1. Open your DNS management screen for `worldvivra.com`.
 2. Add the exact `A` (or `ALIAS`/`ANAME`) record Vercel showed you for the apex domain.
 3. Add the exact `CNAME` record Vercel showed you for `www`.
 4. Repeat steps 1–3 for `joinvivra.com`.
@@ -46,9 +46,9 @@ avoid that operation specifically.
    once DNS resolves correctly.
 
 ## 4. Verify
-- [ ] `https://vivra.world` loads the VIVRA World homepage, padlock/HTTPS valid.
+- [ ] `https://worldvivra.com` loads the VIVRA World homepage, padlock/HTTPS valid.
 - [ ] `https://joinvivra.com` loads the Founding Retreat homepage, padlock/HTTPS valid.
-- [ ] `https://www.vivra.world` redirects to `https://vivra.world`.
+- [ ] `https://www.worldvivra.com` redirects to `https://worldvivra.com`.
 - [ ] Existing email for both domains still works (send/receive a test email) —
       confirms MX/SPF/DKIM were untouched.
 - [ ] `/apply/join`, `/apply/ibiza`, `/apply/alliance` submit successfully (check

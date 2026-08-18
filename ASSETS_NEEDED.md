@@ -84,7 +84,7 @@
 - [ ] Meta Pixel ID / LinkedIn Insight Tag ID (optional, hooks already exist)
 - [ ] WhatsApp community invite link (`NEXT_PUBLIC_WHATSAPP_COMMUNITY_URL`) — the
       floating "Join our community" button only renders once this is set.
-- [ ] Domain registrar/DNS access for vivra.world and joinvivra.com
+- [ ] Domain registrar/DNS access for worldvivra.com and joinvivra.com
 - [ ] Vercel account (or confirm alternative host)
 - [ ] Confirmed Instagram/LinkedIn URLs (`content/site.ts` currently has best-guess
       placeholders — verify before launch)

@@ -1,9 +1,12 @@
-// Server-only. Storage adapter for the three application forms.
+// Server-only. Storage + notification adapter for the three application forms.
 //
-// Priority: Supabase (if configured) > Formspree (if configured) > local JSON file
+// Storage priority: Supabase (if configured) > Formspree (if configured) > local JSON file
 // (dev/testing only — most serverless hosts, including Vercel, have a read-only or
 // ephemeral filesystem in production, so the local-file path is NOT a production
 // database; configure Supabase or Formspree before launch. See README "Forms & CRM").
+//
+// Notification: every lead is also emailed to francisco@ithaka.vc via FormSubmit.co
+// (free, no account/API key needed) — this is what actually delivers submissions today.
 
 import path from 'node:path'
 
@@ -74,6 +77,25 @@ async function saveToLocalFile(record: LeadRecord) {
   }
 }
 
+async function notifyEmail(record: LeadRecord) {
+  try {
+    const res = await fetch('https://formsubmit.co/ajax/francisco@ithaka.vc', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        _subject: `New VIVRA ${record.type} application`,
+        _template: 'table',
+        _captcha: 'false',
+        type: record.type,
+        ...record.data,
+      }),
+    })
+    if (!res.ok) throw new Error(`FormSubmit notify failed: ${res.status}`)
+  } catch (err) {
+    console.error('[leads] email notification failed', err)
+  }
+}
+
 async function notifyWebhook(record: LeadRecord) {
   const url = process.env.LEAD_NOTIFY_WEBHOOK_URL
   if (!url) return
@@ -101,6 +123,7 @@ export async function saveLead(type: LeadType, data: Record<string, unknown>) {
     if (!usedFormspree) await saveToLocalFile(record)
   }
 
+  await notifyEmail(record)
   await notifyWebhook(record)
   return record
 }

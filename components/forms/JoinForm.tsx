@@ -57,7 +57,7 @@ export default function JoinForm() {
       trackEvent('form_completed', { form: 'join' })
       setDone(true)
     } catch {
-      setError('Something went wrong. Please try again or email hello@vivra.world.')
+      setError('Something went wrong. Please try again or email francisco@ithaka.vc.')
     } finally {
       setSubmitting(false)
     }

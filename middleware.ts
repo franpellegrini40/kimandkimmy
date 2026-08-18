@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-// Canonicalizes both domains to their apex (non-www) form. Both vivra.world and
+// Canonicalizes both domains to their apex (non-www) form. Both worldvivra.com and
 // joinvivra.com are added to the SAME hosting project — the host header alone is
 // what makes app/page.tsx render the right homepage (see lib/site.ts).
 export function middleware(request: NextRequest) {

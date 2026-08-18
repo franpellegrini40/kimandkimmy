@@ -17,7 +17,7 @@ export async function getCurrentSite(): Promise<SiteId> {
 export const SITE_META = {
   'vivra-world': {
     name: 'VIVRA World',
-    domain: 'vivra.world',
+    domain: 'worldvivra.com',
     tagline: 'Live longer. Think bigger. Leave it better.',
   },
   'join-vivra': {

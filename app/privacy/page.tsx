@@ -29,7 +29,7 @@ export default async function PrivacyPage() {
             We use analytics tools to understand how visitors use this site. Analytics
             cookies only load after you accept them in the cookie banner.
           </p>
-          <p>To request access to, correction of, or deletion of your data, contact hello@vivra.world.</p>
+          <p>To request access to, correction of, or deletion of your data, contact francisco@ithaka.vc.</p>
         </div>
       </Section>
     </PageShell>

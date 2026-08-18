@@ -68,7 +68,7 @@ export default function Footer() {
         style={{ borderColor: 'var(--rule)', color: 'var(--text-quiet)' }}
       >
         <p>© {new Date().getFullYear()} VIVRA. All rights reserved.</p>
-        <p>vivra.world · joinvivra.com</p>
+        <p>worldvivra.com · joinvivra.com</p>
       </div>
     </footer>
   )

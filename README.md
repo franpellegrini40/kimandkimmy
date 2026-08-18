@@ -1,7 +1,7 @@
-# VIVRA — vivra.world / joinvivra.com
+# VIVRA — worldvivra.com / joinvivra.com
 
 
-One Next.js codebase serving two domains: **vivra.world** (institutional brand +
+One Next.js codebase serving two domains: **worldvivra.com** (institutional brand +
 membership + Alliance) and **joinvivra.com** (Ibiza Founding Retreat, conversion-first).
 Which homepage renders is decided per-request by the `Host` header
 (`lib/site.ts` → `getCurrentSite()`), so both domains are attached to the same
@@ -127,7 +127,7 @@ cp .env.example .env.local   # fill in what you have; everything else degrades g
 npm run dev
 ```
 
-Visit `http://localhost:3000` — it renders the vivra.world homepage by default. To
+Visit `http://localhost:3000` — it renders the worldvivra.com homepage by default. To
 preview the joinvivra.com variant locally, either deploy a preview and visit it via
 that domain, or temporarily edit `NEXT_PUBLIC_JOIN_DOMAIN` matching logic in
 `lib/site.ts` for a local override.
