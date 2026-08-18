@@ -44,33 +44,35 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
           boxShadow: solid ? '0 1px 0 var(--rule)' : undefined,
         }}
       >
-        <div className="container-vivra flex h-20 items-center justify-between">
+        <div className="container-vivra grid h-20 grid-cols-3 items-center">
+          <button
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+            className="flex h-10 w-10 flex-col items-center justify-center justify-self-start gap-[5px]"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            <span className="sr-only">Menu</span>
+            <span className="h-px w-6" style={{ background: 'currentColor' }} />
+            <span className="h-px w-6" style={{ background: 'currentColor' }} />
+            <span className="h-px w-6" style={{ background: 'currentColor' }} />
+          </button>
+
           <Link
             href="/"
             aria-label="VIVRA home"
-            className="text-[var(--text-primary)] transition-colors hover:text-[var(--copper-deep)] focus-visible:text-[var(--copper-deep)] active:text-[var(--copper-deep)]"
+            className="justify-self-center text-[var(--text-primary)] transition-colors hover:text-[var(--copper-deep)] focus-visible:text-[var(--copper-deep)] active:text-[var(--copper-deep)]"
           >
             <Logo className="h-5 w-auto" />
           </Link>
 
-          <div className="flex items-center gap-5">
-            <Button href={ctaHref} variant={solid ? 'primary' : 'secondary'} className="hidden sm:inline-flex">
-              {ctaLabel}
-            </Button>
-
-            <button
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={menuOpen}
-              onClick={() => setMenuOpen((v) => !v)}
-              className="flex h-10 w-10 flex-col items-center justify-center gap-[5px]"
-              style={{ color: 'var(--text-primary)' }}
-            >
-              <span className="sr-only">Menu</span>
-              <span className="h-px w-6" style={{ background: 'currentColor' }} />
-              <span className="h-px w-6" style={{ background: 'currentColor' }} />
-              <span className="h-px w-6" style={{ background: 'currentColor' }} />
-            </button>
-          </div>
+          <Button
+            href={ctaHref}
+            variant={solid ? 'primary' : 'secondary'}
+            className="hidden justify-self-end sm:inline-flex"
+          >
+            {ctaLabel}
+          </Button>
         </div>
       </header>
 
@@ -105,7 +107,7 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
             aria-label="VIVRA home"
             tabIndex={menuOpen ? 0 : -1}
             onClick={() => setMenuOpen(false)}
-            className="text-[var(--text-primary)]"
+            className="text-[var(--aqua)]"
           >
             <Logo className="h-5 w-auto" />
           </Link>
@@ -139,9 +141,15 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
         </ul>
 
         <div className="p-6">
-          <Button href={ctaHref} className="w-full" tabIndex={menuOpen ? 0 : -1} onClick={() => setMenuOpen(false)}>
+          <Link
+            href={ctaHref}
+            tabIndex={menuOpen ? 0 : -1}
+            onClick={() => setMenuOpen(false)}
+            className="inline-flex w-full items-center justify-center gap-2 border px-7 py-3.5 text-[11px] font-medium uppercase tracking-caps transition hover:opacity-80"
+            style={{ background: 'var(--aqua)', borderColor: 'var(--aqua)', color: 'var(--navy)' }}
+          >
             {ctaLabel}
-          </Button>
+          </Link>
         </div>
       </motion.nav>
     </>
