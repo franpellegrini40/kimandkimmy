@@ -6,6 +6,7 @@ import Button from '@/components/ui/Button'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import VenueCards from '@/components/sections/VenueCards'
 import VivraEcosystem from '@/components/sections/VivraEcosystem'
+import VivraPassport from '@/components/sections/VivraPassport'
 import {
   ALLIANCE_TAGLINE,
   ALLIANCE_POSITIONING,
@@ -59,9 +60,10 @@ export default async function AlliancePage() {
           <RevealOnScroll>
             <span className="eyebrow">Membership</span>
             <h2 className="mt-4 text-2xl md:text-3xl">{ALLIANCE_MEMBERSHIP.heading}</h2>
+            <p className="mt-4" style={{ color: 'var(--text-secondary)' }}>{ALLIANCE_MEMBERSHIP.body}</p>
           </RevealOnScroll>
-          <RevealOnScroll delay={0.1}>
-            <p style={{ color: 'var(--text-secondary)' }}>{ALLIANCE_MEMBERSHIP.body}</p>
+          <RevealOnScroll delay={0.1} className="flex justify-center">
+            <VivraPassport />
           </RevealOnScroll>
         </div>
       </Section>
