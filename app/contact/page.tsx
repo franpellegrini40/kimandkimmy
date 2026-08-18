@@ -32,6 +32,19 @@ export default async function ContactPage() {
           </a>
           .
         </p>
+        <p className="mt-2 text-sm" style={{ color: 'var(--text-quiet)' }}>
+          Follow VIVRA on{' '}
+          <a
+            href="https://linkedin.com/company/vivra-world"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+            style={{ color: 'var(--text-primary)' }}
+          >
+            LinkedIn
+          </a>
+          .
+        </p>
       </Section>
     </PageShell>
   )
