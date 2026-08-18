@@ -42,9 +42,9 @@
   --text-on-contrast: var(--ivory);
   --accent: var(--aqua);
   --accent-deep: var(--aqua-700);
-  /* Accent for solid contrast-surface elements (e.g. primary Button's active
-     state) — here surface-contrast is navy (dark), so copper is correct. */
-  --accent-on-contrast: var(--copper-deep);
+  /* Accent for solid contrast-surface elements (e.g. primary Button's hover/
+     active state). Always aqua, regardless of section theme, per brand. */
+  --accent-on-contrast: var(--aqua-700);
   --rule: var(--black-a12);
   --rule-quiet: var(--black-a08);
 }
@@ -61,8 +61,6 @@
   --text-on-contrast: var(--navy);
   --accent: var(--copper);
   --accent-deep: #935927;
-  /* Here surface-contrast is ivory (light) — copper would break the
-     "copper never on light" rule, so use aqua instead. */
   --accent-on-contrast: var(--aqua-700);
   --rule: var(--white-a12);
   --rule-quiet: var(--white-a06);

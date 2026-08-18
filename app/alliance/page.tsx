@@ -73,8 +73,9 @@ export default async function AlliancePage() {
           <p className="mt-4 max-w-xl" style={{ color: 'var(--text-secondary)' }}>{ALLIANCE_VENUES_INTRO.body}</p>
         </RevealOnScroll>
         <VenueCards />
-        <RevealOnScroll className="mt-10">
+        <RevealOnScroll className="mt-10 flex flex-wrap gap-4">
           <Button href="/venues" variant="ghost">See all VIVRA venues</Button>
+          <Button href="/apply/venue" variant="secondary">Apply as a Venue</Button>
         </RevealOnScroll>
       </Section>
 

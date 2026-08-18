@@ -104,6 +104,41 @@ export function SelectField({
   )
 }
 
+export function FileField({
+  label,
+  name,
+  required,
+  hint,
+  ...rest
+}: {
+  label: string
+  name: string
+  required?: boolean
+  hint?: string
+} & React.InputHTMLAttributes<HTMLInputElement>) {
+  return (
+    <label className="block">
+      <span className="text-sm">
+        {label}
+        {required && <span className="text-red-600"> *</span>}
+      </span>
+      <input
+        name={name}
+        type="file"
+        required={required}
+        className="mt-1.5 w-full border bg-[var(--paper)] px-4 py-3 text-sm text-navy outline-none file:mr-4 file:border-0 file:bg-[var(--surface-inset)] file:px-3 file:py-1.5 file:text-sm focus:border-[var(--accent-deep)]"
+        style={{ borderColor: 'var(--rule)' }}
+        {...rest}
+      />
+      {hint && (
+        <span className="mt-1 block text-xs" style={{ color: 'var(--text-quiet)' }}>
+          {hint}
+        </span>
+      )}
+    </label>
+  )
+}
+
 export function HoneypotField() {
   return (
     <input

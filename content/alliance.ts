@@ -27,11 +27,11 @@ export const ALLIANCE_VENUES = [
   { name: 'Puglia', location: 'Italy', status: 'open', image: '/images/alliance/puglia.jpg' },
   { name: 'Viirelaid', location: 'Estonia', status: 'open', image: '/images/alliance/viirelaid.jpg' },
   { name: 'Koh Phangan', location: 'Thailand', status: 'open', image: '/images/alliance/koh-phangan.jpg' },
-  { name: 'Antigua', location: 'Caribbean', status: 'soon', image: '/images/alliance/antigua.jpg' },
-  { name: 'Ibiza', location: 'Spain', status: 'soon', image: '/images/alliance/ibiza.jpg' },
-  { name: 'Costa Rica', location: 'Central America', status: 'soon', image: '/images/alliance/costa-rica.jpg' },
+  { name: 'Antigua', location: 'Caribbean', status: 'open', image: '/images/alliance/antigua.jpg' },
+  { name: 'Ibiza', location: 'Spain', status: 'open', image: '/images/alliance/ibiza.jpg' },
+  { name: 'Costa Rica', location: 'Central America', status: 'open', image: '/images/alliance/costa-rica.jpg' },
   { name: 'Bali', location: 'Indonesia', status: 'soon', image: '/images/alliance/bali.jpg' },
-  { name: 'Sri Lanka', location: 'Indian Ocean', status: 'soon', image: '/images/alliance/sri-lanka.jpg' },
+  { name: 'Sri Lanka', location: 'Indian Ocean', status: 'open', image: '/images/alliance/sri-lanka.jpg' },
   { name: 'Dubai', location: 'UAE', status: 'soon', image: '/images/alliance/dubai.jpg' },
   { name: 'Hamptons', location: 'USA', status: 'soon', image: '/images/alliance/hamptons.jpg' },
   { name: 'Patagonia', location: 'Argentina', status: 'soon', image: '/images/alliance/patagonia.jpg' },
@@ -40,7 +40,7 @@ export const ALLIANCE_VENUES = [
 export const ALLIANCE_VENUES_INTRO = {
   eyebrow: 'The network',
   heading: '12 destinations, five continents — and growing.',
-  body: 'A regenerative hospitality network, each venue upgraded to the same standard. Four are open today; the rest are on their way.',
+  body: 'A regenerative hospitality network, each venue upgraded to the same standard. Eight are open today; the rest are on their way.',
 }
 
 export const ALLIANCE_BENEFITS = [

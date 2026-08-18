@@ -27,8 +27,9 @@ export default async function VenuesPage() {
           </p>
         </RevealOnScroll>
         <VenueCards />
-        <RevealOnScroll delay={0.1} className="mt-10">
+        <RevealOnScroll delay={0.1} className="mt-10 flex flex-wrap gap-4">
           <Button href="/apply/alliance">Enquire About a Venue</Button>
+          <Button href="/apply/venue" variant="secondary">Apply as a Venue</Button>
         </RevealOnScroll>
       </Section>
 
