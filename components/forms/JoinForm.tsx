@@ -76,62 +76,58 @@ export default function JoinForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <HoneypotField />
 
-      {step === 1 && (
-        <>
-          <div className="grid gap-5 sm:grid-cols-2">
-            <TextField label="First name" name="firstName" required />
-            <TextField label="Last name" name="lastName" required />
-          </div>
-          <TextField label="Email" name="email" type="email" required />
-          <TextField label="Country / City" name="location" required />
-          <TextField label="LinkedIn or website (optional)" name="linkedin" />
-          <Button type="button" onClick={nextStep} className="w-full sm:w-auto">
-            Continue
+      <div className={step === 1 ? 'space-y-5' : 'hidden'}>
+        <div className="grid gap-5 sm:grid-cols-2">
+          <TextField label="First name" name="firstName" required={step === 1} />
+          <TextField label="Last name" name="lastName" required={step === 1} />
+        </div>
+        <TextField label="Email" name="email" type="email" required={step === 1} />
+        <TextField label="Country / City" name="location" required={step === 1} />
+        <TextField label="LinkedIn or website (optional)" name="linkedin" />
+        <Button type="button" onClick={nextStep} className="w-full sm:w-auto">
+          Continue
+        </Button>
+      </div>
+
+      <div className={step === 2 ? 'space-y-5' : 'hidden'}>
+        <TextAreaField
+          label="What interests you most about VIVRA?"
+          name="interest"
+          required={step === 2}
+        />
+        <SelectField
+          label="Interested in VIVRA Membership?"
+          name="membershipInterest"
+          required={step === 2}
+          options={[
+            { value: 'yes', label: 'Yes' },
+            { value: 'exploring', label: 'Exploring' },
+            { value: 'not-yet', label: 'Not yet' },
+          ]}
+        />
+        <SelectField
+          label="Interested in the Ibiza Founding Retreat?"
+          name="ibizaInterest"
+          required={step === 2}
+          options={[
+            { value: 'yes', label: 'Yes' },
+            { value: 'exploring', label: 'Exploring' },
+            { value: 'not-yet', label: 'Not yet' },
+          ]}
+        />
+        <TextAreaField label="Short message (optional)" name="message" />
+
+        {error && <p className="text-sm text-red-600">{error}</p>}
+
+        <div className="flex gap-3">
+          <Button type="button" variant="secondary" onClick={() => setStep(1)}>
+            Back
           </Button>
-        </>
-      )}
-
-      {step === 2 && (
-        <>
-          <TextAreaField
-            label="What interests you most about VIVRA?"
-            name="interest"
-            required
-          />
-          <SelectField
-            label="Interested in VIVRA Membership?"
-            name="membershipInterest"
-            required
-            options={[
-              { value: 'yes', label: 'Yes' },
-              { value: 'exploring', label: 'Exploring' },
-              { value: 'not-yet', label: 'Not yet' },
-            ]}
-          />
-          <SelectField
-            label="Interested in the Ibiza Founding Retreat?"
-            name="ibizaInterest"
-            required
-            options={[
-              { value: 'yes', label: 'Yes' },
-              { value: 'exploring', label: 'Exploring' },
-              { value: 'not-yet', label: 'Not yet' },
-            ]}
-          />
-          <TextAreaField label="Short message (optional)" name="message" />
-
-          {error && <p className="text-sm text-red-600">{error}</p>}
-
-          <div className="flex gap-3">
-            <Button type="button" variant="secondary" onClick={() => setStep(1)}>
-              Back
-            </Button>
-            <Button type="submit" disabled={submitting}>
-              {submitting ? 'Submitting…' : 'Join VIVRA'}
-            </Button>
-          </div>
-        </>
-      )}
+          <Button type="submit" disabled={submitting}>
+            {submitting ? 'Submitting…' : 'Join VIVRA'}
+          </Button>
+        </div>
+      </div>
     </form>
   )
 }

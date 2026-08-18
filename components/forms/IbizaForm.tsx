@@ -76,55 +76,51 @@ export default function IbizaForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <HoneypotField />
 
-      {step === 1 && (
-        <>
-          <div className="grid gap-5 sm:grid-cols-2">
-            <TextField label="First name" name="firstName" required />
-            <TextField label="Last name" name="lastName" required />
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2">
-            <TextField label="Email" name="email" type="email" required />
-            <TextField label="WhatsApp / Phone" name="phone" required />
-          </div>
-          <TextField label="Country / City" name="location" required />
-          <TextField label="LinkedIn / Instagram / Website (optional)" name="linkedin" />
-          <Button type="button" onClick={nextStep} className="w-full sm:w-auto">
-            Continue
+      <div className={step === 1 ? 'space-y-5' : 'hidden'}>
+        <div className="grid gap-5 sm:grid-cols-2">
+          <TextField label="First name" name="firstName" required={step === 1} />
+          <TextField label="Last name" name="lastName" required={step === 1} />
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2">
+          <TextField label="Email" name="email" type="email" required={step === 1} />
+          <TextField label="WhatsApp / Phone" name="phone" required={step === 1} />
+        </div>
+        <TextField label="Country / City" name="location" required={step === 1} />
+        <TextField label="LinkedIn / Instagram / Website (optional)" name="linkedin" />
+        <Button type="button" onClick={nextStep} className="w-full sm:w-auto">
+          Continue
+        </Button>
+      </div>
+
+      <div className={step === 2 ? 'space-y-5' : 'hidden'}>
+        <TextAreaField
+          label="What makes you interested in joining?"
+          name="whyInterested"
+          required={step === 2}
+        />
+        <SelectField
+          label="Interested in becoming a founding VIVRA member?"
+          name="foundingMemberInterest"
+          required={step === 2}
+          options={[
+            { value: 'yes', label: 'Yes' },
+            { value: 'maybe', label: 'Maybe' },
+            { value: 'no', label: 'No' },
+          ]}
+        />
+        <TextField label="How did you hear about us? (optional)" name="referral" />
+
+        {error && <p className="text-sm text-red-600">{error}</p>}
+
+        <div className="flex gap-3">
+          <Button type="button" variant="secondary" onClick={() => setStep(1)}>
+            Back
           </Button>
-        </>
-      )}
-
-      {step === 2 && (
-        <>
-          <TextAreaField
-            label="What makes you interested in joining?"
-            name="whyInterested"
-            required
-          />
-          <SelectField
-            label="Interested in becoming a founding VIVRA member?"
-            name="foundingMemberInterest"
-            required
-            options={[
-              { value: 'yes', label: 'Yes' },
-              { value: 'maybe', label: 'Maybe' },
-              { value: 'no', label: 'No' },
-            ]}
-          />
-          <TextField label="How did you hear about us? (optional)" name="referral" />
-
-          {error && <p className="text-sm text-red-600">{error}</p>}
-
-          <div className="flex gap-3">
-            <Button type="button" variant="secondary" onClick={() => setStep(1)}>
-              Back
-            </Button>
-            <Button type="submit" disabled={submitting}>
-              {submitting ? 'Submitting…' : 'Request to Join'}
-            </Button>
-          </div>
-        </>
-      )}
+          <Button type="submit" disabled={submitting}>
+            {submitting ? 'Submitting…' : 'Request to Join'}
+          </Button>
+        </div>
+      </div>
     </form>
   )
 }
