@@ -50,7 +50,7 @@ export const VILLA_PERKS = [
   { label: 'Seasonal Fruit Trees' },
   { label: 'Sonos Sound System' },
   { label: 'Fiber Optic Internet' },
-  { label: 'Paddle Court' },
+  { label: 'Padel Court' },
   { label: 'Pure O₂ Room & Himalayan Salt Cave' },
   { label: 'Red Light Therapy Chamber' },
 ]
