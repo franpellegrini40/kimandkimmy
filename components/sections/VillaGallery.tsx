@@ -4,13 +4,20 @@ import Photo from '@/components/ui/Photo'
 import { VILLA_PERKS } from '@/content/retreat'
 
 const GALLERY_PHOTOS = [
+  { src: '/images/villa-facade-night.jpg', alt: 'Can Aylma’s arched courtyard at dusk', aspect: 'aspect-video' },
   { src: '/images/villa-facade.jpg', alt: 'Whitewashed entrance path at Can Aylma', aspect: 'aspect-[4/5]' },
+  { src: '/images/villa-living.jpg', alt: 'Open-plan kitchen and living space', aspect: 'aspect-video' },
   { src: '/images/villa-dining.jpg', alt: 'Long-table dining terrace at golden hour', aspect: 'aspect-[4/5]' },
   { src: '/images/villa-pool.jpg', alt: 'Salt water pool with loungers', aspect: 'aspect-video' },
   { src: '/images/villa-kitchen.jpg', alt: 'Outdoor kitchen counter', aspect: 'aspect-[4/5]' },
   { src: '/images/villa-view.jpg', alt: 'Lounge chairs overlooking the Ibiza hills', aspect: 'aspect-[4/5]' },
+  { src: '/images/villa-sauna.jpg', alt: 'The sauna in the wellness zone', aspect: 'aspect-[4/5]' },
+  { src: '/images/villa-hammam.jpg', alt: 'The hammam plunge room', aspect: 'aspect-[4/5]' },
   { src: '/images/villa-bedroom.jpg', alt: 'A guest room at Can Aylma', aspect: 'aspect-[4/5]' },
-  { src: '/images/villa-gym.jpg', alt: 'Outdoor gym overlooking the countryside', aspect: 'aspect-[4/5]' },
+  { src: '/images/villa-teepee.jpg', alt: 'The ceremonial teepee at sunrise', aspect: 'aspect-[4/5]' },
+  { src: '/images/villa-firepit.jpg', alt: 'Fire pit lounge seating', aspect: 'aspect-video' },
+  { src: '/images/villa-gym.jpg', alt: 'The outdoor gym', aspect: 'aspect-[4/5]' },
+  { src: '/images/villa-cabana.jpg', alt: 'Massage cabana in the garden', aspect: 'aspect-[4/5]' },
   { src: '/images/villa-aerial.jpg', alt: 'Aerial view of the garden and pool', aspect: 'aspect-video' },
 ]
 

@@ -1,5 +1,7 @@
-// Sourced directly from Vivra_Retreat_Ibiza_2026_Final_Version.pdf (the approved brochure).
-// Do not rewrite this copy — only reorganize/shorten for web per the brand guidance.
+// Originally sourced directly from Vivra_Retreat_Ibiza_2026_Final_Version.pdf (the approved
+// brochure). Francisco explicitly authorized a voice pass on this file's landing-page copy
+// (2026-08-19) to sound less AI-generic per the CEO voice guide — facts, structure and every
+// named detail (dates, perks, numbers) are unchanged; only sentence-level phrasing was tightened.
 
 export const RETREAT_FACTS = {
   location: 'Can Aylma, Ibiza, Spain',
@@ -9,7 +11,7 @@ export const RETREAT_FACTS = {
   tagline: 'Live longer. Think bigger. Leave it better.',
   subTagline: 'More connected than ever. Yet rarely truly present.',
   positioning:
-    'Vivra was created to redefine how exceptional people travel, connect and grow with purpose.',
+    'VIVRA is a new way for exceptional people to travel, connect and grow — with real purpose behind it.',
   invitation:
     'Join us for a five-day gathering in a private luxury villa in Ibiza, a circle of ten individuals willing to explore new dimensions of wellbeing, awareness, human potential and systemic impact.',
 }
@@ -19,7 +21,7 @@ export const WHY_IBIZA = {
   body:
     'Ibiza has long been a sanctuary for those drawn by its profound natural beauty and ancient energetic significance. The white island has drawn seekers for millennia, from Phoenician traders to bohemian artists to modern-day mystics.',
   villa:
-    'Can Aylma is not just a villa, it is a sensorial experience. Inspired by the slow living philosophy and contemporary spirituality, Can Aylma is a sacred refuge in the heart of Ibiza. Surrounded by raw beauty and designed with intention, this 200-year-old finca invites stillness, connection and conscious celebration of life.',
+    'Can Aylma engages every sense, not only the eye. Inspired by slow living and contemporary spirituality, it is a sacred refuge in the heart of Ibiza — a 200-year-old finca, surrounded by raw beauty and built with intention, that invites stillness, connection and a conscious way to celebrate life.',
 }
 
 export const WHO_JOINS = {
@@ -33,7 +35,7 @@ export const WHO_JOINS = {
     { label: 'Global citizens', body: 'who want to align their travel with their values and their purpose with their soul' },
   ],
   closing:
-    'This retreat is not for everyone. It is for the few who are ready to go beyond the surface, beyond the familiar, beyond the comfortable — those willing to be seen, to be vulnerable, and to grow.',
+    'This retreat is not for everyone. It is for the few ready to leave the surface, the familiar and the comfortable behind — willing to be seen, to be vulnerable, and to grow.',
 }
 
 export const VILLA_PERKS = [
@@ -151,13 +153,13 @@ export const EVERY_PLACE_INCLUDES = [
 export const CLOSING = {
   heading: 'You’ll be telling this story for years.',
   body:
-    'As part of the VIVRA World Alliance community, your journey does not end when you leave Ibiza. You will have access to a global network of conscious destinations and like-minded individuals who share your commitment to living fully and leaving things better.',
+    'As part of the VIVRA World Alliance, Ibiza isn’t the end — it’s access to a global network of destinations and people who share the same commitment: living fully, and leaving things better.',
 }
 
 export const PLATFORM_MVP = {
   eyebrow: 'VIVRA Platform MVP — Coming Live Soon',
   heading: 'More than a network of clubs — a marketplace for how you live.',
   body:
-    'VIVRA isn’t only the OneWorld of membership clubs. It’s the shared marketplace behind it — curated, invite-only events, masterclasses and workshops with the world’s leading facilitators, longevity products and services, and venue access across a growing regenerative network. One membership, one wallet, one booking layer. Be first in when it goes live.',
+    'Behind the VIVRA World Alliance sits a shared marketplace: invite-only events, masterclasses and workshops with leading facilitators, longevity products and services, and venue access across a growing regenerative network. One membership, one wallet, one booking layer. Be first in when it goes live.',
   cta: 'Get Early-Bird Membership',
 }
