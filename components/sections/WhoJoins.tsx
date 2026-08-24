@@ -27,10 +27,6 @@ export default function WhoJoins() {
               </RevealOnScroll>
             ))}
           </div>
-
-          <RevealOnScroll delay={0.2} className="mt-10 max-w-2xl border-t pt-6" style={{ borderColor: 'var(--rule)' }}>
-            <p style={{ color: 'var(--text-secondary)' }}>{WHO_JOINS.closing}</p>
-          </RevealOnScroll>
         </div>
 
         <RevealOnScroll delay={0.1}>

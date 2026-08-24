@@ -34,8 +34,6 @@ export const WHO_JOINS = {
     { label: 'Seekers', body: 'who have tried many paths and are ready for a deeper journey' },
     { label: 'Global citizens', body: 'who want to align their travel with their values and their purpose with their soul' },
   ],
-  closing:
-    'This retreat is not for everyone. It is for the few ready to leave the surface, the familiar and the comfortable behind — willing to be seen, to be vulnerable, and to grow.',
 }
 
 export const VILLA_PERKS = [
