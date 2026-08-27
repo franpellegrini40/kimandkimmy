@@ -1,7 +1,5 @@
 import Button from '@/components/ui/Button'
-import Logo from '@/components/ui/Logo'
 import { ALLIANCE_TAGLINE } from '@/content/alliance'
-import { BRAND_PILLARS } from '@/content/site'
 import type { SiteId } from '@/lib/site'
 
 export default function Hero({ site }: { site: SiteId }) {
@@ -13,14 +11,14 @@ export default function Hero({ site }: { site: SiteId }) {
       style={{ background: 'var(--ivory)', color: 'var(--text-primary)' }}
     >
       <div className="container-vivra relative z-10 flex flex-col items-center gap-6 py-32">
-        <Logo className="h-14 w-auto md:h-20 lg:h-24" />
+        <span className="eyebrow text-sm">{ALLIANCE_TAGLINE}</span>
 
-        <span className="eyebrow">{ALLIANCE_TAGLINE}</span>
-
-        <h1 className="max-w-3xl text-4xl leading-tight md:text-6xl">{BRAND_PILLARS.tagline}</h1>
+        <h1 className="max-w-2xl text-3xl leading-tight md:text-5xl">
+          Live longer. Think bigger. <em style={{ color: 'var(--accent-deep)' }}>Leave it better.</em>
+        </h1>
 
         <p className="max-w-xl text-base md:text-lg" style={{ color: 'var(--text-secondary)' }}>
-          {BRAND_PILLARS.subtext}
+          Where wellbeing becomes potential, travel becomes purpose, and connection becomes impact.
         </p>
 
         <div className="mt-4 flex flex-wrap justify-center gap-4">
