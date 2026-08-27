@@ -20,6 +20,11 @@ export const CTA_COPY = {
   alliance: 'Join VIVRA World Alliance',
 } as const
 
+export const BRAND_PILLARS = {
+  tagline: 'Balance to live longer. Backed to think bigger. Awareness to leave it better.',
+  subtext: 'Where wellbeing becomes potential, travel becomes purpose, and connection becomes impact.',
+}
+
 export const FOOTER_LINKS = {
   primary: [
     { label: 'Join VIVRA', href: '/membership' },
