@@ -18,7 +18,7 @@ export default function MembershipTeaser() {
         <p className="mt-4" style={{ color: 'var(--text-secondary)' }}>{PLATFORM_MVP.body}</p>
         <div className="mt-8 flex flex-wrap gap-4">
           <Button href="/apply/join">{PLATFORM_MVP.cta}</Button>
-          <Button href="/alliance" variant="secondary">
+          <Button href="/membership" variant="secondary">
             Explore Membership
           </Button>
         </div>

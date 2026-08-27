@@ -6,7 +6,6 @@ export default function Photo({
   alt,
   aspect = 'aspect-[4/5]',
   className,
-  imgClassName,
   priority = false,
   sizes = '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw',
   quality = 85,
@@ -15,7 +14,6 @@ export default function Photo({
   alt: string
   aspect?: string
   className?: string
-  imgClassName?: string
   priority?: boolean
   sizes?: string
   quality?: number
@@ -29,7 +27,7 @@ export default function Photo({
         sizes={sizes}
         priority={priority}
         quality={quality}
-        className={clsx('object-cover', imgClassName)}
+        className="object-cover"
       />
     </div>
   )

@@ -2,12 +2,12 @@ export type SiteId = 'vivra-world' | 'join-vivra'
 
 export const NAV_ITEMS = [
   { label: 'VIVRA', href: '/' },
-  { label: 'Philosophy', href: '/#philosophy' },
-  { label: 'Ecosystem', href: '/#ecosystem' },
+  { label: 'Ibiza', href: '/ibiza' },
+  { label: 'Experience', href: '/ibiza#experience' },
+  { label: 'People', href: '/people' },
+  { label: 'Membership', href: '/membership' },
   { label: 'Venues', href: '/venues' },
-  { label: 'Lifestyle', href: '/lifestyle' },
   { label: 'Alliance', href: '/alliance' },
-  { label: 'Concierge', href: '/concierge' },
   { label: 'Impact', href: '/impact' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -22,7 +22,7 @@ export const CTA_COPY = {
 
 export const FOOTER_LINKS = {
   primary: [
-    { label: 'Join VIVRA', href: '/alliance' },
+    { label: 'Join VIVRA', href: '/membership' },
     { label: 'Ibiza Retreat', href: '/ibiza' },
     { label: 'World Alliance', href: '/alliance' },
   ],

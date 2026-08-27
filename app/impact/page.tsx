@@ -4,7 +4,6 @@ import PageShell from '@/components/layout/PageShell'
 import Section from '@/components/ui/Section'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import Photo from '@/components/ui/Photo'
-import VivraPassport from '@/components/sections/VivraPassport'
 import { IMPACT_POSITIONING, IMPACT_POC_INTRO, POC_PARTNERS, IMPACT_PARTNERSHIP } from '@/content/impact'
 import CTABand from '@/components/sections/CTABand'
 
@@ -24,27 +23,6 @@ export default async function ImpactPage() {
           <h1 className="mt-4 max-w-2xl text-3xl md:text-4xl">{IMPACT_POSITIONING.heading}</h1>
           <p className="mt-6 max-w-xl" style={{ color: 'var(--text-secondary)' }}>{IMPACT_POSITIONING.body}</p>
         </RevealOnScroll>
-      </Section>
-
-      <Section tone="light">
-        <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <RevealOnScroll>
-            <span className="eyebrow">Your Passport</span>
-            <h2 className="mt-4 max-w-md text-2xl md:text-3xl">Your impact, sealed in one place.</h2>
-            <p className="mt-4 max-w-md" style={{ color: 'var(--text-secondary)' }}>
-              The VIVRA Passport is the seal that carries your access, your credits and your
-              impact record across every venue in the network — verified, not declared.
-            </p>
-            <ul className="mt-6 space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
-              <li>— Clean-water credits and carbon offsets, tracked per member</li>
-              <li>— One wallet, one booking layer, member pricing everywhere</li>
-              <li>— A personal regeneration ledger, not a marketing claim</li>
-            </ul>
-          </RevealOnScroll>
-          <RevealOnScroll delay={0.1} className="flex justify-center">
-            <VivraPassport />
-          </RevealOnScroll>
-        </div>
       </Section>
 
       <Section tone="sand">

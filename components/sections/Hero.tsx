@@ -1,36 +1,48 @@
 import Button from '@/components/ui/Button'
-import { ALLIANCE_TAGLINE } from '@/content/alliance'
+import HeroVideo from './HeroVideo'
+import { RETREAT_FACTS } from '@/content/retreat'
+import type { SiteId } from '@/lib/site'
 
-export default function Hero() {
+export default function Hero({ site }: { site: SiteId }) {
+  const isJoin = site === 'join-vivra'
+
   return (
     <section
-      className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden text-center"
-      style={{ background: 'var(--ivory)', color: 'var(--text-primary)' }}
+      data-theme="prestige"
+      className="relative flex min-h-[92vh] items-end overflow-hidden"
+      style={{ color: 'var(--text-primary)' }}
     >
-      <div className="container-vivra relative z-10 flex flex-col items-center gap-5 py-32">
-        <h1
-          className="max-w-3xl text-3xl leading-tight md:text-5xl"
-          style={{ color: 'var(--accent-deep)' }}
+      <HeroVideo />
+
+      <div className="container-vivra relative z-10 flex flex-col gap-6 pb-20 pt-32">
+        <span
+          className="eyebrow inline-block w-fit px-3 py-1.5"
+          style={{ color: 'var(--copper)', background: 'rgba(0,14,33,0.55)' }}
         >
-          {ALLIANCE_TAGLINE}
-        </h1>
+          {RETREAT_FACTS.status}
+        </span>
 
-        <p className="max-w-2xl text-lg md:text-xl">
-          Live longer. Think bigger. <em style={{ color: 'var(--forest)' }}>Leave it better.</em>
-        </p>
+        <h1 className="max-w-2xl text-4xl leading-tight md:text-6xl">{RETREAT_FACTS.tagline}</h1>
 
-        <div className="mt-4 flex flex-wrap justify-center gap-4">
-          <Button href="/apply/join" variant="accent" size="sm">
-            Request Invitation
+        {isJoin ? (
+          <p className="max-w-md text-sm uppercase tracking-caps" style={{ color: 'var(--text-secondary)' }}>
+            {RETREAT_FACTS.dates} · Can Aylma, Ibiza
+          </p>
+        ) : (
+          <p className="max-w-lg text-base md:text-lg" style={{ color: 'var(--text-secondary)' }}>
+            {RETREAT_FACTS.subTagline} VIVRA begins in Ibiza — and continues as a global
+            community.
+          </p>
+        )}
+
+        <div className="mt-4 flex flex-wrap gap-4">
+          <Button href={isJoin ? '/apply/ibiza' : '/apply/join'} variant="accent">
+            {isJoin ? 'Join the Founding Retreat' : 'Join VIVRA'}
           </Button>
-          <Button href="/impact" variant="secondary" size="sm">
-            See Your Passport
+          <Button href={isJoin ? '/' : '/ibiza'} variant="secondary">
+            {isJoin ? 'Discover VIVRA' : 'Explore Ibiza Founding Retreat'}
           </Button>
         </div>
-
-        <p className="mt-2 max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
-          Where wellbeing becomes potential, travel becomes purpose, and connection becomes impact.
-        </p>
       </div>
     </section>
   )

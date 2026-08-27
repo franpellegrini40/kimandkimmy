@@ -22,21 +22,19 @@ export const ALLIANCE_MEMBERSHIP = {
   body: 'Joining the alliance doesn’t hand your members another card — it upgrades the club itself. One membership, one wallet, one booking layer, member pricing everywhere they go. We call it the VIVRA Passport: a single credential that carries your access, your credits and your impact across every venue in the network. Every booking creates verified impact — clean-water credits and carbon offsets, tracked per member. Admission is by application.',
 }
 
-// `region` groups venues for the filter tabs on /venues. `tag` is an editorial
-// descriptor (not a certified claim) — swap in anything more specific per venue.
 export const ALLIANCE_VENUES = [
-  { name: 'Holbox', location: 'Mexico', status: 'open', region: 'americas', tag: 'Car-Free Island', image: '/images/alliance/holbox.jpg' },
-  { name: 'Puglia', location: 'Italy', status: 'open', region: 'europe', tag: 'Countryside Estate', image: '/images/alliance/puglia.jpg' },
-  { name: 'Viirelaid', location: 'Estonia', status: 'open', region: 'europe', tag: 'Private Island', image: '/images/alliance/viirelaid.jpg' },
-  { name: 'Koh Phangan', location: 'Thailand', status: 'open', region: 'asia', tag: 'Wellness Island', image: '/images/alliance/koh-phangan.jpg' },
-  { name: 'Antigua', location: 'Caribbean', status: 'open', region: 'americas', tag: 'Beachfront', image: '/images/alliance/antigua.jpg' },
-  { name: 'Ibiza', location: 'Spain', status: 'open', region: 'europe', tag: 'Founding Home', image: '/images/alliance/ibiza.jpg' },
-  { name: 'Costa Rica', location: 'Central America', status: 'open', region: 'americas', tag: 'Rainforest Estate', image: '/images/alliance/costa-rica.jpg' },
-  { name: 'Bali', location: 'Indonesia', status: 'soon', region: 'asia', tag: 'Cliffside', image: '/images/alliance/bali.jpg' },
-  { name: 'Sri Lanka', location: 'Indian Ocean', status: 'open', region: 'asia', tag: 'Ocean Retreat', image: '/images/alliance/sri-lanka.jpg' },
-  { name: 'Dubai', location: 'UAE', status: 'soon', region: 'middle-east', tag: 'Desert Gateway', image: '/images/alliance/dubai.jpg' },
-  { name: 'Hamptons', location: 'USA', status: 'soon', region: 'americas', tag: 'Coastal Estate', image: '/images/alliance/hamptons.jpg' },
-  { name: 'Patagonia', location: 'Argentina', status: 'soon', region: 'americas', tag: 'Wild Frontier', image: '/images/alliance/patagonia.jpg' },
+  { name: 'Holbox', location: 'Mexico', status: 'open', image: '/images/alliance/holbox.jpg' },
+  { name: 'Puglia', location: 'Italy', status: 'open', image: '/images/alliance/puglia.jpg' },
+  { name: 'Viirelaid', location: 'Estonia', status: 'open', image: '/images/alliance/viirelaid.jpg' },
+  { name: 'Koh Phangan', location: 'Thailand', status: 'open', image: '/images/alliance/koh-phangan.jpg' },
+  { name: 'Antigua', location: 'Caribbean', status: 'open', image: '/images/alliance/antigua.jpg' },
+  { name: 'Ibiza', location: 'Spain', status: 'open', image: '/images/alliance/ibiza.jpg' },
+  { name: 'Costa Rica', location: 'Central America', status: 'open', image: '/images/alliance/costa-rica.jpg' },
+  { name: 'Bali', location: 'Indonesia', status: 'soon', image: '/images/alliance/bali.jpg' },
+  { name: 'Sri Lanka', location: 'Indian Ocean', status: 'open', image: '/images/alliance/sri-lanka.jpg' },
+  { name: 'Dubai', location: 'UAE', status: 'soon', image: '/images/alliance/dubai.jpg' },
+  { name: 'Hamptons', location: 'USA', status: 'soon', image: '/images/alliance/hamptons.jpg' },
+  { name: 'Patagonia', location: 'Argentina', status: 'soon', image: '/images/alliance/patagonia.jpg' },
 ] as const
 
 export const ALLIANCE_VENUES_INTRO = {
