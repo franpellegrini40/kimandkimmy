@@ -14,7 +14,7 @@ export default function Hero({ site }: { site: SiteId }) {
         <span className="eyebrow text-sm">{ALLIANCE_TAGLINE}</span>
 
         <h1 className="max-w-2xl text-3xl leading-tight md:text-5xl">
-          Live longer. Think bigger. <em style={{ color: 'var(--accent-deep)' }}>Leave it better.</em>
+          Live longer. Think bigger. <em style={{ color: 'var(--forest)' }}>Leave it better.</em>
         </h1>
 
         <p className="max-w-xl text-base md:text-lg" style={{ color: 'var(--text-secondary)' }}>

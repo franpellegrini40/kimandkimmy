@@ -15,7 +15,12 @@ export default function Philosophy() {
         {PHILOSOPHY_PILLARS.map((pillar, i) => (
           <RevealOnScroll key={pillar.key} delay={i * 0.06}>
             <Photo src={pillar.image} alt={pillar.imageAlt} aspect="aspect-[4/5]" />
-            <span className="eyebrow mt-5 inline-block">{pillar.eyebrow}</span>
+            <span
+              className="eyebrow mt-5 inline-block"
+              style={pillar.key === 'leave-it-better' ? { color: 'var(--forest-deep)' } : undefined}
+            >
+              {pillar.eyebrow}
+            </span>
             <h3 className="mt-2 text-2xl">{pillar.label}</h3>
             <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
               {pillar.body}
