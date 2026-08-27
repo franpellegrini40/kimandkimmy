@@ -42,6 +42,20 @@ export const allianceSchema = z.object({
   source: z.string().optional(),
 })
 
+export const conciergeSchema = z.object({
+  firstName: z.string().min(1, 'Required'),
+  lastName: z.string().min(1, 'Required'),
+  email: z.string().email('Enter a valid email'),
+  home: z.string().min(1, 'Required'),
+  purpose: z.string().min(1, 'Required'),
+  arrival: z.string().min(1, 'Required'),
+  departure: z.string().min(1, 'Required'),
+  note: z.string().optional().or(z.literal('')),
+  utm: z.record(z.string()).optional(),
+  source: z.string().optional(),
+})
+
 export type JoinInput = z.infer<typeof joinSchema>
 export type IbizaInput = z.infer<typeof ibizaSchema>
 export type AllianceInput = z.infer<typeof allianceSchema>
+export type ConciergeInput = z.infer<typeof conciergeSchema>

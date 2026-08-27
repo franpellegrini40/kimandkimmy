@@ -7,6 +7,7 @@ import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import VenueGrid from '@/components/sections/VenueGrid'
 import VivraEcosystem from '@/components/sections/VivraEcosystem'
 import VivraPassport from '@/components/sections/VivraPassport'
+import TiersGrid from '@/components/sections/TiersGrid'
 import {
   ALLIANCE_TAGLINE,
   ALLIANCE_POSITIONING,
@@ -65,6 +66,9 @@ export default async function AlliancePage() {
           <RevealOnScroll delay={0.1} className="flex justify-center">
             <VivraPassport />
           </RevealOnScroll>
+        </div>
+        <div className="mt-16">
+          <TiersGrid />
         </div>
       </Section>
 
