@@ -7,7 +7,7 @@ export default function Hero() {
       className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden text-center"
       style={{ background: 'var(--ivory)', color: 'var(--text-primary)' }}
     >
-      <div className="container-vivra relative z-10 flex flex-col items-center gap-5 py-32">
+      <div className="container-vivra relative z-10 flex flex-col items-center gap-8 py-32 md:gap-10">
         <h1
           className="max-w-3xl text-3xl leading-tight md:text-5xl"
           style={{ color: 'var(--accent-deep)' }}
@@ -19,7 +19,7 @@ export default function Hero() {
           Live longer. Think bigger. <em style={{ color: 'var(--forest)' }}>Leave it better.</em>
         </p>
 
-        <div className="mt-4 flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           <Button href="/apply/join" variant="accent" size="xs">
             Request Invitation
           </Button>
@@ -28,7 +28,7 @@ export default function Hero() {
           </Button>
         </div>
 
-        <p className="mt-8 max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
+        <p className="mt-4 max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
           Where wellbeing becomes potential, travel becomes purpose, and connection becomes impact.
         </p>
       </div>
