@@ -78,7 +78,7 @@ export default function EcosystemStory() {
       </Section>
 
       {/* Chapter 4 — Physical ecosystem manifesto, immersive gathering image */}
-      <Section tone="dark">
+      <Section tone="sand">
         <RevealOnScroll>
           <Photo
             src={manifesto.image}
@@ -93,13 +93,11 @@ export default function EcosystemStory() {
             <span className="eyebrow">{manifesto.eyebrow}</span>
             <span
               className="mt-1 block text-[10px] uppercase"
-              style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--white-a70)' }}
+              style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--text-quiet)' }}
             >
               {manifesto.eyebrowSub}
             </span>
-            <h2 className="mt-4 text-3xl md:text-4xl" style={{ color: 'var(--text-primary)' }}>
-              {manifesto.heading}
-            </h2>
+            <h2 className="mt-4 text-3xl md:text-4xl">{manifesto.heading}</h2>
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.08} className="mt-6 space-y-4 text-sm" style={{ color: 'var(--text-secondary)' }}>
@@ -109,7 +107,7 @@ export default function EcosystemStory() {
 
           <RevealOnScroll delay={0.14} className="mt-8 space-y-1 text-sm">
             <p style={{ color: 'var(--text-secondary)' }}>{manifesto.lineDigital}</p>
-            <p style={{ color: 'var(--copper-deep)' }}>{manifesto.linePhysical}</p>
+            <p style={{ color: 'var(--forest-deep)' }}>{manifesto.linePhysical}</p>
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.2} className="mt-8">

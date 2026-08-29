@@ -76,6 +76,13 @@
     scroll-behavior: smooth;
   }
 
+  /* Offsets every anchor target by the fixed header's height (h-20 = 80px)
+     plus breathing room, so a jump to #philosophy etc. doesn't land the
+     section title underneath the header. */
+  [id] {
+    scroll-margin-top: 96px;
+  }
+
   body {
     @apply font-body antialiased;
     background: var(--surface-page);
