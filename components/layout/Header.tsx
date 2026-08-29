@@ -135,33 +135,39 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
               <Logo className="h-6 w-auto" />
             </Link>
 
-            <nav aria-label="Primary" className="flex items-center gap-9">
-              {LINKS.map((item) => {
-                const isActive = activeHref === item.href
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    aria-current={isActive ? 'true' : undefined}
-                    className="relative py-2 text-[11px] uppercase transition-colors hover:text-[var(--forest-deep)]"
-                    style={{
-                      letterSpacing: 'var(--tracking-caps)',
-                      color: isActive ? 'var(--accent-deep)' : 'var(--text-primary)',
-                    }}
-                  >
-                    {item.label}
-                    <span
-                      className="absolute inset-x-0 -bottom-0.5 h-px origin-left transition-transform duration-300"
-                      style={{ background: 'var(--accent-deep)', transform: isActive ? 'scaleX(1)' : 'scaleX(0)' }}
-                    />
-                  </Link>
-                )
-              })}
-            </nav>
+            <div className="flex items-center gap-8">
+              <nav aria-label="Primary" className="flex items-center gap-7">
+                {LINKS.map((item) => {
+                  const isActive = activeHref === item.href
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      aria-current={isActive ? 'true' : undefined}
+                      className="relative py-2 text-[10px] uppercase transition-colors hover:text-[var(--forest-deep)]"
+                      style={{
+                        letterSpacing: 'var(--tracking-caps)',
+                        color: isActive ? 'var(--accent-deep)' : 'var(--text-primary)',
+                      }}
+                    >
+                      {item.label}
+                      <span
+                        className="absolute inset-x-0 -bottom-0.5 h-px origin-left transition-transform duration-300"
+                        style={{ background: 'var(--accent-deep)', transform: isActive ? 'scaleX(1)' : 'scaleX(0)' }}
+                      />
+                    </Link>
+                  )
+                })}
+              </nav>
 
-            <Button href={CTA_HREF} variant={solid ? 'primary' : 'secondary'}>
-              {CTA_COPY.invite}
-            </Button>
+              <Button
+                href={CTA_HREF}
+                size="sm"
+                className="!border-[var(--navy)] !bg-[var(--navy)] !text-white hover:!border-[var(--copper)] hover:!bg-[var(--copper)]"
+              >
+                {CTA_COPY.invite}
+              </Button>
+            </div>
           </div>
         </div>
       </header>
