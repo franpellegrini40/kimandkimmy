@@ -31,9 +31,16 @@ export default function EcosystemStory() {
             <span className="eyebrow">{founding.eyebrow}</span>
             <h2 className="mt-4 max-w-lg text-3xl md:text-4xl">{founding.heading}</h2>
             <div className="mt-5 max-w-md space-y-4 text-sm" style={{ color: 'var(--text-secondary)' }}>
-              {founding.paragraphs.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
+              {founding.paragraphs.map((p, i) =>
+                i === founding.paragraphs.length - 1 ? (
+                  <p key={i}>
+                    {p.replace('one living ecosystem.', '')}
+                    <span style={{ color: 'var(--forest-deep)' }}>one living ecosystem.</span>
+                  </p>
+                ) : (
+                  <p key={i}>{p}</p>
+                ),
+              )}
             </div>
           </RevealOnScroll>
 
