@@ -50,17 +50,8 @@ export default function EcosystemStory() {
         </div>
       </Section>
 
-      {/* Chapter 4 — Physical ecosystem manifesto, immersive gathering image */}
+      {/* Chapter 4 — Physical ecosystem manifesto */}
       <Section tone="sand">
-        <RevealOnScroll>
-          <Photo
-            src={manifesto.image}
-            alt={manifesto.imageAlt}
-            aspect="aspect-video"
-            className="mb-14"
-          />
-        </RevealOnScroll>
-
         <div className="mx-auto max-w-2xl text-center">
           <RevealOnScroll>
             <span className="eyebrow">{manifesto.eyebrow}</span>
