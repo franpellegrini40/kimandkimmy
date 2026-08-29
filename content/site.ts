@@ -11,6 +11,7 @@ export const NAV_ITEMS = [
   { label: 'Ecosystem', href: '/#ecosystem' },
   { label: 'Venues', href: '/venues' },
   { label: 'Membership', href: '/#membership' },
+  { label: 'News', href: '/news' },
 ]
 
 export const CTA_COPY = {

@@ -4,7 +4,6 @@ import Hero from '@/components/sections/Hero'
 import BrandReel from '@/components/sections/BrandReel'
 import Philosophy from '@/components/sections/Philosophy'
 import VivraEcosystem from '@/components/sections/VivraEcosystem'
-import FoundingRetreat from '@/components/sections/FoundingRetreat'
 import EcosystemStory from '@/components/sections/EcosystemStory'
 import VillaGallery from '@/components/sections/VillaGallery'
 import ExperiencePillars from '@/components/sections/ExperiencePillars'
@@ -23,7 +22,6 @@ export default async function HomePage() {
       <BrandReel />
       <Philosophy />
       <VivraEcosystem />
-      <FoundingRetreat />
       <EcosystemStory />
       <ExperiencePillars />
       <VillaGallery />
