@@ -15,9 +15,16 @@ export default function Hero() {
           {ALLIANCE_TAGLINE}
         </h1>
 
-        <p className="max-w-2xl text-lg md:text-xl">
-          Live longer. Think bigger. <em style={{ color: 'var(--forest)' }}>Leave it better.</em>
-        </p>
+        <div
+          className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-base uppercase md:text-xl"
+          style={{ letterSpacing: 'var(--tracking-caps)' }}
+        >
+          <span style={{ color: 'var(--accent-deep)' }}>Live longer</span>
+          <span style={{ color: 'var(--text-quiet)' }}>·</span>
+          <span>Think bigger</span>
+          <span style={{ color: 'var(--text-quiet)' }}>·</span>
+          <span className="italic" style={{ color: 'var(--forest)' }}>Leave it better</span>
+        </div>
 
         <div className="flex flex-wrap justify-center gap-4">
           <Button href="/apply/join" variant="accent" size="xs">
