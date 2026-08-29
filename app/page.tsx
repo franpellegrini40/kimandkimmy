@@ -1,6 +1,7 @@
 import { getCurrentSite } from '@/lib/site'
 import PageShell from '@/components/layout/PageShell'
 import Hero from '@/components/sections/Hero'
+import BrandReel from '@/components/sections/BrandReel'
 import Philosophy from '@/components/sections/Philosophy'
 import VivraEcosystem from '@/components/sections/VivraEcosystem'
 import FoundingRetreat from '@/components/sections/FoundingRetreat'
@@ -19,6 +20,7 @@ export default async function HomePage() {
   return (
     <PageShell site={site} overHero>
       <Hero />
+      <BrandReel />
       <Philosophy />
       <VivraEcosystem />
       <FoundingRetreat />

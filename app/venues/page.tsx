@@ -5,6 +5,7 @@ import Section from '@/components/ui/Section'
 import Button from '@/components/ui/Button'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import VenueGrid from '@/components/sections/VenueGrid'
+import BrandReel from '@/components/sections/BrandReel'
 import CTABand from '@/components/sections/CTABand'
 
 export const metadata: Metadata = {
@@ -26,6 +27,11 @@ export default async function VenuesPage() {
             regenerative standard, opening steadily across five continents.
           </p>
         </RevealOnScroll>
+      </Section>
+
+      <BrandReel />
+
+      <Section tone="light">
         <VenueGrid />
         <RevealOnScroll delay={0.1} className="mt-10 flex flex-wrap gap-4">
           <Button href="/apply/alliance">Enquire About a Venue</Button>
