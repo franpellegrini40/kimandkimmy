@@ -28,7 +28,7 @@ export default function Hero() {
           </Button>
         </div>
 
-        <p className="mt-2 max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
+        <p className="mt-8 max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
           Where wellbeing becomes potential, travel becomes purpose, and connection becomes impact.
         </p>
       </div>

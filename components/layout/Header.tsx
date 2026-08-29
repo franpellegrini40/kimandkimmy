@@ -143,7 +143,7 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
                     key={item.href}
                     href={item.href}
                     aria-current={isActive ? 'true' : undefined}
-                    className="relative py-2 text-[13px] uppercase transition-colors hover:text-[var(--accent-deep)]"
+                    className="relative py-2 text-[11px] uppercase transition-colors hover:text-[var(--forest-deep)]"
                     style={{
                       letterSpacing: 'var(--tracking-caps)',
                       color: isActive ? 'var(--accent-deep)' : 'var(--text-primary)',

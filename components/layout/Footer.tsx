@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             <span className="mb-1 text-xs uppercase" style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--text-quiet)' }}>VIVRA</span>
             {FOOTER_LINKS.primary.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:opacity-70">
+              <Link key={l.label} href={l.href} className="hover:opacity-70">
                 {l.label}
               </Link>
             ))}

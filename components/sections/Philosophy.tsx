@@ -21,7 +21,12 @@ export default function Philosophy() {
             >
               {pillar.eyebrow}
             </span>
-            <h3 className="mt-2 text-2xl">{pillar.label}</h3>
+            <h3
+              className="mt-2 text-2xl"
+              style={{ color: pillar.key === 'leave-it-better' ? 'var(--forest)' : 'var(--accent-deep)' }}
+            >
+              {pillar.label}
+            </h3>
             <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
               {pillar.body}
             </p>
