@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import RevealOnScroll from '@/components/ui/RevealOnScroll'
 
 export default function BrandReel() {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -37,6 +38,12 @@ export default function BrandReel() {
       style={{ background: 'var(--navy)' }}
       aria-label="A glimpse of the VIVRA World Alliance"
     >
+      <RevealOnScroll className="px-6 pb-8 pt-14 text-center md:pt-20">
+        <p className="text-xl md:text-2xl" style={{ color: 'var(--ivory)' }}>
+          Exceptional homes, <em style={{ color: 'var(--copper)', fontStyle: 'italic' }}>reserved for meaningful gathering.</em>
+        </p>
+      </RevealOnScroll>
+
       <video
         ref={videoRef}
         className="block h-[56vh] w-full object-cover md:h-[82vh]"

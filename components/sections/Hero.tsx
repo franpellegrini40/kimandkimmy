@@ -20,10 +20,10 @@ export default function Hero() {
         </p>
 
         <div className="mt-4 flex flex-wrap justify-center gap-4">
-          <Button href="/apply/join" variant="accent" size="sm">
+          <Button href="/apply/join" variant="accent" size="xs">
             Request Invitation
           </Button>
-          <Button href="/impact" variant="secondary" size="sm">
+          <Button href="/impact" variant="secondary" size="xs">
             See Your Passport
           </Button>
         </div>

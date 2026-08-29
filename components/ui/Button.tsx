@@ -12,6 +12,7 @@ const base =
 const sizes = {
   md: 'px-7 py-3.5 text-[11px]',
   sm: 'px-5 py-2.5 text-[10px]',
+  xs: 'px-4 py-2 text-[9px]',
 }
 
 const styles: Record<Variant, string> = {
