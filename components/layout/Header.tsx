@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { clsx } from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, useReducedMotion } from 'framer-motion'
@@ -144,11 +145,12 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
                       key={item.href}
                       href={item.href}
                       aria-current={isActive ? 'true' : undefined}
-                      className="relative py-2 text-[10px] uppercase transition-colors hover:text-[var(--forest-deep)]"
-                      style={{
-                        letterSpacing: 'var(--tracking-caps)',
-                        color: isActive ? 'var(--accent-deep)' : 'var(--text-primary)',
-                      }}
+                      onClick={() => setActiveHref(item.href)}
+                      className={clsx(
+                        'relative py-2 text-[10px] uppercase transition-colors hover:!text-[var(--forest-deep)]',
+                        isActive ? 'text-[var(--accent-deep)]' : 'text-[var(--text-primary)]',
+                      )}
+                      style={{ letterSpacing: 'var(--tracking-caps)' }}
                     >
                       {item.label}
                       <span
