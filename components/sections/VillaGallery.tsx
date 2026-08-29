@@ -29,7 +29,7 @@ export default function VillaGallery() {
         <h2 className="mt-4 max-w-xl text-3xl md:text-4xl">Can Aylma — where it happens.</h2>
       </RevealOnScroll>
 
-      <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+      <div className="mt-10 grid grid-cols-2 gap-4 [grid-auto-flow:dense] md:grid-cols-4">
         {GALLERY_PHOTOS.map((photo, i) => (
           <RevealOnScroll
             key={photo.src}
