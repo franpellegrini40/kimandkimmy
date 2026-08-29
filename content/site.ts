@@ -7,7 +7,6 @@ export type SiteId = 'vivra-world' | 'join-vivra'
 export const NAV_ITEMS = [
   { label: 'VIVRA', href: '/' },
   { label: 'Philosophy', href: '/#philosophy' },
-  { label: 'Experiences', href: '/#experience' },
   { label: 'Ecosystem', href: '/#ecosystem' },
   { label: 'Venues', href: '/venues' },
   { label: 'Membership', href: '/#membership' },

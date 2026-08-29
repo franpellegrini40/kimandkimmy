@@ -5,7 +5,7 @@ import Button from '@/components/ui/Button'
 import { ECOSYSTEM_STORY } from '@/content/ecosystem'
 
 export default function EcosystemStory() {
-  const { intro, founding, profiles, manifesto } = ECOSYSTEM_STORY
+  const { intro, founding, manifesto } = ECOSYSTEM_STORY
 
   return (
     <>
@@ -47,33 +47,6 @@ export default function EcosystemStory() {
           <RevealOnScroll delay={0.1} className="md:order-1">
             <Photo src={founding.image} alt={founding.imageAlt} aspect="aspect-[4/5]" />
           </RevealOnScroll>
-        </div>
-      </Section>
-
-      {/* Chapter 3 — Six ecosystem profiles, elegant typographic cards */}
-      <Section tone="light">
-        <RevealOnScroll className="mb-10 max-w-lg">
-          <span className="eyebrow">Who Shapes the Ecosystem</span>
-        </RevealOnScroll>
-
-        <div className="grid gap-px overflow-hidden border sm:grid-cols-2 md:grid-cols-3" style={{ borderColor: 'var(--rule)', background: 'var(--rule)' }}>
-          {profiles.map((profile, i) => (
-            <RevealOnScroll key={profile.label} delay={i * 0.04}>
-              <div
-                className="group h-full p-7 transition-transform duration-500 ease-out hover:-translate-y-1"
-                style={{ background: 'var(--surface-raised)' }}
-              >
-                <h3 className="text-lg transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
-                  {profile.label}
-                </h3>
-                <span
-                  className="mt-3 block h-px w-8 transition-all duration-300 group-hover:w-14"
-                  style={{ background: 'var(--accent)' }}
-                />
-                <p className="mt-4 text-sm" style={{ color: 'var(--text-quiet)' }}>{profile.body}</p>
-              </div>
-            </RevealOnScroll>
-          ))}
         </div>
       </Section>
 
