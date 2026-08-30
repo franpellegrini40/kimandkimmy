@@ -13,8 +13,13 @@ export default function Philosophy() {
 
       <div className="mt-12 grid gap-10 md:grid-cols-3">
         {PHILOSOPHY_PILLARS.map((pillar, i) => (
-          <RevealOnScroll key={pillar.key} delay={i * 0.06}>
-            <Photo src={pillar.image} alt={pillar.imageAlt} aspect="aspect-[4/5]" />
+          <RevealOnScroll key={pillar.key} delay={i * 0.06} className="group">
+            <Photo
+              src={pillar.image}
+              alt={pillar.imageAlt}
+              aspect="aspect-[4/5]"
+              imgClassName="transition-transform duration-700 ease-out group-hover:scale-110 group-active:scale-110"
+            />
             <span
               className="eyebrow mt-5 inline-block"
               style={pillar.key === 'leave-it-better' ? { color: 'var(--forest-deep)' } : undefined}
