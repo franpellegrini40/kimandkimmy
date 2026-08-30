@@ -1,5 +1,4 @@
 import Button from '@/components/ui/Button'
-import { ALLIANCE_TAGLINE } from '@/content/alliance'
 
 export default function Hero() {
   return (
@@ -8,29 +7,25 @@ export default function Hero() {
       style={{ background: 'var(--ivory)', color: 'var(--text-primary)' }}
     >
       <div className="container-vivra relative z-10 flex flex-col items-center gap-8 py-32 md:gap-10">
-        <h1
-          className="max-w-3xl text-3xl leading-tight md:text-5xl"
-          style={{ color: 'var(--accent-deep)' }}
+        <p
+          className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm uppercase md:text-base"
+          style={{ letterSpacing: 'var(--tracking-caps)' }}
         >
-          {ALLIANCE_TAGLINE.replace('regenerative', '\0')
-            .split('\0')
-            .map((part, i, arr) =>
-              i < arr.length - 1 ? (
-                <span key={i}>
-                  {part}
-                  <span style={{ color: 'var(--forest)' }}>regenerative</span>
-                </span>
-              ) : (
-                <span key={i}>{part}</span>
-              ),
-            )}
-        </h1>
-
-        <p className="max-w-2xl text-lg md:text-xl">
-          <span style={{ color: 'var(--accent-deep)' }}>Live longer.</span>{' '}
-          Think bigger.{' '}
-          <em style={{ color: 'var(--forest)' }}>Leave it better.</em>
+          <span style={{ color: 'var(--accent-deep)' }}>Live longer</span>
+          <span style={{ color: 'var(--text-quiet)' }}>·</span>
+          <span>Think bigger</span>
+          <span style={{ color: 'var(--text-quiet)' }}>·</span>
+          <span className="italic" style={{ color: 'var(--forest)' }}>Leave it better</span>
         </p>
+
+        <h1 className="max-w-4xl leading-[1.08]">
+          <span className="block text-4xl md:text-6xl lg:text-7xl">
+            The world&rsquo;s first <span style={{ color: 'var(--forest)' }}>regenerative</span>
+          </span>
+          <span className="mt-1 block text-4xl italic md:text-6xl lg:text-7xl" style={{ color: 'var(--accent-deep)' }}>
+            membership alliance.
+          </span>
+        </h1>
 
         <div className="flex flex-wrap justify-center gap-4">
           <Button href="/apply/join" variant="accent" size="xs">
