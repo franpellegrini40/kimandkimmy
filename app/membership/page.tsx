@@ -36,7 +36,7 @@ export default async function MembershipPage() {
 
       {/* Independent by nature. Stronger together. — the alliance model, for clubs */}
       <Section tone="dark">
-        <RevealOnScroll className="mx-auto max-w-2xl text-center">
+        <RevealOnScroll className="max-w-2xl">
           <span className="eyebrow">For Clubs &amp; Brands</span>
           <h2 className="mt-4 text-3xl md:text-4xl">{ALLIANCE_INDEPENDENCE.heading}</h2>
           <div className="mt-6 space-y-4" style={{ color: 'var(--text-secondary)' }}>

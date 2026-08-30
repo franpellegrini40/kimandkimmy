@@ -52,7 +52,7 @@ export default function EcosystemStory() {
 
       {/* Chapter 4 — Physical ecosystem manifesto */}
       <Section tone="sand">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="max-w-2xl">
           <RevealOnScroll>
             <span
               className="block text-base uppercase md:text-xl"

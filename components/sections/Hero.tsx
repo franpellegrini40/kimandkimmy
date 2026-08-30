@@ -27,11 +27,18 @@ export default function Hero() {
           </span>
         </h1>
 
+        <span
+          className="rounded-full border px-4 py-1.5 text-xs uppercase"
+          style={{ borderColor: 'var(--rule)', color: 'var(--text-quiet)', letterSpacing: 'var(--tracking-caps)' }}
+        >
+          Coming Soon
+        </span>
+
         <p className="max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
           Where wellbeing becomes potential, travel becomes purpose, and connection becomes impact.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="mt-4 flex flex-wrap justify-center gap-4">
           <Button href="/apply/join" variant="accent" size="xs">
             Request Invitation
           </Button>
