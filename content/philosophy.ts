@@ -1,6 +1,6 @@
 export const PHILOSOPHY_INTRO = {
   eyebrow: 'Philosophy',
-  heading: 'A members’ world built on three promises.',
+  heading: 'A members’ world for a living planet.',
 }
 
 export const PHILOSOPHY_PILLARS = [

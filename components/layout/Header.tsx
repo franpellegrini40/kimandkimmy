@@ -165,7 +165,7 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
               <Button
                 href={CTA_HREF}
                 size="sm"
-                className="!border-[var(--navy)] !bg-[var(--navy)] !text-white hover:!border-[var(--copper)] hover:!bg-[var(--copper)]"
+                className="!border-[var(--navy)] !bg-[var(--navy)] !text-white hover:!border-[var(--forest)] hover:!bg-[var(--forest)]"
               >
                 {CTA_COPY.invite}
               </Button>
