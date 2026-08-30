@@ -30,8 +30,8 @@ export const ALLIANCE_INDEPENDENCE = {
   heading: 'Independent by nature. Stronger together.',
   body: [
     'VIVRA does for independent clubs what OneWorld did for airlines: it connects distinct brands without asking them to become the same.',
-    'Each club keeps its identity, members and team. VIVRA upgrades what it can offer through shared access to remarkable venues, impactful people, transformative experiences and regenerative initiatives.',
-    'Clubs join the alliance. Members unlock experiences that elevate how they live and the impact they create.',
+    'Each club keeps its identity, members and team. VIVRA expands what it can offer through shared access to remarkable venues, technology, lifestyle experiences and regenerative initiatives.',
+    'Clubs join the alliance. Their members gain more ways to experience it.',
   ],
 }
 

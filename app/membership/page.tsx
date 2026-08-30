@@ -11,9 +11,7 @@ import {
   ALLIANCE_TAGLINE,
   ALLIANCE_POSITIONING,
   ALLIANCE_INDEPENDENCE,
-  ALLIANCE_HOW_IT_WORKS,
   ALLIANCE_MEMBERSHIP,
-  MEMBERSHIP_MANIFESTO,
 } from '@/content/alliance'
 
 export const metadata: Metadata = {
@@ -36,22 +34,6 @@ export default async function MembershipPage() {
         </RevealOnScroll>
       </Section>
 
-      {/* Not another club. A living exchange. */}
-      <Section tone="sand">
-        <RevealOnScroll className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl md:text-4xl">{MEMBERSHIP_MANIFESTO.heading}</h2>
-          <div className="mt-6 space-y-4" style={{ color: 'var(--text-secondary)' }}>
-            {MEMBERSHIP_MANIFESTO.body.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
-          <p className="mt-6 text-lg italic" style={{ color: 'var(--accent-deep)' }}>{MEMBERSHIP_MANIFESTO.closing}</p>
-          <Button href="/apply/join" className="mt-10">
-            Request an Invitation
-          </Button>
-        </RevealOnScroll>
-      </Section>
-
       {/* Independent by nature. Stronger together. — the alliance model, for clubs */}
       <Section tone="dark">
         <RevealOnScroll className="mx-auto max-w-2xl text-center">
@@ -62,19 +44,11 @@ export default async function MembershipPage() {
               <p key={i}>{p}</p>
             ))}
           </div>
-          <Button href="/apply/alliance" variant="secondary" className="mt-10">
+          <p className="mt-10 text-sm" style={{ color: 'var(--text-quiet)' }}>Are you a membership club?</p>
+          <Button href="/apply/alliance" variant="secondary" className="mt-3">
             Apply to Join the Alliance
           </Button>
         </RevealOnScroll>
-
-        <div className="mt-16 grid gap-px md:grid-cols-2" style={{ background: 'var(--rule)' }}>
-          {ALLIANCE_HOW_IT_WORKS.map((item, i) => (
-            <RevealOnScroll key={item.label} delay={i * 0.05} style={{ background: 'var(--surface-page)' }} className="p-8">
-              <div className="text-lg" style={{ color: 'var(--text-primary)' }}>{item.label}</div>
-              <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>{item.detail}</p>
-            </RevealOnScroll>
-          ))}
-        </div>
       </Section>
 
       {/* The VIVRA Passport + benefits */}
