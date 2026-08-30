@@ -27,6 +27,10 @@ export default function Hero() {
           </span>
         </h1>
 
+        <p className="max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
+          Where wellbeing becomes potential, travel becomes purpose, and connection becomes impact.
+        </p>
+
         <div className="flex flex-wrap justify-center gap-4">
           <Button href="/apply/join" variant="accent" size="xs">
             Request Invitation
@@ -35,10 +39,6 @@ export default function Hero() {
             See Your Passport
           </Button>
         </div>
-
-        <p className="mt-4 max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
-          Where wellbeing becomes potential, travel becomes purpose, and connection becomes impact.
-        </p>
       </div>
     </section>
   )
