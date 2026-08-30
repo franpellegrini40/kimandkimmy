@@ -5,8 +5,8 @@ import BrandReel from '@/components/sections/BrandReel'
 import Philosophy from '@/components/sections/Philosophy'
 import VivraEcosystem from '@/components/sections/VivraEcosystem'
 import EcosystemStory from '@/components/sections/EcosystemStory'
-import VillaGallery from '@/components/sections/VillaGallery'
 import ExperiencePillars from '@/components/sections/ExperiencePillars'
+import VenuesTeaser from '@/components/sections/VenuesTeaser'
 import HealingPractices from '@/components/sections/HealingPractices'
 import DayInLife from '@/components/sections/DayInLife'
 import MembershipTeaser from '@/components/sections/MembershipTeaser'
@@ -24,7 +24,7 @@ export default async function HomePage() {
       <VivraEcosystem />
       <EcosystemStory />
       <ExperiencePillars />
-      <VillaGallery />
+      <VenuesTeaser />
       <HealingPractices />
       <DayInLife />
       <MembershipTeaser />

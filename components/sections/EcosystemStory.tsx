@@ -52,31 +52,36 @@ export default function EcosystemStory() {
 
       {/* Chapter 4 — Physical ecosystem manifesto */}
       <Section tone="sand">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <RevealOnScroll>
-            <span className="eyebrow">{manifesto.eyebrow}</span>
             <span
-              className="mt-1 block text-[10px] uppercase"
-              style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--text-quiet)' }}
+              className="block text-base uppercase md:text-xl"
+              style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--accent-deep)' }}
+            >
+              {manifesto.eyebrow}
+            </span>
+            <span
+              className="mt-2 block text-sm uppercase md:text-base"
+              style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--text-secondary)' }}
             >
               {manifesto.eyebrowSub}
             </span>
-            <h2 className="mt-4 text-3xl md:text-4xl">{manifesto.heading}</h2>
+            <h2 className="mt-6 text-4xl md:text-5xl">{manifesto.heading}</h2>
           </RevealOnScroll>
 
-          <RevealOnScroll delay={0.08} className="mt-6 space-y-4 text-sm" style={{ color: 'var(--text-secondary)' }}>
+          <RevealOnScroll delay={0.08} className="mt-8 space-y-4 text-base md:text-lg" style={{ color: 'var(--text-secondary)' }}>
             <p>{manifesto.bodyLead}</p>
             <p>{manifesto.bodyContrast}</p>
           </RevealOnScroll>
 
-          <RevealOnScroll delay={0.14} className="mt-8 space-y-1 text-sm">
+          <RevealOnScroll delay={0.14} className="mt-8 space-y-1 text-base md:text-lg">
             <p style={{ color: 'var(--text-secondary)' }}>{manifesto.lineDigital}</p>
             <p style={{ color: 'var(--forest-deep)' }}>{manifesto.linePhysical}</p>
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.2} className="mt-8">
-            <p className="text-lg italic" style={{ color: 'var(--accent)' }}>{manifesto.tagline}</p>
-            <p className="mt-4 text-sm" style={{ color: 'var(--text-quiet)' }}>{manifesto.closing}</p>
+            <p className="text-xl italic md:text-2xl" style={{ color: 'var(--accent)' }}>{manifesto.tagline}</p>
+            <p className="mt-4 text-sm md:text-base" style={{ color: 'var(--text-quiet)' }}>{manifesto.closing}</p>
           </RevealOnScroll>
 
           {/* Chapter 5 — Final invitation */}
