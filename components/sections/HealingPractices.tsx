@@ -31,7 +31,7 @@ export default function HealingPractices() {
       </div>
 
       <RevealOnScroll delay={0.2} className="mt-10">
-        <Button href="/people" variant="ghost">Meet everyone leading VIVRA</Button>
+        <Button href="/people" variant="ghost">Meet everyone leading VIVRA gatherings and retreats</Button>
       </RevealOnScroll>
     </Section>
   )

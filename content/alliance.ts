@@ -17,6 +17,24 @@ export const ALLIANCE_HOW_IT_WORKS = [
   { label: 'Tiers that map to yours', detail: 'Explorer, Member and Legacy sit on top of whatever tiers you already offer.' },
 ]
 
+export const MEMBERSHIP_MANIFESTO = {
+  heading: 'Not another club. A living exchange.',
+  body: [
+    'VIVRA brings together remarkable places, intimate gatherings, transformative learning and trusted longevity practices within one regenerative alliance.',
+    'One membership opens the door to it all — wherever VIVRA takes you next.',
+  ],
+  closing: 'Join early. Help shape what comes next.',
+}
+
+export const ALLIANCE_INDEPENDENCE = {
+  heading: 'Independent by nature. Stronger together.',
+  body: [
+    'VIVRA does for independent clubs what OneWorld did for airlines: it connects distinct brands without asking them to become the same.',
+    'Each club keeps its identity, members and team. VIVRA upgrades what it can offer through shared access to remarkable venues, impactful people, transformative experiences and regenerative initiatives.',
+    'Clubs join the alliance. Members unlock experiences that elevate how they live and the impact they create.',
+  ],
+}
+
 export const ALLIANCE_MEMBERSHIP = {
   heading: 'Members become VIPs — Very Impactful People.',
   body: 'Joining the alliance doesn’t hand your members another card — it upgrades the club itself. One membership, one wallet, one booking layer, member pricing everywhere they go. We call it the VIVRA Passport: a single credential that carries your access, your credits and your impact across every venue in the network. Every booking creates verified impact — clean-water credits and carbon offsets, tracked per member. Admission is by application.',
@@ -27,7 +45,7 @@ export const ALLIANCE_MEMBERSHIP = {
 export const ALLIANCE_VENUES = [
   { name: 'Holbox', location: 'Mexico', status: 'open', region: 'americas', tag: 'Car-Free Island', image: '/images/alliance/holbox.jpg' },
   { name: 'Puglia', location: 'Italy', status: 'open', region: 'europe', tag: 'Countryside Estate', image: '/images/alliance/puglia.jpg' },
-  { name: 'Viirelaid', location: 'Estonia', status: 'open', region: 'europe', tag: 'Private Island', image: '/images/alliance/viirelaid.jpg' },
+  { name: 'Viirelaid', location: 'Estonia', status: 'open', region: 'europe', tag: 'Carbon Neutral Island', image: '/images/alliance/viirelaid.jpg' },
   { name: 'Koh Phangan', location: 'Thailand', status: 'open', region: 'asia', tag: 'Wellness Island', image: '/images/alliance/koh-phangan.jpg' },
   { name: 'Antigua', location: 'Caribbean', status: 'open', region: 'americas', tag: 'Beachfront', image: '/images/alliance/antigua.jpg' },
   { name: 'Ibiza', location: 'Spain', status: 'open', region: 'europe', tag: 'Founding Home', image: '/images/alliance/ibiza.jpg' },
