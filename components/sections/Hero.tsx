@@ -22,7 +22,7 @@ export default function Hero() {
           <span className="block text-4xl md:text-6xl lg:text-7xl">
             The world&rsquo;s first <span style={{ color: 'var(--forest)' }}>regenerative</span>
           </span>
-          <span className="mt-1 block text-4xl italic md:text-6xl lg:text-7xl" style={{ color: 'var(--accent-deep)' }}>
+          <span className="mt-1 block text-4xl italic md:text-6xl lg:text-7xl">
             membership alliance.
           </span>
         </h1>

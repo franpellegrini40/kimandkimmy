@@ -42,8 +42,8 @@ export default function BrandReel() {
         <p className="font-display text-4xl leading-tight md:text-6xl" style={{ color: 'var(--ivory)' }}>
           Life, elevated <em style={{ fontStyle: 'italic' }}>everywhere.</em>
         </p>
-        <p className="mt-6 text-xl md:text-2xl" style={{ color: 'var(--ivory)' }}>
-          Exceptional homes, <em style={{ color: 'var(--copper)', fontStyle: 'italic' }}>reserved for meaningful gathering.</em>
+        <p className="mt-6 text-xl md:text-2xl" style={{ color: 'var(--copper)' }}>
+          Exceptional homes, <em style={{ fontStyle: 'italic' }}>reserved for meaningful gathering.</em>
         </p>
       </RevealOnScroll>
 
