@@ -4,7 +4,7 @@ import PageShell from '@/components/layout/PageShell'
 import Section from '@/components/ui/Section'
 import Button from '@/components/ui/Button'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
-import VivraPassport from '@/components/sections/VivraPassport'
+import MemberDashboard from '@/components/sections/MemberDashboard'
 import TiersGrid from '@/components/sections/TiersGrid'
 import CTABand from '@/components/sections/CTABand'
 import {
@@ -86,7 +86,7 @@ export default async function MembershipPage() {
             <p className="mt-4" style={{ color: 'var(--text-secondary)' }}>{ALLIANCE_MEMBERSHIP.body}</p>
           </RevealOnScroll>
           <RevealOnScroll delay={0.1} className="flex justify-center">
-            <VivraPassport />
+            <MemberDashboard />
           </RevealOnScroll>
         </div>
         <div className="mt-16">
