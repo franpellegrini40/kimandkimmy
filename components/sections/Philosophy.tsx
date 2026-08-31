@@ -14,20 +14,27 @@ export default function Philosophy() {
       <div className="mt-12 grid gap-10 md:grid-cols-3">
         {PHILOSOPHY_PILLARS.map((pillar, i) => (
           <RevealOnScroll key={pillar.key} delay={i * 0.06} className="group">
-            <Photo
-              src={pillar.image}
-              alt={pillar.imageAlt}
-              aspect="aspect-[4/5]"
-              imgClassName="transition-transform duration-700 ease-out group-hover:scale-110 group-active:scale-110"
-            />
-            <span
-              className="eyebrow mt-5 inline-block"
-              style={pillar.key === 'leave-it-better' ? { color: 'var(--forest-deep)' } : undefined}
-            >
-              {pillar.eyebrow}
-            </span>
+            <div className="relative">
+              <Photo
+                src={pillar.image}
+                alt={pillar.imageAlt}
+                aspect="aspect-[4/5]"
+                imgClassName="transition-transform duration-700 ease-out group-hover:scale-110 group-active:scale-110"
+              />
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                <span
+                  className="eyebrow rounded-full px-4 py-1.5 backdrop-blur-sm"
+                  style={{
+                    background: 'rgba(247,244,238,0.88)',
+                    color: pillar.key === 'leave-it-better' ? 'var(--forest-deep)' : 'var(--accent-deep)',
+                  }}
+                >
+                  {pillar.eyebrow}
+                </span>
+              </div>
+            </div>
             <h3
-              className="mt-2 text-2xl"
+              className="mt-5 text-2xl"
               style={{ color: pillar.key === 'leave-it-better' ? 'var(--forest)' : 'var(--accent-deep)' }}
             >
               {pillar.label}

@@ -4,6 +4,12 @@ import Photo from '@/components/ui/Photo'
 import Button from '@/components/ui/Button'
 import { ECOSYSTEM_STORY } from '@/content/ecosystem'
 
+const FOUNDERS = [
+  { name: 'Manuele Monti', role: 'Co-Founder', linkedin: 'https://www.linkedin.com/in/manuelemonti/' },
+  { name: 'Francisco Pellegrini', role: 'CEO & Founder', linkedin: 'https://www.linkedin.com/in/francisco-pellegrini' },
+  { name: 'Alessandro Adamoli', role: 'Co-Founder', linkedin: 'https://www.linkedin.com/in/alessandroluigiadamoli/' },
+]
+
 export default function EcosystemStory() {
   const { intro, founding } = ECOSYSTEM_STORY
 
@@ -54,28 +60,44 @@ export default function EcosystemStory() {
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.1} className="md:order-1">
-            <div className="font-display pb-3 text-center text-lg" style={{ color: 'var(--accent-deep)' }}>
-              VIVRA
+            <div className="relative">
+              <Photo
+                src="/images/founders-trio.jpg"
+                alt="Manuele Monti, Francisco Pellegrini and Alessandro Adamoli, the founders of VIVRA"
+                aspect="aspect-[1122/1215]"
+              />
+              <div className="absolute inset-0 grid grid-cols-3">
+                {FOUNDERS.map((f) => (
+                  <a
+                    key={f.name}
+                    href={f.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${f.name} on LinkedIn`}
+                    className="group relative"
+                  >
+                    <span
+                      className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                      style={{ background: 'rgba(0,14,33,0.15)' }}
+                    />
+                  </a>
+                ))}
+              </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <Photo
-                  src="/images/founder-francisco-nologo.jpg"
-                  alt="Francisco Pellegrini, Founder & CEO of VIVRA"
-                  aspect="aspect-[4/5]"
-                />
-                <p className="mt-3 text-sm">Francisco Pellegrini</p>
-                <p className="text-xs" style={{ color: 'var(--text-quiet)' }}>Founder &amp; CEO, VIVRA</p>
-              </div>
-              <div>
-                <Photo
-                  src="/images/founder-manuele-nologo.jpg"
-                  alt="Manuele Monti, Co-Founder of VIVRA"
-                  aspect="aspect-[4/5]"
-                />
-                <p className="mt-3 text-sm">Manuele Monti</p>
-                <p className="text-xs" style={{ color: 'var(--text-quiet)' }}>Co-Founder, VIVRA</p>
-              </div>
+
+            <div className="mt-4 grid grid-cols-3 text-center">
+              {FOUNDERS.map((f) => (
+                <a
+                  key={f.name}
+                  href={f.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group px-1"
+                >
+                  <p className="text-sm transition-colors group-hover:text-[var(--accent-deep)]">{f.name}</p>
+                  <p className="text-xs" style={{ color: 'var(--text-quiet)' }}>{f.role}</p>
+                </a>
+              ))}
             </div>
           </RevealOnScroll>
         </div>

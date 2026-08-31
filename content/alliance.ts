@@ -46,7 +46,6 @@ export const ALLIANCE_VENUES = [
   { name: 'Holbox', location: 'Mexico', status: 'open', region: 'americas', tag: 'Car-Free Island', image: '/images/alliance/holbox.jpg' },
   { name: 'Puglia', location: 'Italy', status: 'open', region: 'europe', tag: 'Countryside Estate', image: '/images/alliance/puglia.jpg' },
   { name: 'Viirelaid', location: 'Estonia', status: 'open', region: 'europe', tag: 'Carbon Neutral Island', image: '/images/alliance/viirelaid.jpg' },
-  { name: 'Koh Phangan', location: 'Thailand', status: 'open', region: 'asia', tag: 'Wellness Island', image: '/images/alliance/koh-phangan.jpg' },
   { name: 'Antigua', location: 'Caribbean', status: 'open', region: 'americas', tag: 'Beachfront', image: '/images/alliance/antigua.jpg' },
   { name: 'Ibiza', location: 'Spain', status: 'open', region: 'europe', tag: 'Founding Home', image: '/images/alliance/ibiza.jpg' },
   { name: 'Costa Rica', location: 'Central America', status: 'open', region: 'americas', tag: 'Rainforest Estate', image: '/images/alliance/costa-rica.jpg' },
@@ -59,8 +58,8 @@ export const ALLIANCE_VENUES = [
 
 export const ALLIANCE_VENUES_INTRO = {
   eyebrow: 'The network',
-  heading: '12 destinations, five continents — and growing.',
-  body: 'A regenerative hospitality network, each venue upgraded to the same standard. Eight are open today; the rest are on their way.',
+  heading: '11 destinations, five continents — and growing.',
+  body: 'A regenerative hospitality network, each venue upgraded to the same standard. Seven are open today; the rest are on their way.',
 }
 
 export const ALLIANCE_BENEFITS = [
