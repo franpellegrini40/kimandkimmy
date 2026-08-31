@@ -69,41 +69,42 @@ export default function EcosystemStory() {
 
       {/* Chapter 4 — Physical ecosystem manifesto */}
       <Section tone="sand">
-        <div className="max-w-2xl">
-          <RevealOnScroll>
-            <span
-              className="block text-base uppercase md:text-xl"
-              style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--accent-deep)' }}
-            >
-              {manifesto.eyebrow}
-            </span>
-            <span
-              className="mt-2 block text-sm uppercase md:text-base"
-              style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--text-secondary)' }}
-            >
-              {manifesto.eyebrowSub}
-            </span>
-            <h2 className="mt-6 text-4xl md:text-5xl">{manifesto.heading}</h2>
-          </RevealOnScroll>
+        <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
+          <div className="max-w-lg">
+            <RevealOnScroll>
+              <span
+                className="inline-block rounded-full border px-4 py-1.5 text-xs uppercase md:text-sm"
+                style={{ borderColor: 'var(--rule)', letterSpacing: 'var(--tracking-caps)' }}
+              >
+                <span style={{ color: 'var(--accent-deep)' }}>{manifesto.eyebrow}</span>{' '}
+                <span style={{ color: 'var(--text-quiet)' }}>&middot; {manifesto.eyebrowSub}</span>
+              </span>
+              <h2 className="mt-6 text-4xl md:text-5xl">{manifesto.heading}</h2>
+            </RevealOnScroll>
 
-          <RevealOnScroll delay={0.08} className="mt-8 space-y-4 text-base md:text-lg" style={{ color: 'var(--text-secondary)' }}>
-            <p>{manifesto.bodyLead}</p>
-            <p>{manifesto.bodyContrast}</p>
-          </RevealOnScroll>
+            <RevealOnScroll delay={0.08} className="mt-8 space-y-4 text-base md:text-lg" style={{ color: 'var(--text-secondary)' }}>
+              <p>{manifesto.bodyLead}</p>
+              <p>{manifesto.bodyContrast}</p>
+            </RevealOnScroll>
 
-          <RevealOnScroll delay={0.14} className="mt-8 space-y-1 text-base md:text-lg">
-            <p style={{ color: 'var(--text-secondary)' }}>{manifesto.lineDigital}</p>
-            <p style={{ color: 'var(--forest-deep)' }}>{manifesto.linePhysical}</p>
-          </RevealOnScroll>
+            <RevealOnScroll delay={0.14} className="mt-8 space-y-1 text-base md:text-lg">
+              <p style={{ color: 'var(--text-secondary)' }}>{manifesto.lineDigital}</p>
+              <p style={{ color: 'var(--forest-deep)' }}>{manifesto.linePhysical}</p>
+            </RevealOnScroll>
 
-          <RevealOnScroll delay={0.2} className="mt-8">
-            <p className="text-xl italic md:text-2xl" style={{ color: 'var(--accent)' }}>{manifesto.tagline}</p>
-            <p className="mt-4 text-sm md:text-base" style={{ color: 'var(--text-quiet)' }}>{manifesto.closing}</p>
-          </RevealOnScroll>
+            <RevealOnScroll delay={0.2} className="mt-8">
+              <p className="text-xl italic md:text-2xl" style={{ color: 'var(--accent)' }}>{manifesto.tagline}</p>
+              <p className="mt-4 text-sm md:text-base" style={{ color: 'var(--text-quiet)' }}>{manifesto.closing}</p>
+            </RevealOnScroll>
 
-          {/* Chapter 5 — Final invitation */}
-          <RevealOnScroll delay={0.26} className="mt-12">
-            <Button href="/apply/join" variant="accent">Request an Invitation</Button>
+            {/* Chapter 5 — Final invitation */}
+            <RevealOnScroll delay={0.26} className="mt-12">
+              <Button href="/apply/join" variant="accent">Request an Invitation</Button>
+            </RevealOnScroll>
+          </div>
+
+          <RevealOnScroll delay={0.1}>
+            <Photo src={manifesto.image} alt={manifesto.imageAlt} aspect="aspect-[4/5]" />
           </RevealOnScroll>
         </div>
       </Section>

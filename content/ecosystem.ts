@@ -48,8 +48,8 @@ export const ECOSYSTEM_STORY = {
     tagline: 'Different paths. One shared direction.',
     closing:
       'Every gathering is curated for chemistry, contribution and the possibilities that can only emerge together.',
-    image: '/images/villa-evening-gathering.jpg',
-    imageAlt: 'A VIVRA gathering circle at dusk, the VIVRA sign lit on the wall',
+    image: '/images/ecosystem-physical-gathering.jpg',
+    imageAlt: 'A VIVRA circle gathered in conversation under a stone-vaulted ceiling',
   },
 }
 
