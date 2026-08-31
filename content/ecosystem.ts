@@ -12,7 +12,7 @@ export const ECOSYSTEM_STORY = {
   intro: {
     eyebrow: 'Ecosystem',
     heading: 'The right people change what becomes possible.',
-    body: 'A carefully curated mix of founders, investors, leaders, creators, wellbeing pioneers and regenerative builders — brought together by what they can discover, contribute and create.',
+    body: 'A carefully curated mix of founders, investors, leaders, creators, wellbeing pioneers, digital nomads and regenerative builders — brought together by what they can discover, contribute and create.',
     image: '/images/vivra-gathering-table.jpg',
     imageAlt: 'The VIVRA circle gathered around the long table',
   },
