@@ -44,24 +44,29 @@ export default function EcosystemStory() {
             </div>
           </RevealOnScroll>
 
-          <RevealOnScroll delay={0.1} className="grid grid-cols-2 gap-4 md:order-1">
-            <div>
-              <Photo
-                src="/people/francisco-pellegrini.jpg"
-                alt="Francisco Pellegrini, Founder & CEO of VIVRA"
-                aspect="aspect-[4/5]"
-              />
-              <p className="mt-3 text-sm">Francisco Pellegrini</p>
-              <p className="text-xs" style={{ color: 'var(--text-quiet)' }}>Founder &amp; CEO, VIVRA</p>
+          <RevealOnScroll delay={0.1} className="md:order-1">
+            <div className="font-display pb-3 text-center text-lg" style={{ color: 'var(--accent-deep)' }}>
+              VIVRA
             </div>
-            <div>
-              <Photo
-                src="/people/manuele-monti.jpg"
-                alt="Manuele Monti, Co-Founder of VIVRA"
-                aspect="aspect-[4/5]"
-              />
-              <p className="mt-3 text-sm">Manuele Monti</p>
-              <p className="text-xs" style={{ color: 'var(--text-quiet)' }}>Co-Founder, VIVRA</p>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Photo
+                  src="/images/founder-francisco-nologo.jpg"
+                  alt="Francisco Pellegrini, Founder & CEO of VIVRA"
+                  aspect="aspect-[4/5]"
+                />
+                <p className="mt-3 text-sm">Francisco Pellegrini</p>
+                <p className="text-xs" style={{ color: 'var(--text-quiet)' }}>Founder &amp; CEO, VIVRA</p>
+              </div>
+              <div>
+                <Photo
+                  src="/images/founder-manuele-nologo.jpg"
+                  alt="Manuele Monti, Co-Founder of VIVRA"
+                  aspect="aspect-[4/5]"
+                />
+                <p className="mt-3 text-sm">Manuele Monti</p>
+                <p className="text-xs" style={{ color: 'var(--text-quiet)' }}>Co-Founder, VIVRA</p>
+              </div>
             </div>
           </RevealOnScroll>
         </div>
