@@ -11,10 +11,13 @@ export const ECOSYSTEM_INTRO = {
 export const ECOSYSTEM_STORY = {
   intro: {
     eyebrow: 'Ecosystem',
-    heading: 'The right people change what becomes possible.',
-    body: 'A carefully curated mix of founders, investors, leaders, creators, wellbeing pioneers, digital nomads and regenerative builders — brought together by what they can discover, contribute and create.',
-    image: '/images/vivra-gathering-table.jpg',
-    imageAlt: 'The VIVRA circle gathered around the long table',
+    heading: 'A gathering should change more than your network.',
+    body: [
+      'VIVRA combines intimate masterclasses led by globally respected practitioners, wellbeing and transformative experiences, and carefully curated connections to help members rethink how they live, lead and contribute.',
+      'Every gathering is designed to leave you with greater clarity, practical tools, trusted relationships and meaningful opportunities already in motion.',
+    ],
+    image: '/images/ecosystem-physical-gathering.jpg',
+    imageAlt: 'A VIVRA circle gathered in conversation under a stone-vaulted ceiling',
   },
   founding: {
     eyebrow: 'How VIVRA Began',

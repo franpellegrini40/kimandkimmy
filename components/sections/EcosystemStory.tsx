@@ -5,18 +5,27 @@ import Button from '@/components/ui/Button'
 import { ECOSYSTEM_STORY } from '@/content/ecosystem'
 
 export default function EcosystemStory() {
-  const { intro, founding, manifesto } = ECOSYSTEM_STORY
+  const { intro, founding } = ECOSYSTEM_STORY
 
   return (
     <>
       {/* Chapter 1 — Ecosystem introduction */}
       <Section tone="light">
         <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
-          <RevealOnScroll>
-            <span className="eyebrow">{intro.eyebrow}</span>
-            <h2 className="mt-4 max-w-lg text-3xl md:text-4xl">{intro.heading}</h2>
-            <p className="mt-5 max-w-md" style={{ color: 'var(--text-secondary)' }}>{intro.body}</p>
-          </RevealOnScroll>
+          <div>
+            <RevealOnScroll>
+              <span className="eyebrow">{intro.eyebrow}</span>
+              <h2 className="mt-4 max-w-lg text-3xl md:text-4xl">{intro.heading}</h2>
+              <div className="mt-5 max-w-md space-y-4" style={{ color: 'var(--text-secondary)' }}>
+                {intro.body.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll delay={0.16} className="mt-8">
+              <Button href="/apply/join" variant="accent">Request an Invitation</Button>
+            </RevealOnScroll>
+          </div>
 
           <RevealOnScroll delay={0.1}>
             <Photo src={intro.image} alt={intro.imageAlt} aspect="aspect-[4/5]" />
@@ -68,48 +77,6 @@ export default function EcosystemStory() {
                 <p className="text-xs" style={{ color: 'var(--text-quiet)' }}>Co-Founder, VIVRA</p>
               </div>
             </div>
-          </RevealOnScroll>
-        </div>
-      </Section>
-
-      {/* Chapter 4 — Physical ecosystem manifesto */}
-      <Section tone="sand">
-        <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
-          <div className="max-w-lg">
-            <RevealOnScroll>
-              <span
-                className="inline-block rounded-full border px-4 py-1.5 text-xs uppercase md:text-sm"
-                style={{ borderColor: 'var(--rule)', letterSpacing: 'var(--tracking-caps)' }}
-              >
-                <span style={{ color: 'var(--accent-deep)' }}>{manifesto.eyebrow}</span>{' '}
-                <span style={{ color: 'var(--text-quiet)' }}>&middot; {manifesto.eyebrowSub}</span>
-              </span>
-              <h2 className="mt-6 text-4xl md:text-5xl">{manifesto.heading}</h2>
-            </RevealOnScroll>
-
-            <RevealOnScroll delay={0.08} className="mt-8 space-y-4 text-base md:text-lg" style={{ color: 'var(--text-secondary)' }}>
-              <p>{manifesto.bodyLead}</p>
-              <p>{manifesto.bodyContrast}</p>
-            </RevealOnScroll>
-
-            <RevealOnScroll delay={0.14} className="mt-8 space-y-1 text-base md:text-lg">
-              <p style={{ color: 'var(--text-secondary)' }}>{manifesto.lineDigital}</p>
-              <p style={{ color: 'var(--forest-deep)' }}>{manifesto.linePhysical}</p>
-            </RevealOnScroll>
-
-            <RevealOnScroll delay={0.2} className="mt-8">
-              <p className="text-xl italic md:text-2xl" style={{ color: 'var(--accent)' }}>{manifesto.tagline}</p>
-              <p className="mt-4 text-sm md:text-base" style={{ color: 'var(--text-quiet)' }}>{manifesto.closing}</p>
-            </RevealOnScroll>
-
-            {/* Chapter 5 — Final invitation */}
-            <RevealOnScroll delay={0.26} className="mt-12">
-              <Button href="/apply/join" variant="accent">Request an Invitation</Button>
-            </RevealOnScroll>
-          </div>
-
-          <RevealOnScroll delay={0.1}>
-            <Photo src={manifesto.image} alt={manifesto.imageAlt} aspect="aspect-[4/5]" />
           </RevealOnScroll>
         </div>
       </Section>
