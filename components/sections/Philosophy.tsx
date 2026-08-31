@@ -21,7 +21,7 @@ export default function Philosophy() {
                 aspect="aspect-[4/5]"
                 imgClassName="transition-transform duration-700 ease-out group-hover:scale-110 group-active:scale-110"
               />
-              <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+              <div className="pointer-events-none absolute inset-0 flex items-end justify-center pb-6">
                 <span
                   className="eyebrow rounded-full px-4 py-1.5 backdrop-blur-sm"
                   style={{
