@@ -3,6 +3,7 @@ import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import Photo from '@/components/ui/Photo'
 import Button from '@/components/ui/Button'
 import { ECOSYSTEM_STORY } from '@/content/ecosystem'
+import { AUDIENCE_TIERS } from '@/content/narrative'
 
 const FOUNDERS = [
   { name: 'Manuele Monti', role: 'Co-Founder', linkedin: 'https://www.linkedin.com/in/manuelemonti/' },
@@ -41,6 +42,27 @@ export default function EcosystemStory() {
           <RevealOnScroll delay={0.1}>
             <Photo src={intro.image} alt={intro.imageAlt} aspect="aspect-[4/5]" />
           </RevealOnScroll>
+        </div>
+      </Section>
+
+      {/* For Whom — the three audience tiers */}
+      <Section tone="light">
+        <RevealOnScroll>
+          <span className="eyebrow">For Whom</span>
+          <h2 className="mt-4 max-w-lg text-3xl md:text-4xl">Who VIVRA is built for.</h2>
+        </RevealOnScroll>
+        <div
+          className="mt-10 grid gap-px border sm:grid-cols-3"
+          style={{ borderColor: 'var(--rule)', background: 'var(--rule)' }}
+        >
+          {AUDIENCE_TIERS.map((tier, i) => (
+            <RevealOnScroll key={tier.key} delay={i * 0.06}>
+              <div className="h-full p-6" style={{ background: 'var(--surface-raised)' }}>
+                <h3 className="text-base">{tier.label}</h3>
+                <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>{tier.body}</p>
+              </div>
+            </RevealOnScroll>
+          ))}
         </div>
       </Section>
 
