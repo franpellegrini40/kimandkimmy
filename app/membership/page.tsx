@@ -8,7 +8,6 @@ import MemberDashboard from '@/components/sections/MemberDashboard'
 import TiersGrid from '@/components/sections/TiersGrid'
 import CTABand from '@/components/sections/CTABand'
 import {
-  ALLIANCE_INDEPENDENCE,
   ALLIANCE_MEMBERSHIP,
   ALLIANCE_HOW_IT_WORKS,
   HOW_IT_WORKS_INTRO,
@@ -48,21 +47,11 @@ export default async function MembershipPage() {
             </RevealOnScroll>
           ))}
         </div>
-      </Section>
 
-      {/* Independent by nature. Stronger together. — the alliance model, for clubs */}
-      <Section tone="dark">
-        <RevealOnScroll className="max-w-2xl">
-          <span className="eyebrow">For Clubs &amp; Brands</span>
-          <h2 className="mt-4 text-3xl md:text-4xl">{ALLIANCE_INDEPENDENCE.heading}</h2>
-          <div className="mt-6 space-y-4" style={{ color: 'var(--text-secondary)' }}>
-            {ALLIANCE_INDEPENDENCE.body.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
-          <p className="mt-10 text-sm" style={{ color: 'var(--text-quiet)' }}>Are you a membership club?</p>
-          <Button href="/apply/alliance" variant="secondary" className="mt-3">
-            Apply to Join the Alliance
+        <RevealOnScroll delay={0.2} className="mt-10">
+          <p className="text-sm" style={{ color: 'var(--text-quiet)' }}>Are you a community leader?</p>
+          <Button href="/apply/alliance" variant="accent" className="mt-3">
+            Apply to join VIVRA Alliance
           </Button>
         </RevealOnScroll>
       </Section>
