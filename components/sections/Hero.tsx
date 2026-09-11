@@ -52,8 +52,8 @@ export default function Hero() {
           <Button href="/apply/join" variant="accent" size="xs">
             Request Invitation
           </Button>
-          <Button href="/impact" variant="secondary" size="xs">
-            See Your Passport
+          <Button href="/#philosophy" variant="secondary" size="xs">
+            Discover VIVRA
           </Button>
         </div>
       </div>
