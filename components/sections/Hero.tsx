@@ -28,8 +28,8 @@ export default function Hero() {
         </h1>
 
         <span
-          className="rounded-full border px-4 py-1.5 text-xs uppercase"
-          style={{ borderColor: 'var(--rule)', color: 'var(--text-quiet)', letterSpacing: 'var(--tracking-caps)' }}
+          className="rounded-full px-4 py-1.5 text-xs uppercase"
+          style={{ background: 'var(--navy)', color: 'var(--copper)', letterSpacing: 'var(--tracking-caps)' }}
         >
           Coming Soon
         </span>
