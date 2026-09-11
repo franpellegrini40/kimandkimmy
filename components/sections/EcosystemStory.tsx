@@ -57,7 +57,10 @@ export default function EcosystemStory() {
         >
           {AUDIENCE_TIERS.map((tier, i) => (
             <RevealOnScroll key={tier.key} delay={i * 0.06}>
-              <div className="h-full p-6" style={{ background: 'var(--surface-raised)' }}>
+              <div
+                className="relative h-full p-6 transition-transform duration-200 hover:z-10 hover:scale-105"
+                style={{ background: 'var(--surface-raised)' }}
+              >
                 <h3 className="text-base">{tier.label}</h3>
                 <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>{tier.body}</p>
               </div>
