@@ -18,13 +18,12 @@ export default function Hero() {
           <span className="italic" style={{ color: 'var(--forest)' }}>Leave it better</span>
         </p>
 
-        <h1 className="max-w-3xl leading-[1.15]">
-          <span className="block text-3xl md:text-5xl lg:text-6xl">
-            The &ldquo;phygital&rdquo; layer connecting communities
+        <h1 className="max-w-4xl leading-[1.08]">
+          <span className="block text-4xl md:text-6xl lg:text-7xl">
+            Change within.
           </span>
-          <span className="mt-2 block text-3xl italic md:text-5xl lg:text-6xl">
-            through curated gatherings, transformative wellbeing experiences and masterclasses in
-            exceptional places.
+          <span className="mt-1 block text-4xl italic md:text-6xl lg:text-7xl">
+            Impact beyond.
           </span>
         </h1>
 
@@ -34,6 +33,11 @@ export default function Hero() {
         >
           Coming Soon
         </span>
+
+        <p className="max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
+          The &ldquo;phygital&rdquo; layer connecting communities through curated gatherings,
+          transformative wellbeing experiences and masterclasses in exceptional places.
+        </p>
 
         <div className="mt-4 flex flex-wrap justify-center gap-4">
           <Button href="/apply/join" variant="accent" size="xs">
