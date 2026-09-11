@@ -36,7 +36,7 @@ export default function Hero() {
 
         <p className="max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
           The &ldquo;phygital&rdquo; layer connecting communities through curated gatherings,
-          transformative wellbeing experiences and masterclasses in exceptional places.
+          transformative experiences and masterclasses in exceptional places.
         </p>
 
         <div className="mt-4 flex flex-wrap justify-center gap-4">
