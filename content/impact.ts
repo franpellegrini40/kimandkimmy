@@ -1,8 +1,8 @@
 export const IMPACT_POSITIONING = {
   eyebrow: 'Impact',
-  heading: 'Every booking creates verified impact.',
+  heading: 'Building the proof, one gathering at a time.',
   body:
-    'VIVRA is built on regenerative economics — ventures and portfolios designed to give back more than they take. Every stay, retreat and event across the VIVRA World Alliance is tracked and reported as clean-water credits and carbon offsets, delivered back to every member.',
+    'VIVRA is built on regenerative economics — ventures and portfolios designed to give back more than they take. We’re testing exactly how to verify that at the venue level, through two live partnerships, before turning it into a promise on every booking.',
 }
 
 export const IMPACT_POC_INTRO = {

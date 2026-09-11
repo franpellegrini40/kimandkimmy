@@ -1,8 +1,7 @@
 export type SiteId = 'vivra-world' | 'join-vivra'
 
-// Header nav — deliberately kept to 5 items + the CTA (Lifestyle, Alliance,
-// Concierge, Impact and Contact stay reachable via the footer and in-page
-// CTAs, e.g. Hero's "See Your Passport" -> /impact — but are not primary-nav
+// Header nav — deliberately kept tight (Lifestyle, Alliance and Concierge
+// stay reachable via the footer and in-page CTAs, but are not primary-nav
 // items). /alliance stays a separate, deeper B2B page.
 export const NAV_ITEMS = [
   { label: 'VIVRA', href: '/' },
@@ -10,6 +9,7 @@ export const NAV_ITEMS = [
   { label: 'How It Works', href: '/membership' },
   { label: 'Ecosystem', href: '/#ecosystem' },
   { label: 'Venues', href: '/venues' },
+  { label: 'Impact', href: '/impact' },
   { label: 'News', href: '/news' },
 ]
 
