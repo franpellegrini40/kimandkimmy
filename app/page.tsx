@@ -7,8 +7,11 @@ import HowItWorksTeaser from '@/components/sections/HowItWorksTeaser'
 import VivraEcosystem from '@/components/sections/VivraEcosystem'
 import EcosystemStory from '@/components/sections/EcosystemStory'
 import ExperiencePillars from '@/components/sections/ExperiencePillars'
-import VenuesTeaser from '@/components/sections/VenuesTeaser'
 import HealingPractices from '@/components/sections/HealingPractices'
+import VenuesTeaser from '@/components/sections/VenuesTeaser'
+import ImpactTeaser from '@/components/sections/ImpactTeaser'
+import NewsTeaser from '@/components/sections/NewsTeaser'
+import ContactTeaser from '@/components/sections/ContactTeaser'
 import DayInLife from '@/components/sections/DayInLife'
 import MembershipTeaser from '@/components/sections/MembershipTeaser'
 import CTABand from '@/components/sections/CTABand'
@@ -25,8 +28,11 @@ export default async function HomePage() {
       <VivraEcosystem />
       <EcosystemStory />
       <ExperiencePillars />
-      <VenuesTeaser />
       <HealingPractices />
+      <VenuesTeaser />
+      <ImpactTeaser />
+      <NewsTeaser />
+      <ContactTeaser />
       <DayInLife />
       <MembershipTeaser />
       <CTABand site={site} />

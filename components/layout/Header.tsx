@@ -50,28 +50,34 @@ export default function Header({ site, overHero = false }: { site: SiteId; overH
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [menuOpen])
 
-  // Optional active-section indicator: only the home page has these anchor
-  // targets in the DOM, so elsewhere this simply finds nothing to observe.
+  // Optional active-section indicator: only the home page has these teaser
+  // sections in the DOM, so elsewhere this simply finds nothing to observe.
+  // Nav items with a hash (e.g. /#ecosystem) match by hash id; items that
+  // link to a standalone page (e.g. /venues) match by their path segment,
+  // since the home page also carries a same-id teaser section for each.
   useEffect(() => {
     if (pathname !== '/') {
       setActiveHref(null)
       return
     }
-    const sections = LINKS.map((item) => {
-      const id = item.href.split('#')[1]
-      return id ? document.getElementById(id) : null
-    }).filter((el): el is HTMLElement => Boolean(el))
+    const entries = LINKS.map((item) => {
+      const id = item.href.includes('#') ? item.href.split('#')[1] : item.href.replace(/^\//, '')
+      const el = id ? document.getElementById(id) : null
+      return el ? { href: item.href, el } : null
+    }).filter((x): x is { href: string; el: HTMLElement } => Boolean(x))
 
-    if (sections.length === 0) return
+    if (entries.length === 0) return
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.find((e) => e.isIntersecting)
-        if (visible) setActiveHref(`/#${visible.target.id}`)
+      (obsEntries) => {
+        const visible = obsEntries.find((e) => e.isIntersecting)
+        if (!visible) return
+        const match = entries.find((s) => s.el === visible.target)
+        if (match) setActiveHref(match.href)
       },
       { rootMargin: '-40% 0px -55% 0px', threshold: 0 },
     )
-    sections.forEach((el) => observer.observe(el))
+    entries.forEach((s) => observer.observe(s.el))
     return () => observer.disconnect()
   }, [pathname])
 

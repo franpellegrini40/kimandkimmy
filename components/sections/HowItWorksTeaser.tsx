@@ -5,7 +5,7 @@ import { ALLIANCE_HOW_IT_WORKS, HOW_IT_WORKS_INTRO, HOW_IT_WORKS_NOTE } from '@/
 
 export default function HowItWorksTeaser() {
   return (
-    <Section tone="sand" id="how-it-works">
+    <Section tone="sand" id="membership">
       <RevealOnScroll>
         <span className="eyebrow">How It Works</span>
         <h2 className="mt-4 max-w-xl text-3xl md:text-4xl">{HOW_IT_WORKS_INTRO}</h2>

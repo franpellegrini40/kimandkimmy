@@ -5,7 +5,7 @@ import { CLOSING, PLATFORM_MVP } from '@/content/retreat'
 
 export default function MembershipTeaser() {
   return (
-    <Section tone="light" id="membership">
+    <Section tone="light" id="platform">
       <RevealOnScroll className="max-w-2xl">
         <span className="eyebrow">VIVRA Membership — Coming Live Soon</span>
         <h2 className="mt-4 text-3xl md:text-4xl">{CLOSING.heading}</h2>
