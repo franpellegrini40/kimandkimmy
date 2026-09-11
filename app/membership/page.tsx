@@ -10,6 +10,7 @@ import CTABand from '@/components/sections/CTABand'
 import {
   ALLIANCE_MEMBERSHIP,
   ALLIANCE_HOW_IT_WORKS,
+  ALLIANCE_BENEFITS,
   HOW_IT_WORKS_INTRO,
   HOW_IT_WORKS_NOTE,
 } from '@/content/alliance'
@@ -51,6 +52,17 @@ export default async function MembershipPage() {
         </div>
 
         <RevealOnScroll delay={0.2} className="mt-10">
+          <ul className="grid gap-3 text-sm sm:grid-cols-2" style={{ color: 'var(--text-secondary)' }}>
+            {ALLIANCE_BENEFITS.map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--accent)' }} />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </RevealOnScroll>
+
+        <RevealOnScroll delay={0.26} className="mt-10">
           <p className="text-sm" style={{ color: 'var(--text-quiet)' }}>Are you a community leader?</p>
           <Button href="/apply/alliance" variant="accent" className="mt-3">
             Apply to join VIVRA Alliance

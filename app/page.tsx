@@ -10,7 +10,6 @@ import VenuesTeaser from '@/components/sections/VenuesTeaser'
 import HealingPractices from '@/components/sections/HealingPractices'
 import DayInLife from '@/components/sections/DayInLife'
 import MembershipTeaser from '@/components/sections/MembershipTeaser'
-import AllianceTeaser from '@/components/sections/AllianceTeaser'
 import CTABand from '@/components/sections/CTABand'
 
 export default async function HomePage() {
@@ -28,7 +27,6 @@ export default async function HomePage() {
       <HealingPractices />
       <DayInLife />
       <MembershipTeaser />
-      <AllianceTeaser />
       <CTABand site={site} />
     </PageShell>
   )
