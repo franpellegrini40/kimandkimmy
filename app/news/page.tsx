@@ -29,11 +29,16 @@ export default async function NewsPage() {
           <h1 className="mt-4 max-w-2xl text-3xl md:text-4xl">Upcoming Events</h1>
         </RevealOnScroll>
 
-        <RevealOnScroll delay={0.08} className="mt-10 flex flex-wrap items-baseline gap-x-3 gap-y-1 border-t pt-8" style={{ borderColor: 'var(--rule)' }}>
-          <span className="text-2xl">Founding Member Gathering</span>
-          <span style={{ color: 'var(--text-secondary)' }}>
-            {RETREAT_FACTS.location} · {RETREAT_FACTS.dates}
-          </span>
+        <RevealOnScroll delay={0.08} className="mt-10 border-t pt-8" style={{ borderColor: 'var(--rule)' }}>
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span className="text-2xl">Founding Member Gathering</span>
+            <span style={{ color: 'var(--text-secondary)' }}>
+              {RETREAT_FACTS.location} · {RETREAT_FACTS.dates}
+            </span>
+          </div>
+          <p className="mt-3 max-w-xl text-sm" style={{ color: 'var(--text-quiet)' }}>
+            It begins with ten people, one estate, and five days in Ibiza.
+          </p>
         </RevealOnScroll>
       </Section>
 
