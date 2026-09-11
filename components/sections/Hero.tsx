@@ -22,7 +22,7 @@ export default function Hero() {
           <span className="block text-4xl md:text-6xl lg:text-7xl">
             Change within.
           </span>
-          <span className="mt-1 block text-4xl italic md:text-6xl lg:text-7xl">
+          <span className="mt-1 block text-4xl italic md:text-6xl lg:text-7xl" style={{ color: 'var(--forest)' }}>
             Impact beyond.
           </span>
         </h1>
