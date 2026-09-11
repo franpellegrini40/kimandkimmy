@@ -20,10 +20,10 @@ export default function Hero() {
 
         <h1 className="max-w-4xl leading-[1.08]">
           <span className="block text-4xl md:text-6xl lg:text-7xl">
-            The world&rsquo;s first <span style={{ color: 'var(--forest)' }}>regenerative</span>
+            Success rarely arrives
           </span>
           <span className="mt-1 block text-4xl italic md:text-6xl lg:text-7xl">
-            membership alliance.
+            as one whole life.
           </span>
         </h1>
 
@@ -35,7 +35,8 @@ export default function Hero() {
         </span>
 
         <p className="max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
-          Where wellbeing becomes potential, travel becomes purpose, and connection becomes impact.
+          VIVRA brings wellbeing, relationships and purposeful action back together — through curated
+          gatherings in exceptional homes, for people ready to make them count.
         </p>
 
         <div className="mt-4 flex flex-wrap justify-center gap-4">
