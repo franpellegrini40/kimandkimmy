@@ -4,8 +4,15 @@ import PageShell from '@/components/layout/PageShell'
 import Section from '@/components/ui/Section'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import Photo from '@/components/ui/Photo'
-import VivraPassport from '@/components/sections/VivraPassport'
-import { IMPACT_POSITIONING, IMPACT_POC_INTRO, POC_PARTNERS, IMPACT_PARTNERSHIP } from '@/content/impact'
+import ImpactDashboard from '@/components/sections/ImpactDashboard'
+import {
+  IMPACT_POSITIONING,
+  IMPACT_PASSPORT_INTRO,
+  IMPACT_PASSPORT_FEATURES,
+  IMPACT_POC_INTRO,
+  POC_PARTNERS,
+  IMPACT_PARTNERSHIP,
+} from '@/content/impact'
 import CTABand from '@/components/sections/CTABand'
 
 export const metadata: Metadata = {
@@ -29,20 +36,26 @@ export default async function ImpactPage() {
       <Section tone="light">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <RevealOnScroll>
-            <span className="eyebrow">Your Passport</span>
-            <h2 className="mt-4 max-w-md text-2xl md:text-3xl">Your impact, sealed in one place.</h2>
-            <p className="mt-4 max-w-md" style={{ color: 'var(--text-secondary)' }}>
-              The VIVRA Passport is the seal that carries your access, your credits and your
-              impact record across every venue in the network — verified, not declared.
-            </p>
-            <ul className="mt-6 space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
-              <li>— Clean-water credits and carbon offsets, tracked per member</li>
-              <li>— One wallet, one booking layer, member pricing everywhere</li>
-              <li>— A personal regeneration ledger, not a marketing claim</li>
-            </ul>
+            <span className="eyebrow">{IMPACT_PASSPORT_INTRO.eyebrow}</span>
+            <h2 className="mt-4 max-w-md text-2xl md:text-3xl">{IMPACT_PASSPORT_INTRO.heading}</h2>
+            <p className="mt-4 max-w-md" style={{ color: 'var(--text-secondary)' }}>{IMPACT_PASSPORT_INTRO.body}</p>
+            <div className="mt-8 space-y-6">
+              {IMPACT_PASSPORT_FEATURES.map((f, i) => (
+                <RevealOnScroll key={f.key} delay={i * 0.06} className="flex gap-4">
+                  <span
+                    className="mt-1 h-2 w-2 shrink-0 rounded-full"
+                    style={{ background: 'var(--accent)' }}
+                  />
+                  <div>
+                    <h3 className="text-base">{f.label}</h3>
+                    <p className="mt-1 text-sm" style={{ color: 'var(--text-secondary)' }}>{f.body}</p>
+                  </div>
+                </RevealOnScroll>
+              ))}
+            </div>
           </RevealOnScroll>
           <RevealOnScroll delay={0.1} className="flex justify-center">
-            <VivraPassport />
+            <ImpactDashboard />
           </RevealOnScroll>
         </div>
       </Section>

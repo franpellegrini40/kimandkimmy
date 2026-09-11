@@ -5,6 +5,30 @@ export const IMPACT_POSITIONING = {
     'VIVRA is built on regenerative economics — ventures and portfolios designed to give back more than they take. Every stay, retreat and event across the VIVRA World Alliance is tracked and reported as clean-water credits and carbon offsets, delivered back to every member.',
 }
 
+export const IMPACT_PASSPORT_INTRO = {
+  eyebrow: 'Your Passport',
+  heading: 'Your impact, in your pocket.',
+  body: 'VIVRA Credits, planetary impact and benefits. One place, always with you.',
+}
+
+export const IMPACT_PASSPORT_FEATURES = [
+  {
+    key: 'measured',
+    label: 'Real impact, measured',
+    body: 'Water restored, carbon drawn down, trees grown. Verified, not declared.',
+  },
+  {
+    key: 'credits',
+    label: 'VIVRA Credits that elevate',
+    body: 'Earned through stays, actions and referrals. They unlock access, never discounts.',
+  },
+  {
+    key: 'benefits',
+    label: 'Benefits that travel',
+    body: 'Free nights, named concierge and private access across the growing VIVRA network.',
+  },
+]
+
 export const IMPACT_POC_INTRO = {
   eyebrow: 'Proof of Concept',
   heading: 'Verified impact, running in parallel.',
