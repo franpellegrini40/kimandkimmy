@@ -16,6 +16,10 @@ export const ECOSYSTEM_STORY = {
       'VIVRA combines intimate masterclasses led by globally respected practitioners, wellbeing and transformative experiences, and carefully curated connections to help members rethink how they live, lead and contribute.',
       'Every gathering is designed to leave you with greater clarity, practical tools, trusted relationships and meaningful opportunities already in motion.',
     ],
+    taglines: [
+      'From ideas to measurable impact.',
+      'From V.I.P.s to VIMPs — Very Impactful People.',
+    ],
     image: '/images/ecosystem-physical-gathering.jpg',
     imageAlt: 'A VIVRA circle gathered in conversation under a stone-vaulted ceiling',
   },

@@ -11,7 +11,7 @@ export default function HealingPractices() {
   return (
     <Section tone="sand">
       <RevealOnScroll>
-        <span className="eyebrow">Healing & Wellbeing Practices</span>
+        <span className="eyebrow">Transformative Wellbeing Experiences</span>
         <h2 className="mt-4 max-w-xl text-3xl md:text-4xl">Guided by facilitators we trust.</h2>
       </RevealOnScroll>
 

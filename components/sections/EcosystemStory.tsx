@@ -27,6 +27,11 @@ export default function EcosystemStory() {
                   <p key={i}>{p}</p>
                 ))}
               </div>
+              <div className="mt-5 max-w-md space-y-1.5">
+                {intro.taglines.map((t, i) => (
+                  <p key={i} className="text-sm italic" style={{ color: 'var(--accent-deep)' }}>{t}</p>
+                ))}
+              </div>
             </RevealOnScroll>
             <RevealOnScroll delay={0.16} className="mt-8">
               <Button href="/apply/join" variant="accent">Request an Invitation</Button>

@@ -12,6 +12,8 @@ import {
   ALLIANCE_POSITIONING,
   ALLIANCE_INDEPENDENCE,
   ALLIANCE_MEMBERSHIP,
+  ALLIANCE_HOW_IT_WORKS,
+  HOW_IT_WORKS_INTRO,
 } from '@/content/alliance'
 
 export const metadata: Metadata = {
@@ -32,6 +34,29 @@ export default async function MembershipPage() {
           <p className="mt-3 max-w-xl text-sm" style={{ color: 'var(--text-quiet)' }}>{ALLIANCE_TAGLINE}</p>
           <p className="mt-6 max-w-xl" style={{ color: 'var(--text-secondary)' }}>{ALLIANCE_POSITIONING.body}</p>
         </RevealOnScroll>
+      </Section>
+
+      {/* How It Works — the four-step alliance process */}
+      <Section tone="sand">
+        <RevealOnScroll>
+          <span className="eyebrow">How It Works</span>
+          <h2 className="mt-4 max-w-xl text-3xl md:text-4xl">{HOW_IT_WORKS_INTRO}</h2>
+        </RevealOnScroll>
+
+        <div
+          className="mt-10 grid gap-px overflow-hidden border sm:grid-cols-2"
+          style={{ borderColor: 'var(--rule)', background: 'var(--rule)' }}
+        >
+          {ALLIANCE_HOW_IT_WORKS.map((s, i) => (
+            <RevealOnScroll key={s.step} delay={i * 0.05}>
+              <div className="h-full p-6" style={{ background: 'var(--surface-raised)' }}>
+                <span className="text-xs" style={{ color: 'var(--accent-deep)' }}>{s.step.padStart(2, '0')}</span>
+                <h3 className="mt-2 text-base">{s.label}</h3>
+                <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>{s.detail}</p>
+              </div>
+            </RevealOnScroll>
+          ))}
+        </div>
       </Section>
 
       {/* Independent by nature. Stronger together. — the alliance model, for clubs */}

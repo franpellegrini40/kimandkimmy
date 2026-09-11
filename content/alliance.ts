@@ -10,11 +10,29 @@ export const ALLIANCE_POSITIONING = {
   body: "VIVRA connects existing clubs the way OneWorld connects airlines. Your club keeps its name, its members and its team — VIVRA adds a shared layer of venues, technology, lifestyle and impact on top. It's a B2B alliance: clubs join first, and their members follow.",
 }
 
+export const HOW_IT_WORKS_INTRO = 'VIVRA works as an alliance, the way OneWorld works for airlines.'
+
 export const ALLIANCE_HOW_IT_WORKS = [
-  { label: 'Your brand, your members', detail: 'Nothing about how you run your club changes — it stays yours.' },
-  { label: 'Network-wide access', detail: 'Your members gain venue and event access across every partner in the alliance.' },
-  { label: 'One shared currency', detail: 'Everyone earns and spends VIVRA Credits, anywhere in the network.' },
-  { label: 'Tiers that map to yours', detail: 'Explorer, Member and Legacy sit on top of whatever tiers you already offer.' },
+  {
+    step: '1',
+    label: 'Connect your community',
+    detail: 'Integrate VIVRA as "plug and play" into your community, ecosystem or membership club, bringing your members new opportunities to connect, learn and grow — becoming more VIMPs.',
+  },
+  {
+    step: '2',
+    label: 'Unlock more for your members',
+    detail: 'Your members can join VIVRA at preferential rates, upgrading to exclusive benefits, transformative wellbeing experiences and expert-led masterclasses through curated gatherings in exceptional venues.',
+  },
+  {
+    step: '3',
+    label: 'Enjoy benefits as a community leader',
+    detail: 'Community leaders receive dedicated benefits and opportunities to collaborate, co-host gatherings and expand their network and source of revenue.',
+  },
+  {
+    step: '4',
+    label: 'Explore and book',
+    detail: 'Our digital marketplace brings together retreats, events and flagship workshops, with access to exclusive masterminds and world-class facilitators — making it easy for members to discover and book their next impactful experience.',
+  },
 ]
 
 export const MEMBERSHIP_MANIFESTO = {
