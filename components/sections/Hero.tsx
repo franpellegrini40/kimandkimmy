@@ -34,12 +34,13 @@ export default function Hero() {
           </span>
         </h1>
 
-        <span
-          className="rounded-full px-4 py-1.5 text-xs uppercase"
+        <Link
+          href="/apply/join"
+          className="inline-block rounded-full px-4 py-1.5 text-xs uppercase transition-transform duration-200 hover:scale-110"
           style={{ background: 'var(--navy)', color: 'var(--copper)', letterSpacing: 'var(--tracking-caps)' }}
         >
           Coming Soon
-        </span>
+        </Link>
 
         <p className="max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
           The <span className="text-base font-semibold md:text-lg" style={{ color: 'var(--text-primary)' }}>phygital</span> layer

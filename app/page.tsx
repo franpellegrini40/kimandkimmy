@@ -19,8 +19,8 @@ export default async function HomePage() {
   return (
     <PageShell site={site} overHero>
       <Hero />
-      <BrandReel />
       <Philosophy />
+      <BrandReel />
       <VivraEcosystem />
       <EcosystemStory />
       <ExperiencePillars />
