@@ -12,7 +12,7 @@ export const ALLIANCE_POSITIONING = {
 
 export const HOW_IT_WORKS_INTRO = 'One alliance. Exceptional communities. Greater possibilities.'
 
-export const HOW_IT_WORKS_NOTE = 'A community, here, means an ecosystem or a membership club — your world, joining VIVRA’s.'
+export const HOW_IT_WORKS_NOTE = 'Community = Ecosystem = Membership Club.'
 
 export const ALLIANCE_HOW_IT_WORKS = [
   {
