@@ -18,12 +18,13 @@ export default function Hero() {
           <span className="italic" style={{ color: 'var(--forest)' }}>Leave it better</span>
         </p>
 
-        <h1 className="max-w-4xl leading-[1.08]">
-          <span className="block text-4xl md:text-6xl lg:text-7xl">
-            Success rarely arrives
+        <h1 className="max-w-3xl leading-[1.2]">
+          <span className="block text-2xl md:text-4xl lg:text-5xl">
+            We are the &ldquo;phygital&rdquo; layer for ecosystems and communities
           </span>
-          <span className="mt-1 block text-4xl italic md:text-6xl lg:text-7xl">
-            as one whole life.
+          <span className="mt-2 block text-2xl italic md:text-4xl lg:text-5xl">
+            to have access to curated gatherings, transformative wellbeing experiences and unique
+            masterclasses in exceptional places.
           </span>
         </h1>
 
@@ -33,11 +34,6 @@ export default function Hero() {
         >
           Coming Soon
         </span>
-
-        <p className="max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
-          VIVRA brings wellbeing, relationships and purposeful action back together — through curated
-          gatherings in exceptional homes, for people ready to make them count.
-        </p>
 
         <div className="mt-4 flex flex-wrap justify-center gap-4">
           <Button href="/apply/join" variant="accent" size="xs">
