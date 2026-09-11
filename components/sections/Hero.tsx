@@ -43,7 +43,7 @@ export default function Hero() {
         </Link>
 
         <p className="max-w-3xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
-          The <span className="text-base font-semibold md:text-lg" style={{ color: 'var(--text-primary)' }}>phygital</span> layer
+          A <span className="text-base font-semibold md:text-lg" style={{ color: 'var(--text-primary)' }}>phygital</span> layer
           giving communities access to exclusive benefits, extraordinary gatherings,
           transformative wellbeing experiences and world-class masterclasses in remarkable venues.
         </p>
