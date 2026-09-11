@@ -3,6 +3,7 @@ import PageShell from '@/components/layout/PageShell'
 import Hero from '@/components/sections/Hero'
 import BrandReel from '@/components/sections/BrandReel'
 import Philosophy from '@/components/sections/Philosophy'
+import HowItWorksTeaser from '@/components/sections/HowItWorksTeaser'
 import VivraEcosystem from '@/components/sections/VivraEcosystem'
 import EcosystemStory from '@/components/sections/EcosystemStory'
 import ExperiencePillars from '@/components/sections/ExperiencePillars'
@@ -19,6 +20,7 @@ export default async function HomePage() {
     <PageShell site={site} overHero>
       <Hero />
       <Philosophy />
+      <HowItWorksTeaser />
       <BrandReel />
       <VivraEcosystem />
       <EcosystemStory />
