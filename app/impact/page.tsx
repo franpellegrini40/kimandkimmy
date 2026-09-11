@@ -36,7 +36,7 @@ export default async function ImpactPage() {
               impact record across every venue in the network — verified, not declared.
             </p>
             <ul className="mt-6 space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
-              <li>— Clean-water credits and carbon offsets, tracked as the model proves itself</li>
+              <li>— Clean-water credits and carbon offsets, tracked per member</li>
               <li>— One wallet, one booking layer, member pricing everywhere</li>
               <li>— A personal regeneration ledger, not a marketing claim</li>
             </ul>
