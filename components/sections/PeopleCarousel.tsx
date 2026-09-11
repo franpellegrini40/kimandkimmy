@@ -5,11 +5,11 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
 import AssetPlaceholder from '@/components/ui/AssetPlaceholder'
 import Button from '@/components/ui/Button'
-import { PEOPLE } from '@/content/people'
+import { PEOPLE, type Person } from '@/content/people'
 
 const INTERVAL_MS = 6000
 
-export default function PeopleCarousel() {
+export default function PeopleCarousel({ people = PEOPLE }: { people?: Person[] }) {
   const [index, setIndex] = useState(0)
   const [playing, setPlaying] = useState(true)
   const reduced = useReducedMotion()
@@ -18,12 +18,12 @@ export default function PeopleCarousel() {
   useEffect(() => {
     if (!playing || reduced) return
     timerRef.current = setTimeout(() => {
-      setIndex((i) => (i + 1) % PEOPLE.length)
+      setIndex((i) => (i + 1) % people.length)
     }, INTERVAL_MS)
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current)
     }
-  }, [index, playing, reduced])
+  }, [index, playing, reduced, people.length])
 
   function goTo(i: number) {
     setIndex(i)
@@ -31,10 +31,10 @@ export default function PeopleCarousel() {
   }
 
   function step(delta: number) {
-    goTo((index + delta + PEOPLE.length) % PEOPLE.length)
+    goTo((index + delta + people.length) % people.length)
   }
 
-  const active = PEOPLE[index]
+  const active = people[index]
 
   return (
     <div>
@@ -90,7 +90,7 @@ export default function PeopleCarousel() {
         {/* Text — every person's copy stays in the DOM (SEO/crawlability); only
             the active one is visible, the rest sit absolutely underneath it. */}
         <div className="relative min-h-[320px] sm:min-h-[280px] md:min-h-[360px]">
-          {PEOPLE.map((p, i) => (
+          {people.map((p, i) => (
             <div
               key={p.slug}
               aria-hidden={i !== index}
@@ -123,7 +123,7 @@ export default function PeopleCarousel() {
 
       {/* Progress dots — click any to jump there and pause autoplay */}
       <div className="mt-10 flex items-center gap-2 sm:gap-3">
-        {PEOPLE.map((p, i) => (
+        {people.map((p, i) => (
           <button
             key={p.slug}
             type="button"

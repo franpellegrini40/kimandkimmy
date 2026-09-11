@@ -1,8 +1,7 @@
 import Section from '@/components/ui/Section'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
-import AssetPlaceholder from '@/components/ui/AssetPlaceholder'
-import Photo from '@/components/ui/Photo'
 import Button from '@/components/ui/Button'
+import PeopleCarousel from '@/components/sections/PeopleCarousel'
 import { PEOPLE } from '@/content/people'
 
 export default function HealingPractices() {
@@ -15,19 +14,8 @@ export default function HealingPractices() {
         <h2 className="mt-4 max-w-xl text-3xl md:text-4xl">Guided by facilitators we trust.</h2>
       </RevealOnScroll>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-3">
-        {practitioners.map((p, i) => (
-          <RevealOnScroll key={p.slug} delay={i * 0.06}>
-            {p.image ? (
-              <Photo src={p.image} alt={p.name} aspect="aspect-[4/5]" />
-            ) : (
-              <AssetPlaceholder note={`Portrait — ${p.name}, 4:5`} />
-            )}
-            <h3 className="mt-3 text-base">{p.name}</h3>
-            <p className="text-sm" style={{ color: 'var(--text-quiet)' }}>{p.role}</p>
-            <p className="mt-3 text-sm italic" style={{ color: 'var(--text-secondary)' }}>“{p.quote}”</p>
-          </RevealOnScroll>
-        ))}
+      <div className="mt-10">
+        <PeopleCarousel people={practitioners} />
       </div>
 
       <RevealOnScroll delay={0.2} className="mt-10">

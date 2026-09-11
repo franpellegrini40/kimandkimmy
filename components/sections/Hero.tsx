@@ -25,11 +25,11 @@ export default function Hero() {
           </Link>
         </p>
 
-        <h1 className="max-w-4xl leading-[1.08]">
-          <span className="block text-4xl md:text-6xl lg:text-7xl">
+        <h1 className="flex max-w-4xl flex-wrap items-baseline justify-center gap-x-3 leading-[1.08]">
+          <span className="text-3xl md:text-5xl lg:text-6xl">
             Change within.
           </span>
-          <span className="mt-1 block text-4xl italic md:text-6xl lg:text-7xl" style={{ color: 'var(--forest)' }}>
+          <span className="text-3xl italic md:text-5xl lg:text-6xl" style={{ color: 'var(--forest)' }}>
             Impact beyond.
           </span>
         </h1>
