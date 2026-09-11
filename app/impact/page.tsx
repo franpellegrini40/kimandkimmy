@@ -56,7 +56,10 @@ export default async function ImpactPage() {
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {POC_PARTNERS.map((poc, i) => (
             <RevealOnScroll key={poc.name} delay={i * 0.08}>
-              <div className="h-full border p-6" style={{ borderColor: 'var(--rule)', background: 'var(--surface-raised)' }}>
+              <div
+                className="relative h-full border p-6 transition-transform duration-200 hover:z-10 hover:scale-105"
+                style={{ borderColor: 'var(--rule)', background: 'var(--surface-raised)' }}
+              >
                 <h3 className="text-lg" style={{ color: 'var(--text-primary)' }}>{poc.name}</h3>
                 <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}>{poc.description}</p>
                 <a
