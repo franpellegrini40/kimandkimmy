@@ -3,6 +3,7 @@ import PageShell from '@/components/layout/PageShell'
 import Section from '@/components/ui/Section'
 import Button from '@/components/ui/Button'
 import { PRICING_CONTACT } from '@/content/retreat'
+import { FOOTER_LINKS } from '@/content/site'
 
 export const metadata = { title: 'Contact' }
 
@@ -32,19 +33,27 @@ export default async function ContactPage() {
           </a>
           .
         </p>
-        <p className="mt-2 text-sm" style={{ color: 'var(--text-quiet)' }}>
-          Follow VIVRA on{' '}
-          <a
-            href="https://linkedin.com/company/vivra-world"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            LinkedIn
-          </a>
-          .
-        </p>
+        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t pt-8 text-sm" style={{ borderColor: 'var(--rule)' }}>
+          {FOOTER_LINKS.social.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+              style={{ color: 'var(--text-primary)' }}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+        <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm" style={{ color: 'var(--text-quiet)' }}>
+          {FOOTER_LINKS.legal.map((link) => (
+            <a key={link.label} href={link.href} className="underline" style={{ color: 'var(--text-quiet)' }}>
+              {link.label}
+            </a>
+          ))}
+        </div>
       </Section>
     </PageShell>
   )
