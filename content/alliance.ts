@@ -54,7 +54,7 @@ export const ALLIANCE_INDEPENDENCE = {
 }
 
 export const ALLIANCE_MEMBERSHIP = {
-  heading: 'Members become VIPs — Very Impactful People.',
+  heading: 'Members become more VIMPs — Very Impactful People.',
   body: 'Joining the alliance doesn’t hand your members another card — it upgrades the club itself. One membership, one wallet, one booking layer, member pricing everywhere they go. We call it the VIVRA Passport: a single credential that carries your access, your credits and your impact across every venue in the network. Every booking creates verified impact — clean-water credits and carbon offsets, tracked per member. Admission is by application.',
 }
 

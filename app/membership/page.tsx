@@ -56,7 +56,12 @@ export default async function MembershipPage() {
         </RevealOnScroll>
       </Section>
 
-      {/* The VIVRA Passport + benefits */}
+      {/* Every benefit, every tier */}
+      <Section tone="light">
+        <TiersGrid />
+      </Section>
+
+      {/* The VIVRA Passport */}
       <Section tone="light">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <RevealOnScroll>
@@ -67,9 +72,6 @@ export default async function MembershipPage() {
           <RevealOnScroll delay={0.1} className="flex justify-center">
             <MemberDashboard />
           </RevealOnScroll>
-        </div>
-        <div className="mt-16">
-          <TiersGrid />
         </div>
       </Section>
 
