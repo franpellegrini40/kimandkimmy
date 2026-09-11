@@ -8,7 +8,6 @@ import MemberDashboard from '@/components/sections/MemberDashboard'
 import TiersGrid from '@/components/sections/TiersGrid'
 import CTABand from '@/components/sections/CTABand'
 import {
-  ALLIANCE_TAGLINE,
   ALLIANCE_POSITIONING,
   ALLIANCE_INDEPENDENCE,
   ALLIANCE_MEMBERSHIP,
@@ -29,9 +28,7 @@ export default async function MembershipPage() {
       {/* Opening — the alliance positioning */}
       <Section tone="light" className="pt-40">
         <RevealOnScroll>
-          <span className="eyebrow">{ALLIANCE_POSITIONING.eyebrow}</span>
-          <h1 className="mt-4 max-w-2xl text-3xl md:text-4xl">{ALLIANCE_POSITIONING.heading}</h1>
-          <p className="mt-3 max-w-xl text-sm" style={{ color: 'var(--text-quiet)' }}>{ALLIANCE_TAGLINE}</p>
+          <h1 className="max-w-2xl text-3xl md:text-4xl">{ALLIANCE_POSITIONING.heading}</h1>
           <p className="mt-6 max-w-xl" style={{ color: 'var(--text-secondary)' }}>{ALLIANCE_POSITIONING.body}</p>
         </RevealOnScroll>
       </Section>
