@@ -41,12 +41,15 @@ export default async function MembershipPage() {
         </RevealOnScroll>
 
         <div
-          className="mt-10 grid gap-px overflow-hidden border sm:grid-cols-2"
+          className="mt-10 grid gap-px border sm:grid-cols-2"
           style={{ borderColor: 'var(--rule)', background: 'var(--rule)' }}
         >
           {ALLIANCE_HOW_IT_WORKS.map((s, i) => (
             <RevealOnScroll key={s.step} delay={i * 0.05}>
-              <div className="h-full p-6" style={{ background: 'var(--surface-raised)' }}>
+              <div
+                className="relative h-full p-6 transition-transform duration-200 hover:z-10 hover:scale-105"
+                style={{ background: 'var(--surface-raised)' }}
+              >
                 <span className="text-xs" style={{ color: 'var(--accent-deep)' }}>{s.step.padStart(2, '0')}</span>
                 <h3 className="mt-2 text-base">{s.label}</h3>
                 <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>{s.detail}</p>
