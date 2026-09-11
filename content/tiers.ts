@@ -88,7 +88,7 @@ export const MEMBERSHIP_TERMS = [
 
 export const LONGEVITY_PANEL = {
   heading: 'The VIVRA Longevity Panel',
-  subheading: 'Longevity Consultation — all-in model.',
+  subheading: 'Wellbeing Consultation — all-in model.',
   tiers: [
     {
       name: 'Explorer',

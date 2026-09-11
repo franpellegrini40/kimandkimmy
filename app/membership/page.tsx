@@ -11,6 +11,7 @@ import {
   ALLIANCE_MEMBERSHIP,
   ALLIANCE_HOW_IT_WORKS,
   HOW_IT_WORKS_INTRO,
+  HOW_IT_WORKS_NOTE,
 } from '@/content/alliance'
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default async function MembershipPage() {
         <RevealOnScroll>
           <span className="eyebrow">How It Works</span>
           <h1 className="mt-4 max-w-xl text-3xl md:text-4xl">{HOW_IT_WORKS_INTRO}</h1>
+          <p className="mt-3 max-w-xl text-sm" style={{ color: 'var(--text-quiet)' }}>{HOW_IT_WORKS_NOTE}</p>
         </RevealOnScroll>
 
         <div

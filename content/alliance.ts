@@ -10,7 +10,9 @@ export const ALLIANCE_POSITIONING = {
   body: "VIVRA connects existing clubs the way OneWorld connects airlines. Your club keeps its name, its members and its team — VIVRA adds a shared layer of venues, technology, lifestyle and impact on top. It's a B2B alliance: clubs join first, and their members follow.",
 }
 
-export const HOW_IT_WORKS_INTRO = 'VIVRA works as an alliance, the way OneWorld works for airlines.'
+export const HOW_IT_WORKS_INTRO = 'One alliance. Exceptional communities. Greater possibilities.'
+
+export const HOW_IT_WORKS_NOTE = 'A community, here, means an ecosystem or a membership club — your world, joining VIVRA’s.'
 
 export const ALLIANCE_HOW_IT_WORKS = [
   {

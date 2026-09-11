@@ -69,7 +69,7 @@ export default function TiersGrid() {
           {LONGEVITY_PANEL.tiers.map((tier) => (
             <div
               key={tier.name}
-              className="border p-6"
+              className="relative border p-6 transition-transform duration-200 hover:z-10 hover:scale-105"
               style={{
                 borderColor: 'var(--rule)',
                 background: tier.name === 'Legacy' ? 'var(--surface-inset)' : 'var(--surface-raised)',
