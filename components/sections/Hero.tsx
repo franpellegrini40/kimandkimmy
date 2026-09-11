@@ -18,13 +18,13 @@ export default function Hero() {
           <span className="italic" style={{ color: 'var(--forest)' }}>Leave it better</span>
         </p>
 
-        <h1 className="max-w-3xl leading-[1.2]">
-          <span className="block text-2xl md:text-4xl lg:text-5xl">
-            We are the &ldquo;phygital&rdquo; layer for ecosystems and communities
+        <h1 className="max-w-3xl leading-[1.15]">
+          <span className="block text-3xl md:text-5xl lg:text-6xl">
+            The &ldquo;phygital&rdquo; layer connecting communities
           </span>
-          <span className="mt-2 block text-2xl italic md:text-4xl lg:text-5xl">
-            to have access to curated gatherings, transformative wellbeing experiences and unique
-            masterclasses in exceptional places.
+          <span className="mt-2 block text-3xl italic md:text-5xl lg:text-6xl">
+            through curated gatherings, transformative wellbeing experiences and masterclasses in
+            exceptional places.
           </span>
         </h1>
 
