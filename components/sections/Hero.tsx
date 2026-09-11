@@ -42,7 +42,7 @@ export default function Hero() {
           Coming Soon
         </Link>
 
-        <p className="max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
+        <p className="max-w-3xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
           The <span className="text-base font-semibold md:text-lg" style={{ color: 'var(--text-primary)' }}>phygital</span> layer
           giving communities access to exclusive benefits, extraordinary gatherings,
           transformative wellbeing experiences and world-class masterclasses in remarkable venues.
