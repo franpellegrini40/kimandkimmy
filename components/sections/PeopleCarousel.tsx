@@ -40,7 +40,7 @@ export default function PeopleCarousel({ people = PEOPLE }: { people?: Person[] 
     <div>
       <div className="grid gap-8 sm:gap-10 md:grid-cols-2 md:items-center md:gap-16">
         {/* Photo — crossfades between the active person's portrait */}
-        <div className="relative aspect-[4/5] w-full overflow-hidden">
+        <div className="relative aspect-[4/5] w-full max-w-[320px] overflow-hidden sm:max-w-[360px]">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={active.slug}
