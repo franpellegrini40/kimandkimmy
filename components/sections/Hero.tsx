@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Button from '@/components/ui/Button'
 
 export default function Hero() {
@@ -11,11 +12,17 @@ export default function Hero() {
           className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm uppercase md:text-base"
           style={{ letterSpacing: 'var(--tracking-caps)' }}
         >
-          <span style={{ color: 'var(--accent-deep)' }}>Live longer</span>
+          <Link href="/#philosophy" className="inline-block transition-transform duration-200 hover:scale-125" style={{ color: 'var(--accent-deep)' }}>
+            Live longer
+          </Link>
           <span style={{ color: 'var(--text-quiet)' }}>·</span>
-          <span>Think bigger</span>
+          <Link href="/#philosophy" className="inline-block transition-transform duration-200 hover:scale-125">
+            Think bigger
+          </Link>
           <span style={{ color: 'var(--text-quiet)' }}>·</span>
-          <span className="italic" style={{ color: 'var(--forest)' }}>Leave it better</span>
+          <Link href="/#philosophy" className="inline-block italic transition-transform duration-200 hover:scale-125" style={{ color: 'var(--forest)' }}>
+            Leave it better
+          </Link>
         </p>
 
         <h1 className="max-w-4xl leading-[1.08]">
@@ -35,8 +42,9 @@ export default function Hero() {
         </span>
 
         <p className="max-w-xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
-          The &ldquo;phygital&rdquo; layer connecting communities through curated gatherings,
-          transformative experiences and masterclasses in exceptional places.
+          The <span className="text-base font-semibold md:text-lg" style={{ color: 'var(--text-primary)' }}>phygital</span> layer
+          connecting communities through curated gatherings, transformative experiences and
+          masterclasses in exceptional places.
         </p>
 
         <div className="mt-4 flex flex-wrap justify-center gap-4">
