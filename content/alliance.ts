@@ -18,7 +18,7 @@ export const ALLIANCE_HOW_IT_WORKS = [
   {
     step: '1',
     label: 'Connect your community',
-    detail: 'Integrate VIVRA as "plug and play" into your community, ecosystem or membership club, bringing your members new opportunities to connect, learn and grow — becoming more VIMPs.',
+    detail: 'Integrate VIVRA as "plug and play" into your community, ecosystem or membership club, bringing your members new opportunities to connect, learn and grow.',
   },
   {
     step: '2',

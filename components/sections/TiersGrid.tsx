@@ -9,7 +9,8 @@ import {
 export default function TiersGrid() {
   return (
     <div>
-      <div className="overflow-x-auto">
+      <h2 className="text-3xl md:text-4xl">Upgraded Tiers.</h2>
+      <div className="mt-10 overflow-x-auto">
         <table className="w-full min-w-[720px] border-collapse text-sm">
           <thead>
             <tr>
