@@ -78,7 +78,7 @@ export default function MemberDashboard() {
       <div className="border-t p-6" style={{ borderColor: 'var(--rule)', background: 'var(--navy)' }}>
         <div className="flex items-center gap-2">
           <span className="h-2 w-2 rounded-full" style={{ background: 'var(--aqua)' }} />
-          <span className="text-sm" style={{ color: 'var(--ivory)' }}>VIVRA AI &middot; 24/7 Concierge</span>
+          <span className="text-sm" style={{ color: 'var(--ivory)' }}>VIVRA World AI &middot; 24/7 Concierge</span>
         </div>
 
         <div className="mt-4 space-y-2">
