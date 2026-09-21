@@ -6,10 +6,8 @@ import WhoJoins from '@/components/sections/WhoJoins'
 import VillaGallery from '@/components/sections/VillaGallery'
 import ExperiencePillars from '@/components/sections/ExperiencePillars'
 import DayInLife from '@/components/sections/DayInLife'
-import AgendaTimeline from '@/components/sections/AgendaTimeline'
 import PricingSection from '@/components/sections/PricingSection'
 import CTABand from '@/components/sections/CTABand'
-import Section from '@/components/ui/Section'
 
 export const metadata: Metadata = {
   title: 'VIVRA Founding Retreat — Ibiza',
@@ -27,13 +25,6 @@ export default async function IbizaPage() {
       <WhoJoins />
       <VillaGallery />
       <ExperiencePillars />
-      <Section tone="sand" id="agenda">
-        <span className="eyebrow">Retreat Agenda</span>
-        <h2 className="mt-4 max-w-xl text-3xl md:text-4xl">The program.</h2>
-        <div className="mt-10">
-          <AgendaTimeline />
-        </div>
-      </Section>
       <DayInLife />
       <PricingSection />
       <CTABand site={site} />
