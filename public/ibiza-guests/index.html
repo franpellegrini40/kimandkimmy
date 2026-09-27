@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VIVRA Ibiza Gathering</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/logo/vivra-icon.svg" type="image/svg+xml">
+<meta name="description" content="Guest page for the VIVRA Founding Gathering in Ibiza, 4–9 October 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+  /* Single light look on purpose: it mirrors the ivory VIVRA slide decks. */
+  :root {
+    color-scheme: light;
+    --ground: #F7F4EF;
+    --panel: #EFEAE2;
+    --ink: #151515;
+    --muted: #77726B;
+    --green: #0E8A43;
+    --mint: #6FCF9F;
+    --amber: #C47A2C;
+    --teal: #1A8BA5;
+    --line: #E1DBD1;
+    --font: Calibri, Carlito, "Segoe UI", system-ui, sans-serif;
+  }
+  html, body { margin: 0; }
+  img { max-width: 100%; }
+  body { background: var(--ground); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.5; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; }
+
+  header.top {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+    background: color-mix(in srgb, var(--ground) 92%, transparent);
+    backdrop-filter: blur(6px); border-bottom: 1px solid var(--line);
+  }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; flex-wrap: wrap; }
+  .brand { font-size: 22px; letter-spacing: .32em; color: var(--mint); font-weight: 400; text-decoration: none; }
+  nav { display: flex; gap: 18px; flex-wrap: wrap; }
+  nav a { color: var(--green); text-decoration: none; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+  nav a:hover, nav a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+
+  .slide { position: relative; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; border-radius: 4px; overflow: hidden; box-shadow: 0 1px 2px rgb(0 0 0 / .06), 0 8px 28px rgb(60 50 30 / .10); background: var(--panel); }
+  .slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .slide a.hot { position: absolute; border-radius: 3px; outline-offset: 2px; }
+  .slide a.hot:hover { background: rgb(26 139 165 / .10); box-shadow: 0 0 0 2px rgb(26 139 165 / .45); }
+  .slide a.hot:focus-visible { outline: 2px solid var(--teal); }
+
+  section { padding-block: 56px 8px; scroll-margin-top: 70px; }
+  .eyebrow { color: var(--green); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 6px; }
+  h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 400; text-transform: uppercase; letter-spacing: .01em; margin: 0 0 10px; text-wrap: balance; }
+  .lede { color: var(--muted); max-width: 64ch; margin: 0 0 26px; }
+  .stack { display: grid; gap: 28px; }
+
+  .hero { padding-block: 28px 0; }
+  .facts { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 22px; padding: 0; list-style: none; font-variant-numeric: tabular-nums; }
+  .facts li { display: grid; }
+  .facts b { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+  .facts span { font-size: 19px; }
+
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 18px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border: 1px solid var(--amber); color: var(--green); font-weight: 700; font-size: 18px; text-decoration: none; background: transparent; border-radius: 2px; cursor: pointer; font-family: inherit; }
+  .btn:hover, .btn:focus-visible { background: #fff; }
+  .btn.solid { background: var(--green); border-color: var(--green); color: #fff; }
+  .btn.solid:hover, .btn.solid:focus-visible { background: #0b7437; }
+  .required-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 26px; padding: 18px 20px; background: #fff; border: 1px solid var(--amber); border-radius: 3px; }
+  .required-bar p { margin: 0; flex: 1 1 280px; font-size: 18px; }
+  .pill { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #fff; background: var(--amber); padding: 4px 10px; border-radius: 999px; }
+  nav a.req { display: inline-flex; align-items: center; gap: 6px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); display: inline-block; }
+  .contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .c-item { display: grid; gap: 8px; justify-items: start; padding: 20px; background: #fff; border: 1px solid var(--line); border-radius: 3px; }
+  .c-val { font-size: 22px; user-select: all; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+  .slide a.zoom { display: block; width: 100%; height: 100%; }
+  .slide a.hot { z-index: 1; }
+  .zoom-hint { display: none; color: var(--muted); font-size: 14px; margin: -14px 0 18px; }
+  @media (max-width: 640px) {
+    header.top .wrap { flex-wrap: nowrap; gap: 14px; }
+    nav { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-block: 4px; }
+    nav::-webkit-scrollbar { display: none; }
+    nav a { white-space: nowrap; }
+    .zoom-hint { display: block; }
+  }
+  a.plain { color: inherit; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
+  a.plain:hover { text-decoration-color: var(--teal); }
+  .note { color: var(--muted); font-size: 15px; max-width: 60ch; }
+
+  .person { display: grid; gap: 12px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+  .chips a { color: var(--teal); font-weight: 700; text-decoration: none; font-size: 16px; }
+  .chips a:hover, .chips a:focus-visible { text-decoration: underline; }
+  .chips a::after { content: " \2192"; }
+  .who { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+
+  .prep { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 32px; }
+  .prep h3 { font-size: 21px; font-weight: 700; color: var(--green); margin: 0 0 8px; text-transform: uppercase; letter-spacing: .02em; }
+  .prep p { margin: 0 0 12px; max-width: 62ch; }
+  .prep ul.links { padding: 0; margin: 0; list-style: none; display: grid; gap: 6px; }
+  .prep ul.links a { color: var(--teal); text-decoration: none; }
+  .prep ul.links a:hover { text-decoration: underline; }
+  details { margin-top: 26px; border-top: 1px solid var(--line); padding-top: 16px; }
+  summary { cursor: pointer; font-weight: 700; color: var(--amber); font-size: 18px; }
+  .qgrid { columns: 2 300px; column-gap: 36px; margin-top: 14px; }
+  .qgrid div { break-inside: avoid; margin-bottom: 16px; }
+  .qgrid h4 { margin: 0 0 4px; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--green); }
+  .qgrid ul { margin: 0; padding-left: 18px; font-size: 15.5px; }
+
+  .files { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+  .files li { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  .files .name { font-size: 18px; }
+  .files .meta { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+  .dl { padding: 8px 16px; font-size: 15px; }
+  .status { font-size: 14px; color: var(--muted); min-height: 1.2em; }
+
+  footer { padding-block: 56px 40px; }
+  footer .tag { font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); margin-top: 18px; }
+
+  @media (max-width: 640px) {
+    nav { gap: 12px; }
+    body { font-size: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  html { scroll-behavior: smooth; }
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#welcome">VIVRA</a>
+    <nav aria-label="Sections">
+      <a href="#form" class="req">Form<span class="dot" aria-label="required"></span></a>
+      <a href="#villa">Villa</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#facilitators">Facilitators</a>
+      <a href="#healing">Healing prep</a>
+      <a href="#downloads">Downloads</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" id="welcome">
+    <div class="slide"><a class="zoom" href="/ibiza-guests/slides/fac-1.jpg" target="_blank" rel="noopener" aria-label="Open slide full size"><img src="/ibiza-guests/slides/fac-1.jpg" alt="VIVRA Founding Gathering, Ibiza. An exclusive transformative retreat for conscious leaders. Live longer. Think bigger. Leave it better."></a></div>
+    <ul class="facts">
+      <li><b>Dates</b><span>Sun 4 – Fri 9 October 2026</span></li>
+      <li><b>Villa</b><span><a class="plain" href="https://www.google.com/maps/place/Can+%C4%80ylma/@38.9995035,1.4375051,684m/data=!3m1!1e3!4m14!1m7!3m6!1s0x1299394cfe202277:0xe22cd8445e23d301!2sCan+%C4%80ylma!8m2!3d38.9995035!4d1.4400854!16s%2Fg%2F11gwg1xl31!3m5!1s0x1299394cfe202277:0xe22cd8445e23d301!8m2!3d38.9995035!4d1.4400854!16s%2Fg%2F11gwg1xl31?entry=ttu&amp;g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Can Āylma, Ibiza</a></span></li>
+      <li><b>Format</b><span>By invitation · ten places</span></li>
+      <li><b>Check-out</b><span>Friday, 6pm at the latest</span></li>
+    </ul>
+    <div class="required-bar" role="note">
+      <span class="pill">Required</span>
+      <p><strong>By 30 September:</strong> every attendee must complete the attendee form and review all the material on this page.</p>
+      <a class="btn solid" href="https://docs.google.com/forms/d/e/1FAIpQLScSRE20kHjQrgUFQhP4VVyb13kvq_gPD5mZpHFsbMwvlTXFuA/viewform" target="_blank" rel="noopener">Fill in the form &rarr;</a>
+    </div>
+  </section>
+
+  <section id="form">
+    <p class="eyebrow">Required · by 30 September</p>
+    <h2>Attendee form</h2>
+    <p class="lede">Completing the form by 30 September is mandatory for every attendee. We use it to prepare your room, transfers, meals and sessions. It takes a few minutes.</p>
+    <div class="cta-row">
+      <a class="btn solid" href="https://docs.google.com/forms/d/e/1FAIpQLScSRE20kHjQrgUFQhP4VVyb13kvq_gPD5mZpHFsbMwvlTXFuA/viewform" target="_blank" rel="noopener">Fill in the attendee form &rarr;</a>
+    </div>
+  </section>
+
+  <section id="villa">
+    <p class="eyebrow">Where we stay</p>
+    <h2>Villa location</h2>
+    <p class="lede">Can Āylma, Ibiza. The whole estate is ours for the week, with no other guests.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://www.google.com/maps/place/Can+%C4%80ylma/@38.9995035,1.4375051,684m/data=!3m1!1e3!4m14!1m7!3m6!1s0x1299394cfe202277:0xe22cd8445e23d301!2sCan+%C4%80ylma!8m2!3d38.9995035!4d1.4400854!16s%2Fg%2F11gwg1xl31!3m5!1s0x1299394cfe202277:0xe22cd8445e23d301!8m2!3d38.9995035!4d1.4400854!16s%2Fg%2F11gwg1xl31?entry=ttu&amp;g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
+      <span class="note">38.99950, 1.44009</span>
+    </div>
+  </section>
+
+  <section id="agenda">
+    <p class="eyebrow">Programme</p>
+    <h2>The week in Ibiza</h2>
+    <p class="lede">Five days: mornings for the body, days for the mind, evenings for connection. Breakfast from 8am, and every amenity is included.</p>
+    <p class="zoom-hint">Tap a slide to open it full size.</p>
+    <div class="stack">
+      <div class="slide"><a class="zoom" href="/ibiza-guests/slides/prog-2.jpg" target="_blank" rel="noopener" aria-label="Open slide full size"><img src="/ibiza-guests/slides/prog-2.jpg" alt="Agenda: the rhythm of the week, Sunday 4 to Friday 9 October, by morning, midday, afternoon and evening." loading="lazy"></a></div>
+      <div class="slide"><a class="zoom" href="/ibiza-guests/slides/prog-3.jpg" target="_blank" rel="noopener" aria-label="Open slide full size"><img src="/ibiza-guests/slides/prog-3.jpg" alt="Programme days one to three: Longevity and Wellbeing, Regenerative Impact, Conscious Leadership." loading="lazy"></a></div>
+      <div class="slide"><a class="zoom" href="/ibiza-guests/slides/prog-4.jpg" target="_blank" rel="noopener" aria-label="Open slide full size"><img src="/ibiza-guests/slides/prog-4.jpg" alt="Programme days four and five: Integrate, then enjoy and depart. What every place includes." loading="lazy"></a></div>
+    </div>
+  </section>
+
+  <section id="facilitators">
+    <p class="eyebrow">The mastermind &amp; retreat leaders</p>
+    <h2>Meet the facilitators</h2>
+    <p class="lede">The links on each slide work. Tap them, or use the links under each one.</p>
+    <p class="zoom-hint">Tap a slide to open it full size.</p>
+    <div class="stack">
+      <article class="person">
+        <div class="slide"><a class="zoom" href="/ibiza-guests/slides/fac-2.jpg" target="_blank" rel="noopener" aria-label="Open slide full size">
+          <img src="/ibiza-guests/slides/fac-2.jpg" alt="Sharon Cittone, Longevity and Wellbeing Lead, Systemic Impact." loading="lazy"></a>
+          <a class="hot" style="left:71.5%;top:78%;width:24.1%;height:4.3%" href="https://www.linkedin.com/in/sharon-cittone-3b3a7b6/" target="_blank" rel="noopener" aria-label="Sharon Cittone on LinkedIn"></a>
+          <a class="hot" style="left:9%;top:83%;width:30.6%;height:6.9%" href="https://drive.google.com/drive/folders/1ki8ghppYY_AzjgXimhq0f9XOD0TPVBQ-?usp=drive_link" target="_blank" rel="noopener" aria-label="Download Sharon's flagship workshop"></a>
+        </div>
+        <div class="chips"><span class="who">Sharon Cittone</span>
+          <a href="https://www.linkedin.com/in/sharon-cittone-3b3a7b6/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+          <a href="https://drive.google.com/drive/folders/1ki8ghppYY_AzjgXimhq0f9XOD0TPVBQ-?usp=drive_link" target="_blank" rel="noopener">Flagship workshop</a>
+        </div>
+      </article>
+
+      <article class="person">
+        <div class="slide"><a class="zoom" href="/ibiza-guests/slides/fac-3.jpg" target="_blank" rel="noopener" aria-label="Open slide full size">
+          <img src="/ibiza-guests/slides/fac-3.jpg" alt="Saha, Healing: Quantum Healing Hypnosis Technique and Reconnective Healing practitioner." loading="lazy"></a>
+          <a class="hot" style="left:78.5%;top:84%;width:12%;height:3.8%" href="https://drive.google.com/drive/folders/1nxT9xz8tK68AKWDUQcSOR_0Jgf5TuREb?usp=sharing" target="_blank" rel="noopener" aria-label="More information about Saha"></a>
+        </div>
+        <div class="chips"><span class="who">Saha</span>
+          <a href="https://drive.google.com/drive/folders/1nxT9xz8tK68AKWDUQcSOR_0Jgf5TuREb?usp=sharing" target="_blank" rel="noopener">More information</a>
+          <a href="#healing">Prepare for your session</a>
+        </div>
+      </article>
+
+      <article class="person">
+        <div class="slide"><a class="zoom" href="/ibiza-guests/slides/fac-4.jpg" target="_blank" rel="noopener" aria-label="Open slide full size">
+          <img src="/ibiza-guests/slides/fac-4.jpg" alt="Dunja, Healing: interspecies communicator and founder of Animal Assisted Intuitive Transformation." loading="lazy"></a>
+          <a class="hot" style="left:78.5%;top:84.5%;width:12%;height:3.8%" href="https://outbackwhisperer.com/" target="_blank" rel="noopener" aria-label="More information about Dunja"></a>
+        </div>
+        <div class="chips"><span class="who">Dunja</span>
+          <a href="https://outbackwhisperer.com/" target="_blank" rel="noopener">More information</a>
+        </div>
+      </article>
+
+      <article class="person">
+        <div class="slide"><a class="zoom" href="/ibiza-guests/slides/fac-5.jpg" target="_blank" rel="noopener" aria-label="Open slide full size">
+          <img src="/ibiza-guests/slides/fac-5.jpg" alt="Diana, Wellness: founder of Human State Mastery and VIVRA's retreat operator." loading="lazy"></a>
+          <a class="hot" style="left:79.5%;top:86.5%;width:12%;height:3.8%" href="https://humanstatemastery.com/" target="_blank" rel="noopener" aria-label="More information about Diana"></a>
+        </div>
+        <div class="chips"><span class="who">Diana</span>
+          <a href="https://humanstatemastery.com/" target="_blank" rel="noopener">More information</a>
+        </div>
+      </article>
+
+      <article class="person">
+        <div class="slide"><a class="zoom" href="/ibiza-guests/slides/fac-6.jpg" target="_blank" rel="noopener" aria-label="Open slide full size">
+          <img src="/ibiza-guests/slides/fac-6.jpg" alt="Francisco Pellegrini, Founder and CEO of VIVRA, the organizer." loading="lazy"></a>
+          <a class="hot" style="left:80%;top:75.5%;width:12%;height:3.8%" href="https://franpellegrini.com/" target="_blank" rel="noopener" aria-label="More information about Francisco Pellegrini"></a>
+        </div>
+        <div class="chips"><span class="who">Francisco Pellegrini</span>
+          <a href="https://franpellegrini.com/" target="_blank" rel="noopener">More information</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="healing">
+    <p class="eyebrow">Before you arrive</p>
+    <h2>Healing sessions with Saha</h2>
+    <p class="lede">Healing sessions are optional. If you plan to book one, read this first and watch the short videos.</p>
+    <div class="prep">
+      <div>
+        <h3>Reconnective Healing</h3>
+        <p>A non-touch modality working with energy, information and light to bring body, mind and spirit into balance. It can be done in person or remotely, and most people need one session, three at most. You don't need any technology: simply lie down at the agreed time.</p>
+        <ul class="links">
+          <li><a href="https://youtu.be/UEkxP9jpkaI" target="_blank" rel="noopener">Video: introduction to Reconnective Healing</a></li>
+          <li><a href="https://youtu.be/EfszQgl9tBY" target="_blank" rel="noopener">Video: a second overview</a></li>
+          <li><a href="https://www.tmswiki.org/forum/threads/reconnective-healing-the-reconnection.7606/" target="_blank" rel="noopener">Article: Reconnective Healing, The Reconnection</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Quantum Healing Hypnosis (QHHT)</h3>
+        <p>A deep hypnosis method that guides you into the theta brainwave state for insight, healing and clarity. A QHHT session is in person only, needs a six-hour window of undisturbed time, and the rest of the day should be kept free to rest and integrate. Prepare your questions in advance.</p>
+        <ul class="links">
+          <li><a href="https://youtube.com/shorts/mry-0QM-KFk" target="_blank" rel="noopener">Video: QHHT in one minute</a></li>
+          <li><a href="https://youtu.be/T3OXU2xw2nA" target="_blank" rel="noopener">Video: what happens in a session</a></li>
+          <li><a href="https://youtu.be/_xt7x_PvH70" target="_blank" rel="noopener">Video: going deeper</a></li>
+        </ul>
+      </div>
+    </div>
+    <details id="qhht-questions">
+      <summary>Question ideas to prepare for QHHT</summary>
+      <div class="qgrid">
+        <div><h4>Health &amp; body</h4><ul>
+          <li>Why am I experiencing this health condition?</li><li>What is the root cause of this condition?</li><li>What is this condition showing me?</li><li>What does my body need from me right now?</li><li>What is the optimal diet for me?</li><li>What supplements, if any, support me best?</li><li>What supports my optimal health and immunity?</li><li>What form of movement or exercise suits me best?</li><li>Are any medications I take unnecessary for me?</li><li>Why do I feel tired?</li><li>What is the cause of pain or discomfort in my ______?</li><li>What in my body needs attention, care, or healing?</li><li>What is required for this to fully heal?</li></ul></div>
+        <div><h4>Emotional &amp; inner healing</h4><ul>
+          <li>Is there unresolved trauma in my body?</li><li>What inner child wounds are ready to be healed?</li><li>What is the root cause of my anxiety, depression, or emotional patterns?</li><li>How can I release anger, guilt, grief, or resentment?</li><li>What fears am I holding onto?</li><li>What is the origin of these fears or phobias?</li><li>In what ways is my body communicating with me?</li></ul></div>
+        <div><h4>Self-awareness &amp; integration</h4><ul>
+          <li>What parts of myself have I ignored or rejected?</li><li>What aspects of myself are ready to be integrated?</li><li>What patterns or blocks am I holding?</li><li>Why do I repeat the same patterns?</li><li>What limiting beliefs do I hold?</li><li>What rituals or practices support me now?</li><li>What is most important for me to know at this time?</li></ul></div>
+        <div><h4>Purpose &amp; life path</h4><ul>
+          <li>What did I come here to do?</li><li>Am I aligned with my life's purpose?</li><li>What lessons am I here to learn?</li><li>What conditioning or programming do I need to release?</li><li>Where am I being guided to live or move?</li></ul></div>
+        <div><h4>Relationships &amp; family</h4><ul>
+          <li>How can I improve my relationship with ______?</li><li>What limiting beliefs do I have about relationships?</li><li>What is the deeper reason for challenges with ______?</li><li>How can I be a more present parent?</li><li>What does my child need me to understand?</li><li>How can I be a more conscious partner?</li><li>What role do I play in my relationships?</li><li>What boundaries serve me best?</li><li>Is there anyone I need to forgive?</li></ul></div>
+        <div><h4>Ancestral &amp; soul-level</h4><ul>
+          <li>What is my role in my ancestral healing?</li><li>Are there patterns I carry from my lineage?</li><li>Are there agreements or contracts I need to release or honor?</li></ul></div>
+        <div><h4>Career, money &amp; expression</h4><ul>
+          <li>Am I aligned with my current work?</li><li>What path or career suits me best?</li><li>Why do I struggle financially?</li><li>What blocks my abundance?</li><li>What ideas am I meant to act on?</li></ul></div>
+        <div><h4>Spiritual connection &amp; awareness</h4><ul>
+          <li>How can I deepen my connection with my Higher Self?</li><li>What is the best meditation practice for me?</li><li>How can I better receive guidance?</li><li>What is the meaning of my recurring dreams?</li><li>Why do I feel like I don't belong here?</li><li>What abilities or sensitivities are ready to open?</li><li>What is the meaning behind signs or synchronicities I experience?</li></ul></div>
+        <div><h4>Open inquiry</h4><ul>
+          <li>What does my animal companion want me to know?</li><li>What is the meaning behind a strange or inexplicable experience I had?</li><li>What is the significance of ______?</li><li>Are there any limiting beliefs I have about sexuality and intimacy?</li><li>Is there a healing modality I should learn or practice now?</li></ul></div>
+      </div>
+    </details>
+  </section>
+
+  <section id="downloads">
+    <p class="eyebrow">Keep a copy</p>
+    <h2>Downloads</h2>
+    <p class="lede">The programme and facilitator decks keep their links active inside the PDF.</p>
+    <ul class="files" id="files">
+      <li><div><div class="name">Ibiza Programme &amp; Agenda</div><div class="meta">PDF · 5 pages · 1.0 MB</div></div><a class="btn dl" href="/ibiza-guests/files/VIVRA-Ibiza-Programme.pdf" download>Download</a></li>
+      <li><div><div class="name">Meet the Facilitators</div><div class="meta">PDF · 7 pages · 1.3 MB</div></div><a class="btn dl" href="/ibiza-guests/files/VIVRA-Ibiza-Facilitators.pdf" download>Download</a></li>
+      <li><div><div class="name">VIVRA World Flagship Workshop, by Sharon Cittone</div><div class="meta">PDF · 0.1 MB</div></div><a class="btn dl" href="/ibiza-guests/files/Sharon-Cittone-Flagship-Workshop.pdf" download>Download</a></li>
+      <li><div><div class="name">Saha, introduction</div><div class="meta">PDF · 1.6 MB</div></div><a class="btn dl" href="/ibiza-guests/files/Saha-Introduction.pdf" download>Download</a></li>
+      <li><div><div class="name">Reconnective Healing with Saha</div><div class="meta">PDF · 2.3 MB</div></div><a class="btn dl" href="/ibiza-guests/files/Saha-Reconnective-Healing.pdf" download>Download</a></li>
+      <li><div><div class="name">QHHT, introduction</div><div class="meta">PDF · 5.0 MB</div></div><a class="btn dl" href="/ibiza-guests/files/QHHT-Introduction.pdf" download>Download</a></li>
+      <li><div><div class="name">The research behind Reconnective Healing</div><div class="meta">PDF · 1.4 MB</div></div><a class="btn dl" href="/ibiza-guests/files/Research-Reconnective-Healing.pdf" download>Download</a></li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <p class="eyebrow">Contact</p>
+    <h2>Do you have any questions?</h2>
+    <p class="lede">Send Francisco a WhatsApp or an email.</p>
+    <div class="contact">
+      <div class="c-item">
+        <span class="who">WhatsApp</span>
+        <span class="c-val">+971 54 520 2420</span>
+        <a class="btn solid" href="https://wa.me/971545202420" target="_blank" rel="noopener">Message on WhatsApp &rarr;</a>
+      </div>
+      <div class="c-item">
+        <span class="who">Email</span>
+        <span class="c-val" id="email">francisco@ithaka.vc</span>
+        <button class="btn" type="button" id="copy-email">Copy email</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="slide"><a class="zoom" href="/ibiza-guests/slides/prog-5.jpg" target="_blank" rel="noopener" aria-label="Open slide full size">
+      <img src="/ibiza-guests/slides/prog-5.jpg" alt="You'll be telling this story for years. Fill the form below." loading="lazy"></a>
+      <a class="hot" style="left:4%;top:70.5%;width:24%;height:7%" href="https://docs.google.com/forms/d/e/1FAIpQLScSRE20kHjQrgUFQhP4VVyb13kvq_gPD5mZpHFsbMwvlTXFuA/viewform" target="_blank" rel="noopener" aria-label="Fill in the attendee form"></a>
+    </div>
+    <p class="tag">VIVRA World · Founding Gathering · Can Āylma, Ibiza · Ten places</p>
+  </footer>
+</main>
+
+<script>
+  const copyBtn = document.getElementById('copy-email');
+  copyBtn.addEventListener('click', () => {
+    const text = document.getElementById('email').textContent;
+    const done = () => { copyBtn.textContent = 'Copied'; setTimeout(() => copyBtn.textContent = 'Copy email', 1800); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById('email')); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); copyBtn.textContent = 'Selected, press Ctrl+C'; };
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+  });
+</script>
+
+</body>
+</html>

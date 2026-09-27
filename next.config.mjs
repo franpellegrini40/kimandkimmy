@@ -5,6 +5,10 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [{ protocol: 'https', hostname: '**' }],
   },
+  async rewrites() {
+    // Guest page for the Ibiza gathering: static HTML in public/ibiza-guests.
+    return [{ source: '/ibiza-guests', destination: '/ibiza-guests/index.html' }]
+  },
   async headers() {
     return [
       {
