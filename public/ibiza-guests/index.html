@@ -84,6 +84,20 @@
     .chips { gap: 0 18px; }
     .zoom-hint { display: block; }
   }
+  .agenda-cards { display: none; }
+  .day { background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 18px 18px 8px; }
+  .day header { display: flex; flex-direction: column; gap: 2px; margin-bottom: 10px; }
+  .day-date { font-size: 21px; font-weight: 700; color: var(--amber); }
+  .day-theme { font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--green); }
+  .day dl { margin: 0; }
+  .day dt { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding-top: 10px; border-top: 1px solid var(--line); }
+  .day dd { margin: 4px 0 10px; display: grid; gap: 4px; font-size: 18px; line-height: 1.4; }
+  .day-notes p { margin: 0; font-size: 16px; color: var(--muted); }
+  .includes { margin: 0 0 10px; padding-left: 20px; font-size: 17px; display: grid; gap: 6px; }
+  .slides-label { margin: 8px 0 0; color: var(--muted); font-size: 15px; }
+  @media (max-width: 760px) {
+    .agenda-cards { display: grid; gap: 16px; margin-bottom: 16px; }
+  }
   a.plain { color: inherit; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
   a.plain:hover { text-decoration-color: var(--teal); }
   .note { color: var(--muted); font-size: 15px; max-width: 60ch; }
@@ -184,7 +198,46 @@
     <p class="eyebrow">Programme</p>
     <h2>The week in Ibiza</h2>
     <p class="lede">Five days: mornings for the body, days for the mind, evenings for connection. Breakfast from 8am, and every amenity is included.</p>
-    <p class="zoom-hint">Tap a slide to open it full size.</p>
+    <div class="agenda-cards">
+      <article class="day"><header><span class="day-date">Sunday 4 October</span><span class="day-theme">Arrivals</span></header><dl>
+        <dt>Morning</dt><dd><span>Private arrivals &amp; transfer</span></dd>
+        <dt>Midday</dt><dd><span>Welcome tea + orientation</span></dd>
+        <dt>Afternoon</dt><dd><span>Settle · pool · garden · amenities</span></dd>
+        <dt>Evening</dt><dd><span>Sunset ritual &amp; welcome dinner</span><span>Introduction</span></dd>
+      </dl></article>
+      <article class="day"><header><span class="day-date">Monday 5 October</span><span class="day-theme">Workshops</span></header><dl>
+        <dt>Morning</dt><dd><span>Yoga &amp; Breathwork by Diana</span><span>Longevity &amp; Wellbeing; Becoming a Systemic, by Sharon</span></dd>
+        <dt>Midday</dt><dd><span>Free time · soft lunch</span></dd>
+        <dt>Afternoon</dt><dd><span>Longevity &amp; Wellbeing; Becoming a Systemic, by Sharon</span><span>Spa · Wellness · Free time</span></dd>
+        <dt>Evening</dt><dd><span>Mediterranean dinner</span><span>Cacao Ceremony · Fire Circle Talks</span></dd>
+      </dl></article>
+      <article class="day"><header><span class="day-date">Tuesday 6 October</span><span class="day-theme">Impact</span></header><dl>
+        <dt>Morning</dt><dd><span>Mindful walking / trekking in nature</span><span>Design the future; Ideas into real impact, by Sharon</span></dd>
+        <dt>Midday</dt><dd><span>Design the future; Ideas into real impact, by Sharon</span><span>Lunch snacks</span></dd>
+        <dt>Afternoon</dt><dd><span>Design the future; Ideas into real impact, by Sharon</span><span>Biohacking circuit · Spa</span></dd>
+        <dt>Evening</dt><dd><span>Curated conversation dinner</span></dd>
+      </dl></article>
+      <article class="day"><header><span class="day-date">Wednesday 7 October</span><span class="day-theme">Conscious Leadership</span></header><dl>
+        <dt>Morning</dt><dd><span>Yoga with Sound Healing</span><span>Sustaining the Impact; Becoming VIMPs, by Sharon</span></dd>
+        <dt>Midday</dt><dd><span>Sustaining the Impact; VIMPs, by Sharon</span><span>Lunch snacks</span></dd>
+        <dt>Afternoon</dt><dd><span>Sustaining the Impact; Becoming VIMPs, by Sharon</span><span>Spa, Wellness &amp; Gym (choice)</span></dd>
+        <dt>Evening</dt><dd><span>Spanish dinner</span><span>Reconnective Healing with Saha</span></dd>
+      </dl></article>
+      <article class="day"><header><span class="day-date">Thursday 8 October</span><span class="day-theme">Integrate</span></header><dl>
+        <dt>Morning</dt><dd><span>Equine Healing (optional)</span><span>90-day commitments + matching</span></dd>
+        <dt>Midday</dt><dd><span>Closing Circle &amp; VIVRA World presentation</span><span>Lunch snacks</span></dd>
+        <dt>Afternoon</dt><dd><span>Closing Circle &amp; VIVRA World presentation</span><span>Equine Healing Workshop by Dunja</span></dd>
+        <dt>Evening</dt><dd><span>Celebration dinner</span></dd>
+      </dl></article>
+      <article class="day"><header><span class="day-date">Friday 9 October</span><span class="day-theme">Departure</span></header><dl>
+        <dt>Morning</dt><dd><span>Goodbye gift; Reconnective Healing with Saha</span><span>Transfer to the airport (from the morning)</span></dd>
+        <dt>Midday</dt><dd><span>Free time · enjoy the amenities</span></dd>
+        <dt>Afternoon</dt><dd><span>Free time · enjoy the amenities</span><span>Check-out by 6pm at the latest</span></dd>
+      </dl></article>
+      <div class="day-notes"><p><strong>Every day:</strong> breakfast from 8am · all amenities included (gym, spa, biohacking, cinema, pool, co-working) · healing sessions optional · private, protected free time.</p></div>
+      <article class="day"><header><span class="day-date">Every place includes</span></header><ul class="includes"><li>The whole estate, with no other guests</li><li>Free access to gym, spa, biohacking hub &amp; amenities</li><li>All meals with a private international chef</li><li>The three flagship masterclasses &amp; networking</li><li>Healing &amp; wellness sessions (optional)</li><li>One 1:1 expert session (optional)</li><li>Transfers &amp; private tours</li><li>90-day follow-up mentorship</li></ul></article>
+      <p class="slides-label">The original programme slides (tap to enlarge):</p>
+    </div>
     <div class="stack">
       <div class="slide"><a class="zoom" href="/ibiza-guests/slides/prog-2.jpg" target="_blank" rel="noopener" aria-label="Open slide full size"><img src="/ibiza-guests/slides/prog-2.jpg" alt="Agenda: the rhythm of the week, Sunday 4 to Friday 9 October, by morning, midday, afternoon and evening." loading="lazy"></a></div>
       <div class="slide"><a class="zoom" href="/ibiza-guests/slides/prog-3.jpg" target="_blank" rel="noopener" aria-label="Open slide full size"><img src="/ibiza-guests/slides/prog-3.jpg" alt="Programme days one to three: Longevity and Wellbeing, Regenerative Impact, Conscious Leadership." loading="lazy"></a></div>
