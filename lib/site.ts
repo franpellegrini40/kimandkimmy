@@ -21,8 +21,8 @@ export const SITE_META = {
     tagline: 'Live longer. Think bigger. Leave it better.',
   },
   'join-vivra': {
-    name: 'VIVRA Founding Gathering',
+    name: 'VIVRA',
     domain: 'joinvivra.com',
-    tagline: '1st Founding Gathering · By Invitation Only · Few Places — Can Aylma, Ibiza.',
+    tagline: 'Change within. Impact beyond. A community of communities: curated gatherings in venues that have a soul.',
   },
 } as const

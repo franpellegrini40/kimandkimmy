@@ -9,8 +9,7 @@ export default function Footer() {
         <div className="max-w-sm">
           <Logo className="h-4 w-auto" />
           <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
-            A curated community exploring new dimensions of wellbeing, longevity and human
-            potential — beginning in Ibiza.
+            A community of communities. Change within, impact beyond.
           </p>
         </div>
 

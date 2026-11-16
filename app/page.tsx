@@ -1,41 +1,38 @@
 import { getCurrentSite } from '@/lib/site'
 import PageShell from '@/components/layout/PageShell'
-import Hero from '@/components/sections/Hero'
-import BrandReel from '@/components/sections/BrandReel'
 import Philosophy from '@/components/sections/Philosophy'
-import HowItWorksTeaser from '@/components/sections/HowItWorksTeaser'
 import VivraEcosystem from '@/components/sections/VivraEcosystem'
-import EcosystemStory from '@/components/sections/EcosystemStory'
-import ExperiencePillars from '@/components/sections/ExperiencePillars'
-import HealingPractices from '@/components/sections/HealingPractices'
-import VenuesTeaser from '@/components/sections/VenuesTeaser'
-import ImpactTeaser from '@/components/sections/ImpactTeaser'
-import NewsTeaser from '@/components/sections/NewsTeaser'
-import ContactTeaser from '@/components/sections/ContactTeaser'
-import DayInLife from '@/components/sections/DayInLife'
-import MembershipTeaser from '@/components/sections/MembershipTeaser'
-import CTABand from '@/components/sections/CTABand'
+import { HomeHero, HomeIsIsNot } from '@/components/sections/home/HomeTop'
+import { HomeHowItWorks, HomeConversations, HomeFacilitators } from '@/components/sections/home/HomeAlliance'
+import { HomeMembership, HomeThreeWaysIn, HomeVenues } from '@/components/sections/home/HomeMembership'
+import { HomeFounders, HomeIbiza, HomeWall, HomeRituals } from '@/components/sections/home/HomeIbiza'
+import { HomePassport, HomeCommons, HomeApply } from '@/components/sections/home/HomePlatform'
 
+// Home, site v3. One scroll, in the order of the menu:
+// Philosophy → How it works → Membership → Network → Ecosystem → Ibiza 2026 →
+// Passport → Planetary Commons → Request invitation.
 export default async function HomePage() {
   const site = await getCurrentSite()
 
   return (
     <PageShell site={site} overHero>
-      <Hero />
+      <HomeHero />
       <Philosophy />
-      <HowItWorksTeaser />
-      <BrandReel />
+      <HomeIsIsNot />
+      <HomeHowItWorks />
+      <HomeConversations />
+      <HomeFacilitators />
+      <HomeMembership />
+      <HomeThreeWaysIn />
+      <HomeVenues />
       <VivraEcosystem />
-      <EcosystemStory />
-      <ExperiencePillars />
-      <HealingPractices />
-      <VenuesTeaser />
-      <ImpactTeaser />
-      <NewsTeaser />
-      <ContactTeaser />
-      <DayInLife />
-      <MembershipTeaser />
-      <CTABand site={site} />
+      <HomeFounders />
+      <HomeIbiza />
+      <HomeWall />
+      <HomeRituals />
+      <HomePassport />
+      <HomeCommons />
+      <HomeApply />
     </PageShell>
   )
 }

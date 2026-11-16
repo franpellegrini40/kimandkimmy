@@ -1,18 +1,29 @@
 export type SiteId = 'vivra-world' | 'join-vivra'
 
-// Header nav — deliberately kept tight (Lifestyle, Alliance and Concierge
-// stay reachable via the footer and in-page CTAs, but are not primary-nav
-// items). /alliance stays a separate, deeper B2B page.
-export const NAV_ITEMS = [
-  { label: 'VIVRA', href: '/' },
+// The header shows no inline links: everything lives behind the menu button
+// (three lines), on every screen size. MENU_PRIMARY are the home-page chapters
+// in scroll order; MENU_SECONDARY are the standalone pages.
+export const MENU_PRIMARY = [
   { label: 'Philosophy', href: '/#philosophy' },
-  { label: 'How It Works', href: '/membership' },
+  { label: 'How it works', href: '/#how' },
+  { label: 'Membership', href: '/#members' },
+  { label: 'Network', href: '/#venues' },
   { label: 'Ecosystem', href: '/#ecosystem' },
-  { label: 'Venues', href: '/venues' },
+  { label: 'Ibiza 2026', href: '/#ibiza' },
+  { label: 'Passport', href: '/#passport' },
+  { label: 'Planetary Commons', href: '/#commons' },
+]
+
+export const MENU_SECONDARY = [
+  { label: 'Our story', href: '/#founders' },
   { label: 'Impact', href: '/impact' },
   { label: 'News', href: '/news' },
+  { label: 'Concierge', href: '/concierge' },
   { label: 'Contact', href: '/contact' },
 ]
+
+// Kept for any page that still imports it.
+export const NAV_ITEMS = [{ label: 'VIVRA', href: '/' }, ...MENU_PRIMARY]
 
 export const CTA_COPY = {
   join: 'Join VIVRA',
@@ -20,14 +31,15 @@ export const CTA_COPY = {
   discover: 'Discover VIVRA',
   earlyAccess: 'Request Early Access',
   alliance: 'Join VIVRA World Alliance',
-  invite: 'Request an Invitation',
+  invite: 'Request invitation',
 } as const
 
 export const FOOTER_LINKS = {
   primary: [
-    { label: 'Join VIVRA', href: '/alliance' },
-    { label: 'Ibiza Retreat', href: '/ibiza' },
+    { label: 'Request invitation', href: '/#apply' },
+    { label: 'Membership', href: '/membership' },
     { label: 'World Alliance', href: '/alliance' },
+    { label: 'Ibiza 2026', href: '/#ibiza' },
   ],
   legal: [
     { label: 'Privacy Policy', href: '/privacy' },
