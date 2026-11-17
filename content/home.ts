@@ -68,32 +68,34 @@ export const EXPERT = {
 }
 
 // The first founding gathering, now delivered.
-// [RECORD] A6 + [DECK] slide 7 ("Ibiza ran").
+// [RECORD] A6 + [DECK] slide 7 ("Ibiza ran"). Francisco, 2026-11-17: the gathering
+// was five days at Can Aylma (October 4 to 9, as originally announced); the
+// facilitated See / Reimagine / Act workshop ran on three of them (5 to 7 October).
 export const IBIZA = {
   eyebrow: 'First founding gathering · Delivered',
-  heading: 'Ibiza, October 2026. Three days: see, reimagine, act.',
+  heading: 'Ibiza, October 2026. Five days at Can Aylma.',
   body: [
-    'Our first gathering took place at Can Aylma, Ibiza, from 5 to 7 October 2026. A small group, by invitation, in a 200-year-old finca, facilitated by Sharon Cittone.',
-    'The group mapped the systems it works in, worked through each other’s projects and closed with a 90-day commitment lab. It left ten written commitments.',
+    'Our first gathering took place at Can Aylma, Ibiza, from 4 to 9 October 2026. A small group, by invitation, in a 200-year-old finca.',
+    'At its centre was a three-day workshop facilitated by Sharon Cittone: see, reimagine, act. The group mapped the systems it works in, worked through each other’s projects and closed with a 90-day commitment lab. It left ten written commitments.',
   ],
   facts: [
-    { value: '3', label: 'Days at Can Aylma' },
+    { value: '5', label: 'Days at Can Aylma' },
     { value: '10', label: 'Written commitments' },
     { value: '90', label: 'Days to deliver them' },
   ],
   days: [
     {
-      step: 'Day 1',
+      step: 'Workshop day 1',
       label: 'See',
       body: 'We asked what we are getting wrong about the future, and mapped the systems behind the answers.',
     },
     {
-      step: 'Day 2',
+      step: 'Workshop day 2',
       label: 'Reimagine',
       body: 'Every project in the room was presented, then worked on by the whole group.',
     },
     {
-      step: 'Day 3',
+      step: 'Workshop day 3',
       label: 'Act',
       body: 'A 90-day action lab. Each commitment written on a card, with a name and a date.',
     },
