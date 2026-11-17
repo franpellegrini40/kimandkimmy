@@ -9,7 +9,7 @@ import { HomeFounders, HomeIbiza, HomeWall, HomeRituals } from '@/components/sec
 import { HomePassport, HomeCommons, HomeApply } from '@/components/sections/home/HomePlatform'
 
 // Home, site v3. One scroll, in the order of the menu:
-// Philosophy → How it works → Membership → Network → Ecosystem → Ibiza 2026 →
+// Philosophy → How it works → Experiences → Membership → Ecosystem → Venues →
 // Passport → Planetary Commons → Request invitation.
 export default async function HomePage() {
   const site = await getCurrentSite()
@@ -22,14 +22,14 @@ export default async function HomePage() {
       <HomeHowItWorks />
       <HomeConversations />
       <HomeFacilitators />
-      <HomeMembership />
-      <HomeThreeWaysIn />
-      <HomeVenues />
-      <VivraEcosystem />
-      <HomeFounders />
       <HomeIbiza />
       <HomeWall />
       <HomeRituals />
+      <HomeMembership />
+      <HomeThreeWaysIn />
+      <VivraEcosystem />
+      <HomeFounders />
+      <HomeVenues />
       <HomePassport />
       <HomeCommons />
       <HomeApply />

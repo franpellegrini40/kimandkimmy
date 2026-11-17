@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, useReducedMotion } from 'framer-motion'
-import { MENU_PRIMARY, MENU_SECONDARY, CTA_COPY } from '@/content/site'
+import { MENU_PRIMARY, MENU_SECONDARY, CTA_COPY, LOGIN } from '@/content/site'
 import Button from '@/components/ui/Button'
 import Logo from '@/components/ui/Logo'
 import type { SiteId } from '@/lib/site'
@@ -19,6 +19,7 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeHref, setActiveHref] = useState<string | null>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const drawerRef = useRef<HTMLElement>(null)
   const reducedMotion = useReducedMotion()
   const pathname = usePathname()
 
@@ -32,6 +33,8 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
 
   useEffect(() => {
     if (!menuOpen) return
+    // Always open the drawer from its top, whatever it was scrolled to before.
+    if (drawerRef.current) drawerRef.current.scrollTop = 0
     document.body.style.overflow = 'hidden'
     return () => {
       document.body.style.overflow = ''
@@ -116,6 +119,13 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
           </Link>
 
           <div className="flex items-center gap-3 md:gap-5">
+            <Link
+              href={LOGIN.href}
+              className="px-1 py-2 text-[10px] font-medium uppercase transition-colors hover:text-[var(--accent-deep)] md:px-2"
+              style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--text-primary)' }}
+            >
+              {LOGIN.label}
+            </Link>
             <Button
               href={CTA_HREF}
               size="sm"
@@ -165,6 +175,7 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
         onClick={closeMenu}
       />
       <motion.nav
+        ref={drawerRef}
         id="site-menu"
         data-theme="prestige"
         aria-hidden={!menuOpen}
@@ -198,7 +209,7 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
           </button>
         </div>
 
-        <ol className="flex-1 px-6 py-6 md:px-10">
+        <ol className="flex-1 px-6 py-2 md:px-10">
           {MENU_PRIMARY.map((item, i) => {
             const isActive = activeHref === item.href
             return (
@@ -208,7 +219,7 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
                   tabIndex={tab}
                   aria-current={isActive ? 'true' : undefined}
                   onClick={(e) => goTo(e, item.href)}
-                  className="group flex items-baseline gap-5 py-3.5 transition-colors hover:text-[var(--accent)]"
+                  className="group flex items-baseline gap-5 py-3 transition-colors hover:text-[var(--accent)]"
                   style={{ color: isActive ? 'var(--accent)' : 'var(--text-primary)' }}
                 >
                   <span className="w-6 text-[10px] tabular-nums" style={{ color: 'var(--text-quiet)', letterSpacing: '0.1em' }}>

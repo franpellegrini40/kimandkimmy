@@ -6,15 +6,18 @@ export type SiteId = 'vivra-world' | 'join-vivra'
 export const MENU_PRIMARY = [
   { label: 'Philosophy', href: '/#philosophy' },
   { label: 'How it works', href: '/#how' },
+  { label: 'Experiences', href: '/#ibiza' },
   { label: 'Membership', href: '/#members' },
-  { label: 'Network', href: '/#venues' },
   { label: 'Ecosystem', href: '/#ecosystem' },
-  { label: 'Ibiza 2026', href: '/#ibiza' },
+  { label: 'Venues', href: '/#venues' },
   { label: 'Passport', href: '/#passport' },
-  { label: 'Planetary Commons', href: '/#commons' },
+  { label: 'Log in', href: '/login' },
 ]
 
+export const LOGIN = { label: 'Log in', href: '/login' }
+
 export const MENU_SECONDARY = [
+  { label: 'Planetary Commons', href: '/#commons' },
   { label: 'Our story', href: '/#founders' },
   { label: 'Impact', href: '/impact' },
   { label: 'News', href: '/news' },
@@ -39,7 +42,7 @@ export const FOOTER_LINKS = {
     { label: 'Request invitation', href: '/#apply' },
     { label: 'Membership', href: '/membership' },
     { label: 'World Alliance', href: '/alliance' },
-    { label: 'Ibiza 2026', href: '/#ibiza' },
+    { label: 'Experiences', href: '/#ibiza' },
   ],
   legal: [
     { label: 'Privacy Policy', href: '/privacy' },
