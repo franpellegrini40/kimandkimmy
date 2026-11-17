@@ -192,5 +192,5 @@ export const APPLY = {
   eyebrow: 'Join VIVRA',
   heading: 'Request early access.',
   body: 'A few details so we can understand where you would like to connect with VIVRA.',
-  note: 'Membership isn’t live yet. Join the waitlist and we’ll reach out as soon as early access opens.',
+  note: 'Francisco will write to you to schedule a short call about your profile, our next gatherings and VIVRA membership.',
 }

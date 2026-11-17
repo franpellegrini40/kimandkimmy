@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { joinSchema } from '@/lib/validation'
 import { saveLead } from '@/lib/leads'
 import { isRateLimited } from '@/lib/rateLimit'
+import { sendWelcomeEmail } from '@/lib/welcomeEmail'
 
 export async function POST(request: Request) {
   const ip = request.headers.get('x-forwarded-for') ?? 'unknown'
@@ -21,6 +22,7 @@ export async function POST(request: Request) {
   }
 
   await saveLead('join', parsed.data)
+  await sendWelcomeEmail({ to: parsed.data.email, firstName: parsed.data.firstName })
 
   return NextResponse.json({ ok: true })
 }
