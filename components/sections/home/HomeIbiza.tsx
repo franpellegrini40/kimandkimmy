@@ -4,6 +4,7 @@ import Photo from '@/components/ui/Photo'
 import Button from '@/components/ui/Button'
 import { DAY_IN_LIFE } from '@/content/retreat'
 import { ECOSYSTEM_STORY } from '@/content/ecosystem'
+import IbizaReel from './IbizaReel'
 import { FOUNDER_NOTE, IBIZA, RITUALS, WALL } from '@/content/home'
 
 const FOUNDERS = [
@@ -59,18 +60,16 @@ export function HomeFounders() {
 export function HomeIbiza() {
   return (
     <Section tone="dark" id="ibiza">
-      <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-        <RevealOnScroll>
+      <div className="grid gap-12 lg:grid-cols-5 lg:items-center lg:gap-16">
+        <RevealOnScroll className="lg:col-span-3">
           <span className="eyebrow" style={{ color: 'var(--aqua)' }}>{IBIZA.eyebrow}</span>
           <h2 className="mt-4 text-3xl md:text-5xl">{IBIZA.heading}</h2>
-        </RevealOnScroll>
-        <RevealOnScroll delay={0.08} className="lg:pt-10">
-          <div className="space-y-4" style={{ color: 'var(--text-secondary)' }}>
+          <div className="mt-6 max-w-xl space-y-4" style={{ color: 'var(--text-secondary)' }}>
             {IBIZA.body.map((p) => (
               <p key={p}>{p}</p>
             ))}
           </div>
-          <dl className="mt-8 grid grid-cols-3 gap-px border" style={{ borderColor: 'var(--rule)', background: 'var(--rule)' }}>
+          <dl className="mt-8 grid max-w-xl grid-cols-3 gap-px border" style={{ borderColor: 'var(--rule)', background: 'var(--rule)' }}>
             {IBIZA.facts.map((f) => (
               <div key={f.label} className="p-4 md:p-5" style={{ background: 'var(--surface-raised)' }}>
                 <dd className="font-display text-4xl" style={{ color: 'var(--aqua)' }}>{f.value}</dd>
@@ -80,6 +79,9 @@ export function HomeIbiza() {
               </div>
             ))}
           </dl>
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.08} className="lg:col-span-2">
+          <IbizaReel />
         </RevealOnScroll>
       </div>
 
