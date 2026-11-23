@@ -72,13 +72,13 @@ export const ALLIANCE_VENUES = [
   { name: 'Bali', location: 'Indonesia', status: 'soon', region: 'asia', tag: 'Cliffside', image: '/images/alliance/bali.jpg' },
   { name: 'Sri Lanka', location: 'Indian Ocean', status: 'open', region: 'asia', tag: 'Ocean Retreat', image: '/images/alliance/sri-lanka.jpg' },
   { name: 'Dubai', location: 'UAE', status: 'soon', region: 'middle-east', tag: 'Desert Gateway', image: '/images/alliance/dubai.jpg' },
-  { name: 'Hamptons', location: 'USA', status: 'soon', region: 'americas', tag: 'Coastal Estate', image: '/images/alliance/hamptons.jpg' },
-  { name: 'Patagonia', location: 'Argentina', status: 'soon', region: 'americas', tag: 'Wild Frontier', image: '/images/alliance/patagonia.jpg' },
+  // Tenuta Villa Gaia, Seggiano: photo and facts from Villa_Gaia_brochure_EN_v2.pdf (Nov 2026).
+  { name: 'Villa Gaia', location: 'Tuscany, Italy', status: 'soon', region: 'europe', tag: 'Tuscan Estate', image: '/images/alliance/villa-gaia.jpg' },
 ] as const
 
 export const ALLIANCE_VENUES_INTRO = {
   eyebrow: 'The network',
-  heading: '11 destinations, five continents — and growing.',
+  heading: '10 destinations — and growing.',
   body: 'A regenerative hospitality network, each venue upgraded to the same standard. Seven are open today; the rest are on their way.',
 }
 

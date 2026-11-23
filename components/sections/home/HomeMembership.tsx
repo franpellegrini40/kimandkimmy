@@ -4,6 +4,7 @@ import Button from '@/components/ui/Button'
 import VenueGrid from '@/components/sections/VenueGrid'
 import { LONGEVITY_PANEL, MEMBERSHIP_BENEFITS, MEMBERSHIP_TIER_NAMES } from '@/content/tiers'
 import { AUDIENCE_TIERS } from '@/content/narrative'
+import { ALLIANCE_VENUES } from '@/content/alliance'
 
 // The home page shows the first seven benefits per tier (as the prototype did);
 // the full table lives on /membership. Pricing is intentionally not shown.
@@ -115,7 +116,7 @@ export function HomeVenues() {
   return (
     <Section tone="light" id="venues">
       <RevealOnScroll className="max-w-2xl">
-        <span className="eyebrow">The network · 11 destinations · 5 continents</span>
+        <span className="eyebrow">The network · {ALLIANCE_VENUES.length} destinations</span>
         <h2 className="mt-4 text-3xl md:text-5xl">Where members belong.</h2>
         <p className="mt-5" style={{ color: 'var(--text-secondary)' }}>
           Intimate venues with a soul. Each one chosen for what it stands for, and held to the same regenerative standard.

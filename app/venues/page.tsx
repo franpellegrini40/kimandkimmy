@@ -24,7 +24,7 @@ export default async function VenuesPage() {
           <h1 className="mt-4 max-w-2xl text-3xl md:text-4xl">Where members belong.</h1>
           <p className="mt-6 max-w-xl" style={{ color: 'var(--text-secondary)' }}>
             Very exclusive, conscious and luxury venues — each one upgraded to the same
-            regenerative standard, opening steadily across five continents.
+            regenerative standard, opening steadily around the world.
           </p>
         </RevealOnScroll>
       </Section>
