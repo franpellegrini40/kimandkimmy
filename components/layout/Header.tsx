@@ -122,8 +122,11 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
           <div className="flex items-center gap-3 md:gap-5">
             <Link
               href={LOGIN.href}
-              className="px-1 py-2 text-[10px] font-medium uppercase transition-colors hover:text-[var(--accent-deep)] md:px-2"
-              style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--text-primary)' }}
+              className={`px-1 py-2 text-[10px] font-medium uppercase text-[var(--text-primary)] transition-colors md:px-2 ${
+                // Copper on hover: the light copper over the dark video, the deeper copper once the bar turns ivory.
+                solid ? 'hover:text-[var(--copper-deep)] focus-visible:text-[var(--copper-deep)]' : 'hover:text-[#E3A877] focus-visible:text-[#E3A877]'
+              }`}
+              style={{ letterSpacing: 'var(--tracking-caps)' }}
             >
               {LOGIN.label}
             </Link>
