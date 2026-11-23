@@ -20,13 +20,8 @@ export function HomeHero() {
       className="relative flex min-h-[640px] flex-col overflow-hidden"
       style={{ height: '100svh', background: 'var(--navy)', color: 'var(--ivory)' }}
     >
-      {/* Phones: the highlights fill the hero. Wide screens: a blurred still behind, the highlights sharp in a frame. */}
-      <HeroVideo mode="background" className="absolute inset-0 h-full w-full object-cover lg:hidden" />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 hidden bg-cover bg-center lg:block"
-        style={{ backgroundImage: 'url(/images/hero-blur.jpg)', transform: 'scale(1.08)' }}
-      />
+      {/* The Ibiza highlights fill the hero on every screen. */}
+      <HeroVideo className="absolute inset-0 h-full w-full object-cover" />
       {/* Darkens the film enough for white type, heavier at top (header) and bottom (stats). */}
       <div
         aria-hidden="true"
@@ -37,10 +32,9 @@ export function HomeHero() {
         }}
       />
 
-      <div className="container-vivra relative flex flex-1 items-center gap-12 pt-24 lg:gap-16 lg:pb-8">
-      <div className="flex flex-1 flex-col items-center gap-6 text-center md:gap-7 lg:items-start lg:text-left">
+      <div className="container-vivra relative flex flex-1 flex-col items-center justify-center gap-6 pt-24 text-center md:gap-7">
         <p
-          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-medium uppercase lg:justify-start"
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-medium uppercase"
           style={{ letterSpacing: 'var(--tracking-caps)' }}
         >
           {HERO.claims.map((claim, i) => (
@@ -61,7 +55,7 @@ export function HomeHero() {
           {HERO.body}
         </p>
 
-        <div className="mt-2 flex flex-wrap justify-center gap-4 lg:justify-start">
+        <div className="mt-2 flex flex-wrap justify-center gap-4">
           <Button
             href="/#apply"
             className="!border-[var(--ivory)] !bg-[var(--ivory)] !text-[var(--navy)] hover:!border-[var(--copper)] hover:!bg-[var(--copper)] hover:!text-white"
@@ -82,17 +76,6 @@ export function HomeHero() {
         >
           {HERO.badge}
         </span>
-      </div>
-
-      <div className="relative hidden aspect-[9/16] h-[min(68svh,640px)] shrink-0 overflow-hidden border lg:block" style={{ borderColor: 'rgba(247,244,238,0.25)' }}>
-        <HeroVideo mode="frame" className="absolute inset-0 h-full w-full object-cover" />
-        <span
-          className="absolute inset-x-0 bottom-0 p-4 text-[10px] uppercase"
-          style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--ivory)', background: 'linear-gradient(180deg, transparent, rgba(0,14,33,0.7))' }}
-        >
-          Can Aylma, Ibiza · October 2026
-        </span>
-      </div>
       </div>
 
       <dl className="relative grid grid-cols-2 border-t sm:grid-cols-4" style={{ borderColor: 'rgba(247,244,238,0.18)' }}>
