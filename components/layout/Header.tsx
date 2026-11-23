@@ -223,8 +223,10 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
                   tabIndex={tab}
                   aria-current={isActive ? 'true' : undefined}
                   onClick={(e) => goTo(e, item.href)}
-                  className="group flex items-baseline gap-5 py-3 transition-colors hover:text-[var(--accent)]"
-                  style={{ color: isActive ? 'var(--accent)' : 'var(--text-primary)' }}
+                  // Copper on hover and for the chapter on screen (light copper, legible on navy).
+                  className={`group flex items-baseline gap-5 py-3 transition-colors hover:text-[#E3A877] focus-visible:text-[#E3A877] ${
+                    isActive ? 'text-[#E3A877]' : 'text-[var(--text-primary)]'
+                  }`}
                 >
                   <span className="w-6 text-[10px] tabular-nums" style={{ color: 'var(--text-quiet)', letterSpacing: '0.1em' }}>
                     {String(i + 1).padStart(2, '0')}
@@ -244,8 +246,8 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
                   href={item.href}
                   tabIndex={tab}
                   onClick={(e) => goTo(e, item.href)}
-                  className="text-[10px] uppercase transition-colors hover:text-[var(--text-primary)]"
-                  style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--text-secondary)' }}
+                  className="text-[10px] uppercase text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+                  style={{ letterSpacing: 'var(--tracking-caps)' }}
                 >
                   {item.label}
                 </Link>
