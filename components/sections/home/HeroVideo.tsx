@@ -1,43 +1,58 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useReducedMotion } from 'framer-motion'
 
-// The Ibiza reel, as a silent loop of its quiet shots (no speech, no
-// subtitles). The reel is vertical, so:
-// - variant "background": fills the hero. On phones it is shown sharp; on
-//   wider screens it is blurred, because a vertical film stretched across a
-//   wide screen loses too much quality.
-// - variant "frame": the same loop shown sharp, at its own 9:16 size, next to
-//   the headline on wider screens.
-// With reduced motion the poster stays still.
-export const REEL_LOOP = { src: '/videos/hero-mobile.mp4', poster: '/videos/hero-mobile-poster.jpg' }
+// Highlights of the Ibiza reel: a silent 23-second loop of the quiet shots
+// (workshop first, then the estate), lightly graded warm. About 3 MB.
+//
+// Only ONE video is ever downloaded:
+// - phones and narrow screens: the loop fills the hero;
+// - wide screens: a light blurred still fills the hero and the loop plays
+//   sharp in its own 9:16 frame beside the headline.
+// The video waits for the browser to be idle, and is skipped altogether with
+// reduced motion or data-saver; the poster image shows instead.
+export const HIGHLIGHTS = {
+  src: '/videos/hero-highlights.mp4',
+  poster: '/videos/hero-highlights-poster.jpg',
+}
 
-export default function HeroVideo({ variant, className = '' }: { variant: 'background' | 'frame'; className?: string }) {
+type Mode = 'background' | 'frame'
+
+export default function HeroVideo({ mode, className = '' }: { mode: Mode; className?: string }) {
   const ref = useRef<HTMLVideoElement>(null)
   const reduced = useReducedMotion()
+  const [play, setPlay] = useState(false)
 
   useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    if (reduced) el.pause()
-    else el.play().catch(() => {})
-  }, [reduced])
+    const wide = window.matchMedia('(min-width: 1024px)').matches
+    // Each instance only loads where it is the visible one.
+    if ((mode === 'frame') !== wide) return
+    const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection
+    if (reduced || conn?.saveData) return
+    const start = () => setPlay(true)
+    const w = window as Window & { requestIdleCallback?: (cb: () => void) => number }
+    if (w.requestIdleCallback) w.requestIdleCallback(start)
+    else setTimeout(start, 200)
+  }, [mode, reduced])
+
+  useEffect(() => {
+    if (play) ref.current?.play().catch(() => {})
+  }, [play])
 
   return (
     <video
       ref={ref}
       className={className}
-      autoPlay={!reduced}
       muted
       loop
       playsInline
-      preload="auto"
-      poster={REEL_LOOP.poster}
-      aria-hidden={variant === 'background' ? true : undefined}
-      aria-label={variant === 'frame' ? 'Moments from the VIVRA founding gathering at Can Aylma, Ibiza' : undefined}
+      autoPlay={play}
+      preload="none"
+      poster={HIGHLIGHTS.poster}
+      aria-hidden="true"
     >
-      <source src={REEL_LOOP.src} type="video/mp4" />
+      {play && <source src={HIGHLIGHTS.src} type="video/mp4" />}
     </video>
   )
 }

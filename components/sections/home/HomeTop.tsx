@@ -4,6 +4,14 @@ import Button from '@/components/ui/Button'
 import { HERO, IS, IS_NOT } from '@/content/home'
 import HeroVideo from './HeroVideo'
 
+// The Ibiza footage is warm (wood, terracotta, late sun), so the hero takes
+// the brand's copper rather than aqua. Copper only ever sits on this dark
+// overlay, never on ivory. A lighter copper keeps small text legible over video.
+const COPPER_LIGHT = '#E3A877'
+// "Leave it better" and "Impact beyond.": copper or the brand forest green (lifted for legibility on video).
+const FOREST_LIGHT = '#5CC27E'
+const HEADLINE_ACCENT = FOREST_LIGHT
+
 export function HomeHero() {
   return (
     <section
@@ -12,15 +20,20 @@ export function HomeHero() {
       className="relative flex min-h-[640px] flex-col overflow-hidden"
       style={{ height: '100svh', background: 'var(--navy)', color: 'var(--ivory)' }}
     >
-      {/* Phones: the reel sharp, edge to edge. Wider screens: the same reel blurred behind, sharp in its own frame. */}
-      <HeroVideo variant="background" className="absolute inset-0 h-full w-full object-cover lg:scale-110 lg:blur-2xl" />
+      {/* Phones: the highlights fill the hero. Wide screens: a blurred still behind, the highlights sharp in a frame. */}
+      <HeroVideo mode="background" className="absolute inset-0 h-full w-full object-cover lg:hidden" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 hidden bg-cover bg-center lg:block"
+        style={{ backgroundImage: 'url(/images/hero-blur.jpg)', transform: 'scale(1.08)' }}
+      />
       {/* Darkens the film enough for white type, heavier at top (header) and bottom (stats). */}
       <div
         aria-hidden="true"
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(180deg, rgba(0,14,33,0.6) 0%, rgba(0,14,33,0.4) 30%, rgba(0,14,33,0.45) 60%, rgba(0,14,33,0.88) 100%)',
+            'linear-gradient(180deg, rgba(0,14,33,0.62) 0%, rgba(0,14,33,0.5) 30%, rgba(0,14,33,0.55) 60%, rgba(0,14,33,0.9) 100%)',
         }}
       />
 
@@ -31,7 +44,7 @@ export function HomeHero() {
           style={{ letterSpacing: 'var(--tracking-caps)' }}
         >
           {HERO.claims.map((claim, i) => (
-            <span key={claim} style={{ color: i === 2 ? 'var(--aqua-300)' : 'rgba(247,244,238,0.9)' }}>
+            <span key={claim} style={{ color: i === 2 ? HEADLINE_ACCENT : 'rgba(247,244,238,0.9)' }}>
               {claim}
             </span>
           ))}
@@ -39,7 +52,7 @@ export function HomeHero() {
 
         <h1 className="max-w-5xl text-[clamp(3rem,1.2rem+6vw,6.25rem)] leading-[0.98] !text-[var(--ivory)]">
           <span className="block">{HERO.headline[0]}</span>
-          <span className="block italic" style={{ color: 'var(--aqua-300)' }}>
+          <span className="block italic" style={{ color: HEADLINE_ACCENT }}>
             {HERO.headline[1]}
           </span>
         </h1>
@@ -51,7 +64,7 @@ export function HomeHero() {
         <div className="mt-2 flex flex-wrap justify-center gap-4 lg:justify-start">
           <Button
             href="/#apply"
-            className="!border-[var(--ivory)] !bg-[var(--ivory)] !text-[var(--navy)] hover:!border-[var(--aqua)] hover:!bg-[var(--aqua)]"
+            className="!border-[var(--ivory)] !bg-[var(--ivory)] !text-[var(--navy)] hover:!border-[var(--copper)] hover:!bg-[var(--copper)] hover:!text-white"
           >
             Request invitation
           </Button>
@@ -65,14 +78,14 @@ export function HomeHero() {
 
         <span
           className="mt-1 border px-3 py-1 text-[10px] uppercase"
-          style={{ borderColor: 'rgba(169,230,236,0.6)', color: 'var(--aqua-300)', letterSpacing: 'var(--tracking-caps)' }}
+          style={{ borderColor: 'rgba(224,165,111,0.6)', color: COPPER_LIGHT, letterSpacing: 'var(--tracking-caps)' }}
         >
           {HERO.badge}
         </span>
       </div>
 
       <div className="relative hidden aspect-[9/16] h-[min(68svh,640px)] shrink-0 overflow-hidden border lg:block" style={{ borderColor: 'rgba(247,244,238,0.25)' }}>
-        <HeroVideo variant="frame" className="absolute inset-0 h-full w-full object-cover" />
+        <HeroVideo mode="frame" className="absolute inset-0 h-full w-full object-cover" />
         <span
           className="absolute inset-x-0 bottom-0 p-4 text-[10px] uppercase"
           style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--ivory)', background: 'linear-gradient(180deg, transparent, rgba(0,14,33,0.7))' }}
@@ -91,7 +104,7 @@ export function HomeHero() {
             } ${i >= 2 ? 'border-t sm:border-t-0' : ''} ${i === 2 ? 'sm:border-l' : ''}`}
           >
             <dd className="font-display text-2xl md:text-3xl" style={{ color: 'var(--ivory)' }}>{s.value}</dd>
-            <dt className="text-[10px] uppercase" style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--aqua-300)' }}>
+            <dt className="text-[10px] uppercase" style={{ letterSpacing: 'var(--tracking-caps)', color: COPPER_LIGHT }}>
               {s.label}
             </dt>
           </div>
