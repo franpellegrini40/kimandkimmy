@@ -246,7 +246,7 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
                   href={item.href}
                   tabIndex={tab}
                   onClick={(e) => goTo(e, item.href)}
-                  className="text-[10px] uppercase text-[var(--text-secondary)] transition-colors hover:text-[#E3A877] focus-visible:text-[#E3A877]"
+                  className="text-[10px] uppercase text-[var(--text-secondary)] transition-colors hover:text-[#5CC27E] focus-visible:text-[#5CC27E]"
                   style={{ letterSpacing: 'var(--tracking-caps)' }}
                 >
                   {item.label}
