@@ -78,21 +78,6 @@ export function HomeHero() {
         </span>
       </div>
 
-      <dl className="relative grid grid-cols-2 border-t sm:grid-cols-4" style={{ borderColor: 'rgba(247,244,238,0.18)' }}>
-        {HERO.stats.map((s, i) => (
-          <div
-            key={s.label}
-            className={`flex items-baseline justify-center gap-2.5 border-[rgba(247,244,238,0.18)] px-3 py-4 md:py-5 ${
-              i % 2 === 1 ? 'border-l' : ''
-            } ${i >= 2 ? 'border-t sm:border-t-0' : ''} ${i === 2 ? 'sm:border-l' : ''}`}
-          >
-            <dd className="font-display text-2xl md:text-3xl" style={{ color: 'var(--ivory)' }}>{s.value}</dd>
-            <dt className="text-[10px] uppercase" style={{ letterSpacing: 'var(--tracking-caps)', color: COPPER_LIGHT }}>
-              {s.label}
-            </dt>
-          </div>
-        ))}
-      </dl>
     </section>
   )
 }

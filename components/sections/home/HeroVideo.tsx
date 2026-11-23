@@ -3,20 +3,39 @@
 import { useEffect, useRef, useState } from 'react'
 import { useReducedMotion } from 'framer-motion'
 
-// Highlights of the Ibiza reel: a silent 23-second loop of the quiet shots
-// (workshop first, then the estate), lightly graded warm. About 2.7 MB.
-// It fills the hero on every screen. The video waits for the browser to be
-// idle, and is skipped with reduced motion or data-saver; the poster shows
-// instead.
-export const HIGHLIGHTS = {
-  src: '/videos/hero-highlights.mp4',
-  poster: '/videos/hero-highlights-poster.jpg',
+// Highlights of the Ibiza reel, silent, lightly graded warm and sharpened.
+// The reel is vertical (720 x 1280), so it is never stretched:
+// - landscape screens get three vertical shots side by side (1600 x 900,
+//   about 4 MB, 11 s loop at 0.8x speed; each panel has its own shots): every frame shown whole, no cropped heads;
+// - portrait screens (phones) get the single vertical loop (about 5 MB, 22 s).
+// Only the file for the current screen shape is downloaded, once the browser
+// is idle; with reduced motion or data-saver the poster shows instead.
+const SOURCES = {
+  wide: { src: '/videos/hero-wide.mp4', poster: '/videos/hero-wide-poster.jpg' },
+  tall: { src: '/videos/hero-highlights.mp4', poster: '/videos/hero-highlights-poster.jpg' },
 }
+export const HIGHLIGHTS = SOURCES.tall
 
 export default function HeroVideo({ className = '' }: { className?: string }) {
   const ref = useRef<HTMLVideoElement>(null)
   const reduced = useReducedMotion()
   const [play, setPlay] = useState(false)
+  const [shape, setShape] = useState<'wide' | 'tall'>('wide')
+
+  useEffect(() => {
+    const mq = window.matchMedia('(min-aspect-ratio: 1/1)')
+    const pick = () => setShape(mq.matches ? 'wide' : 'tall')
+    pick()
+    mq.addEventListener('change', pick)
+    return () => mq.removeEventListener('change', pick)
+  }, [])
+
+  // Load only once playback is allowed, and again only if the screen shape changes.
+  useEffect(() => {
+    if (!play) return
+    ref.current?.load()
+    ref.current?.play().catch(() => {})
+  }, [shape, play])
 
   useEffect(() => {
     const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection
@@ -27,10 +46,6 @@ export default function HeroVideo({ className = '' }: { className?: string }) {
     else setTimeout(start, 200)
   }, [reduced])
 
-  useEffect(() => {
-    if (play) ref.current?.play().catch(() => {})
-  }, [play])
-
   return (
     <video
       ref={ref}
@@ -40,10 +55,10 @@ export default function HeroVideo({ className = '' }: { className?: string }) {
       playsInline
       autoPlay={play}
       preload="none"
-      poster={HIGHLIGHTS.poster}
+      poster={SOURCES[shape].poster}
       aria-hidden="true"
     >
-      {play && <source src={HIGHLIGHTS.src} type="video/mp4" />}
+      {play && <source key={shape} src={SOURCES[shape].src} type="video/mp4" />}
     </video>
   )
 }
