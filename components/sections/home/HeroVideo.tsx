@@ -5,8 +5,9 @@ import { useReducedMotion } from 'framer-motion'
 
 // Highlights of the Ibiza reel, silent, lightly graded warm and sharpened.
 // The reel is vertical (720 x 1280), so it is never stretched:
-// - landscape screens get three vertical shots side by side (1600 x 900,
-//   about 4 MB, 11 s loop at 0.8x speed; each panel has its own shots): every frame shown whole, no cropped heads;
+// - landscape screens get one 1600 x 900 film (about 2.8 MB): the reel sharp
+//   at its own size in the centre, blending into a blurred copy of itself on
+//   both sides, so it reads as a single background with no heads cut;
 // - portrait screens (phones) get the single vertical loop (about 5 MB, 22 s).
 // Only the file for the current screen shape is downloaded, once the browser
 // is idle; with reduced motion or data-saver the poster shows instead.
