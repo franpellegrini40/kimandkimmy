@@ -102,6 +102,7 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
   return (
     <>
       <header
+        data-theme={solid ? undefined : 'prestige'}
         className="fixed inset-x-0 top-0 z-50 transition-colors duration-300"
         style={{
           background: solid ? 'color-mix(in srgb, var(--surface-page) 95%, transparent)' : 'transparent',
