@@ -78,7 +78,7 @@ export const ALLIANCE_VENUES = [
 
 export const ALLIANCE_VENUES_INTRO = {
   eyebrow: 'The network',
-  heading: '10 destinations — and growing.',
+  heading: '10 destinations. More venues are coming.',
   body: 'A regenerative hospitality network, each venue upgraded to the same standard. Seven are open today; the rest are on their way.',
 }
 

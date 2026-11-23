@@ -116,7 +116,7 @@ export function HomeVenues() {
   return (
     <Section tone="light" id="venues">
       <RevealOnScroll className="max-w-2xl">
-        <span className="eyebrow">The network · {ALLIANCE_VENUES.length} destinations</span>
+        <span className="eyebrow">The network · {ALLIANCE_VENUES.length} destinations · More venues are coming</span>
         <h2 className="mt-4 text-3xl md:text-5xl">Where members belong.</h2>
         <p className="mt-5" style={{ color: 'var(--text-secondary)' }}>
           Intimate venues with a soul. Each one chosen for what it stands for, and held to the same regenerative standard.

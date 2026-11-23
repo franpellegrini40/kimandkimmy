@@ -45,8 +45,12 @@ export default function VenueGrid() {
               <Photo
                 src={venue.image}
                 alt={`${venue.name}, ${venue.location}`}
-                aspect="aspect-[4/5]"
-                imgClassName="transition-transform duration-700 ease-out group-hover:scale-110 group-active:scale-110"
+                // Landscape cards: most venue photos are landscape, so they are cropped
+                // as little as possible. Higher quality and a gentle zoom keep them crisp.
+                aspect="aspect-[4/3]"
+                quality={90}
+                sizes="(min-width: 768px) 33vw, 50vw"
+                imgClassName="transition-transform duration-700 ease-out group-hover:scale-105 group-active:scale-105"
               />
               <div
                 className="pointer-events-none absolute inset-0"
