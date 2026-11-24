@@ -47,15 +47,18 @@ export const HOW_INTRO = {
   body: 'VIVRA combines intimate masterclasses, wellbeing experiences and carefully curated connections to help members rethink how they live, lead and contribute.',
 }
 
-// [DECK] slide 12, Facilitators. CONFIRM: each facilitator's consent to be
-// named on the public site (the Lovable prototype showed them unnamed).
+// [DECK] slide 12, Facilitators (Nov 2026 version): names, roles and the link
+// on each photo come from the deck. Brian Nathan Siegal removed and Lola Vinagre
+// added on Francisco's instruction, 2026-11-24. Photos: largest originals on
+// file, all cropped to the same 4:5 frame with the eyes at the same height.
+// CONFIRM: each facilitator's consent to be named on the public site.
 export const FACILITATORS = [
-  { name: 'Anaïs Verena Garcia y Boullosa', role: 'Holistic wellbeing doctor', image: '/people/anais-garcia.jpg' },
-  { name: 'Saha', role: 'Energy healer · QHHT and reconnective healing', image: '/people/saha.jpg' },
-  { name: 'Diana Maldonado', role: 'Wellness and healing', image: '/people/diana.jpg' },
-  { name: 'Dunja Will', role: 'Animal communicator · healer', image: '/people/dunja.jpg' },
-  { name: 'Mallika Bajaj', role: 'Embodied leadership · wellness', image: '/people/mallika-bajaj.jpg' },
-  { name: 'Brian Nathan Siegal', role: 'Performance coach · leadership', image: '/people/brian-siegal.jpg' },
+  { name: 'Anaïs Verena Garcia y Boullosa', role: 'Holistic wellbeing doctor', image: '/people/anais-garcia.jpg', href: 'https://www.linkedin.com/in/verena-garcia-y-boullosa/' },
+  { name: 'Saha', role: 'Energy healer · QHHT and reconnective healing', image: '/people/saha.jpg', href: 'https://www.facebook.com/sahan.abeysekera' },
+  { name: 'Diana Maldonado', role: 'Wellness and healing', image: '/people/diana.jpg', href: 'https://humanstatemastery.com/' },
+  { name: 'Dunja Will', role: 'Animal communicator · healer', image: '/people/dunja.jpg', href: 'https://outbackwhisperer.com/' },
+  { name: 'Mallika Bajaj', role: 'Embodied leadership · wellness', image: '/people/mallika-bajaj.jpg', href: 'https://www.instagram.com/svyaglobal/' },
+  { name: 'Lola Vinagre', role: 'Flagship executive chef · Ayurvedic food expert', image: '/people/lola-vinagre.jpg', href: 'https://www.instagram.com/lolavinagre/' },
 ]
 
 export const EXPERT = {

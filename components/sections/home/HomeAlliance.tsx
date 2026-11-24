@@ -116,16 +116,20 @@ export function HomeFacilitators() {
       <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-6">
         {FACILITATORS.map((f, i) => (
           <li key={f.name}>
-            <RevealOnScroll delay={i * 0.04} className="group">
-              <Photo
-                src={f.image}
-                alt={f.name}
-                aspect="aspect-[4/5]"
-                sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw"
-                imgClassName="transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <h3 className="mt-4 text-base leading-snug">{f.name}</h3>
-              <p className="mt-1.5 text-xs" style={{ color: 'var(--text-quiet)' }}>{f.role}</p>
+            <RevealOnScroll delay={i * 0.04}>
+              {/* Photo and name open the facilitator's own page, as linked in the deck. */}
+              <a href={f.href} target="_blank" rel="noopener noreferrer" className="group block" aria-label={`${f.name}: open profile in a new tab`}>
+                <Photo
+                  src={f.image}
+                  alt={f.name}
+                  aspect="aspect-[4/5]"
+                  quality={90}
+                  sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw"
+                  imgClassName="transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <h3 className="mt-4 text-base leading-snug transition-colors group-hover:text-[var(--accent-deep)]">{f.name}</h3>
+                <p className="mt-1.5 text-xs" style={{ color: 'var(--text-quiet)' }}>{f.role}</p>
+              </a>
             </RevealOnScroll>
           </li>
         ))}
