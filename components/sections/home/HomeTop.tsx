@@ -38,7 +38,7 @@ export function HomeHero() {
           style={{ letterSpacing: 'var(--tracking-caps)' }}
         >
           {HERO.claims.map((claim, i) => (
-            <span key={claim} style={{ color: i === 2 ? HEADLINE_ACCENT : 'rgba(247,244,238,0.9)' }}>
+            <span key={claim} style={{ color: i === 2 ? 'var(--aqua)' : 'rgba(247,244,238,0.9)' }}>
               {claim}
             </span>
           ))}
@@ -64,7 +64,7 @@ export function HomeHero() {
           </Button>
           <Button
             href="/#philosophy"
-            className="!border-[rgba(247,244,238,0.6)] !bg-transparent !text-[var(--ivory)] hover:!border-[var(--ivory)] hover:!bg-[rgba(247,244,238,0.1)]"
+            className="!border-[var(--aqua)] !bg-transparent !text-[var(--ivory)] hover:!border-[var(--aqua)] hover:!bg-[rgba(55,200,217,0.15)]"
           >
             Discover VIVRA
           </Button>
