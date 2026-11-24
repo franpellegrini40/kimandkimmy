@@ -81,6 +81,10 @@ export function HomeIbiza() {
         </RevealOnScroll>
         <RevealOnScroll delay={0.08} className="lg:col-span-2">
           <IbizaReel />
+          <p className="mx-auto mt-4 w-full max-w-[340px] text-sm">
+            <span style={{ color: 'var(--ivory)' }}>Francisco Pellegrini</span>
+            <span style={{ color: 'var(--text-quiet)' }}>, CEO</span>
+          </p>
         </RevealOnScroll>
       </div>
 
