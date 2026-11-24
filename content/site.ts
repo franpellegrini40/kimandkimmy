@@ -9,7 +9,7 @@ export const MENU_PRIMARY = [
   { label: 'Experiences', href: '/#ibiza' },
   { label: 'Membership', href: '/#members' },
   { label: 'Ecosystem', href: '/#ecosystem' },
-  { label: 'Venues', href: '/#venues' },
+  { label: 'Venues', href: '/venues' },
   { label: 'Passport', href: '/#passport' },
   { label: 'Log in', href: '/login' },
 ]

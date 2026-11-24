@@ -123,6 +123,9 @@ export function HomeVenues() {
         </p>
       </RevealOnScroll>
       <VenueGrid />
+      <RevealOnScroll delay={0.1} className="mt-10">
+        <Button href="/venues" variant="secondary">See the venues film</Button>
+      </RevealOnScroll>
     </Section>
   )
 }
