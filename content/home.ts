@@ -213,7 +213,7 @@ export const PLATFORM = {
 // Proof of concept and validation. Facts from the November 2026 investor deck
 // (slides 6, 7, 8) and Francisco's instructions of 2026-11-24: Ibiza and the
 // Planetary Commons are VIVRA's proofs of concept; an MOU is placed with GENT
-// Club and the World Impacteurs Network; VIVRA is working with the Milan
+// Club and the World Impact Forum; VIVRA is working with the Milan
 // Longevity Summit through Sharon Cittone. No terms or figures are published.
 export const COMMONS = {
   eyebrow: 'Proof of concept · Validation',
@@ -241,13 +241,13 @@ export const COMMONS = {
     {
       key: 'alliance',
       status: 'Alliance validation · MOU placed',
-      title: 'GENT Club and the World Impacteurs Network',
+      title: 'GENT Club and the World Impact Forum',
       body: 'The first communities to join the alliance, bringing their members into the VIVRA layer.',
       href: null,
       linkLabel: '',
       logos: [
         { src: '/images/partners/gent.png', alt: 'GENT Club', w: 726, h: 688, light: true },
-        { src: '/images/partners/world-impact-forum.png', alt: 'World Impacteurs Network', w: 267, h: 188, light: false },
+        { src: '/images/partners/world-impact-forum.png', alt: 'World Impact Forum', w: 267, h: 188, light: false },
       ],
     },
     {
