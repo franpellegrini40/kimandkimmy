@@ -13,6 +13,8 @@ const nextConfig = {
       { source: '/ibiza', destination: '/#ibiza', permanent: true },
       { source: '/agenda', destination: '/#ibiza', permanent: true },
       { source: '/apply/ibiza', destination: '/#ibiza', permanent: true },
+      // Old gatherings/marketplace page; the home page now tells that story.
+      { source: '/lifestyle', destination: '/#ibiza', permanent: true },
     ]
   },
   async headers() {
