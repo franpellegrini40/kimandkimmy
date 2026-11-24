@@ -3,13 +3,16 @@
 import { useEffect, useRef, useState } from 'react'
 import { useReducedMotion } from 'framer-motion'
 
-// The venues film (25 s, 1280 x 720, silent, about 5 MB). It lives only on
-// /venues, so the home page never downloads it. Even here it loads only when
+// The venues film (25 s, silent). Two encodes, cleaned of compression blocks
+// and gently sharpened: 1280 x 720 (about 7.6 MB) for wide screens and
+// 854 x 480 (about 2.6 MB) for phones; only one is downloaded. It lives only
+// on /venues, so the home page never downloads it. Even here it loads only when
 // it is about to scroll into view, plays muted in a loop, and stays a still
 // poster with reduced motion or data-saver. Shown at 16:9 on every screen,
 // so nothing is cropped on phones.
 export const VENUES_FILM = {
   src: '/videos/venues-film.mp4',
+  mobileSrc: '/videos/venues-film-mobile.mp4',
   poster: '/videos/venues-film-poster.jpg',
 }
 
@@ -17,6 +20,7 @@ export default function VenuesFilm() {
   const ref = useRef<HTMLVideoElement>(null)
   const reduced = useReducedMotion()
   const [load, setLoad] = useState(false)
+  const [src, setSrc] = useState(VENUES_FILM.src)
 
   useEffect(() => {
     const el = ref.current
@@ -26,6 +30,7 @@ export default function VenuesFilm() {
     const io = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
+          if (window.matchMedia('(max-width: 767px)').matches) setSrc(VENUES_FILM.mobileSrc)
           setLoad(true)
           io.disconnect()
         }
@@ -57,7 +62,7 @@ export default function VenuesFilm() {
             poster={VENUES_FILM.poster}
             aria-label="Moments from venues across the VIVRA network"
           >
-            {load && <source src={VENUES_FILM.src} type="video/mp4" />}
+            {load && <source src={src} type="video/mp4" />}
           </video>
         </div>
         <p className="mt-6 text-center font-display text-2xl md:text-4xl" style={{ color: 'var(--ivory)' }}>
