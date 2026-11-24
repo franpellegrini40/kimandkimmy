@@ -58,7 +58,7 @@ export function HomeHero() {
         <div className="mt-2 flex flex-wrap justify-center gap-4">
           <Button
             href="/#apply"
-            className="!border-[var(--ivory)] !bg-[var(--ivory)] !text-[var(--navy)] hover:!border-[var(--copper)] hover:!bg-[var(--copper)] hover:!text-white"
+            className="!border-[var(--forest-deep)] !bg-[var(--forest-deep)] !text-white hover:!border-[var(--forest)] hover:!bg-[var(--forest)]"
           >
             Request invitation
           </Button>
