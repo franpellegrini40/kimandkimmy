@@ -40,7 +40,7 @@ export const UPCOMING_GATHERINGS = [
     dates: 'October 4–9, 2026',
     format: '5-Day Gathering',
     status: 'open',
-    href: '/ibiza',
+    href: '/#ibiza',
   },
   {
     key: 'puglia',
