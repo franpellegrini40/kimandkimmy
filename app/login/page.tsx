@@ -32,7 +32,9 @@ export default async function LoginPage() {
               fill
               priority
               sizes="100vw"
-              className="object-cover"
+              quality={90}
+              // Anchored near the top so the people's heads stay in the wide frame.
+              className="object-cover object-[center_8%]"
             />
             <div
               className="absolute inset-0"
