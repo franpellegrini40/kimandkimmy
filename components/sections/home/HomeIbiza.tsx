@@ -2,10 +2,9 @@ import Section from '@/components/ui/Section'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import Photo from '@/components/ui/Photo'
 import Button from '@/components/ui/Button'
-import { DAY_IN_LIFE } from '@/content/retreat'
 import { ECOSYSTEM_STORY } from '@/content/ecosystem'
 import IbizaReel from './IbizaReel'
-import { FOUNDER_NOTE, IBIZA, RITUALS, WALL } from '@/content/home'
+import { DAY_RHYTHM, FOUNDER_NOTE, IBIZA, RITUALS, WALL } from '@/content/home'
 
 const FOUNDERS = [
   { name: 'Manuele Monti', role: 'Co-founder', linkedin: 'https://www.linkedin.com/in/manuelemonti/' },
@@ -211,12 +210,15 @@ export function HomeRituals() {
         ))}
       </ul>
 
-      <dl className="mt-12 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-5">
-        {DAY_IN_LIFE.map((moment, i) => (
+      <dl className="mt-12 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
+        {DAY_RHYTHM.map((moment, i) => (
           <RevealOnScroll key={moment.time} delay={i * 0.04}>
             <div className="border-t pt-4" style={{ borderColor: 'var(--rule)' }}>
-              <dt className="eyebrow">{moment.time}</dt>
-              <dd className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>{moment.moment}</dd>
+              <dt>
+                <span className="eyebrow">{moment.time}</span>
+                <span className="mt-2 block font-display text-xl">{moment.purpose}</span>
+              </dt>
+              <dd className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>{moment.body}</dd>
             </div>
           </RevealOnScroll>
         ))}

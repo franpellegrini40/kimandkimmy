@@ -160,6 +160,30 @@ export const RITUALS = {
   ],
 }
 
+// The rhythm of a VIVRA day, in Francisco's words (2026-11-24).
+export const DAY_RHYTHM = [
+  {
+    time: 'Morning',
+    purpose: 'To move',
+    body: 'Wellness and human connection, mixed with fitness and nature: yoga, breathwork, Alchemy Rewire, sound healing and more, to reset before the day. Free-will activity.',
+  },
+  {
+    time: 'Midday',
+    purpose: 'To work',
+    body: 'Masterclass sessions on longevity, systemic impact, the regenerative economy and conscious leadership. Group workshops.',
+  },
+  {
+    time: 'Afternoon',
+    purpose: 'To wrap up',
+    body: 'Mastermind work and teamwork, finishing with spa and wellness.',
+  },
+  {
+    time: 'Evening',
+    purpose: 'To relax and renew',
+    body: 'Flagship private-chef long-table dinner, curated conversations, fire circle ceremonies and group healing sessions.',
+  },
+]
+
 // [LOVABLE] platform section. Platform copy stays in the future tense until the MVP is live.
 export const PLATFORM = {
   eyebrow: 'VIVRA platform MVP · Coming live soon',
