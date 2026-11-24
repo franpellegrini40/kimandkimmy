@@ -47,6 +47,22 @@ export function HomeMembership() {
                     </div>
                   ))}
                 </dl>
+                {/* Closes every tier: the full list is shared after applying. */}
+                <a
+                  href="/#apply"
+                  className="group flex items-center justify-between gap-4 border-t px-6 py-5 transition-colors hover:bg-[var(--surface-inset)]"
+                  style={{ borderColor: 'var(--rule)' }}
+                >
+                  <span>
+                    <span className="block text-sm font-medium">And more…</span>
+                    <span className="mt-1 block text-sm" style={{ color: 'var(--accent-deep)' }}>
+                      Consult for the full list of benefits
+                    </span>
+                  </span>
+                  <span aria-hidden="true" className="text-lg transition-transform group-hover:translate-x-1" style={{ color: 'var(--accent-deep)' }}>
+                    →
+                  </span>
+                </a>
               </article>
             </RevealOnScroll>
           )
