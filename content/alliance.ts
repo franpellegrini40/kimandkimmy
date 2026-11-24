@@ -70,7 +70,7 @@ export const ALLIANCE_VENUES = [
   { name: 'Ibiza', location: 'Spain', status: 'open', region: 'europe', tag: 'Founding Home', image: '/images/alliance/ibiza.jpg' },
   { name: 'Costa Rica', location: 'Central America', status: 'open', region: 'americas', tag: 'Rainforest Estate', image: '/images/alliance/costa-rica.jpg' },
   { name: 'Bali', location: 'Indonesia', status: 'soon', region: 'asia', tag: 'Cliffside', image: '/images/alliance/bali.jpg' },
-  { name: 'Sri Lanka', location: 'Indian Ocean', status: 'open', region: 'asia', tag: 'Ocean Retreat', image: '/images/alliance/sri-lanka.jpg' },
+  { name: 'Sri Lanka', location: 'Santani Wellness', status: 'open', region: 'asia', tag: 'Mountain Retreat', image: '/images/alliance/sri-lanka.jpg' },
   { name: 'Dubai', location: 'UAE', status: 'soon', region: 'middle-east', tag: 'Desert Gateway', image: '/images/alliance/dubai.jpg' },
   // Tenuta Villa Gaia, Seggiano: photo and facts from Villa_Gaia_brochure_EN_v2.pdf (Nov 2026).
   { name: 'Villa Gaia', location: 'Tuscany, Italy', status: 'open', region: 'europe', tag: 'Tuscan Estate', image: '/images/alliance/villa-gaia.jpg' },
