@@ -17,9 +17,13 @@ export function HomeHowItWorks() {
 
       <ol className="mt-12 grid gap-px border sm:grid-cols-2 lg:grid-cols-4" style={{ borderColor: 'var(--rule)', background: 'var(--rule)' }}>
         {ALLIANCE_HOW_IT_WORKS.map((s, i) => (
-          <li key={s.step} className="h-full">
+          <li key={s.step} className="relative h-full hover:z-10">
             <RevealOnScroll delay={i * 0.05} className="h-full">
-              <div className="h-full p-6 md:p-7" style={{ background: 'var(--surface-raised)' }}>
+              {/* Zooms slightly on hover, lifting above its neighbours. */}
+              <div
+                className="h-full p-6 transition-transform duration-300 ease-out hover:scale-105 hover:shadow-[0_12px_40px_rgba(0,14,33,0.12)] md:p-7"
+                style={{ background: 'var(--surface-raised)' }}
+              >
                 <span className="font-display text-3xl" style={{ color: 'var(--aqua-700)' }}>{s.step.padStart(2, '0')}</span>
                 <h3 className="mt-4 text-lg">{s.label}</h3>
                 <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}>{s.detail}</p>
