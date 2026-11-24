@@ -10,7 +10,7 @@ export const MENU_PRIMARY = [
   { label: 'Membership', href: '/#members' },
   { label: 'Ecosystem', href: '/#ecosystem' },
   { label: 'Venues', href: '/venues' },
-  { label: 'Passport', href: '/#passport' },
+  { label: 'Impact Passport', href: '/#passport' },
   { label: 'Log in', href: '/login' },
 ]
 
