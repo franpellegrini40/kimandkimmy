@@ -184,20 +184,28 @@ export function HomeRituals() {
 
       <ul className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
         {RITUALS.items.map((item, i) => (
-          <li key={item.label} className={i === 0 ? 'col-span-2 md:col-span-1' : undefined}>
+          <li key={item.label}>
             <RevealOnScroll delay={i * 0.04} className="group relative">
               <Photo
                 src={item.src}
                 alt={item.alt}
-                aspect={i === 0 ? 'aspect-[16/10] md:aspect-[3/4]' : 'aspect-[3/4]'}
+                aspect="aspect-[3/4]"
+                quality={90}
                 sizes="(min-width: 768px) 20vw, 50vw"
                 imgClassName="transition-transform duration-700 ease-out group-hover:scale-105"
               />
               <div
                 className="pointer-events-none absolute inset-0"
-                style={{ background: 'linear-gradient(180deg, rgba(0,14,33,0) 55%, rgba(0,14,33,0.8) 100%)' }}
+                style={{ background: 'linear-gradient(180deg, rgba(0,14,33,0) 50%, rgba(0,14,33,0.85) 100%)' }}
               />
-              <p className="absolute inset-x-0 bottom-0 p-4 font-display text-lg" style={{ color: 'var(--ivory)' }}>{item.label}</p>
+              <div className="absolute inset-x-0 bottom-0 p-4">
+                <p className="font-display text-lg leading-tight" style={{ color: 'var(--ivory)' }}>{item.label}</p>
+                {item.caption && (
+                  <p className="mt-1 text-[10px] uppercase" style={{ letterSpacing: 'var(--tracking-caps)', color: 'rgba(247,244,238,0.8)' }}>
+                    {item.caption}
+                  </p>
+                )}
+              </div>
             </RevealOnScroll>
           </li>
         ))}

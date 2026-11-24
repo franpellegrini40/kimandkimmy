@@ -150,12 +150,13 @@ export const WALL = {
 export const RITUALS = {
   eyebrow: 'A day at VIVRA',
   heading: 'Rituals, not amenities.',
+  // Photos from the Ibiza founding gathering, October 2026 (Francisco, 2026-11-24).
   items: [
-    { label: 'The circle', src: '/images/villa-evening-gathering.jpg', alt: 'An evening circle at Can Aylma' },
-    { label: 'Long table', src: '/images/ibiza-2026/long-table.jpg', alt: 'The long table at Can Aylma' },
-    { label: 'Fire circle', src: '/images/villa-firepit.jpg', alt: 'The fire pit at Can Aylma' },
-    { label: 'Movement', src: '/images/ibiza-2026/morning-practice.jpg', alt: 'Morning movement practice at Can Aylma' },
-    { label: 'Salt water pool', src: '/images/villa-pool.jpg', alt: 'The salt water pool at Can Aylma' },
+    { label: 'The circle', caption: 'Workshops and masterclasses', src: '/images/ibiza-2026/ritual-circle.jpg', alt: 'The founding gathering group at the long table after the systems workshop, Can Aylma' },
+    { label: 'Long table', caption: 'Deep conversations and networking', src: '/images/ibiza-2026/ritual-long-table.jpg', alt: 'Participants working together over the systems map at Can Aylma' },
+    { label: 'Ceremonies', caption: 'Shared meals and rituals', src: '/images/ibiza-2026/ritual-ceremonies.jpg', alt: 'Candle-lit dinner at the long table, Can Aylma' },
+    { label: 'Movement', caption: 'Wellness', src: '/images/ibiza-2026/ritual-movement.jpg', alt: 'Sunrise movement practice on the wooden deck at Can Aylma' },
+    { label: 'Holistic wellbeing', caption: 'Rest and recovery', src: '/images/ibiza-2026/ritual-wellbeing.jpg', alt: 'Evening in the pool among the banana leaves at Can Aylma' },
   ],
 }
 
