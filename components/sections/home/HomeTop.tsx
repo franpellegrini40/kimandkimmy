@@ -1,8 +1,8 @@
 import Section from '@/components/ui/Section'
-import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import Button from '@/components/ui/Button'
-import { HERO, IS, IS_NOT } from '@/content/home'
+import { HERO } from '@/content/home'
 import HeroVideo from './HeroVideo'
+import IsIsNot from './IsIsNot'
 
 // The Ibiza footage is warm (wood, terracotta, late sun), so the hero takes
 // the brand's copper rather than aqua. Copper only ever sits on this dark
@@ -85,36 +85,7 @@ export function HomeHero() {
 export function HomeIsIsNot() {
   return (
     <Section tone="sand" className="!py-16 md:!py-20">
-      <div className="grid gap-px border md:grid-cols-2" style={{ borderColor: 'var(--rule)', background: 'var(--rule)' }}>
-        <RevealOnScroll className="h-full">
-          <div className="h-full p-8 md:p-10" style={{ background: 'var(--surface-page)' }}>
-            <span className="eyebrow" style={{ color: 'var(--text-quiet)' }}>What VIVRA is not</span>
-            <ul className="mt-6 space-y-3">
-              {IS_NOT.map((line) => (
-                <li key={line} className="flex items-start gap-3" style={{ color: 'var(--text-secondary)' }}>
-                  <span aria-hidden="true" className="mt-[0.7em] h-px w-4 shrink-0" style={{ background: 'var(--text-quiet)' }} />
-                  <span className="line-through decoration-[var(--black-a12)]">{line}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </RevealOnScroll>
-        <RevealOnScroll delay={0.08} className="h-full">
-          <div data-theme="prestige" className="grain h-full p-8 md:p-10" style={{ background: 'var(--surface-page)', color: 'var(--text-primary)' }}>
-            <span className="eyebrow" style={{ color: 'var(--aqua)' }}>What VIVRA is</span>
-            <ul className="mt-6 space-y-3">
-              {IS.map((line, i) => (
-                <li key={line} className="flex items-start gap-3">
-                  <span aria-hidden="true" className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--aqua)' }} />
-                  <span className={i === 0 ? 'font-display text-2xl' : undefined} style={{ color: i === 0 ? 'var(--ivory)' : 'var(--text-secondary)' }}>
-                    {line}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </RevealOnScroll>
-      </div>
+      <IsIsNot />
     </Section>
   )
 }
