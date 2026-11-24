@@ -58,13 +58,13 @@ export function HomeHero() {
         <div className="mt-2 flex flex-wrap justify-center gap-4">
           <Button
             href="/#apply"
-            className="!border-[var(--forest-deep)] !bg-[var(--forest-deep)] !text-white hover:!border-[var(--forest)] hover:!bg-[var(--forest)]"
+            className="!border-[var(--ivory)] !bg-[var(--ivory)] !text-[var(--navy)] hover:!border-[var(--forest-deep)] hover:!bg-[var(--forest-deep)] hover:!text-white active:!border-[var(--forest)] active:!bg-[var(--forest)] active:!text-white focus-visible:!bg-[var(--forest-deep)] focus-visible:!text-white"
           >
             Request invitation
           </Button>
           <Button
             href="/#philosophy"
-            className="!border-[var(--aqua)] !bg-transparent !text-[var(--ivory)] hover:!border-[var(--aqua)] hover:!bg-[rgba(55,200,217,0.15)]"
+            className="!border-[rgba(247,244,238,0.6)] !bg-transparent !text-[var(--ivory)] hover:!border-[var(--ivory)] hover:!bg-[rgba(247,244,238,0.1)]"
           >
             Discover VIVRA
           </Button>

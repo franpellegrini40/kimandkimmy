@@ -133,7 +133,7 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
             <Button
               href={CTA_HREF}
               size="sm"
-              className="hidden !border-[var(--copper)] !bg-[var(--copper)] !text-white hover:!border-[var(--copper-deep)] hover:!bg-[var(--copper-deep)] sm:inline-flex"
+              className="hidden !border-[var(--navy)] !bg-[var(--navy)] !text-white hover:!border-[var(--copper)] hover:!bg-[var(--copper)] active:!border-[var(--copper-deep)] active:!bg-[var(--copper-deep)] focus-visible:!bg-[var(--copper)] sm:inline-flex"
             >
               {CTA_COPY.invite}
             </Button>
