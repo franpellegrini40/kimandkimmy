@@ -242,7 +242,7 @@ export const COMMONS = {
     },
     {
       key: 'alliance',
-      status: 'Alliance validation · MOU placed',
+      status: 'Partnership · In progress',
       title: 'GENT Club and the World Impact Forum',
       body: 'The first communities to join the alliance, bringing their members into the VIVRA layer.',
       href: null,
