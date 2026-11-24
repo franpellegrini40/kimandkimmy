@@ -97,22 +97,52 @@ export function HomePassport() {
 export function HomeCommons() {
   return (
     <Section tone="dark" id="commons">
-      <div className="grid gap-10 lg:grid-cols-5 lg:gap-16">
-        <RevealOnScroll className="lg:col-span-2">
-          <span className="eyebrow" style={{ color: 'var(--copper)' }}>{COMMONS.eyebrow}</span>
-          <h2 className="mt-4 text-3xl md:text-4xl">{COMMONS.heading}</h2>
-        </RevealOnScroll>
-        <RevealOnScroll delay={0.08} className="lg:col-span-3">
-          <div className="space-y-5 text-lg" style={{ color: 'var(--text-secondary)' }}>
-            {COMMONS.body.map((p) => (
-              <p key={p}>{p}</p>
-            ))}
-          </div>
-          <p className="mt-8 border-t pt-5 text-sm" style={{ borderColor: 'var(--rule)', color: 'var(--text-quiet)' }}>
-            {COMMONS.note}
-          </p>
-        </RevealOnScroll>
-      </div>
+      <RevealOnScroll className="max-w-3xl">
+        <span className="eyebrow" style={{ color: 'var(--copper)' }}>{COMMONS.eyebrow}</span>
+        <h2 className="mt-4 text-3xl md:text-5xl">{COMMONS.heading}</h2>
+        <p className="mt-5 text-lg" style={{ color: 'var(--text-secondary)' }}>{COMMONS.intro}</p>
+      </RevealOnScroll>
+
+      <ul className="mt-12 grid gap-px border md:grid-cols-2" style={{ borderColor: 'var(--rule)', background: 'var(--rule)' }}>
+        {COMMONS.items.map((item, i) => (
+          <li key={item.key} className="h-full">
+            <RevealOnScroll delay={i * 0.06} className="h-full">
+              <article className="flex h-full flex-col p-7 md:p-9" style={{ background: 'var(--surface-raised)' }}>
+                <p className="text-[10px] uppercase" style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--copper)' }}>
+                  {item.status}
+                </p>
+                <h3 className="mt-3 text-2xl">{item.title}</h3>
+                <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}>{item.body}</p>
+                {item.logos.length > 0 && (
+                  <div className="mt-6 flex flex-wrap items-center gap-4">
+                    {item.logos.map((l) => (
+                      <span
+                        key={l.alt}
+                        className="flex h-20 items-center justify-center px-4"
+                        style={{ background: l.light ? 'var(--ivory)' : '#000' }}
+                      >
+                        <Image src={l.src} alt={l.alt} width={l.w} height={l.h} className="h-14 w-auto" />
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {item.href && (
+                  <a
+                    href={item.href}
+                    {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    className="mt-auto inline-block pt-6 text-sm underline underline-offset-4 transition-colors hover:text-[var(--aqua)]"
+                    style={{ color: 'var(--ivory)' }}
+                  >
+                    {item.linkLabel}
+                  </a>
+                )}
+              </article>
+            </RevealOnScroll>
+          </li>
+        ))}
+      </ul>
+
+      <p className="mt-8 text-sm" style={{ color: 'var(--text-quiet)' }}>{COMMONS.note}</p>
     </Section>
   )
 }

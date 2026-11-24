@@ -210,12 +210,55 @@ export const PLATFORM = {
 }
 
 // [RECORD] A11 — vision, not a group decision; wording approved for public copy.
+// Proof of concept and validation. Facts from the November 2026 investor deck
+// (slides 6, 7, 8) and Francisco's instructions of 2026-11-24: Ibiza and the
+// Planetary Commons are VIVRA's proofs of concept; an MOU is placed with GENT
+// Club and the World Impacteurs Network; VIVRA is working with the Milan
+// Longevity Summit through Sharon Cittone. No terms or figures are published.
 export const COMMONS = {
-  eyebrow: 'The long view',
-  heading: 'Part of something larger: the Planetary Commons.',
-  body: [
-    'At the Ibiza gathering, the projects in the room drew one band across the top of their map: the Planetary Commons. A shared infrastructure for regenerative ecosystems, owned collectively rather than by any single project.',
-    'VIVRA’s place in it is the physical layer. We convene the people and run the gatherings where this work becomes real. For our members, the long view is simple: the ultimate upgrade of a VIVRA membership is to take part in the Planetary Commons.',
+  eyebrow: 'Proof of concept · Validation',
+  heading: 'Proof, not projection.',
+  intro: 'VIVRA is already running. Two proofs of concept, and the first communities plugging in.',
+  items: [
+    {
+      key: 'ibiza',
+      status: 'Proof of concept · Delivered',
+      title: 'Ibiza founding gathering',
+      body: 'Five days at Can Aylma in October 2026. A curated group, a three-day workshop, and ten written 90-day commitments.',
+      href: '/#ibiza',
+      linkLabel: 'See the gathering',
+      logos: [],
+    },
+    {
+      key: 'commons',
+      status: 'Proof of concept · In set-up',
+      title: 'The Planetary Commons',
+      body: 'An ecosystem that plugged into VIVRA. The projects at the Ibiza gathering drew one shared band across their map: a common infrastructure for regenerative ecosystems. VIVRA is its coordinator and physical layer, and taking part in it is the ultimate upgrade of a VIVRA membership.',
+      href: null,
+      linkLabel: '',
+      logos: [],
+    },
+    {
+      key: 'alliance',
+      status: 'Alliance validation · MOU placed',
+      title: 'GENT Club and the World Impacteurs Network',
+      body: 'The first communities to join the alliance, bringing their members into the VIVRA layer.',
+      href: null,
+      linkLabel: '',
+      logos: [
+        { src: '/images/partners/gent.png', alt: 'GENT Club', w: 726, h: 688, light: true },
+        { src: '/images/partners/world-impact-forum.png', alt: 'World Impacteurs Network', w: 267, h: 188, light: false },
+      ],
+    },
+    {
+      key: 'milan',
+      status: 'Partnership · In progress',
+      title: 'Milan Longevity Summit',
+      body: 'We are working with the Milan Longevity Summit through Sharon Cittone, who leads the Longevity & Wellbeing conversation at VIVRA.',
+      href: 'https://www.milanlongevitysummit.org/',
+      linkLabel: 'milanlongevitysummit.org',
+      logos: [],
+    },
   ],
   note: 'The Planetary Commons is still being designed. We will share each step with our members.',
 }
