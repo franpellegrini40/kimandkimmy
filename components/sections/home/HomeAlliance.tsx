@@ -113,7 +113,7 @@ export function HomeFacilitators() {
         </RevealOnScroll>
       </div>
 
-      <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-3 lg:grid-cols-6">
+      <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
         {FACILITATORS.map((f, i) => (
           <li key={f.name}>
             <RevealOnScroll delay={i * 0.04}>
@@ -124,7 +124,7 @@ export function HomeFacilitators() {
                   alt={f.name}
                   aspect="aspect-[4/5]"
                   quality={90}
-                  sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw"
+                  sizes="(min-width: 1024px) 14vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw"
                   imgClassName="transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <h3 className="mt-4 text-base leading-snug transition-colors group-hover:text-[var(--accent-deep)]">{f.name}</h3>

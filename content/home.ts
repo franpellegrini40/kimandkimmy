@@ -59,6 +59,8 @@ export const FACILITATORS = [
   { name: 'Dunja Will', role: 'Animal communicator · healer', image: '/people/dunja.jpg', href: 'https://outbackwhisperer.com/' },
   { name: 'Mallika Bajaj', role: 'Embodied leadership · wellness', image: '/people/mallika-bajaj.jpg', href: 'https://www.instagram.com/svyaglobal/' },
   { name: 'Lola Vinagre', role: 'Flagship executive chef · Ayurvedic food expert', image: '/people/lola-vinagre.jpg', href: 'https://www.instagram.com/lolavinagre/' },
+  // Added by Francisco, 2026-11-24.
+  { name: 'Anna Stepanova', role: 'Events, membership & guest experience', image: '/people/anna-stepanova.jpg', href: 'https://www.linkedin.com/in/anna-stepanova-dxb/' },
 ]
 
 export const EXPERT = {
