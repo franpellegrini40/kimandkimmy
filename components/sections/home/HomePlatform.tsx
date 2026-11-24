@@ -1,5 +1,7 @@
+import Image from 'next/image'
 import Section from '@/components/ui/Section'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
+import Photo from '@/components/ui/Photo'
 import ImpactDashboard from '@/components/sections/ImpactDashboard'
 import JoinForm from '@/components/forms/JoinForm'
 import { IMPACT_PASSPORT_FEATURES } from '@/content/impact'
@@ -35,10 +37,51 @@ export function HomePassport() {
             ))}
           </ul>
 
-          <RevealOnScroll delay={0.2} className="mt-6 max-w-lg border p-6" style={{ borderColor: 'var(--rule)', background: 'var(--surface-raised)' }}>
-            <span className="eyebrow" style={{ color: 'var(--forest-deep)' }}>{PLATFORM.impact.eyebrow}</span>
-            <h3 className="mt-2 text-lg">{PLATFORM.impact.heading}</h3>
-            <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>{PLATFORM.impact.body}</p>
+          <RevealOnScroll delay={0.2} className="mt-6 max-w-xl border" style={{ borderColor: 'var(--rule)', background: 'var(--surface-raised)' }}>
+            <div className="grid gap-0 sm:grid-cols-[0.8fr_1.2fr]">
+              <a
+                href={PLATFORM.impact.photo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block overflow-hidden"
+                aria-label="Join The Planet Foundation website (opens in a new tab)"
+              >
+                <Photo
+                  src={PLATFORM.impact.photo.src}
+                  alt={PLATFORM.impact.photo.alt}
+                  aspect="aspect-[4/5] sm:aspect-auto sm:h-full"
+                  quality={90}
+                  sizes="(min-width: 640px) 240px, 100vw"
+                  imgClassName="transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+              </a>
+              <div className="p-6">
+                <span className="eyebrow" style={{ color: 'var(--forest-deep)' }}>{PLATFORM.impact.eyebrow}</span>
+                <h3 className="mt-2 text-lg">{PLATFORM.impact.heading}</h3>
+                <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>{PLATFORM.impact.body}</p>
+                <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
+                  {PLATFORM.impact.partners.map((p) => (
+                    <li key={p.name}>
+                      <a
+                        href={p.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block opacity-80 transition-opacity hover:opacity-100"
+                        aria-label={`${p.name} (opens in a new tab)`}
+                      >
+                        {p.logo ? (
+                          <Image src={p.logo} alt={p.name} width={p.w} height={p.h} className="h-9 w-auto" />
+                        ) : (
+                          <span className="font-display text-sm uppercase" style={{ letterSpacing: '0.12em', color: 'var(--navy)' }}>
+                            {p.name}
+                          </span>
+                        )}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </RevealOnScroll>
         </div>
 

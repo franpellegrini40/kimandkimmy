@@ -190,10 +190,22 @@ export const PLATFORM = {
   heading: 'One platform for how you live.',
   body: 'Invite-only events, masterclasses, wellbeing services and venue access across a growing regenerative network. One membership, one wallet and one booking layer.',
   demoNote: 'Sample figures are demo data. Impact verification and tracking to be confirmed before launch.',
+  // Partners named by Francisco, 2026-11-24. Fondazione Rebecca has no logo on
+  // file yet, so it shows as a name until one is supplied.
   impact: {
     eyebrow: 'Impact layer',
-    heading: 'With the Join The Planet Foundation.',
-    body: 'The impact layer of the VIVRA passport is being built together with the Join The Planet Foundation, so that every booking becomes a measurable, regenerative contribution.',
+    heading: 'Built with our impact partners.',
+    body: 'The impact layer of the VIVRA passport is being built with the Join The Planet Foundation and Fondazione Rebecca, together with Better World, so that every booking becomes a measurable, regenerative contribution.',
+    photo: {
+      src: '/images/impact/join-the-planet-messi.jpg',
+      alt: 'Lionel Messi with the Join The Planet boot',
+      href: 'https://www.jointheplanetproject.org/',
+    },
+    partners: [
+      { name: 'Join The Planet Foundation', href: 'https://www.jointheplanetproject.org/', logo: '/images/partners/join-the-planet.png', w: 250, h: 162 },
+      { name: 'Fondazione Rebecca', href: 'https://fondazionerebecca.com/', logo: null, w: 0, h: 0 },
+      { name: 'Better World', href: 'https://betterworld.studio/', logo: '/images/partners/better-world.png', w: 1376, h: 359 },
+    ],
   },
 }
 
