@@ -18,7 +18,7 @@ const HOME_DESCRIPTION =
 
 export async function generateMetadata(): Promise<Metadata> {
   const site = await getCurrentSite()
-  const url = `https://${SITE_META[site].domain}`
+  const url = `https://${process.env.NEXT_PUBLIC_SITE_DOMAIN || 'worldvivra.com'}`
   return {
     title: { absolute: 'VIVRA · Change within. Impact beyond.' },
     description: HOME_DESCRIPTION,

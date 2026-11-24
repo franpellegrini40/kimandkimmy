@@ -6,7 +6,10 @@ import Section from '@/components/ui/Section'
 import Button from '@/components/ui/Button'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import VenueGrid from '@/components/sections/VenueGrid'
-import VenuesFilm, { VENUES_FILM } from '@/components/sections/VenuesFilm'
+import VenuesFilm from '@/components/sections/VenuesFilm'
+
+// Kept here (not imported from the client component) so the server can read them.
+const VENUES_FILM = { src: '/videos/venues-film.mp4', poster: '/videos/venues-film-poster.jpg' }
 import CTABand from '@/components/sections/CTABand'
 
 const DESCRIPTION =
@@ -14,12 +17,18 @@ const DESCRIPTION =
 
 export async function generateMetadata(): Promise<Metadata> {
   const site = await getCurrentSite()
-  const url = `https://${SITE_META[site].domain}/venues`
+  const url = `https://${process.env.NEXT_PUBLIC_SITE_DOMAIN || 'worldvivra.com'}/venues`
   return {
     title: 'Venues',
     description: DESCRIPTION,
     alternates: { canonical: url },
-    openGraph: { title: 'VIVRA Venues', description: DESCRIPTION, url, type: 'website', images: [VENUES_FILM.poster] },
+    openGraph: {
+      title: 'VIVRA Venues',
+      description: DESCRIPTION,
+      url,
+      type: 'website',
+      images: [{ url: VENUES_FILM.poster, width: 1280, height: 720, alt: 'The VIVRA venues film' }],
+    },
   }
 }
 

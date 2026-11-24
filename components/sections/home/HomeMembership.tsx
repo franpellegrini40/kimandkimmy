@@ -34,8 +34,12 @@ export function HomeMembership() {
         {MEMBERSHIP_TIER_NAMES.map((tier, t) => {
           const head = TIER_HEAD[tier.slug]
           return (
-            <RevealOnScroll key={tier.slug} delay={t * 0.06} className="h-full">
-              <article className="flex h-full flex-col border" style={{ borderColor: 'var(--rule)', background: 'var(--surface-raised)' }}>
+            <RevealOnScroll key={tier.slug} delay={t * 0.06} className="relative h-full hover:z-10">
+              {/* Zooms slightly on hover, like the How it works cards. */}
+              <article
+                className="flex h-full flex-col border transition-transform duration-300 ease-out hover:scale-[1.03] hover:shadow-[0_16px_48px_rgba(0,14,33,0.14)]"
+                style={{ borderColor: 'var(--rule)', background: 'var(--surface-raised)' }}
+              >
                 <header className="p-6" style={{ background: head.bg }}>
                   <h3 className="text-2xl" style={{ color: head.fg }}>{tier.name}</h3>
                   <p className="mt-1 text-xs" style={{ color: head.sub }}>{tier.tagline}</p>
