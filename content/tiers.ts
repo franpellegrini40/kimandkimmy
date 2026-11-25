@@ -50,7 +50,7 @@ export const MEMBERSHIP_BENEFITS: { label: string; values: [string, string, stri
   },
   {
     label:
-      'Marketplace & partner discounts (gyms, spas, nutrition, restaurants, co-working, clothing, supplements, retreats & experiences)',
+      'Partner discounts (gyms, spas, nutrition, restaurants, co-working, clothing, supplements, retreats & experiences)',
     values: ['Up to 15%', 'Up to 20%', 'Up to 30%'],
   },
   {

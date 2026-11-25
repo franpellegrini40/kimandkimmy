@@ -33,7 +33,7 @@ export const ALLIANCE_HOW_IT_WORKS = [
   {
     step: '4',
     label: 'Explore and book',
-    detail: 'Our digital marketplace brings together retreats, events and flagship workshops, with access to exclusive masterminds and world-class facilitators — making it easy for members to discover and book their next impactful experience.',
+    detail: 'Our platform brings together retreats, events and flagship workshops, with access to exclusive masterminds and world-class facilitators — making it easy for members to discover and book their next impactful experience.',
   },
 ]
 
