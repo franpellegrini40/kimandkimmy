@@ -330,5 +330,19 @@ export const VOICES = {
       role: '',
       src: '/images/testimonials/voice-e21.jpg',
     },
+    {
+      clip: 'entrevista6',
+      quote: 'VIVRA means to me people like-minded, people coming together and being ready to take action.',
+      name: 'Dunja Will',
+      role: 'Animal communicator',
+      src: '/images/testimonials/voice-e6.jpg',
+    },
+    {
+      clip: 'entrevista25',
+      quote: 'The VIVRA is a place where it enables people to live at their full potential.',
+      name: 'Alessandro',
+      role: '',
+      src: '/images/testimonials/voice-e25.jpg',
+    },
   ],
 }
