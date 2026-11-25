@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 // A native scroll-snap track with previous/next buttons. Every card is in the
 // server-rendered HTML (good for search and for no-JS visitors); the buttons
 // only scroll the track. Swipe works on phones, Shift+wheel/trackpad on desktop.
-export default function VoicesCarousel({ children, label }: { children: React.ReactNode; label: string }) {
+export default function VoicesCarousel({ children, label, header }: { children: React.ReactNode; label: string; header?: React.ReactNode }) {
   const track = useRef<HTMLUListElement>(null)
   const [atStart, setAtStart] = useState(true)
   const [atEnd, setAtEnd] = useState(false)
@@ -41,17 +41,20 @@ export default function VoicesCarousel({ children, label }: { children: React.Re
 
   return (
     <div role="region" aria-roledescription="carousel" aria-label={label}>
-      <div className="flex justify-end gap-2">
+      <div className="flex items-end justify-between gap-6">
+        <div>{header}</div>
+        <div className="flex shrink-0 gap-2">
         <button type="button" className={btn} style={{ borderColor: 'var(--rule)' }} onClick={() => go(-1)} disabled={atStart} aria-label="Previous voices">
           <span aria-hidden="true">←</span>
         </button>
         <button type="button" className={btn} style={{ borderColor: 'var(--rule)' }} onClick={() => go(1)} disabled={atEnd} aria-label="Next voices">
           <span aria-hidden="true">→</span>
         </button>
+        </div>
       </div>
       <ul
         ref={track}
-        className="-mx-6 mt-6 grid snap-x snap-mandatory scroll-px-6 auto-cols-[68%] grid-flow-col gap-4 overflow-x-auto px-6 pb-4 [scrollbar-width:none] sm:auto-cols-[40%] md:-mx-10 md:scroll-px-10 md:auto-cols-[29%] md:px-10 lg:mx-0 lg:scroll-px-0 lg:auto-cols-[calc((100%-4rem)/4.4)] lg:px-0 [&::-webkit-scrollbar]:hidden"
+        className="-mx-6 mt-10 grid snap-x snap-mandatory scroll-px-6 auto-cols-[62%] grid-flow-col gap-4 overflow-x-auto px-6 pb-4 [scrollbar-width:none] sm:auto-cols-[38%] md:-mx-10 md:scroll-px-10 md:auto-cols-[26%] md:px-10 lg:mx-0 lg:scroll-px-0 lg:auto-cols-[19%] lg:px-0 [&::-webkit-scrollbar]:hidden"
       >
         {children}
       </ul>

@@ -5,18 +5,20 @@ import { VOICES } from '@/content/home'
 import VoicesCarousel from './VoicesCarousel'
 
 // Voices from founding members: a still from each interview and one line,
-// verbatim, in a swipeable carousel (about 4 cards visible on desktop, 1.5 on phones).
+// verbatim, in a swipeable carousel (about 4.5 cards visible on desktop, 1.5 on phones).
 export default function HomeVoices() {
   return (
     <Section tone="light" id="voices">
-      <RevealOnScroll>
-        <span className="eyebrow">{VOICES.eyebrow}</span>
-        <h2 className="mt-4 text-3xl md:text-5xl">{VOICES.heading}</h2>
-        <p className="mt-4 max-w-xl text-sm" style={{ color: 'var(--text-secondary)' }}>{VOICES.intro}</p>
-      </RevealOnScroll>
-
-      <div className="mt-6">
-        <VoicesCarousel label={VOICES.eyebrow}>
+      <VoicesCarousel
+        label={VOICES.eyebrow}
+        header={
+          <RevealOnScroll>
+            <span className="eyebrow">{VOICES.eyebrow}</span>
+            <h2 className="mt-4 text-3xl md:text-5xl">{VOICES.heading}</h2>
+            <p className="mt-4 max-w-xl text-sm" style={{ color: 'var(--text-secondary)' }}>{VOICES.intro}</p>
+          </RevealOnScroll>
+        }
+      >
           {VOICES.items.map((v, i) => (
             <li key={v.clip} className="snap-start" aria-roledescription="slide" aria-label={`${i + 1} of ${VOICES.items.length}`}>
               <figure className="group flex h-full flex-col">
@@ -26,7 +28,7 @@ export default function HomeVoices() {
                     alt={`${v.name}${v.role ? `, ${v.role}` : ''}, a founding member of VIVRA`}
                     aspect="aspect-[4/5]"
                     quality={85}
-                    sizes="(min-width: 1024px) 22vw, (min-width: 768px) 29vw, (min-width: 640px) 40vw, 68vw"
+                    sizes="(min-width: 1024px) 19vw, (min-width: 768px) 26vw, (min-width: 640px) 38vw, 62vw"
                     imgClassName="transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
@@ -40,8 +42,7 @@ export default function HomeVoices() {
               </figure>
             </li>
           ))}
-        </VoicesCarousel>
-      </div>
+      </VoicesCarousel>
     </Section>
   )
 }
