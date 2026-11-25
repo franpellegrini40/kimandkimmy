@@ -61,6 +61,8 @@ export const FACILITATORS = [
   { name: 'Lola Vinagre', role: 'Flagship executive chef · Ayurvedic food expert', image: '/people/lola-vinagre.jpg', href: 'https://www.instagram.com/lolavinagre/' },
   // Added by Francisco, 2026-11-24.
   { name: 'Anna Stepanova', role: 'Events, membership & guest experience', image: '/people/anna-stepanova.jpg', href: 'https://www.linkedin.com/in/anna-stepanova-dxb/' },
+  // Added by Francisco, 2026-11-25 (Diva_Profile.pdf).
+  { name: 'Diva Purba Slamet', role: 'Holistic wellness', image: '/people/diva-purba-slamet.jpg', href: 'https://www.instagram.com/diva.alchemy/' },
 ]
 
 export const EXPERT = {
