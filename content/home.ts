@@ -280,51 +280,51 @@ export const APPLY = {
   note: 'Francisco will write to you to schedule a short call about your profile, our next gatherings and VIVRA membership.',
 }
 
-// [INTERVIEWS] Voices from Ibiza. Quotes are verbatim from the burned-in English
+// [INTERVIEWS] Voices from founding members. Quotes are verbatim from the burned-in English
 // subtitles of the 13 Oct 2026 interview clips (Downloads\VIVRA RETIRO\entrevistas);
 // "…" marks a cut, nothing is reworded. Catalogue: fran-os task VIV-0011.
 // Photos are clean stills from each clip, cropped above the subtitle band.
-// CONFIRM: each person's name and role (shown as [PENDIENTE nombre] until then).
+// Names from Francisco, 2026-11-25. Roles left empty unless already on the site.
 // CONFIRM: written consent from each person (VIV-0011). Until Francisco confirms
 // it in writing, the section renders on preview/staging only, never on production
 // (see showTestimonials() in lib/flags.ts).
 export const VOICES = {
-  eyebrow: 'Voices from Ibiza',
+  eyebrow: 'Voices from founding members',
   heading: 'In their words.',
-  intro: 'Recorded at Can Aylma during the first VIVRA gathering, October 2026.',
+  intro: 'Recorded at the first VIVRA gathering, October 2026.',
   items: [
     {
       clip: 'entrevista 13',
       quote: 'VIVRA events and gatherings is about bringing that collective power and that collective dreams into collective realities.',
-      name: '[PENDIENTE nombre]',
-      role: '',
+      name: 'Saha',
+      role: 'Energy healer',
       src: '/images/testimonials/voice-e13.jpg',
     },
     {
       clip: 'entrevista 17',
       quote: 'It represents a much broader platform for doing good in this world… It’s so scalable here.',
-      name: '[PENDIENTE nombre]',
+      name: 'Bill',
       role: '',
       src: '/images/testimonials/voice-e17.jpg',
     },
     {
       clip: 'entrevista22',
       quote: 'Each of us is doing our own thing, but hopefully together we could do something that actually lasts in time.',
-      name: '[PENDIENTE nombre]',
+      name: 'Sharon',
       role: '',
       src: '/images/testimonials/voice-e22.jpg',
     },
     {
       clip: 'entrevista9',
       quote: 'To me, VIVRA is a new way of living… We usually are divided between work, family, friendship and passion. We want to gather all this in the same place.',
-      name: '[PENDIENTE nombre]',
-      role: '',
+      name: 'Manuele Monti',
+      role: 'Co-founder, VIVRA',
       src: '/images/testimonials/voice-e9.jpg',
     },
     {
       clip: 'entrevista21',
       quote: 'I’m really excited to go back home and take all these different perspectives and best ideas and go demonstrate what it really means to be regenerative.',
-      name: '[PENDIENTE nombre]',
+      name: 'Drew',
       role: '',
       src: '/images/testimonials/voice-e21.jpg',
     },
