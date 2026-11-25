@@ -25,7 +25,7 @@ export const WHY_IBIZA = {
 }
 
 export const WHO_JOINS = {
-  heading: 'VIMPs — Very Impactful People',
+  heading: 'VIPs — Very Impactful People',
   intro: 'Every place includes a short curator fit-conversation. Curation is the product.',
   profiles: [
     { label: 'Founders & investors', body: 'who have created wealth or businesses but crave purpose and impact' },
