@@ -36,7 +36,7 @@ export default function HomeVoices() {
                   <blockquote className="font-display text-base leading-snug md:text-lg">“{v.quote}”</blockquote>
                   <figcaption className="mt-3 text-sm">
                     <span>{v.name}</span>
-                    {v.role && <span style={{ color: 'var(--text-quiet)' }}>, {v.role}</span>}
+                    {v.role && <span style={{ color: 'var(--text-quiet)' }}> · {v.role}</span>}
                   </figcaption>
                 </div>
               </figure>
