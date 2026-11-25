@@ -319,6 +319,8 @@ export const VOICES = {
     {
       clip: 'entrevista9',
       quote: 'To me, VIVRA is a new way of living… We usually are divided between work, family, friendship and passion. We want to gather all this in the same place.',
+      // CONFIRM: Manuele is a co-founder, so this is an internal voice, not a guest
+      // testimonial. Fran decides whether to keep it or swap in another member.
       name: 'Manuele Monti',
       role: '',
       src: '/images/testimonials/voice-e9.jpg',
