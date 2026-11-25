@@ -340,8 +340,8 @@ export const VOICES = {
     {
       clip: 'entrevista25',
       quote: 'The VIVRA is a place where it enables people to live at their full potential.',
-      name: 'Alessandro',
-      role: '',
+      name: 'Alessandro Adamoli',
+      role: 'Co-founder, VIVRA',
       src: '/images/testimonials/voice-e25.jpg',
     },
   ],
