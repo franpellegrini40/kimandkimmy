@@ -8,6 +8,8 @@ import { HomeHowItWorks, HomeConversations, HomeFacilitators } from '@/component
 import { HomeMembership, HomeThreeWaysIn, HomeVenues } from '@/components/sections/home/HomeMembership'
 import { HomeFounders, HomeIbiza, HomeWall, HomeRituals } from '@/components/sections/home/HomeIbiza'
 import { HomePassport, HomeCommons, HomeApply } from '@/components/sections/home/HomePlatform'
+import HomeVoices from '@/components/sections/home/HomeVoices'
+import { showTestimonials } from '@/lib/flags'
 
 // Home, site v3. One scroll, in the order of the menu:
 // Philosophy → How it works → Experiences → Membership → Ecosystem → Venues →
@@ -59,6 +61,7 @@ export default async function HomePage() {
       <HomeConversations />
       <HomeFacilitators />
       <HomeIbiza />
+      {showTestimonials() && <HomeVoices />}
       <HomeWall />
       <HomeRituals />
       <HomeMembership />
