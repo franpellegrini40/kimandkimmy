@@ -293,7 +293,7 @@ export const APPLY = {
 export const VOICES = {
   eyebrow: 'Voices from founding members',
   heading: 'In their words.',
-  intro: 'Recorded at the first VIVRA gathering, October 2026.',
+  intro: 'Recorded with our founding members, October 2026.',
   items: [
     {
       clip: 'entrevista 13',
