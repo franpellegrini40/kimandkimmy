@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 
 // Francisco's 57-second Ibiza recap. It has a voiceover, so it never
-// autoplays: the poster shows first and the video file (about 9 MB) is only
+// autoplays: the poster shows first and the video file (about 5 MB) is only
 // requested once the visitor presses play.
 export default function IbizaReel() {
   const [playing, setPlaying] = useState(false)

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useReducedMotion } from 'framer-motion'
 
 // The venues film (25 s, silent). Two encodes, cleaned of compression blocks
-// and gently sharpened: 1280 x 720 (about 7.6 MB) for wide screens and
+// and gently sharpened: 1280 x 720 (about 3.2 MB) for wide screens and
 // 854 x 480 (about 2.6 MB) for phones; only one is downloaded. It lives only
 // on /venues, so the home page never downloads it. Even here it loads only when
 // it is about to scroll into view, plays muted in a loop, and stays a still
