@@ -98,12 +98,15 @@ export function HomeFacilitators() {
         </RevealOnScroll>
       </div>
 
-      <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 lg:grid-cols-8">
+      {/* Each card spans three rows of the grid (photo, name, role) through
+          subgrid, so every name and role in a row starts at the same height,
+          however many lines a name takes. Browsers without subgrid just stack. */}
+      <ul className="mt-10 grid grid-cols-2 gap-x-4 sm:grid-cols-4 lg:grid-cols-8">
         {FACILITATORS.map((f, i) => (
-          <li key={f.name}>
-            <RevealOnScroll delay={i * 0.04}>
+          <li key={f.name} className="row-span-3 grid grid-rows-subgrid pb-8">
+            <RevealOnScroll delay={i * 0.04} className="row-span-3 grid grid-rows-subgrid">
               {/* Photo and name open the facilitator's own page, as linked in the deck. */}
-              <a href={f.href} target="_blank" rel="noopener noreferrer" className="group block" aria-label={`${f.name}: open profile in a new tab`}>
+              <a href={f.href} target="_blank" rel="noopener noreferrer" className="group row-span-3 grid grid-rows-subgrid" aria-label={`${f.name}: open profile in a new tab`}>
                 <Photo
                   src={f.image}
                   alt={f.name}
