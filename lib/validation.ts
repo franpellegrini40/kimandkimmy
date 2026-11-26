@@ -42,6 +42,15 @@ export const allianceSchema = z.object({
   source: z.string().optional(),
 })
 
+// "Ask VIVRA" chat: a free-text question for the team, sent to /api/concierge with kind 'ask'.
+export const askSchema = z.object({
+  kind: z.literal('ask'),
+  name: z.string().trim().min(1, 'Required').max(120),
+  email: z.string().email('Enter a valid email'),
+  message: z.string().trim().min(1, 'Required').max(2000),
+  source: z.string().max(200).optional(),
+})
+
 export const conciergeSchema = z.object({
   firstName: z.string().min(1, 'Required'),
   lastName: z.string().min(1, 'Required'),

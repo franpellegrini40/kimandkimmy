@@ -18,13 +18,8 @@ export default function ContactTeaser() {
         <p className="mt-8 text-sm" style={{ color: 'var(--text-quiet)' }}>
           Prefer to reach us directly?{' '}
           <a href={`mailto:${PRICING_CONTACT.email}`} className="underline" style={{ color: 'var(--text-primary)' }}>
-            Email
-          </a>{' '}
-          or{' '}
-          <a href={PRICING_CONTACT.whatsappHref} target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'var(--text-primary)' }}>
-            WhatsApp
-          </a>
-          .
+            Email us
+          </a>.
         </p>
         <p className="mt-3 text-sm">
           <a href="/concierge" className="underline" style={{ color: 'var(--forest-deep)' }}>

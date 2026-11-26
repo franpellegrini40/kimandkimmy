@@ -133,8 +133,6 @@ export const PRICING = {
 
 export const PRICING_CONTACT = {
   email: 'francisco@ithaka.vc',
-  whatsapp: '+971 54 520 2420',
-  whatsappHref: 'https://wa.me/971545202420',
 }
 
 export const EVERY_PLACE_INCLUDES = [

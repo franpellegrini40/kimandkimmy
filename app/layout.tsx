@@ -6,7 +6,7 @@ import { getSiteFromHost, SITE_META } from '@/lib/site'
 import { GA4_ID } from '@/lib/analytics'
 import Script from 'next/script'
 import ConsentBanner from '@/components/layout/ConsentBanner'
-import WhatsAppButton from '@/components/layout/WhatsAppButton'
+import AskVivra from '@/components/layout/AskVivra'
 import OrganizationJsonLd from '@/components/seo/OrganizationJsonLd'
 
 // The brand system specifies Optima (display) and Neue Haas Grotesk Display (text) —
@@ -80,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </>
         )}
         {children}
-        <WhatsAppButton />
+        <AskVivra />
         <ConsentBanner />
       </body>
     </html>

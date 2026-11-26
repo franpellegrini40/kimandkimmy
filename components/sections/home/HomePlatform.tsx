@@ -158,12 +158,7 @@ export function HomeApply() {
           <p className="mt-4 text-sm" style={{ color: 'var(--text-quiet)' }}>{APPLY.note}</p>
           <p className="mt-8 text-sm" style={{ color: 'var(--text-quiet)' }}>
             Prefer to reach us directly?{' '}
-            <a href={`mailto:${PRICING_CONTACT.email}`} className="underline" style={{ color: 'var(--text-primary)' }}>Email</a>{' '}
-            or{' '}
-            <a href={PRICING_CONTACT.whatsappHref} target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'var(--text-primary)' }}>
-              WhatsApp
-            </a>
-            .
+            <a href={`mailto:${PRICING_CONTACT.email}`} className="underline" style={{ color: 'var(--text-primary)' }}>Email us</a>.
           </p>
         </RevealOnScroll>
         <RevealOnScroll delay={0.08} className="lg:col-span-3">

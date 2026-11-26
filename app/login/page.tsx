@@ -60,7 +60,7 @@ export default async function LoginPage() {
             <span className="eyebrow">New to VIVRA</span>
             <h2 className="mt-4 text-3xl md:text-4xl">Request an invitation.</h2>
             <p className="mt-4 max-w-md" style={{ color: 'var(--text-secondary)' }}>
-              Tell us who you are. Francisco will write to you to schedule a short call about your profile, our next gatherings and VIVRA membership.
+              Tell us who you are. Our team will contact you to schedule a short call about your profile, our next gatherings and VIVRA membership.
             </p>
             <div className="mt-8">
               <Button href="/" variant="ghost">Back to VIVRA</Button>

@@ -67,7 +67,7 @@ export default function JoinForm() {
     return (
       <SuccessScreen
         heading="Thank you. Your request is with us."
-        body="Francisco will write to you by email to schedule a short call about your profile, our next gatherings and VIVRA membership."
+        body="Our team will contact you by email to schedule a short call about your profile, our next gatherings and VIVRA membership."
       />
     )
   }
