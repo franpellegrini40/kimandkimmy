@@ -319,9 +319,8 @@ export const VOICES = {
     {
       clip: 'entrevista9',
       quote: 'To me, VIVRA is a new way of living… We usually are divided between work, family, friendship and passion. We want to gather all this in the same place.',
-      // Fran, 2026-11-25: stays, shown as CEO of TechBricks (the only card with a role).
       name: 'Manuele Monti',
-      role: 'CEO of TechBricks',
+      role: '',
       src: '/images/testimonials/voice-e9.jpg',
     },
     {
