@@ -6,7 +6,7 @@ import { getSiteFromHost, SITE_META } from '@/lib/site'
 import { GA4_ID } from '@/lib/analytics'
 import Script from 'next/script'
 import ConsentBanner from '@/components/layout/ConsentBanner'
-import WhatsAppButton from '@/components/layout/WhatsAppButton'
+import AskVivra from '@/components/layout/AskVivra'
 import OrganizationJsonLd from '@/components/seo/OrganizationJsonLd'
 
 // The brand system specifies Optima (display) and Neue Haas Grotesk Display (text) —
@@ -25,12 +25,19 @@ const body = Manrope({
   weight: ['400', '500', '600', '700'],
 })
 
+const CANONICAL_DOMAIN = process.env.NEXT_PUBLIC_SITE_DOMAIN || 'worldvivra.com'
+
 export async function generateMetadata(): Promise<Metadata> {
   const h = await headers()
   const site = getSiteFromHost(h.get('x-forwarded-host') || h.get('host'))
   const meta = SITE_META[site]
   return {
-    metadataBase: new URL(`https://${meta.domain}`),
+    // joinvivra.com and worldvivra.com serve the same pages, so every page
+    // names worldvivra.com as its canonical address (the sitemap and robots.txt
+    // already do). This stops search engines from treating the two domains as
+    // duplicate content. './' resolves to the current page's path.
+    metadataBase: new URL(`https://${CANONICAL_DOMAIN}`),
+    alternates: { canonical: './' },
     title: { default: meta.name, template: `%s — ${meta.name}` },
     description: meta.tagline,
     openGraph: {
@@ -73,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </>
         )}
         {children}
-        <WhatsAppButton />
+        <AskVivra />
         <ConsentBanner />
       </body>
     </html>

@@ -10,6 +10,11 @@
   --turquoise: #41c9d3;
   --copper: #c57a3c;
   --copper-deep: #935927;
+  /* Secondary accent, used sparingly for planet/regenerative moments only —
+     aqua remains the primary accent everywhere else. Sampled from the green
+     VIVRA lockup variant. */
+  --forest: #3bab5e;
+  --forest-deep: #256b3d;
   --aqua-900: #004753;
   --aqua-700: #008190;
   --aqua-500: #37c8d9;
@@ -69,6 +74,13 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Offsets every anchor target by the fixed header's height (h-20 = 80px)
+     plus breathing room, so a jump to #philosophy etc. doesn't land the
+     section title underneath the header. */
+  [id] {
+    scroll-margin-top: 96px;
   }
 
   body {

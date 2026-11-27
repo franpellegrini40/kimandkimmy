@@ -2,13 +2,22 @@ import type { Metadata } from 'next'
 import { getCurrentSite } from '@/lib/site'
 import PageShell from '@/components/layout/PageShell'
 import Section from '@/components/ui/Section'
+import Button from '@/components/ui/Button'
+import RevealOnScroll from '@/components/ui/RevealOnScroll'
+import MemberDashboard from '@/components/sections/MemberDashboard'
 import TiersGrid from '@/components/sections/TiersGrid'
-import VivraPassport from '@/components/sections/VivraPassport'
 import CTABand from '@/components/sections/CTABand'
+import {
+  ALLIANCE_MEMBERSHIP,
+  ALLIANCE_HOW_IT_WORKS,
+  ALLIANCE_BENEFITS,
+  HOW_IT_WORKS_INTRO,
+  HOW_IT_WORKS_NOTE,
+} from '@/content/alliance'
 
 export const metadata: Metadata = {
-  title: 'Membership — Coming Live Soon',
-  description: 'VIVRA Membership: a global community continuing beyond the Ibiza Founding Retreat.',
+  title: 'Membership',
+  description: 'One membership, the VIVRA Passport, opening access across a growing alliance of independent clubs, venues and experiences.',
 }
 
 export default async function MembershipPage() {
@@ -16,26 +25,70 @@ export default async function MembershipPage() {
 
   return (
     <PageShell site={site}>
-      <Section tone="light" className="pt-40">
-        <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <div>
-            <span className="eyebrow">VIVRA Membership — Coming Live Soon</span>
-            <h1 className="mt-4 max-w-2xl text-3xl md:text-4xl">Ibiza is the beginning.</h1>
-            <p className="mt-4 max-w-xl" style={{ color: 'var(--text-secondary)' }}>
-              VIVRA continues through a global membership and curated community. One
-              membership — the VIVRA Passport — carries your access, credits and impact
-              everywhere in the network. Selected tiers below — full benefits confirmed at
-              launch.
-            </p>
-          </div>
-          <div className="flex justify-center">
-            <VivraPassport />
-          </div>
+      {/* How It Works — the four-step alliance process, now the page opener */}
+      <Section tone="sand" className="pt-40">
+        <RevealOnScroll>
+          <span className="eyebrow">How It Works</span>
+          <h1 className="mt-4 max-w-xl text-3xl md:text-4xl">{HOW_IT_WORKS_INTRO}</h1>
+          <p className="mt-3 max-w-xl text-sm" style={{ color: 'var(--text-quiet)' }}>{HOW_IT_WORKS_NOTE}</p>
+        </RevealOnScroll>
+
+        <div
+          className="mt-10 grid gap-px border sm:grid-cols-2"
+          style={{ borderColor: 'var(--rule)', background: 'var(--rule)' }}
+        >
+          {ALLIANCE_HOW_IT_WORKS.map((s, i) => (
+            <RevealOnScroll key={s.step} delay={i * 0.05}>
+              <div
+                className="relative h-full p-6 transition-transform duration-200 hover:z-10 hover:scale-105"
+                style={{ background: 'var(--surface-raised)' }}
+              >
+                <span className="text-xs" style={{ color: 'var(--accent-deep)' }}>{s.step.padStart(2, '0')}</span>
+                <h3 className="mt-2 text-base">{s.label}</h3>
+                <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>{s.detail}</p>
+              </div>
+            </RevealOnScroll>
+          ))}
         </div>
-        <div className="mt-12">
-          <TiersGrid />
+
+        <RevealOnScroll delay={0.2} className="mt-10">
+          <ul className="grid gap-3 text-sm sm:grid-cols-2" style={{ color: 'var(--text-secondary)' }}>
+            {ALLIANCE_BENEFITS.map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--accent)' }} />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </RevealOnScroll>
+
+        <RevealOnScroll delay={0.26} className="mt-10">
+          <p className="text-sm" style={{ color: 'var(--text-quiet)' }}>Are you a community leader?</p>
+          <Button href="/apply/alliance" variant="accent" className="mt-3">
+            Apply to join VIVRA Alliance
+          </Button>
+        </RevealOnScroll>
+      </Section>
+
+      {/* Every benefit, every tier */}
+      <Section tone="light">
+        <TiersGrid />
+      </Section>
+
+      {/* The VIVRA Passport */}
+      <Section tone="light">
+        <div className="grid gap-10 md:grid-cols-2 md:items-center">
+          <RevealOnScroll>
+            <span className="eyebrow">The VIVRA Passport</span>
+            <h2 className="mt-4 text-2xl md:text-3xl">{ALLIANCE_MEMBERSHIP.heading}</h2>
+            <p className="mt-4" style={{ color: 'var(--text-secondary)' }}>{ALLIANCE_MEMBERSHIP.body}</p>
+          </RevealOnScroll>
+          <RevealOnScroll delay={0.1} className="flex justify-center">
+            <MemberDashboard />
+          </RevealOnScroll>
         </div>
       </Section>
+
       <CTABand site={site} />
     </PageShell>
   )

@@ -66,8 +66,8 @@ export default function JoinForm() {
   if (done) {
     return (
       <SuccessScreen
-        heading="Thank you for joining the early-access community."
-        body="We'll be in touch as VIVRA membership opens. In the meantime, keep an eye on your inbox."
+        heading="Thank you. Your request is with us."
+        body="Our team will contact you by email to schedule a short call about your profile, our next gatherings and VIVRA membership."
       />
     )
   }
@@ -106,7 +106,7 @@ export default function JoinForm() {
           ]}
         />
         <SelectField
-          label="Interested in the Ibiza Founding Retreat?"
+          label="Interested in our next gatherings?"
           name="ibizaInterest"
           required={step === 2}
           options={[

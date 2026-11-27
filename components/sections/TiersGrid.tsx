@@ -9,7 +9,8 @@ import {
 export default function TiersGrid() {
   return (
     <div>
-      <div className="overflow-x-auto">
+      <h2 className="text-3xl md:text-4xl">Upgraded Tiers.</h2>
+      <div className="mt-10 overflow-x-auto">
         <table className="w-full min-w-[720px] border-collapse text-sm">
           <thead>
             <tr>
@@ -69,7 +70,7 @@ export default function TiersGrid() {
           {LONGEVITY_PANEL.tiers.map((tier) => (
             <div
               key={tier.name}
-              className="border p-6"
+              className="relative border p-6 transition-transform duration-200 hover:z-10 hover:scale-105"
               style={{
                 borderColor: 'var(--rule)',
                 background: tier.name === 'Legacy' ? 'var(--surface-inset)' : 'var(--surface-raised)',

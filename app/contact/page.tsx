@@ -24,26 +24,13 @@ export default async function ContactPage() {
         <p className="mt-8 text-sm" style={{ color: 'var(--text-quiet)' }}>
           Prefer to reach us directly?{' '}
           <a href={`mailto:${PRICING_CONTACT.email}`} className="underline" style={{ color: 'var(--text-primary)' }}>
-            Email
-          </a>{' '}
-          or{' '}
-          <a href={PRICING_CONTACT.whatsappHref} target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'var(--text-primary)' }}>
-            WhatsApp
-          </a>
-          .
+            Email us
+          </a>.
         </p>
-        <p className="mt-2 text-sm" style={{ color: 'var(--text-quiet)' }}>
-          Follow VIVRA on{' '}
-          <a
-            href="https://linkedin.com/company/vivra-world"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            LinkedIn
+        <p className="mt-3 text-sm">
+          <a href="/concierge" className="underline" style={{ color: 'var(--forest-deep)' }}>
+            or Contact our Concierge
           </a>
-          .
         </p>
       </Section>
     </PageShell>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { getCurrentSite } from '@/lib/site'
 import PageShell from '@/components/layout/PageShell'
 import Section from '@/components/ui/Section'
-import PeopleGrid from '@/components/sections/PeopleGrid'
+import PeopleCarousel from '@/components/sections/PeopleCarousel'
 import CTABand from '@/components/sections/CTABand'
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default async function PeoplePage() {
         <span className="eyebrow">The People</span>
         <h1 className="mt-4 max-w-xl text-3xl md:text-4xl">Curated, not corporate.</h1>
         <div className="mt-12">
-          <PeopleGrid />
+          <PeopleCarousel />
         </div>
       </Section>
       <CTABand site={site} />

@@ -84,7 +84,7 @@ export default function VivraEcosystem() {
                     <li
                       key={p.label}
                       className="absolute w-24 -translate-x-1/2 -translate-y-1/2 text-center text-[11px] leading-tight sm:w-28 sm:text-[13px]"
-                      style={{ left: `${p.left}%`, top: `${p.top}%`, color: 'var(--text-primary)' }}
+                      style={{ left: `${p.left}%`, top: `${p.top}%`, color: 'var(--forest-deep)' }}
                     >
                       <span
                         className="inline-block"

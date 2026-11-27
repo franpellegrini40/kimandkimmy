@@ -10,7 +10,7 @@
 
 import path from 'node:path'
 
-export type LeadType = 'join' | 'ibiza' | 'alliance'
+export type LeadType = 'join' | 'ibiza' | 'alliance' | 'concierge'
 
 type LeadRecord = {
   type: LeadType
@@ -43,6 +43,7 @@ async function saveToFormspree(record: LeadRecord) {
     join: process.env.FORMSPREE_JOIN_ENDPOINT,
     ibiza: process.env.FORMSPREE_IBIZA_ENDPOINT,
     alliance: process.env.FORMSPREE_ALLIANCE_ENDPOINT,
+    concierge: process.env.FORMSPREE_CONCIERGE_ENDPOINT,
   }[record.type]
   if (!endpoint) return false
 

@@ -4,13 +4,69 @@ export const ECOSYSTEM_INTRO = {
   body: 'Each dimension strengthens the whole — bringing people, purpose and opportunity into one connected ecosystem.',
 }
 
+// The Ecosystem storytelling sequence that replaces Who Joins on the home
+// page only — /ibiza keeps the original WhoJoins + ExperiencePillars
+// components untouched, so this lives as its own export rather than
+// reshaping theirs.
+export const ECOSYSTEM_STORY = {
+  intro: {
+    eyebrow: 'Ecosystem',
+    heading: 'A gathering should change more than your network.',
+    body: [
+      'VIVRA combines intimate masterclasses led by globally respected practitioners, wellbeing and transformative experiences, and carefully curated connections to help members rethink how they live, lead and contribute.',
+      'Every gathering is designed to leave you with greater clarity, practical tools, trusted relationships and meaningful opportunities already in motion.',
+    ],
+    taglines: [
+      'From ideas to measurable impact.',
+      'From V.I.P.s to VIMPs — Very Impactful People.',
+    ],
+    image: '/images/ecosystem-physical-gathering.jpg',
+    imageAlt: 'A VIVRA circle gathered in conversation under a stone-vaulted ceiling',
+  },
+  founding: {
+    eyebrow: 'How VIVRA Began',
+    heading: 'Built from lives already lived.',
+    paragraphs: [
+      'VIVRA began with a shared realization: success in one part of life means little when everything else remains disconnected.',
+      'After decades building ventures, communities and new ideas across different parts of the world, our founding members came together at a similar moment in their lives. Each had explored a different dimension — wellbeing, human growth, enterprise, impact, travel, lifestyle and community.',
+      'VIVRA emerged as the place where those paths could finally meet. Not as separate interests, but as one living ecosystem.',
+    ],
+    image: '/people/francisco-pellegrini.jpg',
+    imageAlt: 'Francisco Pellegrini, Founder & CEO of VIVRA',
+  },
+  profiles: [
+    { label: 'Builders', body: 'Turning ideas, experience and capital into meaningful progress.' },
+    { label: 'Catalysts', body: 'Moving people, organizations and systems forward.' },
+    { label: 'Creators', body: 'Shaping culture through new perspectives and forms of expression.' },
+    { label: 'Practitioners', body: 'Expanding human wellbeing and potential through science, wisdom and practice.' },
+    { label: 'Place-Makers', body: 'Creating exceptional settings for meaningful connection.' },
+    { label: 'Explorers', body: 'Bringing curiosity, openness and a desire to experience life differently.' },
+  ],
+  manifesto: {
+    eyebrow: 'A Physical Ecosystem of V.I.P.',
+    eyebrowSub: 'Very Impactful People',
+    heading: 'Not another network. A living one.',
+    bodyLead:
+      'VIVRA brings its ecosystem into the physical world through intimate gatherings, shared experiences and exceptional homes.',
+    bodyContrast:
+      'Because digital connection creates reach — but time together creates trust, unexpected ideas and relationships that move beyond the gathering itself.',
+    lineDigital: 'Digital keeps the ecosystem connected.',
+    linePhysical: 'Physical experiences make it real.',
+    tagline: 'Different paths. One shared direction.',
+    closing:
+      'Every gathering is curated for chemistry, contribution and the possibilities that can only emerge together.',
+    image: '/images/ecosystem-physical-gathering.jpg',
+    imageAlt: 'A VIVRA circle gathered in conversation under a stone-vaulted ceiling',
+  },
+}
+
 // Clockwise from top, matching the approved concept diagram.
 // angle: degrees, SVG convention (0 = right, 90 = down, -90 = up).
-// The label at angle 0 ("Clean Innovation") sits at the exact same height as
-// its dot, so a centered label overlaps the dot; nudging its `top` down
-// clears the dot without widening the label (which would overflow the
-// diagram's box on narrow screens). The other seven either stack diagonally
-// or wrap to two lines and clear the dot on their own.
+// The label at angle 0 (currently "Clean Innovation") is the one sitting at
+// the exact same height as its dot, so a centered label overlaps the dot;
+// nudging its `top` down clears the dot without widening the label (which
+// would overflow the diagram's box on narrow screens). The other seven either
+// stack diagonally or wrap to two lines and clear the dot on their own.
 export const ECOSYSTEM_PILLARS = [
   { label: 'Wellbeing', angle: -90, left: 50, top: 12.86 },
   { label: 'Inner Impact', angle: -45, left: 76.26, top: 23.74 },

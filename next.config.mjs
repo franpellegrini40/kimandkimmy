@@ -5,8 +5,21 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [{ protocol: 'https', hostname: '**' }],
   },
+  // The October 2026 retreat pages described it as upcoming. The gathering is
+  // now told on the home page (Experiences), so the old addresses send people
+  // there; old links and search results keep working.
+  async redirects() {
+    return [
+      { source: '/ibiza', destination: '/#ibiza', permanent: true },
+      { source: '/agenda', destination: '/#ibiza', permanent: true },
+      { source: '/apply/ibiza', destination: '/#ibiza', permanent: true },
+      // Old gatherings/marketplace page; the home page now tells that story.
+      { source: '/lifestyle', destination: '/#ibiza', permanent: true },
+    ]
+  },
+  // Guest page for the Ibiza gathering (live on production since October):
+  // static HTML in public/ibiza-guests, kept at its old address.
   async rewrites() {
-    // Guest page for the Ibiza gathering: static HTML in public/ibiza-guests.
     return [{ source: '/ibiza-guests', destination: '/ibiza-guests/index.html' }]
   },
   async headers() {

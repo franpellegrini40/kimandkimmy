@@ -34,13 +34,8 @@ export default function PricingSection() {
         <p className="mt-4">
           For pricing, contact us directly —{' '}
           <a href={`mailto:${PRICING_CONTACT.email}`} className="underline" style={{ color: 'var(--text-primary)' }}>
-            Email
-          </a>{' '}
-          or{' '}
-          <a href={PRICING_CONTACT.whatsappHref} target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'var(--text-primary)' }}>
-            WhatsApp
-          </a>
-          .
+            Email us
+          </a>.
         </p>
       </RevealOnScroll>
 

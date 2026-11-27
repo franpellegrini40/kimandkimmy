@@ -42,6 +42,29 @@ export const allianceSchema = z.object({
   source: z.string().optional(),
 })
 
+// "Ask VIVRA" chat: a free-text question for the team, sent to /api/concierge with kind 'ask'.
+export const askSchema = z.object({
+  kind: z.literal('ask'),
+  name: z.string().trim().min(1, 'Required').max(120),
+  email: z.string().email('Enter a valid email'),
+  message: z.string().trim().min(1, 'Required').max(2000),
+  source: z.string().max(200).optional(),
+})
+
+export const conciergeSchema = z.object({
+  firstName: z.string().min(1, 'Required'),
+  lastName: z.string().min(1, 'Required'),
+  email: z.string().email('Enter a valid email'),
+  home: z.string().min(1, 'Required'),
+  purpose: z.string().min(1, 'Required'),
+  arrival: z.string().min(1, 'Required'),
+  departure: z.string().min(1, 'Required'),
+  note: z.string().optional().or(z.literal('')),
+  utm: z.record(z.string()).optional(),
+  source: z.string().optional(),
+})
+
 export type JoinInput = z.infer<typeof joinSchema>
 export type IbizaInput = z.infer<typeof ibizaSchema>
 export type AllianceInput = z.infer<typeof allianceSchema>
+export type ConciergeInput = z.infer<typeof conciergeSchema>

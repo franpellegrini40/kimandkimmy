@@ -4,9 +4,10 @@ import PageShell from '@/components/layout/PageShell'
 import Section from '@/components/ui/Section'
 import Button from '@/components/ui/Button'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
-import VenueCards from '@/components/sections/VenueCards'
+import VenueGrid from '@/components/sections/VenueGrid'
 import VivraEcosystem from '@/components/sections/VivraEcosystem'
 import VivraPassport from '@/components/sections/VivraPassport'
+import TiersGrid from '@/components/sections/TiersGrid'
 import {
   ALLIANCE_TAGLINE,
   ALLIANCE_POSITIONING,
@@ -66,6 +67,9 @@ export default async function AlliancePage() {
             <VivraPassport />
           </RevealOnScroll>
         </div>
+        <div className="mt-16">
+          <TiersGrid />
+        </div>
       </Section>
 
       <Section tone="sand">
@@ -74,7 +78,7 @@ export default async function AlliancePage() {
           <h2 className="mt-4 max-w-xl text-2xl md:text-3xl">{ALLIANCE_VENUES_INTRO.heading}</h2>
           <p className="mt-4 max-w-xl" style={{ color: 'var(--text-secondary)' }}>{ALLIANCE_VENUES_INTRO.body}</p>
         </RevealOnScroll>
-        <VenueCards />
+        <VenueGrid />
         <RevealOnScroll className="mt-10 flex flex-wrap gap-4">
           <Button href="/venues" variant="ghost">See all VIVRA venues</Button>
           <Button href="/apply/venue" variant="secondary">Apply as a Venue</Button>

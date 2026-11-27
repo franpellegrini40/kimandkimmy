@@ -1,46 +1,59 @@
+import Link from 'next/link'
 import Button from '@/components/ui/Button'
-import HeroVideo from './HeroVideo'
-import { RETREAT_FACTS } from '@/content/retreat'
-import type { SiteId } from '@/lib/site'
 
-export default function Hero({ site }: { site: SiteId }) {
-  const isJoin = site === 'join-vivra'
-
+export default function Hero() {
   return (
     <section
-      data-theme="prestige"
-      className="relative flex min-h-[92vh] items-end overflow-hidden"
-      style={{ color: 'var(--text-primary)' }}
+      className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden text-center"
+      style={{ background: 'var(--ivory)', color: 'var(--text-primary)' }}
     >
-      <HeroVideo />
-
-      <div className="container-vivra relative z-10 flex flex-col gap-6 pb-20 pt-32">
-        <span
-          className="eyebrow inline-block w-fit px-3 py-1.5"
-          style={{ color: 'var(--copper)', background: 'rgba(0,14,33,0.55)' }}
+      <div className="container-vivra relative z-10 flex flex-col items-center gap-8 py-32 md:gap-10">
+        <p
+          className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm uppercase md:text-base"
+          style={{ letterSpacing: 'var(--tracking-caps)' }}
         >
-          {RETREAT_FACTS.status}
-        </span>
+          <Link href="/#philosophy" className="inline-block transition-transform duration-200 hover:scale-125" style={{ color: 'var(--accent-deep)' }}>
+            Live longer
+          </Link>
+          <span style={{ color: 'var(--text-quiet)' }}>·</span>
+          <Link href="/#philosophy" className="inline-block transition-transform duration-200 hover:scale-125">
+            Think bigger
+          </Link>
+          <span style={{ color: 'var(--text-quiet)' }}>·</span>
+          <Link href="/#philosophy" className="inline-block italic transition-transform duration-200 hover:scale-125" style={{ color: 'var(--forest)' }}>
+            Leave it better
+          </Link>
+        </p>
 
-        <h1 className="max-w-2xl text-4xl leading-tight md:text-6xl">{RETREAT_FACTS.tagline}</h1>
+        <h1 className="flex max-w-4xl flex-wrap items-baseline justify-center gap-x-3 leading-[1.08]">
+          <span className="text-3xl md:text-5xl lg:text-6xl">
+            Change within.
+          </span>
+          <span className="text-3xl italic md:text-5xl lg:text-6xl" style={{ color: 'var(--forest)' }}>
+            Impact beyond.
+          </span>
+        </h1>
 
-        {isJoin ? (
-          <p className="max-w-md text-sm uppercase tracking-caps" style={{ color: 'var(--text-secondary)' }}>
-            {RETREAT_FACTS.dates} · Can Aylma, Ibiza
-          </p>
-        ) : (
-          <p className="max-w-lg text-base md:text-lg" style={{ color: 'var(--text-secondary)' }}>
-            {RETREAT_FACTS.subTagline} VIVRA begins in Ibiza — and continues as a global
-            community.
-          </p>
-        )}
+        <Link
+          href="/apply/join"
+          className="inline-block rounded-full px-4 py-1.5 text-xs uppercase transition-transform duration-200 hover:scale-110"
+          style={{ background: 'var(--navy)', color: 'var(--copper)', letterSpacing: 'var(--tracking-caps)' }}
+        >
+          Coming Soon
+        </Link>
 
-        <div className="mt-4 flex flex-wrap gap-4">
-          <Button href={isJoin ? '/apply/ibiza' : '/apply/join'} variant="accent">
-            {isJoin ? 'Join the Founding Retreat' : 'Join VIVRA'}
+        <p className="max-w-3xl text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
+          A <span className="text-base font-semibold md:text-lg" style={{ color: 'var(--text-primary)' }}>phygital</span> layer
+          giving communities access to exclusive benefits, extraordinary gatherings,
+          transformative wellbeing experiences and world-class masterclasses in remarkable venues.
+        </p>
+
+        <div className="mt-4 flex flex-wrap justify-center gap-4">
+          <Button href="/apply/join" variant="accent" size="xs">
+            Request Invitation
           </Button>
-          <Button href={isJoin ? '/' : '/ibiza'} variant="secondary">
-            {isJoin ? 'Discover VIVRA' : 'Explore Ibiza Founding Retreat'}
+          <Button href="/#philosophy" variant="secondary" size="xs">
+            Discover VIVRA
           </Button>
         </div>
       </div>

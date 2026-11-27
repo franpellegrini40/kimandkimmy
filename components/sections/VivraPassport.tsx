@@ -4,7 +4,7 @@ const ICON_PATH =
 export default function VivraPassport({
   name = 'Francisco Pellegrini',
   tier = 'Legacy Member',
-  number = 'N.º 000001',
+  number = 'N.º 00001',
 }: {
   name?: string
   tier?: string
