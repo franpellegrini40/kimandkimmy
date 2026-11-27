@@ -45,8 +45,8 @@ export function HomeFounders() {
             ))}
           </div>
 
-          <figure className="mt-10 max-w-md border-l-2 pl-6" style={{ borderColor: 'var(--forest)' }}>
-            <figcaption className="eyebrow" style={{ color: 'var(--forest-deep)' }}>{FOUNDER_NOTE.heading}</figcaption>
+          <figure className="mt-10 max-w-md border-l-2 pl-6" style={{ borderColor: 'var(--copper)' }}>
+            <figcaption className="eyebrow" style={{ color: 'var(--copper-deep)' }}>{FOUNDER_NOTE.heading}</figcaption>
             <blockquote className="mt-3 font-display text-lg leading-relaxed">{FOUNDER_NOTE.body}</blockquote>
             <p className="mt-3 text-xs" style={{ color: 'var(--text-quiet)' }}>{FOUNDER_NOTE.signature}</p>
           </figure>
@@ -61,7 +61,7 @@ export function HomeIbiza() {
     <Section tone="dark" id="ibiza">
       <div className="grid gap-12 lg:grid-cols-5 lg:items-center lg:gap-16">
         <RevealOnScroll className="lg:col-span-3">
-          <span className="eyebrow" style={{ color: 'var(--aqua)' }}>{IBIZA.eyebrow}</span>
+          <span className="eyebrow" style={{ color: 'var(--copper-light)' }}>{IBIZA.eyebrow}</span>
           <h2 className="mt-4 text-3xl md:text-5xl">{IBIZA.heading}</h2>
           <div className="mt-6 max-w-xl space-y-4" style={{ color: 'var(--text-secondary)' }}>
             {IBIZA.body.map((p) => (
@@ -71,7 +71,7 @@ export function HomeIbiza() {
           <dl className="mt-8 grid max-w-xl grid-cols-3 gap-px border" style={{ borderColor: 'var(--rule)', background: 'var(--rule)' }}>
             {IBIZA.facts.map((f) => (
               <div key={f.label} className="p-4 md:p-5" style={{ background: 'var(--surface-raised)' }}>
-                <dd className="font-display text-4xl" style={{ color: 'var(--aqua)' }}>{f.value}</dd>
+                <dd className="font-display text-4xl" style={{ color: 'var(--copper-light)' }}>{f.value}</dd>
                 <dt className="mt-2 text-[10px] uppercase" style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--text-quiet)' }}>
                   {f.label}
                 </dt>
@@ -140,7 +140,7 @@ export function HomeIbiza() {
 function Wall({ data, tone }: { data: typeof WALL.wrong; tone: 'wrong' | 'right' }) {
   const right = tone === 'right'
   return (
-    <div className="h-full p-8 md:p-10" style={{ background: right ? '#e3f2e7' : 'var(--surface-raised)' }}>
+    <div className="h-full p-8 md:p-10" style={{ background: right ? '#efebe3' : 'var(--surface-raised)' }}>
       <h3 className="text-2xl md:text-3xl">{data.heading}</h3>
       <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}>{data.intro}</p>
       <ul className="mt-7 space-y-px">
@@ -148,7 +148,7 @@ function Wall({ data, tone }: { data: typeof WALL.wrong; tone: 'wrong' | 'right'
           <li
             key={note}
             className="border-t py-3.5 font-display text-lg"
-            style={{ borderColor: 'var(--rule)', color: right ? 'var(--forest-deep)' : 'var(--text-primary)' }}
+            style={{ borderColor: 'var(--rule)', color: 'var(--text-primary)' }}
           >
             {note}
           </li>

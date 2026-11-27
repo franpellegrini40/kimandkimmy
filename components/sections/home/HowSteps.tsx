@@ -54,7 +54,7 @@ export default function HowSteps({ steps }: { steps: readonly Step[] }) {
               className="absolute inset-x-0 top-0 h-0.5 origin-left"
               style={{ background: 'var(--copper)' }}
             />
-            <motion.span variants={num} className="block font-display text-3xl" style={{ color: 'var(--aqua-700)' }}>
+            <motion.span variants={num} className="block font-display text-3xl" style={{ color: 'var(--copper-deep)' }}>
               {s.step.padStart(2, '0')}
             </motion.span>
             <h3 className="mt-4 text-lg">{s.label}</h3>

@@ -64,11 +64,11 @@ export default function IsIsNot() {
         className="grain h-full p-8 transition-opacity duration-500 md:p-10 md:group-hover/cmp:opacity-60 md:hover:!opacity-100"
         style={{ background: 'var(--surface-page)', color: 'var(--text-primary)' }}
       >
-        <span className="eyebrow" style={{ color: 'var(--aqua)' }}>What VIVRA is</span>
+        <span className="eyebrow" style={{ color: 'var(--copper-light)' }}>What VIVRA is</span>
         <motion.div
           aria-hidden="true"
           className="mt-4 h-px w-16 origin-left"
-          style={{ background: 'var(--aqua)' }}
+          style={{ background: 'var(--copper)' }}
           initial={reduced ? false : { scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={view}
@@ -84,7 +84,7 @@ export default function IsIsNot() {
               viewport={view}
               transition={{ duration: 0.6, delay: ANSWER_START + 0.15 + i * 0.12, ease: EASE }}
             >
-              <span aria-hidden="true" className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--aqua)' }} />
+              <span aria-hidden="true" className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--copper)' }} />
               <span className={i === 0 ? 'font-display text-2xl' : undefined} style={{ color: i === 0 ? 'var(--ivory)' : 'var(--text-secondary)' }}>
                 {line}
               </span>

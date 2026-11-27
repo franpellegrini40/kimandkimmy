@@ -7,7 +7,7 @@ export const RETREAT_FACTS = {
   location: 'Can Aylma, Ibiza, Spain',
   name: 'VIVRA Founding Gathering',
   dates: 'October 4–9, 2026',
-  status: '1st Founding Gathering · By Invitation Only · Few Places',
+  status: 'Founding Gathering · Ibiza, October 2026',
   tagline: 'Live longer. Think bigger. Leave it better.',
   subTagline: 'More connected than ever. Yet rarely truly present.',
   positioning:

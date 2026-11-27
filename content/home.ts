@@ -10,9 +10,10 @@
 // Anything marked CONFIRM is waiting on Francisco before it goes live.
 
 export const HERO = {
-  claims: ['Live longer', 'Think bigger', 'Leave it better'],
+  // VIV-0035: one quiet label instead of the coloured claims row and the
+  // "Coming soon" pill (the three claims still structure the Philosophy section).
+  eyebrow: 'By invitation · Early access open',
   headline: ['Change within.', 'Impact beyond.'],
-  badge: 'Coming soon',
   // [DECK] slide 1
   body: 'A phygital layer giving communities access to exclusive benefits, extraordinary gatherings, wellbeing experiences, expert-led masterclasses and exceptional venues worldwide.',
   // [LOVABLE] hero stats
@@ -68,18 +69,18 @@ export const FACILITATORS = [
 export const EXPERT = {
   name: 'Sharon Cittone',
   role: 'Longevity & Wellbeing Lead · Systemic Impact',
-  body: 'Sharon leads the Longevity & Wellbeing conversation across the VIVRA alliance. She facilitated our first founding gathering in Ibiza.',
+  body: 'Sharon leads the Longevity & Wellbeing conversation across the VIVRA alliance. She facilitated our founding gathering in Ibiza.',
   portrait: '/people/sharon-cittone.jpg',
   workshopImage: '/images/sharon-workshop.webp',
   pdf: '/downloads/vivra-world-flagship-workshop.pdf',
 }
 
-// The first founding gathering, now delivered.
+// The founding gathering, now delivered.
 // [RECORD] A6 + [DECK] slide 7 ("Ibiza ran"). Francisco, 2026-11-17: the gathering
 // was five days at Can Aylma (October 4 to 9, as originally announced); the
 // facilitated See / Reimagine / Act workshop ran on three of them (5 to 7 October).
 export const IBIZA = {
-  eyebrow: 'First founding gathering · Delivered',
+  eyebrow: 'Founding Gathering · Ibiza, October 2026',
   heading: 'Ibiza, October 2026. Five days at Can Aylma.',
   body: [
     'Our first gathering took place at Can Aylma, Ibiza, from 4 to 9 October 2026. A small group, by invitation, in a 200-year-old finca.',

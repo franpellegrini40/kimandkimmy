@@ -26,7 +26,7 @@ export default function Philosophy() {
                   className="eyebrow rounded-full px-4 py-1.5 backdrop-blur-sm"
                   style={{
                     background: 'rgba(247,244,238,0.88)',
-                    color: pillar.key === 'leave-it-better' ? 'var(--forest-deep)' : 'var(--accent-deep)',
+                    color: 'var(--accent-deep)',
                   }}
                 >
                   {pillar.eyebrow}
@@ -35,7 +35,7 @@ export default function Philosophy() {
             </div>
             <h3
               className="mt-5 text-2xl"
-              style={{ color: pillar.key === 'leave-it-better' ? 'var(--forest)' : 'var(--accent-deep)' }}
+              style={{ color: 'var(--accent-deep)' }}
             >
               {pillar.label}
             </h3>

@@ -39,14 +39,14 @@ export default function IbizaReel() {
             style={{ background: 'linear-gradient(180deg, rgba(0,14,33,0.15) 0%, rgba(0,14,33,0) 40%, rgba(0,14,33,0.85) 100%)' }}
           />
           <span
-            className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border transition-colors group-hover:bg-[var(--aqua)]"
+            className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border transition-colors group-hover:bg-[var(--copper)]"
             style={{ borderColor: 'var(--ivory)', background: 'rgba(0,14,33,0.45)', color: 'var(--ivory)' }}
             aria-hidden="true"
           >
             <svg width="18" height="20" viewBox="0 0 18 20" fill="currentColor"><path d="M1 0l17 10L1 20z" /></svg>
           </span>
           <span className="absolute inset-x-0 bottom-0 p-5">
-            <span className="block text-[10px] uppercase" style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--aqua)' }}>
+            <span className="block text-[10px] uppercase" style={{ letterSpacing: 'var(--tracking-caps)', color: 'var(--copper-light)' }}>
               Watch · 0:57
             </span>
             <span className="mt-1.5 block font-display text-xl" style={{ color: 'var(--ivory)' }}>The Ibiza recap</span>

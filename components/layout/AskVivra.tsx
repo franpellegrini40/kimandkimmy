@@ -27,7 +27,7 @@ export default function AskVivra() {
         onPointerEnter={() => void loadPanel()}
         aria-expanded={open}
         aria-controls="ask-vivra"
-        className="fixed bottom-5 right-5 z-40 flex items-center gap-2 border px-4 py-3 text-[11px] font-medium uppercase shadow-[0_10px_30px_rgba(0,14,33,0.18)] transition-colors hover:bg-[var(--forest-deep)] md:bottom-6 md:right-6"
+        className="fixed bottom-5 right-5 z-40 flex items-center gap-2 border px-4 py-3 text-[11px] font-medium uppercase shadow-[0_10px_30px_rgba(0,14,33,0.18)] transition-colors hover:bg-[var(--copper-deep)] md:bottom-6 md:right-6"
         style={{ background: 'var(--navy)', color: 'var(--ivory)', borderColor: 'var(--navy)', letterSpacing: 'var(--tracking-caps)' }}
       >
         <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Jost, Manrope } from 'next/font/google'
+import { Cormorant_Garamond, Manrope } from 'next/font/google'
 import './globals.css'
 import { headers } from 'next/headers'
 import { getSiteFromHost, SITE_META } from '@/lib/site'
@@ -13,10 +13,15 @@ import OrganizationJsonLd from '@/components/seo/OrganizationJsonLd'
 // both commercial fonts whose license files weren't included in the design-system export.
 // Jost/Manrope stand in visually until real .woff2 files are supplied (see ASSETS_NEEDED.md);
 // tailwind.config.ts still lists the real family names first so licensed fonts drop in for free.
-const display = Jost({
+// VIV-0035: an editorial serif for display (Cormorant Garamond, light, with
+// italics) against Manrope for text, so hierarchy comes from the type pairing
+// rather than from colour. Cormorant is kept to 28 px and above; h3 and all
+// small text use Manrope.
+const display = Cormorant_Garamond({
   subsets: ['latin'],
   variable: '--font-display',
-  weight: ['400', '500', '600'],
+  weight: ['300', '400', '500'],
+  style: ['normal', 'italic'],
 })
 
 const body = Manrope({

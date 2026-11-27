@@ -38,7 +38,7 @@ function VideoJsonLd({ domain }: { domain: string }) {
     '@type': 'VideoObject',
     name: 'VIVRA founding gathering, Ibiza 2026: the recap',
     description:
-      'Francisco Pellegrini, founder of VIVRA, on the first VIVRA gathering at Can Aylma, Ibiza, in October 2026.',
+      'Francisco Pellegrini, founder of VIVRA, on the VIVRA Founding Gathering with our founding members at Can Aylma, Ibiza, in October 2026.',
     thumbnailUrl: [`${base}/videos/ibiza-recap-poster.jpg`],
     uploadDate: '2026-11-17',
     duration: 'PT57S',

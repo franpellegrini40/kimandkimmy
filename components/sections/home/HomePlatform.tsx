@@ -56,7 +56,7 @@ export function HomePassport() {
                 />
               </a>
               <div className="p-6">
-                <span className="eyebrow" style={{ color: 'var(--forest-deep)' }}>{PLATFORM.impact.eyebrow}</span>
+                <span className="eyebrow" style={{ color: 'var(--copper-deep)' }}>{PLATFORM.impact.eyebrow}</span>
                 <h3 className="mt-2 text-lg">{PLATFORM.impact.heading}</h3>
                 <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>{PLATFORM.impact.body}</p>
                 <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
@@ -130,7 +130,7 @@ export function HomeCommons() {
                   <a
                     href={item.href}
                     {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                    className="mt-auto inline-block pt-6 text-sm underline underline-offset-4 transition-colors hover:text-[var(--aqua)]"
+                    className="mt-auto inline-block pt-6 text-sm underline underline-offset-4 transition-colors hover:text-[var(--copper-light)]"
                     style={{ color: 'var(--ivory)' }}
                   >
                     {item.linkLabel}

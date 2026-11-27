@@ -12,8 +12,8 @@ import { ALLIANCE_VENUES } from '@/content/alliance'
 const HOME_BENEFITS = MEMBERSHIP_BENEFITS.slice(0, 7)
 
 const TIER_HEAD: Record<string, { bg: string; fg: string; sub: string }> = {
-  explorer: { bg: '#e3f2e7', fg: 'var(--navy)', sub: 'var(--forest-deep)' },
-  member: { bg: 'var(--aqua-100)', fg: 'var(--navy)', sub: 'var(--aqua-700)' },
+  explorer: { bg: '#efebe3', fg: 'var(--navy)', sub: 'var(--copper-deep)' },
+  member: { bg: '#e8dccc', fg: 'var(--navy)', sub: 'var(--copper-deep)' },
   legacy: { bg: 'var(--navy)', fg: 'var(--ivory)', sub: 'var(--copper)' },
 }
 
@@ -23,7 +23,7 @@ export function HomeMembership() {
       <RevealOnScroll className="max-w-2xl">
         <span className="eyebrow">Membership</span>
         <h2 className="mt-4 text-3xl md:text-5xl">
-          What members <em className="italic" style={{ color: 'var(--forest)' }}>receive</em>.
+          What members <em className="italic">receive</em>.
         </h2>
         <p className="mt-5" style={{ color: 'var(--text-secondary)' }}>
           Upgrading to the alliance is the primary way in: one membership, three tiers, benefits that travel across the whole network.

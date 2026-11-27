@@ -89,7 +89,7 @@ export default function AskVivraPanel({ open, onClose }: { open: boolean; onClos
                 </li>
               ))}
             </ul>
-            <button type="button" onClick={() => setView({ kind: 'form' })} className="mt-5 text-sm underline" style={{ color: 'var(--forest-deep)' }}>
+            <button type="button" onClick={() => setView({ kind: 'form' })} className="mt-5 text-sm underline" style={{ color: 'var(--copper-deep)' }}>
               Didn’t find your answer? Write to our team
             </button>
           </>
@@ -107,7 +107,7 @@ export default function AskVivraPanel({ open, onClose }: { open: boolean; onClos
             {view.item.links && (
               <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
                 {view.item.links.map((l) => (
-                  <a key={l.href} href={l.href} onClick={onClose} className="text-sm underline" style={{ color: 'var(--forest-deep)' }}>
+                  <a key={l.href} href={l.href} onClick={onClose} className="text-sm underline" style={{ color: 'var(--copper-deep)' }}>
                     {l.label} →
                   </a>
                 ))}

@@ -45,11 +45,14 @@
   --text-secondary: var(--black-a60);
   --text-quiet: var(--black-a40);
   --text-on-contrast: var(--ivory);
-  --accent: var(--aqua);
-  --accent-deep: var(--aqua-700);
-  /* Accent for solid contrast-surface elements (e.g. primary Button's hover/
-     active state). Always aqua, regardless of section theme, per brand. */
-  --accent-on-contrast: var(--aqua-700);
+  /* VIV-0035: copper is the single accent on the marketing site; aqua is
+     kept in reserve for the digital layer (passport, members' app) and green
+     for impact data only. Copper #C57A3C is 3.07:1 on ivory, so text uses
+     copper-deep #935927 (5.17:1). */
+  --copper-light: #e3a877;
+  --accent: var(--copper-deep);
+  --accent-deep: var(--copper-deep);
+  --accent-on-contrast: var(--copper-deep);
   --rule: var(--black-a12);
   --rule-quiet: var(--black-a08);
 }
@@ -66,7 +69,7 @@
   --text-on-contrast: var(--navy);
   --accent: var(--copper);
   --accent-deep: #935927;
-  --accent-on-contrast: var(--aqua-700);
+  --accent-on-contrast: var(--copper);
   --rule: var(--white-a12);
   --rule-quiet: var(--white-a06);
 }
@@ -96,9 +99,12 @@
     font-weight: 400;
   }
 
-  h1 { font-size: clamp(2.25rem, 1.5rem + 3.6vw, 4.5rem); letter-spacing: 0.01em; }
-  h2 { font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.75rem); letter-spacing: 0.005em; }
-  h3 { font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.5rem); }
+  /* Cormorant runs small for its size, so display sizes step up a little. */
+  h1, h2 { font-weight: 300; letter-spacing: -0.01em; }
+  h1 { font-size: clamp(2.5rem, 1.6rem + 4vw, 5rem); }
+  h2 { font-size: clamp(2rem, 1.35rem + 2.7vw, 3.1rem); }
+  h3, h4 { @apply font-body; font-weight: 500; letter-spacing: 0; }
+  h3 { font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.25rem); }
 
   p { line-height: 1.68; }
 
@@ -141,3 +147,8 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 }
+
+/* VIV-0035 hero photo variant: one slow push-in, never looped. */
+@keyframes hero-zoom { from { transform: scale(1); } to { transform: scale(1.06); } }
+.hero-zoom { animation: hero-zoom 20s ease-out forwards; transform-origin: 50% 60%; }
+@media (prefers-reduced-motion: reduce) { .hero-zoom { animation: none; } }

@@ -3,20 +3,28 @@
 import { useEffect, useRef, useState } from 'react'
 import { useReducedMotion } from 'framer-motion'
 
-// Highlights of the Ibiza reel, silent, lightly graded warm and sharpened.
-// The reel is vertical (720 x 1280), so it is never stretched:
-// - landscape screens get a 1600 x 900 full-width film (about 3.8 MB): each
-//   shot cropped to the band where the people are (heads stay in), the
-//   source's compression blocks cleaned (deblock + light denoise) before a
-//   single high-quality upscale, encoded at high quality with no added grain;
-// - portrait screens (phones) get the single vertical loop (about 2.7 MB, 22 s).
+// The hero loop: the villa at Can Aylma with no people in it (VIV-0035,
+// Bruno's hero-v4 cut, 11.5 s, silent). Each screen shape has an AV1 file and
+// an H.264 fallback; the browser takes the first it can play:
+// - landscape: 1920 x 1080, AV1 about 1.4 MB, H.264 about 2.2 MB;
+// - portrait (phones): 720 x 1280, AV1 about 0.7 MB, H.264 about 1.2 MB.
 // Only the file for the current screen shape is downloaded, once the browser
 // is idle; with reduced motion or data-saver the poster shows instead.
+// Licence for the villa footage is still pending: stage only for now.
 const SOURCES = {
-  wide: { src: '/videos/hero-wide.mp4', poster: '/videos/hero-wide-poster.jpg' },
-  tall: { src: '/videos/hero-highlights.mp4', poster: '/videos/hero-highlights-poster.jpg' },
+  wide: {
+    av1: '/videos/hero-villa-1080p-av1.mp4',
+    h264: '/videos/hero-villa-1080p.mp4',
+    poster: '/videos/hero-villa-poster.webp',
+    av1Codec: 'av01.0.08M.10',
+  },
+  tall: {
+    av1: '/videos/hero-villa-mobile-av1.mp4',
+    h264: '/videos/hero-villa-mobile.mp4',
+    poster: '/videos/hero-villa-poster-mobile.webp',
+    av1Codec: 'av01.0.05M.10',
+  },
 }
-export const HIGHLIGHTS = SOURCES.tall
 
 export default function HeroVideo({ className = '' }: { className?: string }) {
   const ref = useRef<HTMLVideoElement>(null)
@@ -48,6 +56,7 @@ export default function HeroVideo({ className = '' }: { className?: string }) {
     else setTimeout(start, 200)
   }, [reduced])
 
+  const s = SOURCES[shape]
   return (
     <video
       ref={ref}
@@ -57,10 +66,11 @@ export default function HeroVideo({ className = '' }: { className?: string }) {
       playsInline
       autoPlay={play}
       preload="none"
-      poster={SOURCES[shape].poster}
+      poster={s.poster}
       aria-hidden="true"
     >
-      {play && <source key={shape} src={SOURCES[shape].src} type="video/mp4" />}
+      {play && <source key={`${shape}-av1`} src={s.av1} type={`video/mp4; codecs="${s.av1Codec}"`} />}
+      {play && <source key={`${shape}-h264`} src={s.h264} type="video/mp4" />}
     </video>
   )
 }
