@@ -19,6 +19,11 @@ export const HERO_LOOPS = {
     wide: { av1: '/videos/hero-v5-1080p-av1.mp4', h264: '/videos/hero-v5-1080p.mp4', poster: '/videos/hero-v5-poster.webp', codec: 'av01.0.08M.10' },
     tall: { av1: '/videos/hero-v5-mobile-av1.mp4', h264: '/videos/hero-v5-mobile.mp4', poster: '/videos/hero-v5-poster-mobile.webp', codec: 'av01.0.05M.10' },
   },
+  // Option A (wide cut only, 1 MB AV1 / 2.2 MB H.264); phones get the v5 phone cut.
+  a: {
+    wide: { av1: '/videos/hero-v5a-1080p-av1.mp4', h264: '/videos/hero-v5a-1080p.mp4', poster: '/videos/hero-v5a-poster.webp', codec: 'av01.0.08M.10' },
+    tall: { av1: '/videos/hero-v5-mobile-av1.mp4', h264: '/videos/hero-v5-mobile.mp4', poster: '/videos/hero-v5-poster-mobile.webp', codec: 'av01.0.05M.10' },
+  },
   villa: {
     wide: { av1: '/videos/hero-villa-1080p-av1.mp4', h264: '/videos/hero-villa-1080p.mp4', poster: '/videos/hero-villa-poster.webp', codec: 'av01.0.08M.10' },
     tall: { av1: '/videos/hero-villa-mobile-av1.mp4', h264: '/videos/hero-villa-mobile.mp4', poster: '/videos/hero-villa-poster-mobile.webp', codec: 'av01.0.05M.10' },
