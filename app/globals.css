@@ -163,3 +163,28 @@
   }
   .js [data-reveal].is-in { opacity: 1; transform: none; }
 }
+
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+.fade-in { animation: fade-in 0.5s ease-in-out; }
+
+/* Sequenced reveals driven by [data-inview].is-in (RevealObserver); the
+   per-item delays are inline. Only with JavaScript and motion allowed. */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-inview] .isnot-text { color: rgba(0, 14, 33, 0.75); transition: color 0.5s; }
+  .js [data-inview].is-in .isnot-text { color: rgba(0, 14, 33, 0.38); }
+  .js [data-inview] .isnot-strike,
+  .js [data-inview] .isnot-rule,
+  .js [data-inview] .howsteps-rule { transform: scaleX(0); transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+  .js [data-inview].is-in .isnot-strike,
+  .js [data-inview].is-in .isnot-rule,
+  .js [data-inview].is-in .howsteps-rule { transform: scaleX(1); }
+  .js [data-inview] .isnot-is,
+  .js [data-inview] .howsteps-card,
+  .js [data-inview] .howsteps-num { opacity: 0; transform: translateY(18px); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+  .js [data-inview].is-in .isnot-is,
+  .js [data-inview].is-in .howsteps-card,
+  .js [data-inview].is-in .howsteps-num { opacity: 1; transform: none; }
+}
+/* Without the sequence (reduced motion or no JavaScript), the "not" lines
+   still read as crossed out. */
+.isnot-text { color: rgba(0, 14, 33, 0.38); }

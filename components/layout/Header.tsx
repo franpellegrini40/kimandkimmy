@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { motion, useReducedMotion } from 'framer-motion'
 import { MENU_PRIMARY, MENU_SECONDARY, CTA_COPY, LOGIN } from '@/content/site'
 import Button from '@/components/ui/Button'
 import Logo from '@/components/ui/Logo'
@@ -20,7 +19,6 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
   const [activeHref, setActiveHref] = useState<string | null>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const drawerRef = useRef<HTMLElement>(null)
-  const reducedMotion = useReducedMotion()
   const pathname = usePathname()
 
   useEffect(() => {
@@ -96,7 +94,7 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
     document.body.style.overflow = ''
     window.history.pushState(null, '', `#${hash}`)
     setActiveHref(href)
-    window.setTimeout(() => target.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' }), 0)
+    window.setTimeout(() => target.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }), 0)
   }
 
   return (
@@ -169,26 +167,21 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
         nav <Link> remains a real, crawlable anchor in the DOM. Only visibility
         and interactivity are toggled.
       */}
-      <motion.div
+      <div
         aria-hidden="true"
-        initial={false}
-        animate={{ opacity: menuOpen ? 1 : 0 }}
-        transition={{ duration: 0.2 }}
-        className="fixed inset-0 z-[60]"
-        style={{ background: 'rgba(0,14,33,0.5)', pointerEvents: menuOpen ? 'auto' : 'none' }}
+        className="fixed inset-0 z-[60] transition-opacity duration-200"
+        style={{ background: 'rgba(0,14,33,0.5)', opacity: menuOpen ? 1 : 0, pointerEvents: menuOpen ? 'auto' : 'none' }}
         onClick={closeMenu}
       />
-      <motion.nav
+      <nav
         ref={drawerRef}
         id="site-menu"
         data-theme="prestige"
         aria-hidden={!menuOpen}
         aria-label="Site navigation"
-        initial={false}
-        animate={{ x: menuOpen ? 0 : '100%' }}
-        transition={reducedMotion ? { duration: 0 } : { duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed inset-y-0 right-0 z-[70] flex w-full max-w-md flex-col overflow-y-auto"
+        className="fixed inset-y-0 right-0 z-[70] flex w-full max-w-md flex-col overflow-y-auto transition-transform duration-[350ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
         style={{
+          transform: menuOpen ? 'none' : 'translateX(100%)',
           background: 'var(--surface-page)',
           color: 'var(--text-primary)',
           pointerEvents: menuOpen ? 'auto' : 'none',
@@ -258,7 +251,7 @@ export default function Header({ overHero = false }: { site: SiteId; overHero?: 
             {CTA_COPY.invite}
           </Button>
         </div>
-      </motion.nav>
+      </nav>
     </>
   )
 }

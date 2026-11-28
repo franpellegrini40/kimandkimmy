@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
 import Section from '@/components/ui/Section'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import { ECOSYSTEM_INTRO, ECOSYSTEM_PILLARS } from '@/content/ecosystem'
@@ -16,7 +15,6 @@ const ICON_CY = 104.086
 
 export default function VivraEcosystem() {
   const [step, setStep] = useState(0)
-  const reduced = useReducedMotion()
   const rotation = step * 45
 
   return (
@@ -40,10 +38,10 @@ export default function VivraEcosystem() {
               className="absolute inset-0 h-full w-full cursor-pointer"
               style={{ background: 'transparent', border: 0 }}
             >
-              <motion.div
-                className="absolute inset-0"
-                animate={{ rotate: reduced ? 0 : rotation }}
-                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              {/* Turns by CSS transition (instant with reduced motion, see globals.css). */}
+              <div
+                className="absolute inset-0 transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+                style={{ transform: `rotate(${rotation}deg)` }}
               >
                 <svg viewBox="0 0 700 700" className="absolute inset-0 h-full w-full" aria-hidden="true">
                   <circle cx="350" cy="350" r="100" fill="none" stroke="var(--accent-deep)" strokeWidth="1.5" />
@@ -88,14 +86,14 @@ export default function VivraEcosystem() {
                     >
                       <span
                         className="inline-block"
-                        style={{ transform: reduced ? undefined : `rotate(${-rotation}deg)`, transition: 'transform 0.9s cubic-bezier(0.16,1,0.3,1)' }}
+                        style={{ transform: `rotate(${-rotation}deg)`,transition: 'transform 0.9s cubic-bezier(0.16,1,0.3,1)' }}
                       >
                         {p.label}
                       </span>
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             </button>
 
             <div

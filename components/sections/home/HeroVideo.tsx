@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { useReducedMotion } from 'framer-motion'
 
 // Hero loops (VIV-0035). Each has a landscape and a portrait cut, AV1 first
 // with an H.264 fallback, and a WebP poster per shape:
@@ -54,7 +53,8 @@ export function HeroPoster({ loop }: { loop: HeroLoop }) {
 
 export default function HeroVideo({ loop = 'v5', className = '' }: { loop?: HeroLoop; className?: string }) {
   const ref = useRef<HTMLVideoElement>(null)
-  const reduced = useReducedMotion()
+  const [reduced, setReduced] = useState<boolean | null>(null)
+  useEffect(() => setReduced(window.matchMedia('(prefers-reduced-motion: reduce)').matches), [])
   const [play, setPlay] = useState(false)
   const [shape, setShape] = useState<'wide' | 'tall'>('wide')
 
@@ -75,7 +75,7 @@ export default function HeroVideo({ loop = 'v5', className = '' }: { loop?: Hero
 
   useEffect(() => {
     const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection
-    if (reduced || conn?.saveData) return
+    if (reduced !== false || conn?.saveData) return // wait until the motion preference is known
     const start = () => setPlay(true)
     const w = window as Window & { requestIdleCallback?: (cb: () => void) => number }
     if (w.requestIdleCallback) w.requestIdleCallback(start)

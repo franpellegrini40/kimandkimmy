@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { useReducedMotion } from 'framer-motion'
 
 // The venues film (25 s, silent). Two encodes, cleaned of compression blocks
 // and gently sharpened: 1280 x 720 (about 3.2 MB) for wide screens and
@@ -18,7 +17,8 @@ export const VENUES_FILM = {
 
 export default function VenuesFilm() {
   const ref = useRef<HTMLVideoElement>(null)
-  const reduced = useReducedMotion()
+  const [reduced, setReduced] = useState<boolean | null>(null)
+  useEffect(() => setReduced(window.matchMedia('(prefers-reduced-motion: reduce)').matches), [])
   const [load, setLoad] = useState(false)
   const [src, setSrc] = useState(VENUES_FILM.src)
 
@@ -26,7 +26,7 @@ export default function VenuesFilm() {
     const el = ref.current
     if (!el) return
     const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection
-    if (reduced || conn?.saveData) return
+    if (reduced !== false || conn?.saveData) return // wait until the motion preference is known
     const io = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {

@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
 import AssetPlaceholder from '@/components/ui/AssetPlaceholder'
 import Button from '@/components/ui/Button'
@@ -12,7 +11,8 @@ const INTERVAL_MS = 6000
 export default function PeopleCarousel({ people = PEOPLE }: { people?: Person[] }) {
   const [index, setIndex] = useState(0)
   const [playing, setPlaying] = useState(true)
-  const reduced = useReducedMotion()
+  const [reduced, setReduced] = useState(false)
+  useEffect(() => setReduced(window.matchMedia('(prefers-reduced-motion: reduce)').matches), [])
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
@@ -41,15 +41,8 @@ export default function PeopleCarousel({ people = PEOPLE }: { people?: Person[] 
       <div className="grid gap-8 sm:gap-10 md:grid-cols-2 md:items-center md:gap-16">
         {/* Photo — crossfades between the active person's portrait */}
         <div className="relative aspect-[4/5] w-full max-w-[320px] overflow-hidden sm:max-w-[360px]">
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.div
-              key={active.slug}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
-              className="absolute inset-0"
-            >
+          {/* Each portrait fades in (CSS keyframes, globals.css). */}
+            <div key={active.slug} className="fade-in absolute inset-0">
               {active.image ? (
                 <Image
                   src={active.image}
@@ -63,8 +56,7 @@ export default function PeopleCarousel({ people = PEOPLE }: { people?: Person[] 
               ) : (
                 <AssetPlaceholder note={`Portrait — ${active.name}, 4:5`} />
               )}
-            </motion.div>
-          </AnimatePresence>
+            </div>
 
           {/* Prev/next controls, overlaid on the photo */}
           <button
