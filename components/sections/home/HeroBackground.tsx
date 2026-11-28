@@ -2,23 +2,24 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import HeroVideo from './HeroVideo'
+import HeroVideo, { HeroPoster } from './HeroVideo'
 
-// Hero background, VIV-0035. Three candidates for Francisco to compare:
-// - 'video' (default): the villa loop with no people (HeroVideo);
+// Hero background, VIV-0035. Candidates for Francisco to compare:
+// - 'v5' (default): hero v5, option C (HeroVideo over its poster);
+// - 'villa': the earlier villa loop (hero v4);
 // - 'photo': the villa arches at blue hour, still, with a slow 20 s zoom;
 // - 'navy': no image, navy with a fine grain, type only.
-// Off production, ?hero=photo or ?hero=navy switches the background, so the
-// three can be compared on the same page. Production always shows the default.
-export type HeroVariant = 'video' | 'photo' | 'navy'
+// Off production, ?hero=villa|photo|navy switches the background so they can
+// be compared on the same page. Production always shows the default.
+export type HeroVariant = 'v5' | 'villa' | 'photo' | 'navy'
 
 export default function HeroBackground({ allowSwitch }: { allowSwitch: boolean }) {
-  const [variant, setVariant] = useState<HeroVariant>('video')
+  const [variant, setVariant] = useState<HeroVariant>('v5')
 
   useEffect(() => {
     if (!allowSwitch) return
     const v = new URLSearchParams(window.location.search).get('hero')
-    if (v === 'photo' || v === 'navy') setVariant(v)
+    if (v === 'villa' || v === 'photo' || v === 'navy') setVariant(v)
   }, [allowSwitch])
 
   if (variant === 'navy') return <div aria-hidden="true" className="grain absolute inset-0" style={{ background: 'var(--navy)' }} />
@@ -26,17 +27,14 @@ export default function HeroBackground({ allowSwitch }: { allowSwitch: boolean }
   if (variant === 'photo')
     return (
       <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
-        <Image
-          src="/images/villa-facade-night.jpg"
-          alt=""
-          fill
-          priority
-          quality={85}
-          sizes="100vw"
-          className="hero-zoom object-cover"
-        />
+        <Image src="/images/villa-facade-night.jpg" alt="" fill priority quality={85} sizes="100vw" className="hero-zoom object-cover" />
       </div>
     )
 
-  return <HeroVideo className="absolute inset-0 h-full w-full object-cover" />
+  return (
+    <div aria-hidden="true" className="absolute inset-0">
+      <HeroPoster loop={variant} />
+      <HeroVideo loop={variant} className="absolute inset-0 h-full w-full object-cover" />
+    </div>
+  )
 }
