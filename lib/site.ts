@@ -1,5 +1,3 @@
-import { headers } from 'next/headers'
-
 export type SiteId = 'vivra-world' | 'join-vivra'
 
 const JOIN_DOMAIN = process.env.NEXT_PUBLIC_JOIN_DOMAIN || 'joinvivra.com'
@@ -9,9 +7,14 @@ export function getSiteFromHost(host: string | null): SiteId {
   return 'vivra-world'
 }
 
+// Francisco chose option A (2026-11-28): worldvivra.com is the one site
+// (joinvivra.com and livevivra.com redirect to it), so every page uses the
+// VIVRA World metadata and no page reads the request host. That keeps pages
+// static, built once and served from the CDN instead of rendered per visit.
+export const CURRENT_SITE: SiteId = 'vivra-world'
+
 export async function getCurrentSite(): Promise<SiteId> {
-  const h = await headers()
-  return getSiteFromHost(h.get('x-forwarded-host') || h.get('host'))
+  return CURRENT_SITE
 }
 
 export const SITE_META = {

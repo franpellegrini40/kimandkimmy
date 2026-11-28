@@ -1,7 +1,10 @@
-'use client'
-
-import { motion, useReducedMotion } from 'framer-motion'
-
+// Fades and lifts content in as it scrolls into view.
+//
+// No client JavaScript per instance: this renders a plain <div data-reveal>,
+// and one shared observer (components/layout/RevealObserver.tsx) adds
+// .is-in when each element comes near the viewport. The CSS lives in
+// globals.css. Content is in the HTML from the start (search engines and
+// no-JS visitors see everything), and with reduced motion nothing is hidden.
 export default function RevealOnScroll({
   children,
   delay = 0,
@@ -13,20 +16,9 @@ export default function RevealOnScroll({
   className?: string
   style?: React.CSSProperties
 }) {
-  const reduced = useReducedMotion()
-
-  if (reduced) return <div className={className} style={style}>{children}</div>
-
   return (
-    <motion.div
-      className={className}
-      style={style}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <div data-reveal="" className={className} style={delay ? { ...style, transitionDelay: `${delay}s` } : style}>
       {children}
-    </motion.div>
+    </div>
   )
 }

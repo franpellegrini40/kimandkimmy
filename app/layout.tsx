@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Manrope } from 'next/font/google'
 import './globals.css'
-import { headers } from 'next/headers'
-import { getSiteFromHost, SITE_META } from '@/lib/site'
+import { CURRENT_SITE, SITE_META } from '@/lib/site'
 import { GA4_ID } from '@/lib/analytics'
 import Script from 'next/script'
 import ConsentBanner from '@/components/layout/ConsentBanner'
 import AskVivra from '@/components/layout/AskVivra'
+import RevealObserver from '@/components/layout/RevealObserver'
 import OrganizationJsonLd from '@/components/seo/OrganizationJsonLd'
 
 // The brand system specifies Optima (display) and Neue Haas Grotesk Display (text) —
@@ -33,9 +33,7 @@ const body = Manrope({
 const CANONICAL_DOMAIN = process.env.NEXT_PUBLIC_SITE_DOMAIN || 'worldvivra.com'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const h = await headers()
-  const site = getSiteFromHost(h.get('x-forwarded-host') || h.get('host'))
-  const meta = SITE_META[site]
+  const meta = SITE_META[CURRENT_SITE]
   return {
     // joinvivra.com and worldvivra.com serve the same pages, so every page
     // names worldvivra.com as its canonical address (the sitemap and robots.txt
@@ -62,8 +60,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
       <body>
+        {/* Marks that JavaScript runs, so scroll reveals may start hidden (globals.css). */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <OrganizationJsonLd />
         {GA4_ID && (
           <>
@@ -86,6 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
         {children}
         <AskVivra />
+        <RevealObserver />
         <ConsentBanner />
       </body>
     </html>
